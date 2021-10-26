@@ -1,10 +1,8 @@
-﻿using System;
+﻿using AugustusFahsion.Model;
+using Dapper;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using AugustusFahsion.Model;
-using AugustusFahsion.View;
-using Dapper;
 
 namespace AugustusFahsion.DAO
 {
@@ -12,7 +10,8 @@ namespace AugustusFahsion.DAO
     {
         public static void CadastrarCliente(IDbConnection conexao, ClienteModel cliente)
         {
-            var query = @"insert into Cliente values(@Nome, @Email, @Telefone)";
+            var query = @"insert into Cliente values(@Nome, @Sobrenome, @Sexo, @DataNascimento, @ValorLimiteAPrazo, 
+            @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco, @Telefone, @Celular, @Email, @Cpf)";       
             conexao.Query<ClienteModel>(query, cliente);
         }
 
@@ -24,7 +23,7 @@ namespace AugustusFahsion.DAO
 
         public static bool ValidaId(IDbConnection conexao, int id)
         {
-            var validaId = conexao.Query(@"SELECT Id FROM Cliente WHERE Id=@Id", new { Id = id }).ToList();
+            var validaId = conexao.Query(@"SELECT Id FROM Cliente WHERE Id=@id", new { Id = id }).ToList();
 
             if (validaId.Count != 0)
                 return true;
@@ -32,27 +31,27 @@ namespace AugustusFahsion.DAO
                 return false;
         }
 
-        //public static string PreencheDados(IDbConnection conexao, string nome, string email, string telefone, ClienteModel cliente)
-        //{
-        //    var id = cliente.Id;
-        //    nome = conexao.Query(@"SELECT Nome FROM Cliente WHERE Id=@id").ToString();
-        //    email = conexao.Query(@"SELECT Email FROM Cliente WHERE Id=@id").ToString();
-        //    telefone = conexao.Query(@"SELECT Telefone FROM Cliente WHERE Id=@id").ToString();
-
-        //    return nome;
-        //}
+        public static ClienteModel Buscar(IDbConnection conexao, int id)
+        { 
+            var query = @"select * from Cliente where Id=@id";
+            var parametros = new DynamicParameters();
+            parametros.Add("@id", id, System.Data.DbType.Int32);
+            var resultado = conexao.QueryFirstOrDefault<ClienteModel>(query, parametros);
+            return resultado;
+        }
 
         public static void AlterarCliente(IDbConnection conexao, ClienteModel cliente)
         {
             var id = cliente.Id;
-            var query = @"update Cliente set Nome = @Nome, Email = @Email, Telefone = @Telefone where Id=@id ";
+            var query = @"update Cliente set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, DataNascimento = @DataNascimento, ValorLimiteAPrazo = @ValorLimiteAPrazo, 
+            Cep = @Cep, Logradouro = @Logradouro, Cidade = @Cidade, Uf = @Uf, Complemento = @Complemento, Bairro = @Bairro, NumeroEndereco = @NumeroEndereco, Telefone = @Telefone, Celular = @Celular, Email = @Email, Cpf =  @Cpf where Id=@id ";
             conexao.Query<ClienteModel>(query, cliente);
         }
 
         public static void ExcluirCliente(IDbConnection conexao, ClienteModel cliente)
         {
             var id = cliente.Id;
-            conexao.Query(@"delete from Clientes where Id=@id");
-        }    
+            conexao.Query(@"delete from Cliente where Id=" + id);
+        }
     }
 }

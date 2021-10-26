@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace AugustusFahsion.Model
 {
-    public class ColaboradorModel
+    public class ColaboradorModel: Pessoa
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Telefone { get; set; }
+       
+        public double Salario { get; set; }
+        public int Comissao { get; set; }
+        
+
+        public string Banco { get; set; }
+        public string Agencia { get; set; }
+        public string TipoConta { get; set; }
+        public string Conta { get; set; }
+
     }
 }

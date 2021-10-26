@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace AugustusFahsion.Model
 {
-    public class ClienteModel
+    public class ClienteModel: Pessoa
     {
-
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Telefone { get; set; }
-
+        public double ValorLimiteAPrazo { get; set; }
     }
 }
