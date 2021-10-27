@@ -69,10 +69,6 @@ namespace AugustusFahsion.View.Cadastrar
                 {
                     MessageBox.Show("Insira um numero de endereço.");
                 }
-                else if (!new Regex("[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{3}").Match(mtxtCelular.Text).Success)
-                {
-                    MessageBox.Show("Insira um numero de celular válido");
-                }
                 else if (String.IsNullOrEmpty(txtEmail.Text))
                 {
                     MessageBox.Show("Insira um endereço de email.");

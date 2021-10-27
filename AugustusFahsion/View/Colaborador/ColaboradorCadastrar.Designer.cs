@@ -532,7 +532,7 @@ namespace AugustusFahsion.View.Cadastrar
             // mtxtCelular
             // 
             this.mtxtCelular.Location = new System.Drawing.Point(335, 164);
-            this.mtxtCelular.Mask = "(99) 00000-0000";
+            this.mtxtCelular.Mask = "(099) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 23);
             this.mtxtCelular.TabIndex = 8;
