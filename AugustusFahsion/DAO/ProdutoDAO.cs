@@ -42,7 +42,7 @@ namespace AugustusFahsion.DAO
         {
             var id = produto.Id;
             var query = @"update Produto set Nome = @Nome, Marca = @Marca, PrecoCusto = @PrecoCusto, 
-            PrecoVenda = @PrecoVenda, PrecoPromocao = @PrecoPromocao, CodigoBarras = @CodigoBarras";
+            PrecoVenda = @PrecoVenda, PrecoPromocao = @PrecoPromocao, CodigoBarras = @CodigoBarras where Id=@id";
             conexao.Query<ProdutoModel>(query, produto);
         }
 
