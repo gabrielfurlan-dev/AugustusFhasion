@@ -319,7 +319,6 @@ namespace AugustusFahsion.View
             this.btnConsultarId.TabIndex = 2;
             this.btnConsultarId.Text = "Ok";
             this.btnConsultarId.UseVisualStyleBackColor = false;
-            this.btnConsultarId.Click += new System.EventHandler(this.btnConsultarId_Click);
             // 
             // txtId
             // 
@@ -582,6 +581,7 @@ namespace AugustusFahsion.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClienteAlterar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ClienteAlterar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

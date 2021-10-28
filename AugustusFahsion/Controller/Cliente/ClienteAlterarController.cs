@@ -9,8 +9,14 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteAlterarController
     {
+
+        //private ClienteModel _clienteModelSelecionado;
+
         public void AbrirFormulario() =>
             new ClienteAlterar(this).Show();
+
+        public void AbrirFormulario(ClienteModel clienteModelSelecionado) =>
+            new ClienteAlterar(this, clienteModelSelecionado).Show();
 
 
         public bool ValidarId(int id)

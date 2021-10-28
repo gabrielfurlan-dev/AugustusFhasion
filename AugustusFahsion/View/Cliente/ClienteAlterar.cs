@@ -39,6 +39,16 @@ namespace AugustusFahsion.View
             };
         }
 
+        public ClienteAlterar(ClienteAlterarController clienteAlterarController, ClienteModel clienteModelSelecionado)
+        {
+            InitializeComponent();
+
+            _controller = clienteAlterarController;
+            clienteModel = clienteModelSelecionado;
+
+            AtribuirModelParaCampos();
+            btnSalvar.Enabled = true;
+        }
 
         public void btnConsultarId_Click(object sender, EventArgs e)
         {
@@ -52,23 +62,7 @@ namespace AugustusFahsion.View
                 MessageBox.Show("id válido!");
                 clienteModel = _controller.Buscar(Int32.Parse(txtId.Text));
 
-
-                txtNome.Text = clienteModel.Nome;
-                txtSobrenome.Text = clienteModel.Sobrenome;
-                dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
-                cbSexo.Text = clienteModel.Sexo;
-                nupValorLimiteAPrazo.Text = clienteModel.ValorLimiteAPrazo.ToString();
-                mtxtCep.Text = clienteModel.Cep.ToString();
-                txtLogradouro.Text = clienteModel.Logradouro;
-                txtCidade.Text = clienteModel.Cidade;
-                cbUf.Text = clienteModel.Uf;
-                txtComplemento.Text = clienteModel.Complemento;
-                txtBairro.Text = clienteModel.Bairro;
-                txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
-                txtTelefone.Text = clienteModel.Telefone.ToString();
-                mtxtCelular.Text = clienteModel.Celular.ToString();
-                txtEmail.Text = clienteModel.Email;
-                mtxtCpf.Text = clienteModel.Cpf;
+                AtribuirModelParaCampos();
 
                 btnSalvar.Enabled = true;
             }
@@ -77,6 +71,27 @@ namespace AugustusFahsion.View
                 MessageBox.Show("id invalido!");
             }
         }
+
+        private void AtribuirModelParaCampos()
+        {
+            txtNome.Text = clienteModel.Nome;
+            txtSobrenome.Text = clienteModel.Sobrenome;
+            dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
+            cbSexo.Text = clienteModel.Sexo;
+            nupValorLimiteAPrazo.Text = clienteModel.ValorLimiteAPrazo.ToString();
+            mtxtCep.Text = clienteModel.Cep.ToString();
+            txtLogradouro.Text = clienteModel.Logradouro;
+            txtCidade.Text = clienteModel.Cidade;
+            cbUf.Text = clienteModel.Uf;
+            txtComplemento.Text = clienteModel.Complemento;
+            txtBairro.Text = clienteModel.Bairro;
+            txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
+            txtTelefone.Text = clienteModel.Telefone.ToString();
+            mtxtCelular.Text = clienteModel.Celular.ToString();
+            txtEmail.Text = clienteModel.Email;
+            mtxtCpf.Text = clienteModel.Cpf;
+        }
+
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -180,6 +195,11 @@ namespace AugustusFahsion.View
                     e.Handled = true;
                 }
             }
+        }
+
+        private void ClienteAlterar_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

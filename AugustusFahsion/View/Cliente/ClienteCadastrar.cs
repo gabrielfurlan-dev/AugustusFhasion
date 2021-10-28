@@ -10,14 +10,12 @@ namespace AugustusFahsion.View
     {
         private ClienteCadastrarController _controller;
         private ClienteModel clienteModel;
-        private Validar validar;
+
 
         public ClienteCadastrar(ClienteCadastrarController clienteCadastrarController)
         {
             InitializeComponent();
             _controller = clienteCadastrarController;
-            validar = new Validar { };
-
             clienteModel = new ClienteModel{};
         }
 
@@ -30,19 +28,22 @@ namespace AugustusFahsion.View
         {
             try
             {
-                if (String.IsNullOrEmpty(txtNome.Text))
+                if (txtNome.Text.NuloOuVazio())
+                    MessageBox.Show("Insira um nome.");
+
+                else if (txtNome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um nome.");
                 }
-                else if (String.IsNullOrEmpty(txtSobrenome.Text))
+                else if (txtSobrenome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um sobrenome");
                 }
-                else if (String.IsNullOrEmpty(cbSexo.Text))
+                else if (cbSexo.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o sexo.");
                 }
-                else if (dtpDataNascimento.Value >= DateTime.Now)
+                else if (dtpDataNascimento.Value.DataDeHoje())
                 {
                     MessageBox.Show("Selecione uma data de nascimento valida");
                 }
@@ -50,45 +51,44 @@ namespace AugustusFahsion.View
                 {
                     MessageBox.Show("Insira um valor a prazo válido");
                 }
-                else if (String.IsNullOrEmpty(mtxtCep.Text))
+                else if (mtxtCep.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um CEP");
                 }
-                else if (String.IsNullOrEmpty(txtLogradouro.Text))
+                else if (txtLogradouro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um Logradouro");
                 }
-                else if (String.IsNullOrEmpty(txtCidade.Text))
+                else if (txtCidade.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira uma cidade");
                 }
-                else if (String.IsNullOrEmpty(cbUf.Text))
+                else if (cbUf.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione um Estado (UF)");
                 }
-                else if (String.IsNullOrEmpty(txtBairro.Text))
+                else if (txtBairro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um bairro");
                 }
-                else if (String.IsNullOrEmpty(txtNumeroEndereco.Text))
+                else if (txtNumeroEndereco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um numero de endereço.");
                 }
-                else if (!new Regex("[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{3}").Match(mtxtCelular.Text).Success)
+                else if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
                 {
                     MessageBox.Show("Insira um numero de celular válido");
                 }
-                else if (String.IsNullOrEmpty(txtEmail.Text))
+                else if (txtEmail.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um endereço de email.");
                 }
-                else if (!new Regex("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}").Match(mtxtCpf.Text).Success)
+                else if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
                     MessageBox.Show("Insira um CPF");
                 }
                 else
                 {
-
                     clienteModel.Nome = txtNome.Text;
                     clienteModel.Sobrenome = txtSobrenome.Text;
                     clienteModel.Sexo = cbSexo.Text;
@@ -114,9 +114,6 @@ namespace AugustusFahsion.View
             {
                 MessageBox.Show(excecao.Message);
             }
-        }
-    
-
-       
+        }       
     }
 }

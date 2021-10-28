@@ -20,6 +20,43 @@ namespace AugustusFahsion.View.Alterar
             colaboradorModel = new ColaboradorModel { };
         }
 
+        public ColaboradorAlterar(ColaboradorAlterarController colaboradorAlterarController, ColaboradorModel colaboradorModelSelecionado)
+        {
+            InitializeComponent();
+
+            _controller = colaboradorAlterarController;
+            colaboradorModel = colaboradorModelSelecionado;
+
+            AtribuirModelParaCampos();
+            btnSalvar.Enabled = true;
+        }
+
+        private void AtribuirModelParaCampos()
+        {
+            txtNome.Text = colaboradorModel.Nome;
+            txtSobrenome.Text = colaboradorModel.Sobrenome;
+            dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
+            cbSexo.Text = colaboradorModel.Sexo;
+            mtxtCep.Text = colaboradorModel.Cep.ToString();
+            nupSalario.Value = (decimal)colaboradorModel.Salario;
+            nupComissao.Value = colaboradorModel.Comissao;
+            txtLogradouro.Text = colaboradorModel.Logradouro;
+            txtCidade.Text = colaboradorModel.Cidade;
+            cbUf.Text = colaboradorModel.Uf;
+            txtComplemento.Text = colaboradorModel.Complemento;
+            txtBairro.Text = colaboradorModel.Bairro;
+            txtNumeroEndereco.Text = colaboradorModel.NumeroEndereco.ToString();
+            txtTelefone.Text = colaboradorModel.Telefone.ToString();
+            mtxtCelular.Text = colaboradorModel.Celular.ToString();
+            txtEmail.Text = colaboradorModel.Email;
+            mtxtCpf.Text = colaboradorModel.Cpf;
+
+            txtBanco.Text = colaboradorModel.Banco;
+            mtxtAgencia.Text = colaboradorModel.Agencia;
+            cbTipoConta.Text = colaboradorModel.TipoConta;
+            mtxtConta.Text = colaboradorModel.Conta;
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();

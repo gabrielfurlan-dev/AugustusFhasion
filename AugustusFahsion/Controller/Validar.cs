@@ -7,45 +7,21 @@ using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller
 {
-    public class Validar
+    public static class Validar
     {
-        public bool NuloOuVazio(string texto, string mensagem)
-        {
-            if (!String.IsNullOrEmpty(texto)) {
-                MessageBox.Show(mensagem);
-                return false;
-            }
-            else
-                return true;
-        }
-        public bool DataDeHoje (DateTime dataNascimento, string mensagem)
-        {
-            if (dataNascimento == DateTime.Now)
-            {
-                MessageBox.Show(mensagem);
-                return true;
-            }
-            else
-                return false;
-        }
-        public bool MenorQueZeroDouble(double valor, string mensagem)
-        {
-            if (valor < 0) { 
-                MessageBox.Show(mensagem);
-                return true;
-            }
-            else
-                return false;
-        }
-        public bool MenorQueZeroInt(double valor, string mensagem)
-        {
-            if (valor < 0)
-            {
-                MessageBox.Show(mensagem);
-                return true;
-            }
-            else
-                return false;
-        }
+        public static bool NuloOuVazio(string texto) =>
+        !string.IsNullOrEmpty(texto);
+    }
+
+    public static class Extensoes
+    {
+        public static bool EstaSelecionado(this ComboBox comboBox) =>
+           comboBox.SelectedIndex > 0;
+
+        public static bool NuloOuVazio(this string texto) =>
+            string.IsNullOrEmpty(texto);
+
+        public static bool DataDeHoje(this DateTime dataNascimento) =>
+            dataNascimento == DateTime.Now;
     }
 }

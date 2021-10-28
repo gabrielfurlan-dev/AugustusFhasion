@@ -21,75 +21,82 @@ namespace AugustusFahsion.View.Cadastrar
         {
             try
             {
-                if (String.IsNullOrEmpty(txtNome.Text))
+                if (txtNome.Text.NuloOuVazio())
+                    MessageBox.Show("Insira um nome.");
+
+                else if (txtNome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um nome.");
                 }
-                else if (String.IsNullOrEmpty(txtSobrenome.Text))
+                else if (txtSobrenome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um sobrenome");
                 }
-                else if (String.IsNullOrEmpty(cbSexo.Text))
+                else if (cbSexo.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o sexo.");
                 }
-                else if (dtpDataNascimento.Value >= DateTime.Now)
+                else if (dtpDataNascimento.Value.DataDeHoje())
                 {
                     MessageBox.Show("Selecione uma data de nascimento valida");
                 }
-                else if (nupSalario.Value <= 0)
+                else if (mtxtCep.Text.NuloOuVazio())
+                {
+                    MessageBox.Show("Insira um CEP");
+                }
+                else if (nupSalario.Value < 0)
                 {
                     MessageBox.Show("Insira um salario válido.");
                 }
                 else if (nupComissao.Value < 0)
                 {
-                    MessageBox.Show("O colaborador tem comissão negativa ? kkkkk.\nInsira um valor de comissão válido.");
+                    MessageBox.Show("Insira uma comissão válida.");
                 }
-                else if (String.IsNullOrEmpty(mtxtCep.Text))
-                {
-                    MessageBox.Show("Insira um CEP");
-                }
-                else if (String.IsNullOrEmpty(txtLogradouro.Text))
+                else if (txtLogradouro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um Logradouro");
                 }
-                else if (String.IsNullOrEmpty(txtCidade.Text))
+                else if (txtCidade.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira uma cidade");
                 }
-                else if (String.IsNullOrEmpty(cbUf.Text))
+                else if (cbUf.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione um Estado (UF)");
                 }
-                else if (String.IsNullOrEmpty(txtBairro.Text))
+                else if (txtBairro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um bairro");
                 }
-                else if (String.IsNullOrEmpty(txtNumeroEndereco.Text))
+                else if (txtNumeroEndereco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um numero de endereço.");
                 }
-                else if (String.IsNullOrEmpty(txtEmail.Text))
+                else if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+                {
+                    MessageBox.Show("Insira um numero de celular válido");
+                }
+                else if (txtEmail.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um endereço de email.");
                 }
-                else if (!new Regex("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}").Match(mtxtCpf.Text).Success)
+                else if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
                     MessageBox.Show("Insira um CPF");
                 }
-                else if (String.IsNullOrEmpty(txtBanco.Text))
+                else if (txtBanco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um banco");
                 }
-                else if (String.IsNullOrEmpty(mtxtAgencia.Text))
+                else if (mtxtAgencia.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira o número da agência bancária.");
                 }
-                else if (String.IsNullOrEmpty(mtxtConta.Text))
+                else if (mtxtConta.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira o numero da conta bancária");
                 }
-                else if (String.IsNullOrEmpty(cbTipoConta.Text))
+                else if (cbTipoConta.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o tipo da conta bancária.");
                 }

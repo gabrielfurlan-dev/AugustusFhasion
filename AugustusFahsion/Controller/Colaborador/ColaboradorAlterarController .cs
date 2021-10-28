@@ -7,10 +7,15 @@ using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller
 {
+    
     public class ColaboradorAlterarController
     {
+        //private ColaboradorModel _colaboradorModelSelecionado;
         public void AbrirFormulario() =>
             new ColaboradorAlterar(this).Show();
+
+        public void AbrirFormulario(ColaboradorModel _colaboradorModelSelecionado) =>
+            new ColaboradorAlterar(this, _colaboradorModelSelecionado).Show();
 
 
         public bool ValidarId(int id)

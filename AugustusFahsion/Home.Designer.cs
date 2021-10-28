@@ -236,7 +236,6 @@ namespace AugustusFahsion
             this.label2.Size = new System.Drawing.Size(87, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "Fashion";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -248,7 +247,6 @@ namespace AugustusFahsion
             this.label1.Size = new System.Drawing.Size(134, 36);
             this.label1.TabIndex = 2;
             this.label1.Text = "Augustu\'s\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -259,7 +257,6 @@ namespace AugustusFahsion
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox4
             // 
@@ -272,7 +269,6 @@ namespace AugustusFahsion
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -286,7 +282,7 @@ namespace AugustusFahsion
             this.button1.TabIndex = 4;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -300,7 +296,6 @@ namespace AugustusFahsion
             this.label3.Size = new System.Drawing.Size(96, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cliente";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -312,7 +307,6 @@ namespace AugustusFahsion
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -408,7 +402,6 @@ namespace AugustusFahsion
             this.groupBox3.Size = new System.Drawing.Size(244, 343);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnAlterarProduto
             // 
@@ -437,7 +430,6 @@ namespace AugustusFahsion
             this.label5.Size = new System.Drawing.Size(96, 26);
             this.label5.TabIndex = 2;
             this.label5.Text = "Produto";
-            this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnListarProduto
             // 
@@ -495,7 +487,6 @@ namespace AugustusFahsion
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label4
             // 
@@ -509,7 +500,6 @@ namespace AugustusFahsion
             this.label4.Size = new System.Drawing.Size(144, 26);
             this.label4.TabIndex = 2;
             this.label4.Text = "Colaborador";
-            this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -529,7 +519,6 @@ namespace AugustusFahsion
             this.groupBox2.Size = new System.Drawing.Size(244, 343);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnAlterarColaborador
             // 

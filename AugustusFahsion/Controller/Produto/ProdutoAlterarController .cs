@@ -9,6 +9,7 @@ namespace AugustusFahsion.Controller
 {
     public class ProdutoAlterarController
     {
+
         public void AbrirFormulario() =>
             new ProdutoAlterar(this).Show();
 
