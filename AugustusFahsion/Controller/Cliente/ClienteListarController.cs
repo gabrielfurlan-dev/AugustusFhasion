@@ -13,13 +13,12 @@ namespace AugustusFahsion.Controller
             new ClienteListar(this).Show();
 
 
-        public List<ClienteModel> ListarClientes()
+        public List<ClienteListagem> ListarClientes()
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     var lista = ClienteDao.ListarClientes(conexao);
                     return lista;
                 }
@@ -29,7 +28,7 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ClienteModel>();
+            return new List<ClienteListagem>();
         }
     }
 }

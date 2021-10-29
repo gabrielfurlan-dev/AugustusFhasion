@@ -16,13 +16,12 @@ namespace AugustusFahsion.Controller
             new ColaboradorListar(this).Show();
 
 
-        public List<ColaboradorModel> ListarColaborador()
+        public List<ColaboradorListagem> ListarColaborador()
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     var lista = ColaboradorDAO.ListarColaboradores(conexao);
                     return lista;
                 }
@@ -32,7 +31,7 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ColaboradorModel>();
+            return new List<ColaboradorListagem>();
         }
     }
 }

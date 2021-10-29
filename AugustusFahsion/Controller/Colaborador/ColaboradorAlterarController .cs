@@ -7,15 +7,13 @@ using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller
 {
-    
     public class ColaboradorAlterarController
     {
-        //private ColaboradorModel _colaboradorModelSelecionado;
         public void AbrirFormulario() =>
             new ColaboradorAlterar(this).Show();
 
-        public void AbrirFormulario(ColaboradorModel _colaboradorModelSelecionado) =>
-            new ColaboradorAlterar(this, _colaboradorModelSelecionado).Show();
+        public void AbrirFormulario(ColaboradorModel colaboradorModelSelecionado) =>
+            new ColaboradorAlterar(this, colaboradorModelSelecionado).Show();
 
 
         public bool ValidarId(int id)
@@ -24,7 +22,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     return ColaboradorDAO.ValidaId(conexao, id);
                 }
             }
@@ -35,11 +32,10 @@ namespace AugustusFahsion.Controller
             }
         }
 
-        public ColaboradorModel Buscar(int id)
+        public static ColaboradorModel Buscar(int id)
         {
             using (var conexao = new SqlConexao().Connection())
             {
-                conexao.Open();
                 return ColaboradorDAO.Buscar(conexao, id);
             }
         }
@@ -54,8 +50,7 @@ namespace AugustusFahsion.Controller
                 if (ColaboradorDAO.ValidaId(conexao, colaboradorModel.Id))
                 {
                     {
-                        conexao.Open();
-                            ColaboradorDAO.AlterarColaborador(conexao, colaboradorModel);
+                        ColaboradorDAO.AlterarColaborador(conexao, colaboradorModel);
                         MessageBox.Show("Colaborador alterado!");
                     }
                 }

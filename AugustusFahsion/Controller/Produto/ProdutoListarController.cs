@@ -20,7 +20,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     var lista = ProdutoDAO.ListarProdutos(conexao);
                     return lista;
                 }

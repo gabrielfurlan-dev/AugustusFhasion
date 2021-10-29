@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AugustusFahsion.Model
 {
-    public class Pessoa
+    public abstract class Pessoa
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -24,5 +24,14 @@ namespace AugustusFahsion.Model
         public string Celular { get; set; }
         public string Email { get; set; }
         public string Cpf { get; set; }
+
+        public static bool ValorNuloOuVazio(string texto) =>
+            string.IsNullOrEmpty(texto);
+
+        //public static bool DataNascimentoInvalida() =>
+        //    DataNascimento >= DateTime.Now;
+        }
     }
-}
+
+
+    

@@ -9,8 +9,8 @@ namespace AugustusFahsion.View
     public partial class ClienteAlterar : Form
     {
         private ClienteAlterarController _controller;
+        private ClienteExcluirController _controllerExcluir;
         private ClienteModel clienteModel;
-
         public ClienteAlterar(ClienteAlterarController clienteAlterarController)
         {
             InitializeComponent();
@@ -45,60 +45,17 @@ namespace AugustusFahsion.View
 
             _controller = clienteAlterarController;
             clienteModel = clienteModelSelecionado;
+            _controllerExcluir = new ClienteExcluirController();
 
-            AtribuirModelParaCampos();
+            AtribuirModelParaCampos(clienteModelSelecionado);
             btnSalvar.Enabled = true;
         }
-
-        public void btnConsultarId_Click(object sender, EventArgs e)
-        {
-            int id;
-            Int32.TryParse(txtId.Text, out id);
-
-            var validaID = new ClienteAlterarController().ValidarId(id);
-            if (id > 0 && validaID)
-            {
-                clienteModel.Id = int.Parse(txtId.Text);
-                MessageBox.Show("id válido!");
-                clienteModel = _controller.Buscar(Int32.Parse(txtId.Text));
-
-                AtribuirModelParaCampos();
-
-                btnSalvar.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("id invalido!");
-            }
-        }
-
-        private void AtribuirModelParaCampos()
-        {
-            txtNome.Text = clienteModel.Nome;
-            txtSobrenome.Text = clienteModel.Sobrenome;
-            dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
-            cbSexo.Text = clienteModel.Sexo;
-            nupValorLimiteAPrazo.Text = clienteModel.ValorLimiteAPrazo.ToString();
-            mtxtCep.Text = clienteModel.Cep.ToString();
-            txtLogradouro.Text = clienteModel.Logradouro;
-            txtCidade.Text = clienteModel.Cidade;
-            cbUf.Text = clienteModel.Uf;
-            txtComplemento.Text = clienteModel.Complemento;
-            txtBairro.Text = clienteModel.Bairro;
-            txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
-            txtTelefone.Text = clienteModel.Telefone.ToString();
-            mtxtCelular.Text = clienteModel.Celular.ToString();
-            txtEmail.Text = clienteModel.Email;
-            mtxtCpf.Text = clienteModel.Cpf;
-        }
-
-
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -188,18 +145,84 @@ namespace AugustusFahsion.View
         }
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            {
-                if (!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar))
 
-                {
-                    e.Handled = true;
-                }
+            {
+                e.Handled = true;
+            }
+        }
+        public void AtribuirModelParaCampos(ClienteModel clienteModel)
+        {
+            txtId.Text = clienteModel.Id.ToString();
+            txtNome.Text = clienteModel.Nome;
+            txtSobrenome.Text = clienteModel.Sobrenome;
+            dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
+            cbSexo.Text = clienteModel.Sexo;
+            mtxtCep.Text = clienteModel.Cep.ToString();
+            nupValorLimiteAPrazo.Value = (decimal)clienteModel.ValorLimiteAPrazo;
+            txtLogradouro.Text = clienteModel.Logradouro;
+            txtCidade.Text = clienteModel.Cidade;
+            cbUf.Text = clienteModel.Uf;
+            txtComplemento.Text = clienteModel.Complemento;
+            txtBairro.Text = clienteModel.Bairro;
+            txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
+            txtTelefone.Text = clienteModel.Telefone.ToString();
+            mtxtCelular.Text = clienteModel.Celular.ToString();
+            txtEmail.Text = clienteModel.Email;
+            mtxtCpf.Text = clienteModel.Cpf;
+        }
+
+        private void btnConsultarId_Click_1(object sender, EventArgs e)
+        {
+            int id;
+            Int32.TryParse(txtId.Text, out id);
+
+            var validaID = new ClienteAlterarController().ValidarId(id);
+            if (id > 0 && validaID)
+            {
+                clienteModel.Id = int.Parse(txtId.Text);
+                MessageBox.Show("id válido!");
+                clienteModel = ClienteAlterarController.Buscar(int.Parse(txtId.Text));
+
+                //AtribuirModelParaCampos();
+
+                btnSalvar.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("id invalido!");
             }
         }
 
-        private void ClienteAlterar_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    int id;
+            //    Int32.TryParse(txtId.Text, out id);
+
+            //    var validaID = new ClienteExcluirController().ValidarId(id);
+            //    if (id > 0 && validaID)
+            //    {
+            //        clienteModel.Id = int.Parse(txtId.Text);
+            //        _controllerExcluir.ExcluirCliente(clienteModel);
+            //        MessageBox.Show("Cliente excluido com sucesso");
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("id invalido!");
+            //    }
+            //}
+            //catch (Exception excecao)
+            //{
+            //    MessageBox.Show(excecao.Message);
+            //}
         }
     }
 }

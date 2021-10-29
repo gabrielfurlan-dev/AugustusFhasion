@@ -10,19 +10,22 @@ namespace AugustusFahsion.DAO
     {
         public static void CadastrarCliente(IDbConnection conexao, ClienteModel cliente)
         {
+            conexao.Open();
             var query = @"insert into Cliente values(@Nome, @Sobrenome, @Sexo, @DataNascimento, @ValorLimiteAPrazo, 
             @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco, @Telefone, @Celular, @Email, @Cpf)";       
             conexao.Query<ClienteModel>(query, cliente);
         }
 
-        public static List<ClienteModel> ListarClientes(IDbConnection conexao)
+        public static List<ClienteListagem> ListarClientes(IDbConnection conexao)
         {
-            var query = @"select * from Cliente";
-            return conexao.Query<ClienteModel>(query).AsList();
+            conexao.Open();
+            var query = @"select Id, Nome, Sobrenome, Email, Celular from Cliente";
+            return conexao.Query<ClienteListagem>(query).AsList();
         }
 
         public static bool ValidaId(IDbConnection conexao, int id)
         {
+            conexao.Open();
             var validaId = conexao.Query(@"SELECT Id FROM Cliente WHERE Id=@id", new { Id = id }).ToList();
 
             if (validaId.Count != 0)
@@ -32,7 +35,8 @@ namespace AugustusFahsion.DAO
         }
 
         public static ClienteModel Buscar(IDbConnection conexao, int id)
-        { 
+        {
+            conexao.Open();
             var query = @"select * from Cliente where Id=@id";
             var parametros = new DynamicParameters();
             parametros.Add("@id", id, System.Data.DbType.Int32);
@@ -42,6 +46,7 @@ namespace AugustusFahsion.DAO
 
         public static void AlterarCliente(IDbConnection conexao, ClienteModel cliente)
         {
+            conexao.Open();
             var id = cliente.Id;
             var query = @"update Cliente set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, DataNascimento = @DataNascimento, ValorLimiteAPrazo = @ValorLimiteAPrazo, 
             Cep = @Cep, Logradouro = @Logradouro, Cidade = @Cidade, Uf = @Uf, Complemento = @Complemento, Bairro = @Bairro, NumeroEndereco = @NumeroEndereco, Telefone = @Telefone, Celular = @Celular, Email = @Email, Cpf =  @Cpf where Id=@id ";
@@ -50,6 +55,7 @@ namespace AugustusFahsion.DAO
 
         public static void ExcluirCliente(IDbConnection conexao, ClienteModel cliente)
         {
+            conexao.Open();
             var id = cliente.Id;
             conexao.Query(@"delete from Cliente where Id=" + id);
         }

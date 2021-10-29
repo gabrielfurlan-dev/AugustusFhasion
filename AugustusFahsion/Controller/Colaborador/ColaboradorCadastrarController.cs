@@ -19,7 +19,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     ColaboradorDAO.CadastrarColaborador(conexao, colaboradorModel);
                     MessageBox.Show("Colaborador cadastrado.");
                 }

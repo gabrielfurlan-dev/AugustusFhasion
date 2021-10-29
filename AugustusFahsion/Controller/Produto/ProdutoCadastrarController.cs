@@ -22,7 +22,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     ProdutoDAO.CadastrarProduto(conexao, produtoModel);
                     MessageBox.Show("Produto cadastrado.");
                 }
@@ -39,7 +38,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     var lista = ProdutoDAO.ListarProdutos(conexao);
                     return lista;
                 }

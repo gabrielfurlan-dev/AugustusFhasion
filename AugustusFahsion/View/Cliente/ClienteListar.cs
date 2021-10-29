@@ -10,27 +10,24 @@ namespace AugustusFahsion.View
     public partial class ClienteListar : Form
     {
         private ClienteListarController _controller;
-        private ClienteListarController clienteListarController;
-        private ClienteModel _clienteModelSelecionado;
+        private ClienteListagem _clienteModelSelecionado = new ClienteListagem();
 
 
         public ClienteListar(ClienteListarController clienteListarController)
         {
             InitializeComponent();
             _controller = clienteListarController;
-            this.clienteListarController = clienteListarController;
+        }
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ClienteListar_Load(object sender, EventArgs e)
         {
             dgvLista.DataSource = _controller.ListarClientes();
-            dgvLista.Columns["ValorLimiteAPrazo"].DisplayIndex = 16;
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void dgvLista_MouseClick(object sender, MouseEventArgs e)
         {
@@ -39,42 +36,31 @@ namespace AugustusFahsion.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            AbrirFormAlterar();
+            new ClienteAlterarController().AbrirFormulario();
         }
 
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            SelecionarClienteModel();
-            AbrirFormAlterar();
+            var id = SelecionarClienteModel();
+            
+            var cliente = ClienteAlterarController.Buscar(id);
+            
+            AbrirFormAlterar(cliente);
+            
         }
 
-        private void SelecionarClienteModel()
+        private int SelecionarClienteModel()
         {
-            int indiceselecionado = -1;
-            // Se o usuário selecionou a Linha
-            if (dgvLista.SelectedRows.Count > 0)
-            {
-                indiceselecionado = dgvLista.SelectedRows[0].Index;
-            }
-            else
-            { // Se o usuário selecionou a célula
-                if (dgvLista.SelectedCells.Count > 0)
-                {
-                    indiceselecionado = dgvLista.SelectedCells[0].RowIndex;
-                }
-            }
+            int id = Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
 
-            if (indiceselecionado != -1)
-            {
-                _clienteModelSelecionado = dgvLista.Rows[indiceselecionado].DataBoundItem as ClienteModel;
-            }
+            return id;
         }
 
-        private void AbrirFormAlterar()
+        private void AbrirFormAlterar(ClienteModel cliente)
         {
-            if (_clienteModelSelecionado == null) return;
+            //if (_clienteModelSelecionado == null) return;
 
-            new ClienteAlterarController().AbrirFormulario(_clienteModelSelecionado);
+            new ClienteAlterarController().AbrirFormulario(cliente);
             this.Close();
         }
     }

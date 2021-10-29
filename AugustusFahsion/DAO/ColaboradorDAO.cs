@@ -15,11 +15,10 @@ namespace AugustusFahsion.DAO
             conexao.Query<ColaboradorModel>(query, colaborador);
         }
 
-        public static List<ColaboradorModel> ListarColaboradores(IDbConnection conexao)
+        public static List<ColaboradorListagem> ListarColaboradores(IDbConnection conexao)
         {
-            var query = @"select Id, Nome, Sobrenome, Sexo, DataNascimento, Salario, Comissao, 
-            Cep, Logradouro, Cidade, Uf, Complemento, Bairro, NumeroEndereco, Telefone, Celular, Email, Cpf, Banco, Agencia, Conta, TipoConta from Colaborador";
-            return conexao.Query<ColaboradorModel>(query).AsList();
+            var query = @"select Id, Nome, Sobrenome, Celular, Email, Salario, Comissao from Colaborador";
+            return conexao.Query<ColaboradorListagem>(query).AsList();
         }
 
         public static bool ValidaId(IDbConnection conexao, int id)

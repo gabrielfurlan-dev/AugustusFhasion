@@ -20,7 +20,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     return ProdutoDAO.ValidaId(conexao, id);
                 }
             }
@@ -35,7 +34,6 @@ namespace AugustusFahsion.Controller
         {
             using (var conexao = new SqlConexao().Connection())
             {
-                conexao.Open();
                 return ProdutoDAO.Buscar(conexao, id);
             }
         }
@@ -50,8 +48,7 @@ namespace AugustusFahsion.Controller
                 if (ProdutoDAO.ValidaId(conexao, produtoModel.Id))
                 {
                     {
-                        conexao.Open();
-                            ProdutoDAO.AlterarProduto(conexao, produtoModel);
+                        ProdutoDAO.AlterarProduto(conexao, produtoModel);
                         MessageBox.Show("Produto alterado!");
                     }
                 }

@@ -17,7 +17,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     return ProdutoDAO.ValidaId(conexao, id);
                 }
             }
@@ -33,7 +32,6 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    conexao.Open();
                     ProdutoDAO.ExcluirProduto(conexao, produto);
                 }
             }

@@ -9,9 +9,6 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteAlterarController
     {
-
-        //private ClienteModel _clienteModelSelecionado;
-
         public void AbrirFormulario() =>
             new ClienteAlterar(this).Show();
 
@@ -24,8 +21,7 @@ namespace AugustusFahsion.Controller
             try
             {
                 using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
+                { 
                     return ClienteDao.ValidaId(conexao, id);
                 }
             }
@@ -36,11 +32,11 @@ namespace AugustusFahsion.Controller
             }
         }
 
-        public ClienteModel Buscar(int id)
+        public static ClienteModel Buscar(int id)
         {
             using (var conexao = new SqlConexao().Connection())
             {
-                conexao.Open();
+
                 return ClienteDao.Buscar(conexao, id);
             }
         }
@@ -51,14 +47,13 @@ namespace AugustusFahsion.Controller
             {
                 using (var conexao = new SqlConexao().Connection())
 
-                    if (ClienteDao.ValidaId(conexao, clienteModel.Id))
+                if (ClienteDao.ValidaId(conexao, clienteModel.Id))
+                {
                     {
-                        {
-                            conexao.Open();
-                            ClienteDao.AlterarCliente(conexao, clienteModel);
-                            MessageBox.Show("Cliente alterado!");
-                        }
+                        ClienteDao.AlterarCliente(conexao, clienteModel);
+                        MessageBox.Show("Cliente alterado!");
                     }
+                }
             }
             catch (Exception excecao)
             {
