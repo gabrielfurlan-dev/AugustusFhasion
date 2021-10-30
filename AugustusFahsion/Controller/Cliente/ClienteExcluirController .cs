@@ -15,10 +15,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    return ClienteDao.ValidaId(conexao, id);
-                }
+                return ClienteDao.ValidaId(id);
             }
             catch (Exception excecao)
             {
@@ -30,10 +27,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    ClienteDao.ExcluirCliente(conexao, cliente);
-                }
+               ClienteDao.ExcluirCliente(cliente);
             }
             catch (Exception excecao)
             {

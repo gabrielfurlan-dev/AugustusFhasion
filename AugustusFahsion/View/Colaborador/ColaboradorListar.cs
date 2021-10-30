@@ -61,7 +61,7 @@ namespace AugustusFahsion.View
 
         private void AbrirFormAlterar(ColaboradorModel colaborador)
         {
-            //    if (_colaboradorModelSelecionado == null) return;
+               //if (_colaboradorModelSelecionado == null) return;
             new ColaboradorAlterarController().AbrirFormulario(colaborador);
             this.Close();
         }

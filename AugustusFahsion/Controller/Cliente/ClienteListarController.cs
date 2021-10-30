@@ -17,11 +17,8 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    var lista = ClienteDao.ListarClientes(conexao);
-                    return lista;
-                }
+                var lista = ClienteDao.ListarClientes();
+                return lista;
             }
             catch (Exception excecao)
             {

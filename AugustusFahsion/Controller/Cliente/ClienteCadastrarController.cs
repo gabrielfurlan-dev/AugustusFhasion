@@ -16,11 +16,10 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    ClienteDao.CadastrarCliente(conexao, clienteModel);
-                    MessageBox.Show("Cliente cadastrado.");
-                }
+                
+                ClienteDao.CadastrarCliente(clienteModel);
+                MessageBox.Show("Cliente cadastrado.");
+                
             }
             catch (Exception excecao)
             {

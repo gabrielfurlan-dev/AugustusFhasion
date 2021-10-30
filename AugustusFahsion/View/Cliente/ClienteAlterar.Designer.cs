@@ -87,7 +87,7 @@ namespace AugustusFahsion.View
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(20, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 526);
             this.panel1.TabIndex = 0;
@@ -137,7 +137,7 @@ namespace AugustusFahsion.View
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(514, 120);
+            this.groupBox2.Location = new System.Drawing.Point(493, 120);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(460, 306);
             this.groupBox2.TabIndex = 24;
@@ -389,7 +389,7 @@ namespace AugustusFahsion.View
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtId.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtId.Location = new System.Drawing.Point(373, 25);
+            this.txtId.Location = new System.Drawing.Point(373, 28);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(62, 16);
             this.txtId.TabIndex = 53;
@@ -419,6 +419,7 @@ namespace AugustusFahsion.View
             // nupValorLimiteAPrazo
             // 
             this.nupValorLimiteAPrazo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.nupValorLimiteAPrazo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupValorLimiteAPrazo.DecimalPlaces = 2;
             this.nupValorLimiteAPrazo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.nupValorLimiteAPrazo.Increment = new decimal(new int[] {
@@ -433,7 +434,7 @@ namespace AugustusFahsion.View
             0,
             0});
             this.nupValorLimiteAPrazo.Name = "nupValorLimiteAPrazo";
-            this.nupValorLimiteAPrazo.Size = new System.Drawing.Size(178, 23);
+            this.nupValorLimiteAPrazo.Size = new System.Drawing.Size(178, 19);
             this.nupValorLimiteAPrazo.TabIndex = 11;
             // 
             // label2
@@ -448,7 +449,7 @@ namespace AugustusFahsion.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 25);
+            this.label1.Location = new System.Drawing.Point(350, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 15);
             this.label1.TabIndex = 2;
@@ -612,6 +613,7 @@ namespace AugustusFahsion.View
             this.ClientSize = new System.Drawing.Size(1045, 548);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1061, 587);
             this.Name = "ClienteAlterar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

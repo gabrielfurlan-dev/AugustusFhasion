@@ -20,11 +20,8 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    var lista = ColaboradorDAO.ListarColaboradores(conexao);
-                    return lista;
-                }
+                var lista = ColaboradorDAO.ListarColaboradores();
+                return lista;
             }
             catch (Exception excecao)
             {

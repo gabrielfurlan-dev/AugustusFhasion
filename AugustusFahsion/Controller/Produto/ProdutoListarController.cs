@@ -18,17 +18,13 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    var lista = ProdutoDAO.ListarProdutos(conexao);
-                    return lista;
-                }
+                var lista = ProdutoDAO.ListarProdutos();
+                return lista;
             }
             catch (Exception excecao)
             {
                 MessageBox.Show(excecao.Message);
             }
-
             return new List<ProdutoModel>();
         }
     }

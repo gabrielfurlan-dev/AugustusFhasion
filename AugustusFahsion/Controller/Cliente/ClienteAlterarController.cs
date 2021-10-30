@@ -12,18 +12,19 @@ namespace AugustusFahsion.Controller
         public void AbrirFormulario() =>
             new ClienteAlterar(this).Show();
 
-        public void AbrirFormulario(ClienteModel clienteModelSelecionado) =>
-            new ClienteAlterar(this, clienteModelSelecionado).Show();
+        public void AbrirFormulario(ClienteModel clienteModelSelecionado)
+        {
+            ClienteExcluirController clienteExcluirController = new ClienteExcluirController();
+            new ClienteAlterar(this, clienteModelSelecionado, clienteExcluirController).Show();
+        }
 
 
         public bool ValidarId(int id)
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                { 
-                    return ClienteDao.ValidaId(conexao, id);
-                }
+
+                    return ClienteDao.ValidaId(id);
             }
             catch (Exception excecao)
             {
@@ -45,12 +46,10 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-
-                if (ClienteDao.ValidaId(conexao, clienteModel.Id))
+                if (ClienteDao.ValidaId(clienteModel.Id))
                 {
                     {
-                        ClienteDao.AlterarCliente(conexao, clienteModel);
+                        ClienteDao.AlterarCliente(clienteModel);
                         MessageBox.Show("Cliente alterado!");
                     }
                 }
@@ -60,8 +59,6 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
         }
-
-
     }
 }
 

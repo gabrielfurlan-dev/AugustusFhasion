@@ -30,7 +30,7 @@ namespace AugustusFahsion.View.Alterar
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -61,6 +61,8 @@ namespace AugustusFahsion.View.Alterar
             this.mtxtConta = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.nupComissao = new System.Windows.Forms.NumericUpDown();
             this.mtxtCpf = new System.Windows.Forms.MaskedTextBox();
@@ -82,8 +84,6 @@ namespace AugustusFahsion.View.Alterar
             this.label16 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -95,30 +95,31 @@ namespace AugustusFahsion.View.Alterar
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(-6, -14);
+            this.panel1.Location = new System.Drawing.Point(27, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1005, 535);
+            this.panel1.Size = new System.Drawing.Size(997, 519);
             this.panel1.TabIndex = 42;
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.button1.Location = new System.Drawing.Point(440, 466);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 39);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnExcluir.Location = new System.Drawing.Point(440, 466);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(98, 39);
+            this.btnExcluir.TabIndex = 54;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -132,6 +133,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnCancelar.TabIndex = 55;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_2);
             // 
             // groupBox2
             // 
@@ -363,6 +365,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnSalvar.TabIndex = 53;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
             // 
             // groupBox4
             // 
@@ -378,7 +381,7 @@ namespace AugustusFahsion.View.Alterar
             this.groupBox4.Controls.Add(this.mtxtConta);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox4.Location = new System.Drawing.Point(502, 336);
+            this.groupBox4.Location = new System.Drawing.Point(502, 335);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(460, 103);
             this.groupBox4.TabIndex = 45;
@@ -527,11 +530,32 @@ namespace AugustusFahsion.View.Alterar
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox1.Location = new System.Drawing.Point(26, 112);
+            this.groupBox1.Location = new System.Drawing.Point(36, 112);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(460, 327);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtId.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtId.Location = new System.Drawing.Point(373, 34);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(62, 16);
+            this.txtId.TabIndex = 55;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(350, 34);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 15);
+            this.label18.TabIndex = 54;
+            this.label18.Text = "Id";
             // 
             // dtpDataNascimento
             // 
@@ -766,33 +790,12 @@ namespace AugustusFahsion.View.Alterar
             this.label4.TabIndex = 7;
             this.label4.Text = "Telefone";
             // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Enabled = false;
-            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtId.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtId.Location = new System.Drawing.Point(373, 27);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(62, 16);
-            this.txtId.TabIndex = 55;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(350, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 15);
-            this.label18.TabIndex = 54;
-            this.label18.Text = "Id";
-            // 
             // ColaboradorAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(1003, 524);
+            this.ClientSize = new System.Drawing.Size(1053, 559);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ColaboradorAlterar";
@@ -865,7 +868,7 @@ namespace AugustusFahsion.View.Alterar
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtId;

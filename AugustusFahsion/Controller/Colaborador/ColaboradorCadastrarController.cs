@@ -17,11 +17,8 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    ColaboradorDAO.CadastrarColaborador(conexao, colaboradorModel);
+                    ColaboradorDAO.CadastrarColaborador(colaboradorModel);
                     MessageBox.Show("Colaborador cadastrado.");
-                }
             }
             catch (Exception excecao)
             {

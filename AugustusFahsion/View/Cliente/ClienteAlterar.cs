@@ -8,53 +8,32 @@ namespace AugustusFahsion.View
 {
     public partial class ClienteAlterar : Form
     {
-        private ClienteAlterarController _controller;
+        private ClienteAlterarController _controllerAlterar;
         private ClienteExcluirController _controllerExcluir;
         private ClienteModel clienteModel;
+
         public ClienteAlterar(ClienteAlterarController clienteAlterarController)
         {
             InitializeComponent();
 
-            _controller = clienteAlterarController;
-
-
-            clienteModel = new ClienteModel
-            {
-                Nome = txtNome.Text,
-                Sobrenome = txtSobrenome.Text,
-                Sexo = cbSexo.Text,
-                DataNascimento = dtpDataNascimento.Value,
-                ValorLimiteAPrazo = double.Parse(nupValorLimiteAPrazo.Text),
-                Cep = mtxtCep.Text,
-                Logradouro = txtLogradouro.Text,
-                Cidade = txtCidade.Text,
-                Uf = cbUf.Text,
-                Complemento = txtComplemento.Text,
-                Bairro = txtBairro.Text,
-                NumeroEndereco = txtNumeroEndereco.Text,
-                Telefone = txtTelefone.Text,
-                Celular = mtxtCelular.Text,
-                Email = txtEmail.Text,
-                Cpf = mtxtCpf.Text
-            };
+            _controllerAlterar = clienteAlterarController;
+            clienteModel = new ClienteModel { };
         }
 
-        public ClienteAlterar(ClienteAlterarController clienteAlterarController, ClienteModel clienteModelSelecionado)
+        public ClienteAlterar(ClienteAlterarController clienteAlterarController,
+            ClienteModel clienteModelSelecionado,
+            ClienteExcluirController clienteExcluirController
+            )
         {
             InitializeComponent();
 
-            _controller = clienteAlterarController;
+            _controllerAlterar = clienteAlterarController;
             clienteModel = clienteModelSelecionado;
-            _controllerExcluir = new ClienteExcluirController();
 
             AtribuirModelParaCampos(clienteModelSelecionado);
             btnSalvar.Enabled = true;
+            _controllerExcluir = clienteExcluirController;
         }
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -134,7 +113,7 @@ namespace AugustusFahsion.View
                     clienteModel.Email = txtEmail.Text;
                     clienteModel.Cpf = mtxtCpf.Text;
 
-                    _controller.AtualizarCliente(clienteModel);
+                    _controllerAlterar.AtualizarCliente(clienteModel);
                     this.Close();
                 }
             }
@@ -201,28 +180,28 @@ namespace AugustusFahsion.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    int id;
-            //    Int32.TryParse(txtId.Text, out id);
+            try
+            {
+                int id;
+                Int32.TryParse(txtId.Text, out id);
 
-            //    var validaID = new ClienteExcluirController().ValidarId(id);
-            //    if (id > 0 && validaID)
-            //    {
-            //        clienteModel.Id = int.Parse(txtId.Text);
-            //        _controllerExcluir.ExcluirCliente(clienteModel);
-            //        MessageBox.Show("Cliente excluido com sucesso");
-            //        this.Close();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("id invalido!");
-            //    }
-            //}
-            //catch (Exception excecao)
-            //{
-            //    MessageBox.Show(excecao.Message);
-            //}
+                var validaID = new ClienteExcluirController().ValidarId(id);
+                if (id > 0 && validaID)
+                {
+                    clienteModel.Id = int.Parse(txtId.Text);
+                    _controllerExcluir.ExcluirCliente(clienteModel);
+                    MessageBox.Show("Cliente excluido com sucesso");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("id invalido!");
+                }
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
         }
     }
 }

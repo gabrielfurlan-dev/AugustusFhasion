@@ -12,7 +12,6 @@ namespace AugustusFahsion.View
         private ClienteListarController _controller;
         private ClienteListagem _clienteModelSelecionado = new ClienteListagem();
 
-
         public ClienteListar(ClienteListarController clienteListarController)
         {
             InitializeComponent();
