@@ -25,25 +25,19 @@ namespace AugustusFahsion.View
             dgvLista.DataSource = _controller.ListarColaborador();
         }
 
-        private void dgvLista_MouseClick(object sender, MouseEventArgs e)
-        {
-            SelecionarColaboradorModel();
-        }
-
         private void AbrirFormAlterar()
         {
             new ColaboradorAlterarController().AbrirFormulario();
             this.Close();
         }
 
-        private void dgvLista_MouseClick_1(object sender, MouseEventArgs e)
-        {
-            SelecionarColaboradorModel();
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            new ColaboradorAlterarController().AbrirFormulario();
+            var id = SelecionarColaboradorModel();
+
+            var colaborador = ColaboradorAlterarController.Buscar(id);
+
+            AbrirFormAlterar(colaborador);
         }
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -64,6 +58,11 @@ namespace AugustusFahsion.View
                //if (_colaboradorModelSelecionado == null) return;
             new ColaboradorAlterarController().AbrirFormulario(colaborador);
             this.Close();
+        }
+
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelecionarColaboradorModel();
         }
     }
 }

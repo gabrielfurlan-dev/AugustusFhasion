@@ -120,8 +120,8 @@ namespace AugustusFahsion.View
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(603, 471);
             this.dgvLista.TabIndex = 9;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
-            this.dgvLista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvLista_MouseClick_1);
             // 
             // ColaboradorListar
             // 

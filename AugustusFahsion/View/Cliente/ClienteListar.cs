@@ -27,15 +27,13 @@ namespace AugustusFahsion.View
             dgvLista.DataSource = _controller.ListarClientes();
         }
 
-
-        private void dgvLista_MouseClick(object sender, MouseEventArgs e)
-        {
-            SelecionarClienteModel();
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            new ClienteAlterarController().AbrirFormulario();
+            var id = SelecionarClienteModel();
+
+            var cliente = ClienteAlterarController.Buscar(id);
+
+            AbrirFormAlterar(cliente);
         }
 
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +59,11 @@ namespace AugustusFahsion.View
 
             new ClienteAlterarController().AbrirFormulario(cliente);
             this.Close();
+        }
+
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelecionarClienteModel();
         }
     }
 }

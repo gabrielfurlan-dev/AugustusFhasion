@@ -133,6 +133,7 @@ namespace AugustusFahsion.View.Cadastrar
             {
                 MessageBox.Show(excecao.Message);
             }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
