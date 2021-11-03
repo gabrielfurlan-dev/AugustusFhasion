@@ -27,5 +27,36 @@ namespace AugustusFahsion.Controller
 
             return new List<ClienteListagem>();
         }
+
+        public List<ClienteListagem> ListarClientesPorId(int id)
+        {
+            try
+            {
+                var lista = ClienteDao.BuscarClientePorId(id);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+
+            return new List<ClienteListagem>();
+        }
+
+        public List<ClienteListagem> ListarClientesPorNome(string nome)
+        {
+            try
+            {
+                var lista = ClienteDao.BuscarClientePorNome(nome);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+
+            return new List<ClienteListagem>();
+        }
+
     }
 }

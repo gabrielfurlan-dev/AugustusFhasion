@@ -1,4 +1,4 @@
-﻿    using AugustusFahsion.DAO;
+﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
 using AugustusFahsion.View.Alterar;
 using System;
@@ -19,7 +19,7 @@ namespace AugustusFahsion.Controller
         {
             try
             { 
-                   return ColaboradorDAO.ValidaId(id);       
+                return ColaboradorDAO.ValidaId(id);       
             }
             catch (Exception excecao)
             {
@@ -35,7 +35,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                if (ColaboradorDAO.ValidaId(colaboradorModel.Id))
+                if (ColaboradorDAO.ValidaId(colaboradorModel.IdPessoa))
                 {
                     ColaboradorDAO.AlterarColaborador(colaboradorModel);
                     MessageBox.Show("Colaborador alterado!");

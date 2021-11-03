@@ -30,5 +30,34 @@ namespace AugustusFahsion.Controller
 
             return new List<ColaboradorListagem>();
         }
+
+        public List<ColaboradorListagem> ListarColaboradorPorNome(string nome)
+        {
+            try
+            {
+                var lista = ColaboradorDAO.BuscarColaboradoresPorNome(nome);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+
+            return new List<ColaboradorListagem>();
+        }
+        public List<ColaboradorListagem> ListarColaboradorPorId(int id)
+        {
+            try
+            {
+                var lista = ColaboradorDAO.BuscarColaboradoresPorId(id);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+
+            return new List<ColaboradorListagem>();
+        }
     }
 }

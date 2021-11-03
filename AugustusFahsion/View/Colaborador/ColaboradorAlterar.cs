@@ -34,13 +34,11 @@ namespace AugustusFahsion.View.Alterar
 
             AtribuirModelParaCampos(colaboradorModelSelecionado);
             btnSalvar.Enabled = true;
-
             _controllerExcluir = colaboradorExcluirController;   
         }
-
         private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
         {
-            txtId.Text = colaboradorModel.Id.ToString();
+            txtId.Text = colaboradorModel.IdPessoa.ToString();
             txtNome.Text = colaboradorModel.Nome;
             txtSobrenome.Text = colaboradorModel.Sobrenome;
             dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
@@ -64,11 +62,6 @@ namespace AugustusFahsion.View.Alterar
             cbTipoConta.Text = colaboradorModel.TipoConta;
             mtxtConta.Text = colaboradorModel.Conta;
         }
-        private void btnCancelar_Click_2(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -148,6 +141,7 @@ namespace AugustusFahsion.View.Alterar
                 }
                 else
                 {
+                    colaboradorModel.IdColaborador = int.Parse(txtId.Text);
                     colaboradorModel.Nome = txtNome.Text;
                     colaboradorModel.Sobrenome = txtSobrenome.Text;
                     colaboradorModel.Sexo = cbSexo.Text;
@@ -176,10 +170,15 @@ namespace AugustusFahsion.View.Alterar
                 }
             }
 
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro ao tentar gravar");
             }
+        }
+        private void btnCancelar_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -193,7 +192,7 @@ namespace AugustusFahsion.View.Alterar
                 var validaID = new ColaboradorExcluirController().ValidarId(id);
                 if (id > 0 && validaID)
                 {
-                    colaboradorModel.Id = int.Parse(txtId.Text);
+                    colaboradorModel.IdPessoa = int.Parse(txtId.Text);
                     _controllerExcluir.ExcluirColaborador(colaboradorModel);
                     MessageBox.Show("Colaborador excluido com sucesso");
                     this.Close();

@@ -29,9 +29,9 @@ namespace AugustusFahsion.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mtxtCodigoBarras = new System.Windows.Forms.MaskedTextBox();
@@ -47,57 +47,60 @@ namespace AugustusFahsion.View
             this.label16 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoPromocao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoCusto)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnEnviar);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(501, 367);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Location = new System.Drawing.Point(255, 290);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(110, 47);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(144, 59);
+            this.label4.Location = new System.Drawing.Point(149, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 30);
-            this.label4.TabIndex = 20;
+            this.label4.TabIndex = 24;
             this.label4.Text = "Cadastrar Produto";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.btnCancelar);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.btnEnviar);
-            this.groupBox3.Controls.Add(this.groupBox1);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(4, -25);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(498, 391);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(250, 321);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(110, 47);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(364, 320);
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnEnviar.Location = new System.Drawing.Point(369, 289);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(113, 49);
-            this.btnEnviar.TabIndex = 16;
+            this.btnEnviar.TabIndex = 22;
             this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = true;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            this.btnEnviar.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -114,24 +117,30 @@ namespace AugustusFahsion.View
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Location = new System.Drawing.Point(13, 92);
+            this.groupBox1.Location = new System.Drawing.Point(18, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(464, 222);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
             // mtxtCodigoBarras
             // 
+            this.mtxtCodigoBarras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.mtxtCodigoBarras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtCodigoBarras.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.mtxtCodigoBarras.Location = new System.Drawing.Point(25, 181);
             this.mtxtCodigoBarras.Mask = "000000000000";
             this.mtxtCodigoBarras.Name = "mtxtCodigoBarras";
-            this.mtxtCodigoBarras.Size = new System.Drawing.Size(116, 23);
+            this.mtxtCodigoBarras.Size = new System.Drawing.Size(116, 16);
             this.mtxtCodigoBarras.TabIndex = 11;
             this.mtxtCodigoBarras.ValidatingType = typeof(int);
             // 
             // nupPrecoPromocao
             // 
+            this.nupPrecoPromocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.nupPrecoPromocao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupPrecoPromocao.DecimalPlaces = 2;
+            this.nupPrecoPromocao.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.nupPrecoPromocao.Location = new System.Drawing.Point(292, 128);
             this.nupPrecoPromocao.Maximum = new decimal(new int[] {
             9999,
@@ -139,12 +148,15 @@ namespace AugustusFahsion.View
             0,
             0});
             this.nupPrecoPromocao.Name = "nupPrecoPromocao";
-            this.nupPrecoPromocao.Size = new System.Drawing.Size(114, 23);
+            this.nupPrecoPromocao.Size = new System.Drawing.Size(114, 19);
             this.nupPrecoPromocao.TabIndex = 8;
             // 
             // nupPrecoVenda
             // 
+            this.nupPrecoVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.nupPrecoVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupPrecoVenda.DecimalPlaces = 2;
+            this.nupPrecoVenda.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.nupPrecoVenda.Location = new System.Drawing.Point(158, 128);
             this.nupPrecoVenda.Maximum = new decimal(new int[] {
             9999,
@@ -152,12 +164,15 @@ namespace AugustusFahsion.View
             0,
             0});
             this.nupPrecoVenda.Name = "nupPrecoVenda";
-            this.nupPrecoVenda.Size = new System.Drawing.Size(114, 23);
+            this.nupPrecoVenda.Size = new System.Drawing.Size(114, 19);
             this.nupPrecoVenda.TabIndex = 8;
             // 
             // nupPrecoCusto
             // 
+            this.nupPrecoCusto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.nupPrecoCusto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupPrecoCusto.DecimalPlaces = 2;
+            this.nupPrecoCusto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.nupPrecoCusto.Location = new System.Drawing.Point(27, 128);
             this.nupPrecoCusto.Maximum = new decimal(new int[] {
             9999,
@@ -165,7 +180,7 @@ namespace AugustusFahsion.View
             0,
             0});
             this.nupPrecoCusto.Name = "nupPrecoCusto";
-            this.nupPrecoCusto.Size = new System.Drawing.Size(114, 23);
+            this.nupPrecoCusto.Size = new System.Drawing.Size(114, 19);
             this.nupPrecoCusto.TabIndex = 8;
             // 
             // label2
@@ -188,16 +203,22 @@ namespace AugustusFahsion.View
             // 
             // txtNome
             // 
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNome.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtNome.Location = new System.Drawing.Point(25, 75);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(206, 23);
+            this.txtNome.Size = new System.Drawing.Size(206, 16);
             this.txtNome.TabIndex = 1;
             // 
             // txtMarca
             // 
+            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtMarca.Location = new System.Drawing.Point(247, 75);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(188, 23);
+            this.txtMarca.Size = new System.Drawing.Size(188, 16);
             this.txtMarca.TabIndex = 2;
             // 
             // label15
@@ -250,29 +271,31 @@ namespace AugustusFahsion.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(505, 380);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProdutoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdutoCadastrar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoPromocao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoVenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoCusto)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox mtxtCodigoBarras;
