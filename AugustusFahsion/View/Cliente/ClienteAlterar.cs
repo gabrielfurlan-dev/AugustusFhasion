@@ -42,17 +42,17 @@ namespace AugustusFahsion.View
             txtSobrenome.Text = clienteModel.Sobrenome;
             dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
             cbSexo.Text = clienteModel.Sexo;
-            mtxtCep.Text = clienteModel.Cep.ToString();
+            mtxtCep.Text = clienteModel.Endereco.Cep.ToString();
             nupValorLimiteAPrazo.Value = (decimal)clienteModel.ValorLimiteAPrazo;
-            txtLogradouro.Text = clienteModel.Logradouro;
-            txtCidade.Text = clienteModel.Cidade;
-            cbUf.Text = clienteModel.Uf;
-            txtComplemento.Text = clienteModel.Complemento;
-            txtBairro.Text = clienteModel.Bairro;
-            txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
-            txtTelefone.Text = clienteModel.Telefone.ToString();
-            mtxtCelular.Text = clienteModel.Celular.ToString();
-            txtEmail.Text = clienteModel.Email;
+            txtLogradouro.Text = clienteModel.Endereco.Logradouro;
+            txtCidade.Text = clienteModel.Endereco.Cidade;
+            cbUf.Text = clienteModel.Endereco.Uf;
+            txtComplemento.Text = clienteModel.Endereco.Complemento;
+            txtBairro.Text = clienteModel.Endereco.Bairro;
+            txtNumeroEndereco.Text = clienteModel.Endereco.NumeroEndereco.ToString();
+            txtTelefone.Text = clienteModel.Contato.Telefone.ToString();
+            mtxtCelular.Text = clienteModel.Contato.Celular.ToString();
+            txtEmail.Text = clienteModel.Contato.Email;
             mtxtCpf.Text = clienteModel.Cpf;
         }
         private void btnSalvar_Click_1(object sender, EventArgs e)
@@ -123,16 +123,16 @@ namespace AugustusFahsion.View
                     clienteModel.Sexo = cbSexo.Text;
                     clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                     clienteModel.ValorLimiteAPrazo = double.Parse(nupValorLimiteAPrazo.Text);
-                    clienteModel.Cep = mtxtCep.Text;
-                    clienteModel.Logradouro = txtLogradouro.Text;
-                    clienteModel.Cidade = txtCidade.Text;
-                    clienteModel.Uf = cbUf.Text;
-                    clienteModel.Complemento = txtComplemento.Text;
-                    clienteModel.Bairro = txtBairro.Text;
-                    clienteModel.NumeroEndereco = txtNumeroEndereco.Text;
-                    clienteModel.Telefone = txtTelefone.Text;
-                    clienteModel.Celular = mtxtCelular.Text;
-                    clienteModel.Email = txtEmail.Text;
+                    clienteModel.Endereco.Cep = mtxtCep.Text;
+                    clienteModel.Endereco.Logradouro = txtLogradouro.Text;
+                    clienteModel.Endereco.Cidade = txtCidade.Text;
+                    clienteModel.Endereco.Uf = cbUf.Text;
+                    clienteModel.Endereco.Complemento = txtComplemento.Text;
+                    clienteModel.Endereco.Bairro = txtBairro.Text;
+                    clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                    clienteModel.Contato.Telefone = txtTelefone.Text;
+                    clienteModel.Contato.Celular = mtxtCelular.Text;
+                    clienteModel.Contato.Email = txtEmail.Text;
                     clienteModel.Cpf = mtxtCpf.Text;
 
                     _controllerAlterar.AtualizarCliente(clienteModel);

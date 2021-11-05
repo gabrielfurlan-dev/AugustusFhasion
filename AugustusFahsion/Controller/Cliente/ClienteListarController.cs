@@ -13,11 +13,11 @@ namespace AugustusFahsion.Controller
             new ClienteListar(this).Show();
 
 
-        public List<ClienteListagem> ListarClientes()
+        public List<ClienteListagemModel> ListarClientes()
         {
             try
             {
-                var lista = ClienteDao.ListarClientes();
+                var lista = ClienteDAO.ListarClientes();
                 return lista;
             }
             catch (Exception excecao)
@@ -25,14 +25,14 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ClienteListagem>();
+            return new List<ClienteListagemModel>();
         }
 
-        public List<ClienteListagem> ListarClientesPorId(int id)
+        public List<ClienteListagemModel> ListarClientesPorId(int id)
         {
             try
             {
-                var lista = ClienteDao.BuscarClientePorId(id);
+                var lista = ClienteDAO.BuscarClientePorId(id);
                 return lista;
             }
             catch (Exception excecao)
@@ -40,14 +40,14 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ClienteListagem>();
+            return new List<ClienteListagemModel>();
         }
 
-        public List<ClienteListagem> ListarClientesPorNome(string nome)
+        public List<ClienteListagemModel> ListarClientesPorNome(string nome)
         {
             try
             {
-                var lista = ClienteDao.BuscarClientePorNome(nome);
+                var lista = ClienteDAO.BuscarClientePorNome(nome);
                 return lista;
             }
             catch (Exception excecao)
@@ -55,7 +55,7 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ClienteListagem>();
+            return new List<ClienteListagemModel>();
         }
 
     }

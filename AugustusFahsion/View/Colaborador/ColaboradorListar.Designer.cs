@@ -49,7 +49,7 @@ namespace AugustusFahsion.View
             this.btnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFechar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFechar.Location = new System.Drawing.Point(349, 596);
+            this.btnFechar.Location = new System.Drawing.Point(350, 482);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(136, 40);
             this.btnFechar.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace AugustusFahsion.View
             this.btnAlterar.Enabled = false;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAlterar.Location = new System.Drawing.Point(207, 595);
+            this.btnAlterar.Location = new System.Drawing.Point(208, 481);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(136, 41);
             this.btnAlterar.TabIndex = 8;
@@ -118,12 +118,12 @@ namespace AugustusFahsion.View
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLista.GridColor = System.Drawing.Color.Black;
-            this.dgvLista.Location = new System.Drawing.Point(41, 139);
+            this.dgvLista.Location = new System.Drawing.Point(92, 140);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowTemplate.Height = 25;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(603, 437);
+            this.dgvLista.Size = new System.Drawing.Size(503, 325);
             this.dgvLista.TabIndex = 9;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
@@ -140,7 +140,7 @@ namespace AugustusFahsion.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 106);
+            this.label4.Location = new System.Drawing.Point(92, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 15);
             this.label4.TabIndex = 11;
@@ -152,7 +152,7 @@ namespace AugustusFahsion.View
             this.txtProcurar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProcurar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtProcurar.Location = new System.Drawing.Point(92, 103);
+            this.txtProcurar.Location = new System.Drawing.Point(143, 106);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(100, 22);
             this.txtProcurar.TabIndex = 12;
@@ -163,20 +163,20 @@ namespace AugustusFahsion.View
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(198, 103);
+            this.button1.Location = new System.Drawing.Point(249, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 22);
             this.button1.TabIndex = 13;
             this.button1.Text = "🔎";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnProcurar);
             // 
             // ColaboradorListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(684, 681);
+            this.ClientSize = new System.Drawing.Size(684, 576);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtProcurar);
             this.Controls.Add(this.label4);
@@ -192,7 +192,6 @@ namespace AugustusFahsion.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ColaboradorListar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ColaboradorListar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

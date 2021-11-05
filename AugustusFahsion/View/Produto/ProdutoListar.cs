@@ -16,7 +16,6 @@ namespace AugustusFahsion.View.Listar
         {
             dgvLista.DataSource = _controller.ListarProdutos();
         }
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();

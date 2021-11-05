@@ -18,21 +18,13 @@ namespace AugustusFahsion.View
         {
             this.Close();
         }
-        private void ColaboradorListar_Load(object sender, EventArgs e)
-        {
-            dgvLista.DataSource = _controller.ListarColaborador();
-        }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            var id = SelecionarColaboradorModel();
-            var colaborador = ColaboradorAlterarController.Buscar(id);
-            AbrirFormAlterar(colaborador);
+            AbirFormEpreencherOsCampos();
         }
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var id = SelecionarColaboradorModel();
-            var colaborador = ColaboradorAlterarController.Buscar(id);
-            AbrirFormAlterar(colaborador);
+            AbirFormEpreencherOsCampos();
         }
         private int SelecionarColaboradorModel()
         {
@@ -53,12 +45,15 @@ namespace AugustusFahsion.View
             btnAlterar.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnProcurar(object sender, EventArgs e)
         {
-            int valorPesquisa;
-            if (int.TryParse(txtProcurar.Text, out valorPesquisa))
+            if (Validar.EhNumerico(txtProcurar.Text))
             {
-                dgvLista.DataSource = _controller.ListarColaboradorPorId(valorPesquisa);
+                dgvLista.DataSource = _controller.ListarColaboradorPorId(int.Parse(txtProcurar.Text));
+            }
+            else if(txtProcurar.Text == "%")
+            {
+                dgvLista.DataSource = _controller.ListarColaborador();
             }
             else 
             {
@@ -66,5 +61,11 @@ namespace AugustusFahsion.View
             }
         }
 
+        private void AbirFormEpreencherOsCampos()
+        {
+            var id = SelecionarColaboradorModel();
+            var colaborador = ColaboradorAlterarController.Buscar(id);
+            AbrirFormAlterar(colaborador);
+        }
     }
 }

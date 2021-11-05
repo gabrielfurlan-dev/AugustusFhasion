@@ -9,7 +9,7 @@ namespace AugustusFahsion.View
     public partial class ClienteListar : Form
     {
         private ClienteListarController _controller;
-        private ClienteListagem _clienteModelSelecionado = new ClienteListagem();
+        private ClienteListagemModel _clienteModelSelecionado = new ClienteListagemModel();
 
         public ClienteListar(ClienteListarController clienteListarController)
         {
@@ -19,10 +19,6 @@ namespace AugustusFahsion.View
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void ClienteListar_Load(object sender, EventArgs e)
-        {
-            dgvLista.DataSource = _controller.ListarClientes();
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -41,6 +37,8 @@ namespace AugustusFahsion.View
             int id = Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
             return id;
         }
+
+
         private void AbrirFormAlterar(ClienteModel cliente)
         {
             //if (_clienteModelSelecionado == null) return;
@@ -56,15 +54,19 @@ namespace AugustusFahsion.View
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            int valorProcurar;
-            if (int.TryParse(txtProcurar.Text, out valorProcurar))
+            if (Validar.EhNumerico(txtProcurar.Text))
             {
-                dgvLista.DataSource = _controller.ListarClientesPorId(valorProcurar);
+                dgvLista.DataSource = _controller.ListarClientesPorId(int.Parse(txtProcurar.Text));
+            }
+            else if (txtProcurar.Text == "%")
+            {
+                dgvLista.DataSource = _controller.ListarClientes();
             }
             else
             {
                 dgvLista.DataSource = _controller.ListarClientesPorNome(txtProcurar.Text);
             }
         }
+
     }
 }

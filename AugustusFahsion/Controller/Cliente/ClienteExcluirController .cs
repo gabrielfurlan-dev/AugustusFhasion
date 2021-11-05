@@ -15,7 +15,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                return ClienteDao.ValidaId(id);
+                return ClienteDAO.ValidaId(id);
             }
             catch (Exception excecao)
             {
@@ -27,7 +27,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-               ClienteDao.ExcluirCliente(cliente);
+               ClienteDAO.ExcluirCliente(cliente);
             }
             catch (Exception excecao)
             {

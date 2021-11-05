@@ -19,7 +19,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                return ClienteDao.ValidaId(id);
+                return ClienteDAO.ValidaId(id);
             }
             catch (Exception excecao)
             {
@@ -29,15 +29,15 @@ namespace AugustusFahsion.Controller
         }
         public static ClienteModel Buscar(int id)
         {
-                return ClienteDao.Buscar(id);
+                return ClienteDAO.Buscar(id);
         }
         public void AtualizarCliente(ClienteModel clienteModel)
         {
             try
             {
-                if (ClienteDao.ValidaId(clienteModel.IdPessoa))
+                if (ClienteDAO.ValidaId(clienteModel.IdPessoa))
                 {
-                    ClienteDao.AlterarCliente(clienteModel);
+                    ClienteDAO.AlterarCliente(clienteModel);
                     MessageBox.Show("Cliente alterado!");
                 }
             }

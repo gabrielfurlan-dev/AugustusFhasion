@@ -12,6 +12,9 @@ namespace AugustusFahsion.Controller
     {
         public static bool NuloOuVazio(string texto) =>
         !string.IsNullOrEmpty(texto);
+
+        public static bool EhNumerico(this string valor) => 
+            int.TryParse(valor, out _);
     }
     public static class Extensoes
     {
@@ -22,4 +25,5 @@ namespace AugustusFahsion.Controller
         public static bool DataDeHoje(this DateTime dataNascimento) =>
             dataNascimento == DateTime.Now;
     }
+
 }

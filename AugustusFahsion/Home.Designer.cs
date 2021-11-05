@@ -54,31 +54,24 @@ namespace AugustusFahsion
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnListarCliente = new System.Windows.Forms.Button();
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnAlterarProduto = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnListarProduto = new System.Windows.Forms.Button();
             this.btnExcluirProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnListarColaborador = new System.Windows.Forms.Button();
-            this.btnCadastrarColaborador = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnListarColaborador = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnCadastrarColaborador = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,7 +84,7 @@ namespace AugustusFahsion
             this.excluirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(835, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(459, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -259,9 +252,9 @@ namespace AugustusFahsion
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(80, 71);
+            this.pictureBox4.Location = new System.Drawing.Point(86, 403);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(90, 88);
+            this.pictureBox4.Size = new System.Drawing.Size(93, 88);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -270,11 +263,11 @@ namespace AugustusFahsion
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(83)))), ((int)(((byte)(87)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(764, 45);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(434, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 36);
+            this.button1.Size = new System.Drawing.Size(22, 21);
             this.button1.TabIndex = 4;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
@@ -286,7 +279,7 @@ namespace AugustusFahsion
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(76, 32);
+            this.label3.Location = new System.Drawing.Point(135, 36);
             this.label3.MaximumSize = new System.Drawing.Size(106, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 26);
@@ -297,37 +290,23 @@ namespace AugustusFahsion
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(76, 105);
+            this.pictureBox2.Location = new System.Drawing.Point(89, 89);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(90, 88);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.btnListarCliente);
-            this.groupBox1.Controls.Add(this.btnCadastrarCliente);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Location = new System.Drawing.Point(23, 49);
-            this.groupBox1.MaximumSize = new System.Drawing.Size(244, 415);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(244, 316);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            // 
             // btnListarCliente
             // 
             this.btnListarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarCliente.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnListarCliente.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnListarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListarCliente.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarCliente.Location = new System.Drawing.Point(124, 251);
+            this.btnListarCliente.Location = new System.Drawing.Point(191, 129);
             this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(114, 59);
+            this.btnListarCliente.Size = new System.Drawing.Size(114, 47);
             this.btnListarCliente.TabIndex = 10;
             this.btnListarCliente.Text = "Listar";
             this.btnListarCliente.UseVisualStyleBackColor = false;
@@ -340,32 +319,13 @@ namespace AugustusFahsion
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(6, 250);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(193, 75);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
-            this.btnCadastrarCliente.Size = new System.Drawing.Size(112, 60);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(112, 48);
             this.btnCadastrarCliente.TabIndex = 11;
             this.btnCadastrarCliente.Text = "Cadastrar";
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
             this.btnCadastrarCliente.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.btnAlterarProduto);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.pictureBox4);
-            this.groupBox3.Controls.Add(this.btnListarProduto);
-            this.groupBox3.Controls.Add(this.btnExcluirProduto);
-            this.groupBox3.Controls.Add(this.btnCadastrarProduto);
-            this.groupBox3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox3.Location = new System.Drawing.Point(524, 46);
-            this.groupBox3.MaximumSize = new System.Drawing.Size(244, 415);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(244, 319);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
             // 
             // btnAlterarProduto
             // 
@@ -374,9 +334,9 @@ namespace AugustusFahsion
             this.btnAlterarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlterarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAlterarProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlterarProduto.Location = new System.Drawing.Point(6, 246);
+            this.btnAlterarProduto.Location = new System.Drawing.Point(197, 511);
             this.btnAlterarProduto.Name = "btnAlterarProduto";
-            this.btnAlterarProduto.Size = new System.Drawing.Size(112, 60);
+            this.btnAlterarProduto.Size = new System.Drawing.Size(112, 34);
             this.btnAlterarProduto.TabIndex = 9;
             this.btnAlterarProduto.Text = "Alterar";
             this.btnAlterarProduto.UseVisualStyleBackColor = false;
@@ -389,7 +349,7 @@ namespace AugustusFahsion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(80, 14);
+            this.label5.Location = new System.Drawing.Point(135, 363);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 26);
             this.label5.TabIndex = 2;
@@ -402,9 +362,9 @@ namespace AugustusFahsion
             this.btnListarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarProduto.Location = new System.Drawing.Point(124, 247);
+            this.btnListarProduto.Location = new System.Drawing.Point(195, 457);
             this.btnListarProduto.Name = "btnListarProduto";
-            this.btnListarProduto.Size = new System.Drawing.Size(114, 59);
+            this.btnListarProduto.Size = new System.Drawing.Size(114, 48);
             this.btnListarProduto.TabIndex = 10;
             this.btnListarProduto.Text = "Listar";
             this.btnListarProduto.UseVisualStyleBackColor = false;
@@ -417,9 +377,9 @@ namespace AugustusFahsion
             this.btnExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExcluirProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnExcluirProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExcluirProduto.Location = new System.Drawing.Point(124, 181);
+            this.btnExcluirProduto.Location = new System.Drawing.Point(77, 511);
             this.btnExcluirProduto.Name = "btnExcluirProduto";
-            this.btnExcluirProduto.Size = new System.Drawing.Size(114, 60);
+            this.btnExcluirProduto.Size = new System.Drawing.Size(114, 34);
             this.btnExcluirProduto.TabIndex = 12;
             this.btnExcluirProduto.Text = "Excluir";
             this.btnExcluirProduto.UseVisualStyleBackColor = false;
@@ -432,25 +392,35 @@ namespace AugustusFahsion
             this.btnCadastrarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarProduto.Location = new System.Drawing.Point(6, 181);
+            this.btnCadastrarProduto.Location = new System.Drawing.Point(195, 403);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
-            this.btnCadastrarProduto.Size = new System.Drawing.Size(112, 60);
+            this.btnCadastrarProduto.Size = new System.Drawing.Size(112, 48);
             this.btnCadastrarProduto.TabIndex = 11;
             this.btnCadastrarProduto.Text = "Cadastrar";
             this.btnCadastrarProduto.UseVisualStyleBackColor = false;
             this.btnCadastrarProduto.Click += new System.EventHandler(this.btnCadastrarProduto_Click);
             // 
-            // pictureBox3
+            // panel1
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(80, 108);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(90, 88);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnAlterarProduto);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.btnListarCliente);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btnListarColaborador);
+            this.panel1.Controls.Add(this.btnListarProduto);
+            this.panel1.Controls.Add(this.btnExcluirProduto);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.btnCadastrarProduto);
+            this.panel1.Controls.Add(this.btnCadastrarCliente);
+            this.panel1.Controls.Add(this.btnCadastrarColaborador);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(23, 114);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(388, 584);
+            this.panel1.TabIndex = 6;
             // 
             // label4
             // 
@@ -459,43 +429,38 @@ namespace AugustusFahsion
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(51, 35);
+            this.label4.Location = new System.Drawing.Point(123, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 26);
             this.label4.TabIndex = 2;
             this.label4.Text = "Colaborador";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.btnListarColaborador);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Controls.Add(this.btnCadastrarColaborador);
-            this.groupBox2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox2.Location = new System.Drawing.Point(273, 46);
-            this.groupBox2.MaximumSize = new System.Drawing.Size(244, 415);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(244, 319);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            // 
             // btnListarColaborador
             // 
             this.btnListarColaborador.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarColaborador.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnListarColaborador.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnListarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListarColaborador.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarColaborador.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarColaborador.Location = new System.Drawing.Point(124, 254);
+            this.btnListarColaborador.Location = new System.Drawing.Point(195, 288);
             this.btnListarColaborador.Name = "btnListarColaborador";
-            this.btnListarColaborador.Size = new System.Drawing.Size(114, 59);
+            this.btnListarColaborador.Size = new System.Drawing.Size(114, 47);
             this.btnListarColaborador.TabIndex = 10;
             this.btnListarColaborador.Text = "Listar";
             this.btnListarColaborador.UseVisualStyleBackColor = false;
             this.btnListarColaborador.Click += new System.EventHandler(this.btnListarColaborador_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(93, 247);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(90, 88);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // btnCadastrarColaborador
             // 
@@ -504,45 +469,20 @@ namespace AugustusFahsion
             this.btnCadastrarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrarColaborador.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarColaborador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarColaborador.Location = new System.Drawing.Point(6, 254);
+            this.btnCadastrarColaborador.Location = new System.Drawing.Point(195, 234);
             this.btnCadastrarColaborador.Name = "btnCadastrarColaborador";
-            this.btnCadastrarColaborador.Size = new System.Drawing.Size(112, 60);
+            this.btnCadastrarColaborador.Size = new System.Drawing.Size(112, 48);
             this.btnCadastrarColaborador.TabIndex = 11;
             this.btnCadastrarColaborador.Text = "Cadastrar";
             this.btnCadastrarColaborador.UseVisualStyleBackColor = false;
             this.btnCadastrarColaborador.Click += new System.EventHandler(this.btnCadastrarColaborador_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Location = new System.Drawing.Point(23, 114);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 377);
-            this.panel1.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(767, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Fechar";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(835, 521);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(459, 737);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -560,14 +500,9 @@ namespace AugustusFahsion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,25 +531,21 @@ namespace AugustusFahsion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button btnAlterarProduto;
         private System.Windows.Forms.Button btnListarProduto;
         private System.Windows.Forms.Button btnExcluirProduto;
         private System.Windows.Forms.Button btnCadastrarProduto;
-        private System.Windows.Forms.Button btnListarColaborador;
-        private System.Windows.Forms.Button btnCadastrarColaborador;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnListarColaborador;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnCadastrarColaborador;
     }
 }
 
