@@ -8,7 +8,7 @@ namespace AugustusFahsion.Model
 {
     public class ColaboradorListagem
     {
-        public int IdColaborador { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Celular { get; set; }

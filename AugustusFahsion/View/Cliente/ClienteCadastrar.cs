@@ -90,16 +90,16 @@ namespace AugustusFahsion.View
                         clienteModel.Sexo = cbSexo.Text;
                         clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                         clienteModel.ValorLimiteAPrazo = (double)nupValorLimiteAPrazo.Value;
-                        clienteModel.Cep = mtxtCep.Text;
-                        clienteModel.Logradouro = txtLogradouro.Text;
-                        clienteModel.Cidade = txtCidade.Text;
-                        clienteModel.Uf = cbUf.Text;
-                        clienteModel.Complemento = txtComplemento.Text;
-                        clienteModel.Bairro = txtBairro.Text;
-                        clienteModel.NumeroEndereco = txtNumeroEndereco.Text;
-                        clienteModel.Telefone = txtTelefone.Text;
-                        clienteModel.Celular = mtxtCelular.Text;
-                        clienteModel.Email = txtEmail.Text;
+                        clienteModel.Endereco.Cep = mtxtCep.Text;
+                        clienteModel.Endereco.Logradouro = txtLogradouro.Text;
+                        clienteModel.Endereco.Cidade = txtCidade.Text;
+                        clienteModel.Endereco.Uf = cbUf.Text;
+                        clienteModel.Endereco.Complemento = txtComplemento.Text;
+                        clienteModel.Endereco.Bairro = txtBairro.Text;
+                        clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                        clienteModel.Contato.Telefone = txtTelefone.Text;
+                        clienteModel.Contato.Celular = mtxtCelular.Text;
+                        clienteModel.Contato.Email = txtEmail.Text;
                         clienteModel.Cpf = mtxtCpf.Text;
 
                         _controller.CadastrarCliente(clienteModel);

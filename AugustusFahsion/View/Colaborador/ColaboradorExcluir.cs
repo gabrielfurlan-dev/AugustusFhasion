@@ -29,7 +29,7 @@ namespace AugustusFahsion.View.Excluir
                 var validaID = new ColaboradorExcluirController().ValidarId(id);
                 if (id > 0 && validaID)
                 {
-                    colaboradorModel.IdPessoa = int.Parse(txtId.Text);
+                    colaboradorModel.Id = int.Parse(txtId.Text);
                     _controller.ExcluirColaborador(colaboradorModel);
                     MessageBox.Show("Colaborador excluido com sucesso");
                     this.Close();

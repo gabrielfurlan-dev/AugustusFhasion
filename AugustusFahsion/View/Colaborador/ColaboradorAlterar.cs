@@ -34,34 +34,41 @@ namespace AugustusFahsion.View.Alterar
 
             AtribuirModelParaCampos(colaboradorModelSelecionado);
             btnSalvar.Enabled = true;
+
             _controllerExcluir = colaboradorExcluirController;   
         }
+
         private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
         {
-            txtId.Text = colaboradorModel.IdPessoa.ToString();
+            txtId.Text = colaboradorModel.Id.ToString();
             txtNome.Text = colaboradorModel.Nome;
             txtSobrenome.Text = colaboradorModel.Sobrenome;
             dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
             cbSexo.Text = colaboradorModel.Sexo;
-            mtxtCep.Text = colaboradorModel.Cep.ToString();
+            mtxtCep.Text = colaboradorModel.Endereco.Cep.ToString();
             nupSalario.Value = (decimal)colaboradorModel.Salario;
             nupComissao.Value = colaboradorModel.Comissao;
-            txtLogradouro.Text = colaboradorModel.Logradouro;
-            txtCidade.Text = colaboradorModel.Cidade;
-            cbUf.Text = colaboradorModel.Uf;
-            txtComplemento.Text = colaboradorModel.Complemento;
-            txtBairro.Text = colaboradorModel.Bairro;
-            txtNumeroEndereco.Text = colaboradorModel.NumeroEndereco.ToString();
-            txtTelefone.Text = colaboradorModel.Telefone.ToString();
-            mtxtCelular.Text = colaboradorModel.Celular.ToString();
-            txtEmail.Text = colaboradorModel.Email;
+            txtLogradouro.Text = colaboradorModel.Endereco.Logradouro;
+            txtCidade.Text = colaboradorModel.Endereco.Cidade;
+            cbUf.Text = colaboradorModel.Endereco.Uf;
+            txtComplemento.Text = colaboradorModel.Endereco.Complemento;
+            txtBairro.Text = colaboradorModel.Endereco.Bairro;
+            txtNumeroEndereco.Text = colaboradorModel.Endereco.NumeroEndereco.ToString();
+            txtTelefone.Text = colaboradorModel.Contato.Telefone.ToString();
+            mtxtCelular.Text = colaboradorModel.Contato.Celular.ToString();
+            txtEmail.Text = colaboradorModel.Contato.Email;
             mtxtCpf.Text = colaboradorModel.Cpf;
 
-            txtBanco.Text = colaboradorModel.Banco;
-            mtxtAgencia.Text = colaboradorModel.Agencia;
-            cbTipoConta.Text = colaboradorModel.TipoConta;
-            mtxtConta.Text = colaboradorModel.Conta;
+            txtBanco.Text = colaboradorModel.ContaBancaria.Banco;
+            mtxtAgencia.Text = colaboradorModel.ContaBancaria.Agencia;
+            cbTipoConta.Text = colaboradorModel.ContaBancaria.TipoConta;
+            mtxtConta.Text = colaboradorModel.ContaBancaria.Conta;
         }
+        private void btnCancelar_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -141,44 +148,38 @@ namespace AugustusFahsion.View.Alterar
                 }
                 else
                 {
-                    colaboradorModel.IdColaborador = int.Parse(txtId.Text);
                     colaboradorModel.Nome = txtNome.Text;
                     colaboradorModel.Sobrenome = txtSobrenome.Text;
                     colaboradorModel.Sexo = cbSexo.Text;
                     colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                     colaboradorModel.Salario = (double)nupSalario.Value;
                     colaboradorModel.Comissao = (int)nupComissao.Value;
-                    colaboradorModel.Cep = mtxtCep.Text;
-                    colaboradorModel.Logradouro = txtLogradouro.Text;
-                    colaboradorModel.Cidade = txtCidade.Text;
-                    colaboradorModel.Uf = cbUf.Text;
-                    colaboradorModel.Complemento = txtComplemento.Text;
-                    colaboradorModel.Bairro = txtBairro.Text;
-                    colaboradorModel.NumeroEndereco = txtNumeroEndereco.Text;
-                    colaboradorModel.Telefone = txtTelefone.Text;
-                    colaboradorModel.Celular = mtxtCelular.Text;
-                    colaboradorModel.Email = txtEmail.Text;
+                    colaboradorModel.Endereco.Cep = mtxtCep.Text;
+                    colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
+                    colaboradorModel.Endereco.Cidade = txtCidade.Text;
+                    colaboradorModel.Endereco.Uf = cbUf.Text;
+                    colaboradorModel.Endereco.Complemento = txtComplemento.Text;
+                    colaboradorModel.Endereco.Bairro = txtBairro.Text;
+                    colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                    colaboradorModel.Contato.Telefone = txtTelefone.Text;
+                    colaboradorModel.Contato.Celular = mtxtCelular.Text;
+                    colaboradorModel.Contato.Email = txtEmail.Text;
                     colaboradorModel.Cpf = mtxtCpf.Text;
 
-                    colaboradorModel.Banco = txtBanco.Text;
-                    colaboradorModel.Agencia = mtxtAgencia.Text;
-                    colaboradorModel.Conta = mtxtConta.Text;
-                    colaboradorModel.TipoConta = cbTipoConta.Text;
+                    colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
+                    colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
+                    colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
+                    colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
 
                     _controller.AtualizarColaborador(colaboradorModel);
                     this.Close();
                 }
             }
 
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro ao tentar gravar");
             }
-        }
-        private void btnCancelar_Click_2(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -192,7 +193,7 @@ namespace AugustusFahsion.View.Alterar
                 var validaID = new ColaboradorExcluirController().ValidarId(id);
                 if (id > 0 && validaID)
                 {
-                    colaboradorModel.IdPessoa = int.Parse(txtId.Text);
+                    colaboradorModel.Id = int.Parse(txtId.Text);
                     _controllerExcluir.ExcluirColaborador(colaboradorModel);
                     MessageBox.Show("Colaborador excluido com sucesso");
                     this.Close();

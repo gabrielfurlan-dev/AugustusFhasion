@@ -108,22 +108,22 @@ namespace AugustusFahsion.View.Cadastrar
                     colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                     colaboradorModel.Salario = (double)nupSalario.Value;
                     colaboradorModel.Comissao = (int)nupComissao.Value;
-                    colaboradorModel.Cep = mtxtCep.Text;
-                    colaboradorModel.Logradouro = txtLogradouro.Text;
-                    colaboradorModel.Cidade = txtCidade.Text;
-                    colaboradorModel.Uf = cbUf.Text;
-                    colaboradorModel.Complemento = txtComplemento.Text;
-                    colaboradorModel.Bairro = txtBairro.Text;
-                    colaboradorModel.NumeroEndereco = txtNumeroEndereco.Text;
-                    colaboradorModel.Telefone = txtTelefone.Text;
-                    colaboradorModel.Celular = mtxtCelular.Text;
-                    colaboradorModel.Email = txtEmail.Text;
+                    colaboradorModel.Endereco.Cep = mtxtCep.Text;
+                    colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
+                    colaboradorModel.Endereco.Cidade = txtCidade.Text;
+                    colaboradorModel.Endereco.Uf = cbUf.Text;
+                    colaboradorModel.Endereco.Complemento = txtComplemento.Text;
+                    colaboradorModel.Endereco.Bairro = txtBairro.Text;
+                    colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                    colaboradorModel.Contato.Telefone = txtTelefone.Text;
+                    colaboradorModel.Contato.Celular = mtxtCelular.Text;
+                    colaboradorModel.Contato.Email = txtEmail.Text;
                     colaboradorModel.Cpf = mtxtCpf.Text;
 
-                    colaboradorModel.Banco = txtBanco.Text;
-                    colaboradorModel.Agencia = mtxtAgencia.Text;
-                    colaboradorModel.Conta = mtxtConta.Text;
-                    colaboradorModel.TipoConta = cbTipoConta.Text;
+                    colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
+                    colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
+                    colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
+                    colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
 
                     _controller.CadastrarColaborador(colaboradorModel);
                     this.Close();
@@ -137,11 +137,6 @@ namespace AugustusFahsion.View.Cadastrar
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

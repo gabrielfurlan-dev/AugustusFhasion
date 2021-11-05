@@ -1,40 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AugustusFahsion.Model.Contato;
+using AugustusFahsion.Model.Enderecos;
+using System;
 
 namespace AugustusFahsion.Model
 {
     public abstract class Pessoa
     {
-        public int IdPessoa { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Sexo { get; set; }
-        public DateTime DataNascimento { get; set; }
-
-        //
-        public string Cep { get; set; }
-        public string Logradouro { get; set; }
-        public string Cidade { get; set; }
-        public string Uf { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string NumeroEndereco { get; set; }
-        //
-        public string Telefone { get; set; }
-        public string Celular { get; set; }
-        public string Email { get; set; }
         public string Cpf { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public EnderecoModel Endereco { get; set; }
+        public ContatoModel Contato { get; set; }
+
+        public Pessoa()
+        {
+            Endereco = new EnderecoModel();
+            Contato = new ContatoModel();
+        }
 
         public static bool ValorNuloOuVazio(string texto) =>
             string.IsNullOrEmpty(texto);
 
-        //public static bool DataNascimentoInvalida() =>
-        //    DataNascimento >= DateTime.Now;
-        }
+        public static bool DataMaiorQueHoje(DateTime data) =>
+            (data > DateTime.Now || data == DateTime.Now);
     }
+}
 
 
     

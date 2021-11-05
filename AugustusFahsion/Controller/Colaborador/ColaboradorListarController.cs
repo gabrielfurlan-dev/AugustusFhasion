@@ -16,7 +16,7 @@ namespace AugustusFahsion.Controller
             new ColaboradorListar(this).Show();
 
 
-        public List<ColaboradorListagem> ListarColaborador()
+        public List<ColaboradorListagemModel> ListarColaborador()
         {
             try
             {
@@ -28,10 +28,11 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ColaboradorListagem>();
+            return new List<ColaboradorListagemModel>();
         }
+<<<<<<< HEAD
 
-        public List<ColaboradorListagem> ListarColaboradorPorNome(string nome)
+        public List<ColaboradorListagemModel> ListarColaboradorPorNome(string nome)
         {
             try
             {
@@ -43,9 +44,9 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ColaboradorListagem>();
+            return new List<ColaboradorListagemModel>();
         }
-        public List<ColaboradorListagem> ListarColaboradorPorId(int id)
+        public List<ColaboradorListagemModel> ListarColaboradorPorId(int id)
         {
             try
             {
@@ -57,7 +58,9 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
-            return new List<ColaboradorListagem>();
+            return new List<ColaboradorListagemModel>();
         }
+=======
+>>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
     }
 }

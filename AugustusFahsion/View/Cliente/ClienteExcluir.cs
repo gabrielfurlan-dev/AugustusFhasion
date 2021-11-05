@@ -35,7 +35,7 @@ namespace AugustusFahsion.View
                 var validaID = new ClienteExcluirController().ValidarId(id);
                 if (id > 0 && validaID)
                 {
-                    clienteModel.IdPessoa = int.Parse(txtId.Text);
+                    clienteModel.Id = int.Parse(txtId.Text);
                     _controller.ExcluirCliente(clienteModel);
                     MessageBox.Show("Cliente excluido com sucesso");
                     this.Close();
