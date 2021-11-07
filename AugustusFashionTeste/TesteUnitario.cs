@@ -22,6 +22,7 @@ namespace AugustusFashionTeste
             var resultado = Pessoa.ValorNuloOuVazio(texto);
             Assert.IsTrue(resultado);
         }
+
         [DataTestMethod]
         [DataRow ("2022/10/11", true)]
         [DataRow("2020/11/05", false)]
@@ -30,6 +31,7 @@ namespace AugustusFashionTeste
             var teste = Convert.ToDateTime(data);
             Assert.AreEqual(resultado, Pessoa.DataMaiorQueHoje(teste));
         }
+
         [DataTestMethod]
         [DataRow ("string", false)]
         [DataRow ("40028922", true)]
@@ -38,5 +40,6 @@ namespace AugustusFashionTeste
         {
             Assert.AreEqual(valor.EhNumerico(), resultado);
         }
+
     }
 }
