@@ -12,12 +12,11 @@ namespace AugustusFahsion.DAO
     {
         public static void CadastrarCliente(ClienteModel cliente)
         {
-            const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @DataNascimento, @Cpf)";
+            const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @Da taNascimento, @Cpf)";
             const string insertCliente = @"insert into Cliente (IdPessoa, ValorLimiteAPrazo) values (@IdPessoa, @ValorLimiteAPrazo)";
             const string insertEndereco = @"insert into Endereco (IdPessoa, Cep, Logradouro, Cidade, Uf, Complemento, Bairro, NumeroEndereco) " +
                 "values (@IdPessoa, @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco)";
             const string insertContato = @"insert into Contato (IdPessoa, Telefone, Celular, Email) values (@IdPessoa, @Telefone, @Celular, @Email)";
-
             try
             {
                 using var conexao = new SqlConexao().Connection();
