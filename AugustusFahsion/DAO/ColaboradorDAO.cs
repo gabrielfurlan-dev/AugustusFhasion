@@ -14,7 +14,6 @@ namespace AugustusFahsion.DAO
     {
         public static void CadastrarColaborador(ColaboradorModel colaborador)
         {
-<<<<<<< HEAD
             const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @DataNascimento, @Cpf)";
             const string insertColaborador = @"insert into Colaborador (IdPessoa, Salario, Comissao)" +
                 " values (@IdPessoa, @Salario, @Comissao)";
@@ -23,13 +22,12 @@ namespace AugustusFahsion.DAO
             const string insertContato = @"insert into Contato (IdPessoa, Telefone, Celular, Email) values (@IdPessoa, @Telefone, @Celular, @Email)";
             const string insertContaBancaria = @"insert into ContaBancaria (IdPessoa, Banco, Agencia, Conta, TipoConta) values (@IdPessoa, @Banco, @Agencia, @Conta, @TipoConta)";
 
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
             try
             {
-                using (var conexao = new SqlConexao().Connection())
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction())
                 {
-<<<<<<< HEAD
                     int id = conexao.ExecuteScalar<int>(insertPessoa, colaborador, transacao);
                     colaborador.IdPessoa = id;
                     colaborador.Endereco.IdPessoa = id;
@@ -41,20 +39,16 @@ namespace AugustusFahsion.DAO
                     conexao.Execute(insertContato, colaborador.Contato, transacao);
                     conexao.Execute(insertContaBancaria, colaborador.ContaBancaria, transacao);
                     transacao.Commit();
-=======
-                    var query = @"insert into Colaborador values(@Nome, @Sobrenome, @Sexo, @DataNascimento, @Salario, @Comissao, 
-            @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco, @Telefone, @Celular, @Email, @Cpf, @Banco, @Agencia, @Conta, @TipoConta)";
-                    conexao.Query<ColaboradorModel>(query, colaborador);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
         public static List<ColaboradorListagemModel> ListarColaboradores()
         {
-                const string listarColaboradores = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Salario, p.Comissao, p.IdPessoa, 
+            const string listarColaboradores = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Salario, p.Comissao, p.IdPessoa, 
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                     cn.Telefone, cn.Celular, cn.Email
                     from Pessoa p
@@ -65,40 +59,35 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-<<<<<<< HEAD
                     var resultado = conexao.Query<ColaboradorListagemModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(listarColaboradores,
                         (colaboradorListagem, enderecoModel, contatoModel) => MapearColaboradorListagem(colaboradorListagem, enderecoModel, contatoModel),
                         splitOn: "IdPessoa").AsList();
-                    return resultado; 
-=======
-                    var query = @"select Id, Nome, Sobrenome, Celular, Email, Salario, Comissao from Colaborador";
-                    return conexao.Query<ColaboradorListagem>(query).AsList();
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
+                    return resultado;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
         public static bool ValidaId(int id)
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var validaId = conexao.Query(@"SELECT Id FROM Colaborador WHERE Id=@id", new { Id = id }).ToList();
-                    
+                    conexao.Open();
+                    var validaId = conexao.Query(@"SELECT IdPessoa FROM Colaborador WHERE IdPessoa=@IdPessoa", new { IdPessoa = id }).ToList();
+
                     if (validaId.Count != 0)
                         return true;
                     else
                         return false;
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw new Exception(ex.Message);
             }
         }
@@ -108,7 +97,6 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-<<<<<<< HEAD
                     conexao.Open();
                     var query = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
                     c.Salario, c.Comissao, p.IdPessoa,
@@ -125,20 +113,13 @@ namespace AugustusFahsion.DAO
                     return conexao.Query<ColaboradorModel, EnderecoModel, ContatoModel, ContaBancariaModel, ColaboradorModel>(query,
                         (colaboradorModel, endereco, contato, contaBancaria) => MapearColaboradorModel(colaboradorModel, endereco, contato, contaBancaria),
                         new { IdPessoa = id }, splitOn: "IdPessoa").FirstOrDefault();
-=======
-                    var query = @"select * from Colaborador where Id=@id";
-                    var parametros = new DynamicParameters();
-                    parametros.Add("@id", id, System.Data.DbType.Int32);
-                    var resultado = conexao.QueryFirstOrDefault<ColaboradorModel>(query, parametros);
-                    return resultado;
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-<<<<<<< HEAD
         public static List<ColaboradorListagemModel> BuscarColaboradoresPorNome(string nome)
         {
             const string query = @"select p.IdPessoa, p.Nome, p.Sobrenome, co.Salario, co.Comissao, p.IdPessoa, 
@@ -155,7 +136,7 @@ namespace AugustusFahsion.DAO
                 {
                     return conexao.Query<ColaboradorListagemModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(query,
                         (colaboradorListagem, endereco, contato) => MapearColaboradorListagem(colaboradorListagem, endereco, contato),
-                        new { nome }, splitOn:"IdPessoa").AsList();
+                        new { nome }, splitOn: "IdPessoa").AsList();
                 }
             }
             catch (Exception ex)
@@ -165,7 +146,7 @@ namespace AugustusFahsion.DAO
         }
         public static List<ColaboradorListagemModel> BuscarColaboradoresPorId(int id)
         {
-            const string  query = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Salario, p.Comissao, p.IdPessoa, 
+            const string query = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Salario, p.Comissao, p.IdPessoa, 
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -188,14 +169,11 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
 
         public static void AlterarColaborador(ColaboradorModel colaborador)
         {
             try
             {
-<<<<<<< HEAD
                 const string updatePessoa = @"update Pessoa set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, 
                 DataNascimento = @DataNascimento, Cpf =  @Cpf where IdPessoa=@IdPessoa";
                 const string updateColaborador = @"update Colaborador set Salario = @Salario, Comissao = @Comissao where IdColaborador=@IdColaborador";
@@ -208,7 +186,7 @@ namespace AugustusFahsion.DAO
                 using var conexao = new SqlConexao().Connection();
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
-                
+
                 {
                     conexao.Execute(updatePessoa, colaborador, transacao);
                     conexao.Execute(updateColaborador, colaborador, transacao);
@@ -216,18 +194,11 @@ namespace AugustusFahsion.DAO
                     conexao.Execute(updateContato, colaborador.Contato, transacao);
                     conexao.Execute(updateContaBancaria, colaborador.ContaBancaria, transacao);
                     transacao.Commit();
-=======
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    var id = colaborador.Id;
-                    var query = @"update Colaborador set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, DataNascimento = @DataNascimento, Salario = @Salario, Comissao = @Comissao,
-                    Cep = @Cep, Logradouro = @Logradouro, Cidade = @Cidade, Uf = @Uf, Complemento = @Complemento, Bairro = @Bairro, NumeroEndereco = @NumeroEndereco, Telefone = @Telefone, Celular = @Celular, Email = @Email, Cpf =  @Cpf, Banco = @Banco, Agencia = @Agencia, Conta = @Conta, TipoConta = @TipoConta where Id=@id ";
-                    conexao.Query<ColaboradorModel>(query, colaborador);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                throw new Exception(ex.Message);           
+                throw new Exception(ex.Message);
             }
         }
 
@@ -246,18 +217,14 @@ namespace AugustusFahsion.DAO
                 using (var transacao = conexao.BeginTransaction())
                 {
 
-<<<<<<< HEAD
                     conexao.Execute(deleteContato, idPessoa, transacao);
                     conexao.Execute(deleteEndereco, idPessoa, transacao);
                     conexao.Execute(deleteColaborador, idPessoa, transacao);
                     conexao.Execute(deletePessoa, idPessoa, transacao);
                     transacao.Commit();
-=======
-                    var id = colaborador.Id;
-                    conexao.Query(@"delete from Colaborador where Id=" + id);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -271,7 +238,7 @@ namespace AugustusFahsion.DAO
             return colaboradorListagem;
         }
 
-        public static ColaboradorModel MapearColaboradorModel(ColaboradorModel colaboradorModel, 
+        public static ColaboradorModel MapearColaboradorModel(ColaboradorModel colaboradorModel,
             EnderecoModel endereco, ContatoModel contato, ContaBancariaModel contaBancaria)
         {
             colaboradorModel.ContaBancaria = contaBancaria;

@@ -30,7 +30,6 @@ namespace AugustusFahsion.Controller
 
             return new List<ColaboradorListagemModel>();
         }
-<<<<<<< HEAD
 
         public List<ColaboradorListagemModel> ListarColaboradorPorNome(string nome)
         {
@@ -60,7 +59,5 @@ namespace AugustusFahsion.Controller
 
             return new List<ColaboradorListagemModel>();
         }
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
     }
 }

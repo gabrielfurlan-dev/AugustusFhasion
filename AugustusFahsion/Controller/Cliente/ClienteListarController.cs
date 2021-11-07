@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller
 {
-    public class ClienteListarController    
+    public class ClienteListarController
     {
         public void AbrirLista() =>
             new ClienteListar(this).Show();
@@ -27,7 +27,6 @@ namespace AugustusFahsion.Controller
 
             return new List<ClienteListagemModel>();
         }
-<<<<<<< HEAD
 
         public List<ClienteListagemModel> ListarClientesPorId(int id)
         {
@@ -59,7 +58,5 @@ namespace AugustusFahsion.Controller
             return new List<ClienteListagemModel>();
         }
 
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
     }
 }

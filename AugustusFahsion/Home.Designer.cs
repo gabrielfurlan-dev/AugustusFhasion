@@ -40,12 +40,8 @@ namespace AugustusFahsion
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradorToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,10 +52,8 @@ namespace AugustusFahsion
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnListarCliente = new System.Windows.Forms.Button();
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
-            this.btnAlterarProduto = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnListarProduto = new System.Windows.Forms.Button();
-            this.btnExcluirProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,7 +70,7 @@ namespace AugustusFahsion
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.menuStrip1.BackColor = System.Drawing.Color.Aquamarine;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem,
             this.listarToolStripMenuItem,
@@ -84,7 +78,7 @@ namespace AugustusFahsion
             this.excluirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(459, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,21 +95,21 @@ namespace AugustusFahsion
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click_1);
             // 
             // colaboradorToolStripMenuItem
             // 
             this.colaboradorToolStripMenuItem.Name = "colaboradorToolStripMenuItem";
-            this.colaboradorToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.colaboradorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colaboradorToolStripMenuItem.Text = "Colaborador";
             this.colaboradorToolStripMenuItem.Click += new System.EventHandler(this.colaboradorToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
@@ -132,83 +126,51 @@ namespace AugustusFahsion
             // clienteToolStripMenuItem1
             // 
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // colaboradoresToolStripMenuItem
             // 
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
             this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem1
             // 
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem1.Text = "Produto";
             this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // alterarToolStripMenuItem
             // 
             this.alterarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem2,
-            this.colaboradorToolStripMenuItem1,
             this.produtoToolStripMenuItem2});
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
             this.alterarToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.alterarToolStripMenuItem.Text = "Alterar";
             // 
-            // clienteToolStripMenuItem2
-            // 
-            this.clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-            this.clienteToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
-            this.clienteToolStripMenuItem2.Text = "Cliente";
-            this.clienteToolStripMenuItem2.Click += new System.EventHandler(this.clienteToolStripMenuItem2_Click);
-            // 
-            // colaboradorToolStripMenuItem1
-            // 
-            this.colaboradorToolStripMenuItem1.Name = "colaboradorToolStripMenuItem1";
-            this.colaboradorToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
-            this.colaboradorToolStripMenuItem1.Text = "Colaborador";
-            this.colaboradorToolStripMenuItem1.Click += new System.EventHandler(this.colaboradorToolStripMenuItem1_Click);
-            // 
             // produtoToolStripMenuItem2
             // 
             this.produtoToolStripMenuItem2.Name = "produtoToolStripMenuItem2";
-            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem2.Text = "Produto";
             this.produtoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem2_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem3,
-            this.colaboradorToolStripMenuItem2,
             this.produtoToolStripMenuItem3});
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.excluirToolStripMenuItem.Text = "Excluir";
             // 
-            // clienteToolStripMenuItem3
-            // 
-            this.clienteToolStripMenuItem3.Name = "clienteToolStripMenuItem3";
-            this.clienteToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
-            this.clienteToolStripMenuItem3.Text = "Cliente";
-            this.clienteToolStripMenuItem3.Click += new System.EventHandler(this.clienteToolStripMenuItem3_Click);
-            // 
-            // colaboradorToolStripMenuItem2
-            // 
-            this.colaboradorToolStripMenuItem2.Name = "colaboradorToolStripMenuItem2";
-            this.colaboradorToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
-            this.colaboradorToolStripMenuItem2.Text = "Colaborador";
-            this.colaboradorToolStripMenuItem2.Click += new System.EventHandler(this.colaboradorToolStripMenuItem2_Click);
-            // 
             // produtoToolStripMenuItem3
             // 
             this.produtoToolStripMenuItem3.Name = "produtoToolStripMenuItem3";
-            this.produtoToolStripMenuItem3.Size = new System.Drawing.Size(140, 22);
+            this.produtoToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.produtoToolStripMenuItem3.Text = "Produto";
             this.produtoToolStripMenuItem3.Click += new System.EventHandler(this.produtoToolStripMenuItem3_Click);
             // 
@@ -252,9 +214,9 @@ namespace AugustusFahsion
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(86, 403);
+            this.pictureBox4.Location = new System.Drawing.Point(694, 218);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(93, 88);
+            this.pictureBox4.Size = new System.Drawing.Size(142, 136);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -265,7 +227,7 @@ namespace AugustusFahsion
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(83)))), ((int)(((byte)(87)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(434, 1);
+            this.button1.Location = new System.Drawing.Point(1151, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 21);
             this.button1.TabIndex = 4;
@@ -277,12 +239,12 @@ namespace AugustusFahsion
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(135, 36);
+            this.label3.Location = new System.Drawing.Point(101, 151);
             this.label3.MaximumSize = new System.Drawing.Size(106, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 26);
+            this.label3.Size = new System.Drawing.Size(103, 35);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cliente";
             // 
@@ -290,9 +252,9 @@ namespace AugustusFahsion
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(89, 89);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 218);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(90, 88);
+            this.pictureBox2.Size = new System.Drawing.Size(143, 137);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -300,13 +262,13 @@ namespace AugustusFahsion
             // btnListarCliente
             // 
             this.btnListarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarCliente.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnListarCliente.BackColor = System.Drawing.Color.White;
             this.btnListarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnListarCliente.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarCliente.Location = new System.Drawing.Point(191, 129);
+            this.btnListarCliente.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnListarCliente.Location = new System.Drawing.Point(171, 308);
             this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(114, 47);
+            this.btnListarCliente.Size = new System.Drawing.Size(109, 47);
             this.btnListarCliente.TabIndex = 10;
             this.btnListarCliente.Text = "Listar";
             this.btnListarCliente.UseVisualStyleBackColor = false;
@@ -315,86 +277,56 @@ namespace AugustusFahsion
             // btnCadastrarCliente
             // 
             this.btnCadastrarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCadastrarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(228)))), ((int)(((byte)(191)))));
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrarCliente.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrarCliente.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(193, 75);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(171, 254);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
-            this.btnCadastrarCliente.Size = new System.Drawing.Size(112, 48);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(109, 48);
             this.btnCadastrarCliente.TabIndex = 11;
             this.btnCadastrarCliente.Text = "Cadastrar";
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
             this.btnCadastrarCliente.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // btnAlterarProduto
-            // 
-            this.btnAlterarProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAlterarProduto.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btnAlterarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAlterarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAlterarProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAlterarProduto.Location = new System.Drawing.Point(197, 511);
-            this.btnAlterarProduto.Name = "btnAlterarProduto";
-            this.btnAlterarProduto.Size = new System.Drawing.Size(112, 34);
-            this.btnAlterarProduto.TabIndex = 9;
-            this.btnAlterarProduto.Text = "Alterar";
-            this.btnAlterarProduto.UseVisualStyleBackColor = false;
-            this.btnAlterarProduto.Click += new System.EventHandler(this.btnAlterarProduto_Click);
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(135, 363);
+            this.label5.Location = new System.Drawing.Point(806, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 26);
+            this.label5.Size = new System.Drawing.Size(109, 35);
             this.label5.TabIndex = 2;
             this.label5.Text = "Produto";
             // 
             // btnListarProduto
             // 
             this.btnListarProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarProduto.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnListarProduto.BackColor = System.Drawing.Color.White;
             this.btnListarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnListarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarProduto.Location = new System.Drawing.Point(195, 457);
+            this.btnListarProduto.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnListarProduto.Location = new System.Drawing.Point(861, 307);
             this.btnListarProduto.Name = "btnListarProduto";
-            this.btnListarProduto.Size = new System.Drawing.Size(114, 48);
+            this.btnListarProduto.Size = new System.Drawing.Size(109, 48);
             this.btnListarProduto.TabIndex = 10;
             this.btnListarProduto.Text = "Listar";
             this.btnListarProduto.UseVisualStyleBackColor = false;
             this.btnListarProduto.Click += new System.EventHandler(this.btnListarProduto_Click);
             // 
-            // btnExcluirProduto
-            // 
-            this.btnExcluirProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnExcluirProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluirProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluirProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnExcluirProduto.Location = new System.Drawing.Point(77, 511);
-            this.btnExcluirProduto.Name = "btnExcluirProduto";
-            this.btnExcluirProduto.Size = new System.Drawing.Size(114, 34);
-            this.btnExcluirProduto.TabIndex = 12;
-            this.btnExcluirProduto.Text = "Excluir";
-            this.btnExcluirProduto.UseVisualStyleBackColor = false;
-            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluirProduto_Click);
-            // 
             // btnCadastrarProduto
             // 
             this.btnCadastrarProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCadastrarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCadastrarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(228)))), ((int)(((byte)(191)))));
             this.btnCadastrarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrarProduto.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrarProduto.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarProduto.Location = new System.Drawing.Point(195, 403);
+            this.btnCadastrarProduto.Location = new System.Drawing.Point(862, 253);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
-            this.btnCadastrarProduto.Size = new System.Drawing.Size(112, 48);
+            this.btnCadastrarProduto.Size = new System.Drawing.Size(108, 48);
             this.btnCadastrarProduto.TabIndex = 11;
             this.btnCadastrarProduto.Text = "Cadastrar";
             this.btnCadastrarProduto.UseVisualStyleBackColor = false;
@@ -403,23 +335,21 @@ namespace AugustusFahsion
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.btnAlterarProduto);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnListarCliente);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.btnListarColaborador);
             this.panel1.Controls.Add(this.btnListarProduto);
-            this.panel1.Controls.Add(this.btnExcluirProduto);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.btnCadastrarProduto);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
             this.panel1.Controls.Add(this.btnCadastrarColaborador);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(23, 114);
+            this.panel1.Location = new System.Drawing.Point(100, 114);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(388, 584);
+            this.panel1.Size = new System.Drawing.Size(977, 586);
             this.panel1.TabIndex = 6;
             // 
             // label4
@@ -427,24 +357,24 @@ namespace AugustusFahsion
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Consolas", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(123, 195);
+            this.label4.Location = new System.Drawing.Point(414, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 26);
+            this.label4.Size = new System.Drawing.Size(161, 35);
             this.label4.TabIndex = 2;
             this.label4.Text = "Colaborador";
             // 
             // btnListarColaborador
             // 
             this.btnListarColaborador.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarColaborador.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnListarColaborador.BackColor = System.Drawing.Color.White;
             this.btnListarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnListarColaborador.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarColaborador.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListarColaborador.Location = new System.Drawing.Point(195, 288);
+            this.btnListarColaborador.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarColaborador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnListarColaborador.Location = new System.Drawing.Point(510, 307);
             this.btnListarColaborador.Name = "btnListarColaborador";
-            this.btnListarColaborador.Size = new System.Drawing.Size(114, 47);
+            this.btnListarColaborador.Size = new System.Drawing.Size(109, 47);
             this.btnListarColaborador.TabIndex = 10;
             this.btnListarColaborador.Text = "Listar";
             this.btnListarColaborador.UseVisualStyleBackColor = false;
@@ -455,9 +385,9 @@ namespace AugustusFahsion
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(93, 247);
+            this.pictureBox3.Location = new System.Drawing.Point(342, 218);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(90, 88);
+            this.pictureBox3.Size = new System.Drawing.Size(142, 137);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -465,13 +395,13 @@ namespace AugustusFahsion
             // btnCadastrarColaborador
             // 
             this.btnCadastrarColaborador.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCadastrarColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCadastrarColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(228)))), ((int)(((byte)(191)))));
             this.btnCadastrarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrarColaborador.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrarColaborador.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarColaborador.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCadastrarColaborador.Location = new System.Drawing.Point(195, 234);
+            this.btnCadastrarColaborador.Location = new System.Drawing.Point(510, 253);
             this.btnCadastrarColaborador.Name = "btnCadastrarColaborador";
-            this.btnCadastrarColaborador.Size = new System.Drawing.Size(112, 48);
+            this.btnCadastrarColaborador.Size = new System.Drawing.Size(109, 48);
             this.btnCadastrarColaborador.TabIndex = 11;
             this.btnCadastrarColaborador.Text = "Cadastrar";
             this.btnCadastrarColaborador.UseVisualStyleBackColor = false;
@@ -482,7 +412,7 @@ namespace AugustusFahsion
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(459, 737);
+            this.ClientSize = new System.Drawing.Size(1176, 737);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -518,12 +448,8 @@ namespace AugustusFahsion
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradorToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem colaboradorToolStripMenuItem2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -535,9 +461,7 @@ namespace AugustusFahsion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnCadastrarCliente;
-        private System.Windows.Forms.Button btnAlterarProduto;
         private System.Windows.Forms.Button btnListarProduto;
-        private System.Windows.Forms.Button btnExcluirProduto;
         private System.Windows.Forms.Button btnCadastrarProduto;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem2;

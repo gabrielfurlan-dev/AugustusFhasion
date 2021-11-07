@@ -20,5 +20,15 @@ namespace AugustusFahsion.View.Listar
         {
             this.Close();
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            new ProdutoExcluirController().AbrirFormulario();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            new ProdutoAlterarController().AbrirFormulario();
+        }
     }
 }

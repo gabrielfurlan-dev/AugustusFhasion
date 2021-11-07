@@ -110,6 +110,7 @@ namespace AugustusFahsion.View
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // groupBox2
             // 

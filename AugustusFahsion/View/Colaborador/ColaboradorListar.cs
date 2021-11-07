@@ -14,12 +14,10 @@ namespace AugustusFahsion.View
             InitializeComponent();
             _controller = colaboradorListarController;
         }
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-<<<<<<< HEAD
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             AbirFormEpreencherOsCampos();
@@ -27,45 +25,16 @@ namespace AugustusFahsion.View
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             AbirFormEpreencherOsCampos();
-=======
-
-        private void ColaboradorListar_Load(object sender, EventArgs e)
-        {
-            dgvLista.DataSource = _controller.ListarColaborador();
-        }
-
-        private void AbrirFormAlterar()
-        {
-            new ColaboradorAlterarController().AbrirFormulario();
-            this.Close();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            var id = SelecionarColaboradorModel();
-
-            var colaborador = ColaboradorAlterarController.Buscar(id);
-
-            AbrirFormAlterar(colaborador);
-        }
-        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var id = SelecionarColaboradorModel();
-
-            var colaborador = ColaboradorAlterarController.Buscar(id);
-
-            AbrirFormAlterar(colaborador);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
         }
         private int SelecionarColaboradorModel()
         {
             var id = Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
-            return id;    
+            return id;
         }
-
         private void AbrirFormAlterar(ColaboradorModel colaborador)
         {
-               //if (_colaboradorModelSelecionado == null) return;
+            //if (_colaboradorModelSelecionado == null) return;
+
             new ColaboradorAlterarController().AbrirFormulario(colaborador);
             this.Close();
         }
@@ -73,8 +42,8 @@ namespace AugustusFahsion.View
         private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SelecionarColaboradorModel();
+            btnAlterar.Enabled = true;
         }
-<<<<<<< HEAD
 
         private void btnProcurar(object sender, EventArgs e)
         {
@@ -82,13 +51,13 @@ namespace AugustusFahsion.View
             {
                 dgvLista.DataSource = _controller.ListarColaboradorPorId(int.Parse(txtProcurar.Text));
             }
-            else if(txtProcurar.Text == "%")
+            else if (txtProcurar.Text == "%")
             {
                 dgvLista.DataSource = _controller.ListarColaborador();
             }
-            else 
+            else
             {
-                dgvLista.DataSource =  _controller.ListarColaboradorPorNome(txtProcurar.Text);
+                dgvLista.DataSource = _controller.ListarColaboradorPorNome(txtProcurar.Text);
             }
         }
 
@@ -98,7 +67,5 @@ namespace AugustusFahsion.View
             var colaborador = ColaboradorAlterarController.Buscar(id);
             AbrirFormAlterar(colaborador);
         }
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace AugustusFahsion.View
+﻿namespace AugustusFahsion.View
 {
     partial class ColaboradorListar
     {
@@ -36,6 +35,10 @@ namespace AugustusFahsion.View
             this.label2 = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtProcurar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +81,7 @@ namespace AugustusFahsion.View
             // 
             this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAlterar.Enabled = false;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAlterar.Location = new System.Drawing.Point(208, 481);
@@ -90,8 +94,8 @@ namespace AugustusFahsion.View
             // 
             // dgvLista
             // 
-            this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -113,25 +117,16 @@ namespace AugustusFahsion.View
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLista.GridColor = System.Drawing.Color.Black;
-<<<<<<< HEAD
             this.dgvLista.Location = new System.Drawing.Point(92, 140);
-=======
-            this.dgvLista.Location = new System.Drawing.Point(41, 105);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowTemplate.Height = 25;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-<<<<<<< HEAD
             this.dgvLista.Size = new System.Drawing.Size(503, 325);
-=======
-            this.dgvLista.Size = new System.Drawing.Size(603, 471);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
             this.dgvLista.TabIndex = 9;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
             // 
-<<<<<<< HEAD
             // label3
             // 
             this.label3.AutoSize = true;
@@ -175,22 +170,16 @@ namespace AugustusFahsion.View
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnProcurar);
             // 
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
             // ColaboradorListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(684, 576);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtProcurar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-=======
-            this.ClientSize = new System.Drawing.Size(684, 681);
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label2);
@@ -215,5 +204,9 @@ namespace AugustusFahsion.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtProcurar;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -2,11 +2,11 @@
 
 namespace AugustusFahsion.Model
 {
-    public class ColaboradorModel: Pessoa
+    public class ColaboradorModel : Pessoa
     {
 
         public int IdColaborador { get; set; }
-        public new int IdPessoa { get; set; }
+        public int IdPessoa { get; set; }
 
         public double Salario { get; set; }
         public int Comissao { get; set; }

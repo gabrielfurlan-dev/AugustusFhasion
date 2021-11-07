@@ -20,7 +20,8 @@ namespace AugustusFahsion.View
             clienteModel = new ClienteModel { };
         }
 
-        public ClienteAlterar(ClienteAlterarController clienteAlterarController,
+        public ClienteAlterar(
+            ClienteAlterarController clienteAlterarController,
             ClienteModel clienteModelSelecionado,
             ClienteExcluirController clienteExcluirController
             )
@@ -34,7 +35,6 @@ namespace AugustusFahsion.View
             btnSalvar.Enabled = true;
             _controllerExcluir = clienteExcluirController;
         }
-<<<<<<< HEAD
         public void AtribuirModelParaCampos(ClienteModel clienteModel)
         {
             txtId.Text = clienteModel.IdPessoa.ToString();
@@ -55,8 +55,6 @@ namespace AugustusFahsion.View
             txtEmail.Text = clienteModel.Contato.Email;
             mtxtCpf.Text = clienteModel.Cpf;
         }
-=======
->>>>>>> parent of 0fbe93f (Adicionado funcionalidade de busca personalizada)
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             try
@@ -119,6 +117,7 @@ namespace AugustusFahsion.View
                 }
                 else
                 {
+                    clienteModel.IdCliente = int.Parse(txtId.Text);
                     clienteModel.Nome = txtNome.Text;
                     clienteModel.Sobrenome = txtSobrenome.Text;
                     clienteModel.Sexo = cbSexo.Text;
@@ -145,56 +144,6 @@ namespace AugustusFahsion.View
                 MessageBox.Show(ex.Message, "Erro ao tentar gravar");
             }
         }
-        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar))
-
-            {
-                e.Handled = true;
-            }
-        }
-        public void AtribuirModelParaCampos(ClienteModel clienteModel)
-        {
-            txtId.Text = clienteModel.Id.ToString();
-            txtNome.Text = clienteModel.Nome;
-            txtSobrenome.Text = clienteModel.Sobrenome;
-            dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
-            cbSexo.Text = clienteModel.Sexo;
-            mtxtCep.Text = clienteModel.Cep.ToString();
-            nupValorLimiteAPrazo.Value = (decimal)clienteModel.ValorLimiteAPrazo;
-            txtLogradouro.Text = clienteModel.Logradouro;
-            txtCidade.Text = clienteModel.Cidade;
-            cbUf.Text = clienteModel.Uf;
-            txtComplemento.Text = clienteModel.Complemento;
-            txtBairro.Text = clienteModel.Bairro;
-            txtNumeroEndereco.Text = clienteModel.NumeroEndereco.ToString();
-            txtTelefone.Text = clienteModel.Telefone.ToString();
-            mtxtCelular.Text = clienteModel.Celular.ToString();
-            txtEmail.Text = clienteModel.Email;
-            mtxtCpf.Text = clienteModel.Cpf;
-        }
-
-        private void btnConsultarId_Click_1(object sender, EventArgs e)
-        {
-            int id;
-            Int32.TryParse(txtId.Text, out id);
-
-            var validaID = new ClienteAlterarController().ValidarId(id);
-            if (id > 0 && validaID)
-            {
-                clienteModel.Id = int.Parse(txtId.Text);
-                MessageBox.Show("id válido!");
-                clienteModel = ClienteAlterarController.Buscar(int.Parse(txtId.Text));
-
-                //AtribuirModelParaCampos();
-
-                btnSalvar.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("id invalido!");
-            }
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -211,7 +160,7 @@ namespace AugustusFahsion.View
                 var validaID = new ClienteExcluirController().ValidarId(id);
                 if (id > 0 && validaID)
                 {
-                    clienteModel.Id = int.Parse(txtId.Text);
+                    clienteModel.IdPessoa = int.Parse(txtId.Text);
                     _controllerExcluir.ExcluirCliente(clienteModel);
                     MessageBox.Show("Cliente excluido com sucesso");
                     this.Close();
