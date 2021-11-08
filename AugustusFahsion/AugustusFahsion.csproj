@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.90" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <Compile Remove="asdas\**" />
+    <EmbeddedResource Remove="asdas\**" />
+    <None Remove="asdas\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="asdas\" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
