@@ -5,6 +5,5 @@
         public int IdCliente { get; set; }
         public int IdPessoa { get; set; }
         public double ValorLimiteAPrazo { get; set; }
-        // testando o clonegit
     }
 }
