@@ -1,6 +1,8 @@
-﻿using AugustusFahsion.Model;
+﻿using AugustusFahsion.Controller;
+using AugustusFahsion.Model;
 using AugustusFahsion.Model.Contato;
 using AugustusFahsion.Model.Enderecos;
+using AugustusFahsion.Model.ValueObjects;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,7 @@ namespace AugustusFahsion.DAO
     {
         public static void CadastrarCliente(ClienteModel cliente)
         {
-            const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @Da taNascimento, @Cpf)";
+            const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @DataNascimento, @Cpf)";
             const string insertCliente = @"insert into Cliente (IdPessoa, ValorLimiteAPrazo) values (@IdPessoa, @ValorLimiteAPrazo)";
             const string insertEndereco = @"insert into Endereco (IdPessoa, Cep, Logradouro, Cidade, Uf, Complemento, Bairro, NumeroEndereco) " +
                 "values (@IdPessoa, @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco)";
@@ -23,13 +25,32 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    int id = conexao.ExecuteScalar<int>(insertPessoa, cliente, transacao);
+                    int id = conexao.ExecuteScalar<int>(insertPessoa,
+                        new
+                        {
+                            Nome = cliente.NomeCompleto.Nome,
+                            Sobrenome = cliente.NomeCompleto.Sobrenome,
+                            Sexo = cliente.Sexo,
+                            DataNascimento = cliente.DataNascimento,
+                            Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
+                        }
+                        , transacao);
                     cliente.IdPessoa = id;
                     cliente.Endereco.IdPessoa = id;
                     cliente.Contato.IdPessoa = id;
 
                     conexao.Execute(insertCliente, cliente, transacao);
-                    conexao.Execute(insertEndereco, cliente.Endereco, transacao);
+                    conexao.Execute(insertEndereco, new
+                    {
+                        IdPessoa = cliente.IdPessoa,
+                        Cep = Metodos.RemoverMascaraDeFormatacao(cliente.Endereco.Cep.RetornarValor),
+                        Logradouro = cliente.Endereco.Logradouro,
+                        Cidade = cliente.Endereco.Cidade,
+                        Uf = cliente.Endereco.Uf,
+                        Complemento = cliente.Endereco.Complemento,
+                        Bairro = cliente.Endereco.Bairro,
+                        NumeroEndereco = cliente.Endereco.NumeroEndereco
+                    }, transacao);
                     conexao.Execute(insertContato, cliente.Contato, transacao);
                     transacao.Commit();
                 }
@@ -41,8 +62,8 @@ namespace AugustusFahsion.DAO
         }
         public static List<ClienteListagemModel> ListarClientes()
         {
-            const string listarPessoa = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
-                e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
+            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
+                e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
                 inner join Cliente c on p.IdPessoa = c.IdPessoa
@@ -52,11 +73,10 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var resultado = conexao.Query<ClienteListagemModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-                        (clienteListagem, endereco, contato) => MapearClienteListagem(clienteListagem, endereco, contato),
+                    return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
+                        (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
                         splitOn: "IdPessoa"
                         ).AsList();
-                    return resultado;
                 }
             }
             catch (Exception ex)
@@ -84,15 +104,16 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        public static ClienteModel Buscar(int id)
+        public static ClienteModel BuscarCliente(int id)
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
                     conexao.Open();
-                    var query = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
+                    var query = @"select p.IdPessoa, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
                     c.ValorLimiteAPrazo, p.IdPessoa,
+                    p.Nome, p.Sobrenome, p.IdPessoa,
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                     cn.Telefone, cn.Celular, cn.Email
                     from Pessoa p
@@ -101,9 +122,10 @@ namespace AugustusFahsion.DAO
                     inner join Contato cn on p.IdPessoa = cn.IdPessoa
                     where p.IdPessoa = @IdPessoa;";
 
-                    return conexao.Query<ClienteModel, EnderecoModel, ContatoModel, ClienteModel>
-                        (query, (clienteModel, enderecoModel, contatoModel) =>
-                        MapearClienteAlterar(clienteModel, enderecoModel, contatoModel), new { IdPessoa = id }, splitOn: "IdPessoa").FirstOrDefault();
+                    return conexao.Query<ClienteModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteModel>
+                        (query, (clienteModel, nomeCompleto, enderecoModel, contatoModel) =>
+                        MapearClienteAlterar(clienteModel, nomeCompleto, enderecoModel, contatoModel),
+                        new { IdPessoa = id }, splitOn: "IdPessoa").FirstOrDefault();
                 }
             }
             catch (Exception ex)
@@ -113,7 +135,7 @@ namespace AugustusFahsion.DAO
         }
         public static List<ClienteListagemModel> BuscarClientePorNome(string nome)
         {
-            const string listarPessoa = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, c.IdCliente, p.IdPessoa,
+            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -125,8 +147,8 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    return conexao.Query<ClienteListagemModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-                        (clienteListagem, endereco, contato) => MapearClienteListagem(clienteListagem, endereco, contato),
+                    return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
+                        (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
                         new { nome }, splitOn: "IdPessoa").AsList();
                 }
             }
@@ -135,22 +157,21 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
-        public static List<ClienteListagemModel> BuscarClientePorId(int id)
+        public static List<ClienteListagemModel> BuscarClientePorId(int id) 
         {
-            const string listarPessoa = @"select p.IdPessoa, p.Nome, p.Sobrenome, e.Cep, 
-                e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, cn.Telefone, cn.Celular, cn.Email
+            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
+                e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
                 inner join Cliente c on p.IdPessoa = c.IdPessoa
                 inner join Endereco e on p.IdPessoa = e.IdPessoa
-                inner join Cliente c on p.IdPessoa = c.IdPessoa 
+                inner join Contato cn on p.IdPessoa = cn.IdPessoa 
                 where p.IdPessoa = @id";
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    return conexao.Query<ClienteListagemModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-                        (clienteListagem, endereco, contato) => MapearClienteListagem(clienteListagem, endereco, contato),
+                    return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
+                        (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
                         new { id }, splitOn: "IdPessoa").AsList();
                 }
             }
@@ -178,11 +199,37 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    conexao.Execute(updatePessoa, cliente, transacao);
+                    conexao.Execute(updatePessoa,
+                        new{
+                                cliente.IdPessoa,
+                                cliente.NomeCompleto.Nome,
+                                cliente.NomeCompleto.Sobrenome,
+                                cliente.Sexo,
+                                cliente.DataNascimento,
+                                Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
+                         }, transacao);
                     conexao.Execute(updateCliente, cliente, transacao);
-                    conexao.Execute(updateEndereco, cliente.Endereco, transacao);
-                    conexao.Execute(updateContato, cliente.Contato, transacao);
-                    transacao.Commit();
+                    conexao.Execute(updateEndereco, 
+                        new{
+                                cliente.IdPessoa,
+                                Cep = Metodos.RemoverMascaraDeFormatacao(cliente.Endereco.Cep.RetornarValor),
+                                cliente.Endereco.Logradouro,
+                                cliente.Endereco.Cidade,
+                                cliente.Endereco.Uf,
+                                cliente.Endereco.Complemento,
+                                cliente.Endereco.Bairro,
+                                cliente.Endereco.NumeroEndereco
+                            }, transacao) ;
+
+                    conexao.Execute(updateContato, 
+                        new{ 
+                            IdPessoa = cliente.IdPessoa,
+                            //Celular = Extencoes.RemoverFormatacao(cliente.Contato.Celular.RetornarValor),
+                            cliente.Contato.Celular,
+                            cliente.Contato.Telefone,
+                            cliente.Contato.Email
+                            }, transacao);
+                            transacao.Commit();
                 }
             }
             catch (Exception ex)
@@ -215,17 +262,20 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        public static ClienteListagemModel MapearClienteListagem(ClienteListagemModel clienteListagem,
+
+
+        public static ClienteListagemModel MapearClienteListagem(ClienteListagemModel clienteListagem, NomeCompletoModel nomeCompleto,
             EnderecoModel endereco, ContatoModel contato)
         {
+            clienteListagem.NomeCompleto = nomeCompleto;
             clienteListagem.Contato = contato;
             clienteListagem.Endereco = endereco;
             return clienteListagem;
         }
-
-        public static ClienteModel MapearClienteAlterar(ClienteModel clienteModel,
+        public static ClienteModel MapearClienteAlterar(ClienteModel clienteModel,NomeCompletoModel nomeCompleto,
             EnderecoModel endereco, ContatoModel contato)
         {
+            clienteModel.NomeCompleto = nomeCompleto;
             clienteModel.Contato = contato;
             clienteModel.Endereco = endereco;
             return clienteModel;

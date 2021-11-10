@@ -13,7 +13,7 @@ namespace AugustusFahsion.Controller
     public class ColaboradorListarController
     {
         public void AbrirLista() =>
-            new ColaboradorListar(this).Show();
+            new FrmColaboradorListar(this).Show();
 
 
         public List<ColaboradorListagemModel> ListarColaborador()

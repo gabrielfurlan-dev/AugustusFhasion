@@ -8,12 +8,20 @@
 
   <ItemGroup>
     <Compile Remove="asdas\**" />
+    <Compile Remove="Model\ValueObjects\NovaPasta\**" />
     <EmbeddedResource Remove="asdas\**" />
+    <EmbeddedResource Remove="Model\ValueObjects\NovaPasta\**" />
     <None Remove="asdas\**" />
+    <None Remove="Model\ValueObjects\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\Contato\Celular.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 

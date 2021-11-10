@@ -12,7 +12,7 @@ namespace AugustusFahsion.Controller
     public class ClienteCadastrarController
     {
         public void AbrirFormulario() =>
-            new ClienteCadastrar(this).Show();
+            new FrmClienteCadastrar(this).Show();
 
         public void CadastrarCliente(ClienteModel clienteModel)
         {

@@ -2,15 +2,10 @@
 using System.Windows.Forms;
 using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
-using AugustusFahsion.View.Excluir;
-
 namespace AugustusFahsion.Controller
 {
     public class ColaboradorExcluirController
     {
-        public void AbrirFormulario() =>
-            new ColaboradorExcluir(this).Show();
-
         public bool ValidarId(int id)
         {
             try

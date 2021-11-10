@@ -8,9 +8,6 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteExcluirController
     {
-        public void AbrirFormulario() =>
-            new ClienteExcluir(this).Show();
-
         public bool ValidarId(int id)
         {
             try

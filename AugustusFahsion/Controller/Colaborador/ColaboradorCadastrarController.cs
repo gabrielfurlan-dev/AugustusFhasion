@@ -11,7 +11,7 @@ namespace AugustusFahsion.Controller
     public class ColaboradorCadastrarController
     {
         public void AbrirFormulario() =>
-            new ColaboradorCadastrar(this).Show();
+            new FrmColaboradorCadastrar(this).Show();
 
         public void CadastrarColaborador(ColaboradorModel colaboradorModel)
         {

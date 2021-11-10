@@ -8,13 +8,14 @@ namespace AugustusFahsion.Controller
 {
     public class ColaboradorAlterarController
     {
-        public void AbrirFormulario() =>
-            new ColaboradorAlterar(this).Show();
+        public void AbrirFormulario() => new FrmColaboradorAlterar(this).Show();
+        
         public void AbrirFormulario(ColaboradorModel colaboradorModelSelecionado)
         {
             ColaboradorExcluirController colaboradorExcluirController = new ColaboradorExcluirController();
-            new ColaboradorAlterar(this, colaboradorModelSelecionado, colaboradorExcluirController).Show();
+            new FrmColaboradorAlterar(this, colaboradorModelSelecionado, colaboradorExcluirController).Show();
         }
+        
         public bool ValidarId(int id)
         {
             try
@@ -27,19 +28,17 @@ namespace AugustusFahsion.Controller
                 return false;
             }
         }
-        public static ColaboradorModel Buscar(int id)
-        {
-                return ColaboradorDAO.Buscar(id);
-        }
+
+        public static ColaboradorModel Buscar(int id) => ColaboradorDAO.Buscar(id);
+
         public void AtualizarColaborador(ColaboradorModel colaboradorModel)
         {
             try
             {
-                if (ColaboradorDAO.ValidaId(colaboradorModel.Id))
-                {
-                    ColaboradorDAO.AlterarColaborador(colaboradorModel);
-                    MessageBox.Show("Colaborador alterado!");
-                }
+                if (!ColaboradorDAO.ValidaId(colaboradorModel.IdPessoa)) return;
+
+                ColaboradorDAO.AlterarColaborador(colaboradorModel);
+                MessageBox.Show("Colaborador alterado!");
             }
             catch (Exception excecao)
             {

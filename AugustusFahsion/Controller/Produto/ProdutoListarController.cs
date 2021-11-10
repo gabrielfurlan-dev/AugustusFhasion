@@ -11,7 +11,7 @@ namespace AugustusFahsion.Controller
     public class ProdutoListarController
     {
         public void AbrirLista() =>
-            new ProdutoListar(this).Show();
+            new FrmProdutoListar(this).Show();
 
 
         public List<ProdutoModel> ListarProdutos()
@@ -19,6 +19,34 @@ namespace AugustusFahsion.Controller
             try
             {
                 var lista = ProdutoDAO.ListarProdutos();
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<ProdutoModel>();
+        }
+
+        public List<ProdutoModel> ListarProdutosPorNome(string nome)
+        {
+            try
+            {
+                var lista = ProdutoDAO.ListarProdutosPorNome(nome);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<ProdutoModel>();
+        }
+
+        public List<ProdutoModel> ListarProdutosPorId(int id)
+        {
+            try
+            {
+                var lista = ProdutoDAO.ListarProdutosPorId(id);
                 return lista;
             }
             catch (Exception excecao)

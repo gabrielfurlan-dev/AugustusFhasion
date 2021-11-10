@@ -12,7 +12,7 @@ namespace AugustusFashionTeste
         public void TestMethod1()
         {
             var nullo = "";
-            var resultado = Validar.NuloOuVazio(nullo);
+            var resultado = Validacoes.NuloOuVazio(nullo);
             Assert.IsFalse(resultado);
         }
         [TestMethod]

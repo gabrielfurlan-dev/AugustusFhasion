@@ -1,11 +1,12 @@
-﻿using AugustusFahsion.Model;
+﻿using AugustusFahsion.Controller;
+using AugustusFahsion.Model;
 using AugustusFahsion.Model.ContasBancaria;
 using AugustusFahsion.Model.Contato;
 using AugustusFahsion.Model.Enderecos;
+using AugustusFahsion.Model.ValueObjects;
 using Dapper;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
 namespace AugustusFahsion.DAO
@@ -15,12 +16,17 @@ namespace AugustusFahsion.DAO
         public static void CadastrarColaborador(ColaboradorModel colaborador)
         {
             const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @DataNascimento, @Cpf)";
-            const string insertColaborador = @"insert into Colaborador (IdPessoa, Salario, Comissao)" +
-                " values (@IdPessoa, @Salario, @Comissao)";
-            const string insertEndereco = @"insert into Endereco (IdPessoa, Cep, Logradouro, Cidade, Uf, Complemento, Bairro, NumeroEndereco) " +
-                "values (@IdPessoa, @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco)";
+            
+            const string insertColaborador = @"insert into Colaborador (IdPessoa, Salario, Comissao)
+                                               values (@IdPessoa, @Salario, @Comissao)";
+
+            const string insertEndereco = @"insert into Endereco (IdPessoa, Cep, Logradouro, Cidade, Uf, Complemento, Bairro, NumeroEndereco) 
+                                            values (@IdPessoa, @Cep, @Logradouro, @Cidade, @Uf, @Complemento, @Bairro, @NumeroEndereco)";
+            
             const string insertContato = @"insert into Contato (IdPessoa, Telefone, Celular, Email) values (@IdPessoa, @Telefone, @Celular, @Email)";
-            const string insertContaBancaria = @"insert into ContaBancaria (IdPessoa, Banco, Agencia, Conta, TipoConta) values (@IdPessoa, @Banco, @Agencia, @Conta, @TipoConta)";
+            
+            const string insertContaBancaria = @"insert into ContaBancaria (IdPessoa, Banco, Agencia, Conta, TipoConta) 
+                                                 values (@IdPessoa, @Banco, @Agencia, @Conta, @TipoConta)";
 
             try
             {
@@ -28,14 +34,32 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    int id = conexao.ExecuteScalar<int>(insertPessoa, colaborador, transacao);
+                    int id = conexao.ExecuteScalar<int>(insertPessoa, new
+                    {
+                        colaborador.NomeCompleto.Nome,
+                        colaborador.NomeCompleto.Sobrenome,
+                        colaborador.Sexo,
+                        colaborador.DataNascimento,
+                        Cpf = Metodos.RemoverMascaraDeFormatacao(colaborador.Cpf.RetornarValor)
+                    }, transacao);
+
                     colaborador.IdPessoa = id;
                     colaborador.Endereco.IdPessoa = id;
                     colaborador.Contato.IdPessoa = id;
                     colaborador.ContaBancaria.IdPessoa = id;
 
                     conexao.Execute(insertColaborador, colaborador, transacao);
-                    conexao.Execute(insertEndereco, colaborador.Endereco, transacao);
+                    conexao.Execute(insertEndereco, new
+                    {
+                        colaborador.IdPessoa,
+                        Cep = Metodos.RemoverMascaraDeFormatacao(colaborador.Endereco.Cep.RetornarValor),
+                        colaborador.Endereco.Logradouro,
+                        colaborador.Endereco.Cidade,
+                        colaborador.Endereco.Uf,
+                        colaborador.Endereco.Complemento,
+                        colaborador.Endereco.Bairro,
+                        colaborador.Endereco.NumeroEndereco
+                    }, transacao);
                     conexao.Execute(insertContato, colaborador.Contato, transacao);
                     conexao.Execute(insertContaBancaria, colaborador.ContaBancaria, transacao);
                     transacao.Commit();
@@ -48,19 +72,19 @@ namespace AugustusFahsion.DAO
         }
         public static List<ColaboradorListagemModel> ListarColaboradores()
         {
-            const string listarColaboradores = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Salario, p.Comissao, p.IdPessoa, 
+            const string listarColaboradores = @"select p.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                     cn.Telefone, cn.Celular, cn.Email
                     from Pessoa p
-                    inner join Cliente c on p.IdPessoa = c.IdPessoa
+                    inner join Colaborador c on p.IdPessoa = c.IdPessoa
                     inner join Endereco e on p.IdPessoa = e.IdPessoa
                     inner join Contato cn on p.IdPessoa = cn.IdPessoa";
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var resultado = conexao.Query<ColaboradorListagemModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(listarColaboradores,
-                        (colaboradorListagem, enderecoModel, contatoModel) => MapearColaboradorListagem(colaboradorListagem, enderecoModel, contatoModel),
+                    var resultado = conexao.Query<ColaboradorListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(listarColaboradores,
+                        (colaboradorListagem, nomeCompleto, enderecoModel, contatoModel) => MapearColaboradorListagem(colaboradorListagem, nomeCompleto, enderecoModel, contatoModel),
                         splitOn: "IdPessoa").AsList();
                     return resultado;
                 }
@@ -71,26 +95,23 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static bool ValidaId(int id)
+        public static bool ValidaId(int IdPessoa)
         {
             try
             {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var validaId = conexao.Query(@"SELECT IdPessoa FROM Colaborador WHERE IdPessoa=@IdPessoa", new { IdPessoa = id }).ToList();
+                using var conexao = new SqlConexao().Connection();
 
-                    if (validaId.Count != 0)
-                        return true;
-                    else
-                        return false;
-                }
+                conexao.Open();
+                var validaId = conexao.Query(@"SELECT IdPessoa FROM Colaborador WHERE IdPessoa=@IdPessoa", new { IdPessoa }).ToList();
+
+                return validaId.Count != 0;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
         public static ColaboradorModel Buscar(int id)
         {
             try
@@ -98,8 +119,9 @@ namespace AugustusFahsion.DAO
                 using (var conexao = new SqlConexao().Connection())
                 {
                     conexao.Open();
-                    var query = @"select p.IdPessoa, p.Nome, p.Sobrenome, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
+                    var query = @"select p.IdPessoa, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
                     c.Salario, c.Comissao, p.IdPessoa,
+                    p.Nome, p.Sobrenome, p.IdPessoa,
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                     cn.Telefone, cn.Celular, cn.Email, p.IdPessoa,
                     cb.Banco, cb.Agencia, cb.Conta, cb.TipoConta
@@ -110,8 +132,9 @@ namespace AugustusFahsion.DAO
                     inner join ContaBancaria cb on p.IdPessoa = cb.IdPessoa
                     where p.IdPessoa = @IdPessoa;";
 
-                    return conexao.Query<ColaboradorModel, EnderecoModel, ContatoModel, ContaBancariaModel, ColaboradorModel>(query,
-                        (colaboradorModel, endereco, contato, contaBancaria) => MapearColaboradorModel(colaboradorModel, endereco, contato, contaBancaria),
+                    return conexao.Query<ColaboradorModel, NomeCompletoModel, EnderecoModel, ContatoModel, ContaBancariaModel, ColaboradorModel>
+                        (query, (colaboradorModel, nomeCompleto, endereco, contato, contaBancaria) => 
+                        MapearColaboradorModel(colaboradorModel, nomeCompleto, endereco, contato, contaBancaria),
                         new { IdPessoa = id }, splitOn: "IdPessoa").FirstOrDefault();
                 }
             }
@@ -120,9 +143,10 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
         public static List<ColaboradorListagemModel> BuscarColaboradoresPorNome(string nome)
         {
-            const string query = @"select p.IdPessoa, p.Nome, p.Sobrenome, co.Salario, co.Comissao, p.IdPessoa, 
+            const string query = @"select p.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -134,8 +158,8 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    return conexao.Query<ColaboradorListagemModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(query,
-                        (colaboradorListagem, endereco, contato) => MapearColaboradorListagem(colaboradorListagem, endereco, contato),
+                    return conexao.Query<ColaboradorListagemModel, NomeCompletoModel,  EnderecoModel, ContatoModel, ColaboradorListagemModel>(query,
+                        (colaboradorListagem, nomeCompleto, endereco, contato) => MapearColaboradorListagem(colaboradorListagem, nomeCompleto, endereco, contato),
                         new { nome }, splitOn: "IdPessoa").AsList();
                 }
             }
@@ -159,8 +183,8 @@ namespace AugustusFahsion.DAO
                 using (var conexao = new SqlConexao().Connection())
                 {
 
-                    return conexao.Query<ColaboradorListagemModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(query,
-                        (colaboradorListagem, endereco, contato) => MapearColaboradorListagem(colaboradorListagem, endereco, contato),
+                    return conexao.Query<ColaboradorListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ColaboradorListagemModel>(query,
+                        (colaboradorListagem, nomeCompleto, endereco, contato) => MapearColaboradorListagem(colaboradorListagem, nomeCompleto, endereco, contato),
                         new { id }, splitOn: "IdPessoa").AsList();
                 }
             }
@@ -188,11 +212,42 @@ namespace AugustusFahsion.DAO
                 using (var transacao = conexao.BeginTransaction())
 
                 {
-                    conexao.Execute(updatePessoa, colaborador, transacao);
+                    conexao.Execute(updatePessoa, 
+                        new {
+                            colaborador.IdPessoa,
+                            colaborador.NomeCompleto.Nome,
+                            colaborador.NomeCompleto.Sobrenome,
+                            colaborador.Sexo,
+                            colaborador.DataNascimento,
+                            Cpf = Metodos.RemoverMascaraDeFormatacao(colaborador.Cpf.RetornarValor)
+                        }, transacao);
+
                     conexao.Execute(updateColaborador, colaborador, transacao);
-                    conexao.Execute(updateEndereco, colaborador.Endereco, transacao);
-                    conexao.Execute(updateContato, colaborador.Contato, transacao);
+
+                    conexao.Execute(updateEndereco,
+                        new {
+                            colaborador.IdPessoa,
+                            Cep = Metodos.RemoverMascaraDeFormatacao(colaborador.Endereco.Cep.RetornarValor),
+                            colaborador.Endereco.Logradouro,
+                            colaborador.Endereco.Cidade,
+                            colaborador.Endereco.Uf,
+                            colaborador.Endereco.Complemento,
+                            colaborador.Endereco.Bairro,
+                            colaborador.Endereco.NumeroEndereco
+                        }, transacao);
+
+                    conexao.Execute(updateContato, 
+                        new{
+                                colaborador.IdPessoa,
+                            //Celular = Extencoes.RemoverFormatacao(cliente.Contato.Celular.RetornarValor),
+                                colaborador.Contato.Celular,
+                                colaborador.Contato.Telefone,
+                                colaborador.Contato.Email
+                            }
+                    , transacao);
+
                     conexao.Execute(updateContaBancaria, colaborador.ContaBancaria, transacao);
+
                     transacao.Commit();
                 }
             }
@@ -230,17 +285,19 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static ColaboradorListagemModel MapearColaboradorListagem(ColaboradorListagemModel colaboradorListagem,
+        public static ColaboradorListagemModel MapearColaboradorListagem(ColaboradorListagemModel colaboradorListagem, NomeCompletoModel nomeCompleto,
             EnderecoModel endereco, ContatoModel contato)
         {
+            colaboradorListagem.NomeCompleto = nomeCompleto;
             colaboradorListagem.Contato = contato;
             colaboradorListagem.Endereco = endereco;
             return colaboradorListagem;
         }
 
-        public static ColaboradorModel MapearColaboradorModel(ColaboradorModel colaboradorModel,
+        public static ColaboradorModel MapearColaboradorModel(ColaboradorModel colaboradorModel, NomeCompletoModel nomeCompleto,
             EnderecoModel endereco, ContatoModel contato, ContaBancariaModel contaBancaria)
         {
+            colaboradorModel.NomeCompleto = nomeCompleto;
             colaboradorModel.ContaBancaria = contaBancaria;
             colaboradorModel.Contato = contato;
             colaboradorModel.Endereco = endereco;

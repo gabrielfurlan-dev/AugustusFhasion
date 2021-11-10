@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AugustusFahsion.Model.ValueObjects.Celular;
+using AugustusFahsion.Model.ValueObjects.Telefone;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

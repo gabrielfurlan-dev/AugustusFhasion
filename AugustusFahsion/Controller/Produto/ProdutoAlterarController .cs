@@ -11,8 +11,12 @@ namespace AugustusFahsion.Controller
     {
 
         public void AbrirFormulario() =>
-            new ProdutoAlterar(this).Show();
-
+            new FrmProdutoAlterar(this).Show();
+        public void AbrirFormulario(ProdutoModel produtoModelSelecionado)
+        {
+            ProdutoExcluirController produtoExcluirController = new ProdutoExcluirController();
+            new FrmProdutoAlterar(this, produtoExcluirController, produtoModelSelecionado).Show();
+        }
 
         public bool ValidarId(int id)
         {
@@ -36,7 +40,7 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                if (ProdutoDAO.ValidaId(produtoModel.Id))
+                if (ProdutoDAO.ValidaId(produtoModel.IdProduto))
                 {
                     ProdutoDAO.AlterarProduto(produtoModel);
                     MessageBox.Show("Produto alterado!");

@@ -9,11 +9,11 @@ namespace AugustusFahsion.Controller
     public class ClienteAlterarController
     {
         public void AbrirFormulario() =>
-            new ClienteAlterar(this).Show();
+            new FrmClienteAlterar(this).Show();
         public void AbrirFormulario(ClienteModel clienteModelSelecionado)
         {
             ClienteExcluirController clienteExcluirController = new ClienteExcluirController();
-            new ClienteAlterar(this, clienteModelSelecionado, clienteExcluirController).Show();
+            new FrmClienteAlterar(this, clienteModelSelecionado, clienteExcluirController).Show();
         }
         public bool ValidarId(int id)
         {
@@ -29,7 +29,7 @@ namespace AugustusFahsion.Controller
         }
         public static ClienteModel Buscar(int id)
         {
-                return ClienteDAO.Buscar(id);
+                return ClienteDAO.BuscarCliente(id);
         }
         public void AtualizarCliente(ClienteModel clienteModel)
         {

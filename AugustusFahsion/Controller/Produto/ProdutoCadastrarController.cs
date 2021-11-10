@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AugustusFahsion.Controller;
-using AugustusFahsion.View;
-using AugustusFahsion.DAO;
+﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
+using AugustusFahsion.View;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller
@@ -14,7 +10,7 @@ namespace AugustusFahsion.Controller
     public class ProdutoCadastrarController
     {
         public void AbrirFormulario() =>
-            new ProdutoCadastrar(this).Show();
+            new FrmProdutoCadastrar(this).Show();
 
         public void CadastrarProduto(ProdutoModel produtoModel)
         {

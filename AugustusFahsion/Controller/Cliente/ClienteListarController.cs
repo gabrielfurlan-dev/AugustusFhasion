@@ -10,7 +10,7 @@ namespace AugustusFahsion.Controller
     public class ClienteListarController
     {
         public void AbrirLista() =>
-            new ClienteListar(this).Show();
+            new FrmClienteListar(this).Show();
 
 
         public List<ClienteListagemModel> ListarClientes()
@@ -54,9 +54,7 @@ namespace AugustusFahsion.Controller
             {
                 MessageBox.Show(excecao.Message);
             }
-
             return new List<ClienteListagemModel>();
         }
-
     }
 }
