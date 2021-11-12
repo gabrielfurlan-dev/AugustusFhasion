@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller;
+using AugustusFahsion.Controller.Venda;
 using System;
 using System.Windows.Forms;
 
@@ -36,7 +37,7 @@ namespace AugustusFahsion
             new ProdutoAlterarController().AbrirFormulario();
 
         private void Button4_Click_1(object sender, EventArgs e) =>
-            new ClienteCadastrarController().AbrirFormulario();
+            new VendaRegistrarController().AbrirFormulario();
 
         private void Button2_Click_1(object sender, EventArgs e) =>
             new ClienteAlterarController().AbrirFormulario();

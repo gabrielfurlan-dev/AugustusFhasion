@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Model\Contato\Celular.cs" />
+    <Compile Remove="Model\Usuario\Contato\Celular.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,6 +12,9 @@ namespace AugustusFahsion.DAO
 {
     public class ClienteDAO
     {
+        // FUNÇÕES C R U D ===============================================================
+        
+        //CRIAR
         public static void CadastrarCliente(ClienteModel cliente)
         {
             const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values (@Nome, @Sobrenome, @Sexo, @DataNascimento, @Cpf)";
@@ -60,50 +63,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        public static List<ClienteListagemModel> ListarClientes()
-        {
-            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
-                e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
-                cn.Telefone, cn.Celular, cn.Email
-                from Pessoa p
-                inner join Cliente c on p.IdPessoa = c.IdPessoa
-                inner join Endereco e on p.IdPessoa = e.IdPessoa
-                inner join Contato cn on p.IdPessoa = cn.IdPessoa";
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-                        (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
-                        splitOn: "IdPessoa"
-                        ).AsList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public static bool ValidaId(int id)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var validaId = conexao.Query(@"SELECT IdPessoa FROM Cliente WHERE IdPessoa=@IdPessoa", new { IdPessoa = id }).ToList();
-
-                    if (validaId.Count != 0)
-                        return true;
-                    else
-                        return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+        // LISTAR
         public static ClienteModel BuscarCliente(int id)
         {
             try
@@ -180,6 +140,31 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+        public static List<ClienteListagemModel> ListarClientes()
+        {
+            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
+                e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
+                cn.Telefone, cn.Celular, cn.Email
+                from Pessoa p
+                inner join Cliente c on p.IdPessoa = c.IdPessoa
+                inner join Endereco e on p.IdPessoa = e.IdPessoa
+                inner join Contato cn on p.IdPessoa = cn.IdPessoa";
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
+                        (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
+                        splitOn: "IdPessoa"
+                        ).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        //ALTERAR
         public static void AlterarCliente(ClienteModel cliente)
         {
             try
@@ -200,36 +185,39 @@ namespace AugustusFahsion.DAO
                 using (var transacao = conexao.BeginTransaction())
                 {
                     conexao.Execute(updatePessoa,
-                        new{
-                                cliente.IdPessoa,
-                                cliente.NomeCompleto.Nome,
-                                cliente.NomeCompleto.Sobrenome,
-                                cliente.Sexo,
-                                cliente.DataNascimento,
-                                Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
-                         }, transacao);
+                        new
+                        {
+                            cliente.IdPessoa,
+                            cliente.NomeCompleto.Nome,
+                            cliente.NomeCompleto.Sobrenome,
+                            cliente.Sexo,
+                            cliente.DataNascimento,
+                            Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
+                        }, transacao);
                     conexao.Execute(updateCliente, cliente, transacao);
-                    conexao.Execute(updateEndereco, 
-                        new{
-                                cliente.IdPessoa,
-                                Cep = Metodos.RemoverMascaraDeFormatacao(cliente.Endereco.Cep.RetornarValor),
-                                cliente.Endereco.Logradouro,
-                                cliente.Endereco.Cidade,
-                                cliente.Endereco.Uf,
-                                cliente.Endereco.Complemento,
-                                cliente.Endereco.Bairro,
-                                cliente.Endereco.NumeroEndereco
-                            }, transacao) ;
+                    conexao.Execute(updateEndereco,
+                        new
+                        {
+                            cliente.IdPessoa,
+                            Cep = Metodos.RemoverMascaraDeFormatacao(cliente.Endereco.Cep.RetornarValor),
+                            cliente.Endereco.Logradouro,
+                            cliente.Endereco.Cidade,
+                            cliente.Endereco.Uf,
+                            cliente.Endereco.Complemento,
+                            cliente.Endereco.Bairro,
+                            cliente.Endereco.NumeroEndereco
+                        }, transacao);
 
-                    conexao.Execute(updateContato, 
-                        new{ 
+                    conexao.Execute(updateContato,
+                        new
+                        {
                             IdPessoa = cliente.IdPessoa,
                             //Celular = Extencoes.RemoverFormatacao(cliente.Contato.Celular.RetornarValor),
                             cliente.Contato.Celular,
                             cliente.Contato.Telefone,
                             cliente.Contato.Email
-                            }, transacao);
-                            transacao.Commit();
+                        }, transacao);
+                    transacao.Commit();
                 }
             }
             catch (Exception ex)
@@ -237,6 +225,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+        //EXCLUIR
         public static void ExcluirCliente(ClienteModel cliente)
         {
             var idPessoa = cliente.IdPessoa;
@@ -263,22 +252,44 @@ namespace AugustusFahsion.DAO
             }
         }
 
-
-        public static ClienteListagemModel MapearClienteListagem(ClienteListagemModel clienteListagem, NomeCompletoModel nomeCompleto,
-            EnderecoModel endereco, ContatoModel contato)
+        // MAPEAMENTO ===================================================================
+        public static ClienteListagemModel MapearClienteListagem(ClienteListagemModel clienteListagem, 
+            NomeCompletoModel nomeCompleto, EnderecoModel endereco, ContatoModel contato)
         {
             clienteListagem.NomeCompleto = nomeCompleto;
             clienteListagem.Contato = contato;
             clienteListagem.Endereco = endereco;
             return clienteListagem;
         }
-        public static ClienteModel MapearClienteAlterar(ClienteModel clienteModel,NomeCompletoModel nomeCompleto,
-            EnderecoModel endereco, ContatoModel contato)
+        public static ClienteModel MapearClienteAlterar(ClienteModel clienteModel,
+            NomeCompletoModel nomeCompleto, EnderecoModel endereco, ContatoModel contato)
         {
             clienteModel.NomeCompleto = nomeCompleto;
             clienteModel.Contato = contato;
             clienteModel.Endereco = endereco;
             return clienteModel;
+        }
+
+        // VALIDAÇÕES ===================================================================
+        public static bool ValidaId(int id)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var validaId = conexao.Query(@"SELECT IdPessoa FROM Cliente WHERE IdPessoa=@IdPessoa", new { IdPessoa = id }).ToList();
+
+                    if (validaId.Count != 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

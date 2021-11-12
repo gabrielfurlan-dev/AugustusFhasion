@@ -20,7 +20,7 @@ namespace AugustusFahsion.View.Listar
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             var id = SelecionarProdutoModel();
-            var produto = new ProdutoAlterarController().Buscar(id);
+            var produto = ProdutoAlterarController.Buscar(id);
             AbrirFormAlterar(produto);
         }
 
@@ -43,7 +43,7 @@ namespace AugustusFahsion.View.Listar
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var id = SelecionarProdutoModel();
-            var produto = new ProdutoAlterarController().Buscar(id);
+            var produto = ProdutoAlterarController.Buscar(id);
             AbrirFormAlterar(produto);
         }
 

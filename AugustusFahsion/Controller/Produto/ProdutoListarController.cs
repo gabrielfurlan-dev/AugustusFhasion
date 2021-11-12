@@ -55,5 +55,48 @@ namespace AugustusFahsion.Controller
             }
             return new List<ProdutoModel>();
         }
+
+        //listar produtos ativos
+        public List<ProdutoModel> ListarProdutosAtivos()
+        {
+            try
+            {
+                var lista = ProdutoDAO.ListarProdutosAtivos();
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<ProdutoModel>();
+        }
+
+        public List<ProdutoModel> ListarProdutosAtivosPorNome(string nome)
+        {
+            try
+            {
+                var lista = ProdutoDAO.ListarProdutosAtivosPorNome(nome);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<ProdutoModel>();
+        }
+
+        public List<ProdutoModel> ListarProdutosAtivosPorId(int id)
+        {
+            try
+            {
+                var lista = ProdutoDAO.ListarProdutosAtivosPorId(id);
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<ProdutoModel>();
+        }
     }
 }

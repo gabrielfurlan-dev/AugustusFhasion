@@ -31,7 +31,7 @@ namespace AugustusFahsion.Controller
             }
         }
 
-        public ProdutoModel Buscar(int id)
+        public static ProdutoModel Buscar(int id)
         {
             return ProdutoDAO.Buscar(id);    
         }

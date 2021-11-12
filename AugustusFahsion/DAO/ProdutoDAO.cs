@@ -24,6 +24,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
+        //listar produtos
         public static List<ProdutoModel> ListarProdutos()
         {
             try
@@ -38,7 +39,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
         public static List<ProdutoModel> ListarProdutosPorId(int id)
         {
             try
@@ -54,14 +54,13 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
         public static List<ProdutoModel> ListarProdutosPorNome(string nome)
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select * from Produto where Nome like @nome + '%'" ;
+                    var query = @"select * from Produto where Nome like @nome + '%' " ;
                     return conexao.Query<ProdutoModel>(query, new { nome }).AsList();
                 }
             }
@@ -70,22 +69,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        public static bool ValidaId(int id)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    var validaId = conexao.Query(@"SELECT IdProduto FROM Produto WHERE IdProduto = @id", new { id }).ToList();
-
-                    return validaId.Count != 0;
-                }
-            }catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
         public static ProdutoModel Buscar(int id)
         {
             try
@@ -104,8 +87,54 @@ namespace AugustusFahsion.DAO
             }
         }
 
+        //listar produtos ativos
+        public static List<ProdutoModel> ListarProdutosAtivos()
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    var query = @"select * from Produto where Condicao = 'Ativo';";
+                    return conexao.Query<ProdutoModel>(query).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static List<ProdutoModel> ListarProdutosAtivosPorId(int id)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    var query = @"select * from Produto where IdProduto = @id and Condicao = 'Ativo';";
+                    return conexao.Query<ProdutoModel>(query, new { id }).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static List<ProdutoModel> ListarProdutosAtivosPorNome(string nome)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    var query = @"select * from Produto where Nome like @nome + '%' and Condicao = 'Ativo';";
+                    return conexao.Query<ProdutoModel>(query, new { nome }).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
-
+        //alterar
         public static void AlterarProduto(ProdutoModel produto)
         {
             try
@@ -123,6 +152,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
+        //excluir
         public static void ExcluirProduto (ProdutoModel produto)
         {
             try
@@ -131,6 +161,23 @@ namespace AugustusFahsion.DAO
                 {
                     var id = produto.IdProduto;
                     conexao.Query(@"delete from Produto where Id=" + id);
+                }
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        //=================================================================
+        public static bool ValidaId(int id)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    var validaId = conexao.Query(@"SELECT IdProduto FROM Produto WHERE IdProduto = @id", new { id }).ToList();
+
+                    return validaId.Count != 0;
                 }
             }catch(Exception ex)
             {
