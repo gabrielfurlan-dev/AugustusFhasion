@@ -8,18 +8,6 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteExcluirController
     {
-        public bool ValidarId(int id)
-        {
-            try
-            {
-                return ClienteDAO.ValidaId(id);
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-                return false;
-            }
-        }
         public void ExcluirCliente(ClienteModel cliente)
         {
             try
@@ -31,6 +19,20 @@ namespace AugustusFahsion.Controller
                 MessageBox.Show(excecao.Message);
             }
 
+        }
+
+        //==================================
+        public bool ValidarId(int id)
+        {
+            try
+            {
+                return ClienteDAO.ValidaId(id);
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+                return false;
+            }
         }
     }
 }

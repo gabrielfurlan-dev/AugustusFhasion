@@ -27,7 +27,6 @@ namespace AugustusFahsion.Controller
             }
             return new List<ProdutoModel>();
         }
-
         public List<ProdutoModel> ListarProdutosPorNome(string nome)
         {
             try
@@ -41,7 +40,6 @@ namespace AugustusFahsion.Controller
             }
             return new List<ProdutoModel>();
         }
-
         public List<ProdutoModel> ListarProdutosPorId(int id)
         {
             try
@@ -70,7 +68,6 @@ namespace AugustusFahsion.Controller
             }
             return new List<ProdutoModel>();
         }
-
         public List<ProdutoModel> ListarProdutosAtivosPorNome(string nome)
         {
             try
@@ -84,7 +81,6 @@ namespace AugustusFahsion.Controller
             }
             return new List<ProdutoModel>();
         }
-
         public List<ProdutoModel> ListarProdutosAtivosPorId(int id)
         {
             try

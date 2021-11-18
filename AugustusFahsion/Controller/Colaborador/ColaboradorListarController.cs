@@ -30,7 +30,6 @@ namespace AugustusFahsion.Controller
 
             return new List<ColaboradorListagemModel>();
         }
-
         public List<ColaboradorListagemModel> ListarColaboradorPorNome(string nome)
         {
             try

@@ -31,10 +31,7 @@ namespace AugustusFahsion.View.Alterar
             _controllerExcluir = produtoExcluirController;
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
 
         public void AtribuirModelParaCampos(ProdutoModel produto)
         {
@@ -56,32 +53,33 @@ namespace AugustusFahsion.View.Alterar
                 if (String.IsNullOrEmpty(txtNome.Text))
                 {
                     MessageBox.Show("Insira um nome.");
+                    return;
                 }
-                else if (String.IsNullOrEmpty(txtFabricante.Text))
+                if (String.IsNullOrEmpty(txtFabricante.Text))
                 {
                     MessageBox.Show("Insira uma marca");
+                    return;
                 }
-                else if (nupPrecoCusto.Value < 0)
+                if (nupPrecoCusto.Value < 0)
                 {
                     MessageBox.Show("Insira um preço de custo válido");
+                    return;
                 }
-                else if (nupPrecoVenda.Value < 0)
+                if (nupPrecoVenda.Value < 0)
                 {
                     MessageBox.Show("Insira um preço de venda válido");
                 }
-                else
-                {
-                    produtoModel.Nome = txtNome.Text;
-                    produtoModel.Fabricante = txtFabricante.Text;
-                    produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
-                    produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
-                    produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
-                    produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
-                    produtoModel.CodigoBarras = cbCondicao.Text;
+                
+                produtoModel.Nome = txtNome.Text;
+                produtoModel.Fabricante = txtFabricante.Text;
+                produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
+                produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
+                produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
+                produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+                produtoModel.CodigoBarras = cbCondicao.Text;
 
-                    _controllerAlterar.AtualizarProduto(produtoModel);
-                    this.Close();
-                }
+                _controllerAlterar.AtualizarProduto(produtoModel);
+                this.Close();
             }
 
             catch (Exception ex)

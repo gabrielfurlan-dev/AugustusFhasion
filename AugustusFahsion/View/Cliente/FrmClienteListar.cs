@@ -28,15 +28,12 @@ namespace AugustusFahsion.View
         }
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvLista.Rows.Count <= 0) return;
             var id = SelecionarClienteModel();
             var cliente = ClienteAlterarController.Buscar(id);
             AbrirFormAlterar(cliente);
         }
-        private int SelecionarClienteModel()
-        {
-            int id = Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
-            return id;
-        }
+        private int SelecionarClienteModel() => Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
 
 
         private void AbrirFormAlterar(ClienteModel cliente)
@@ -46,6 +43,7 @@ namespace AugustusFahsion.View
         }
         private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvLista.Rows.Count <= 0) return;
             SelecionarClienteModel();
             btnAlterar.Enabled = true;
         }
@@ -55,15 +53,15 @@ namespace AugustusFahsion.View
             if (Validacoes.EhNumerico(txtProcurar.Text))
             {
                 dgvLista.DataSource = _controller.ListarClientesPorId(int.Parse(txtProcurar.Text));
+                return;
             }
-            else if (txtProcurar.Text == "%")
+            if (txtProcurar.Text == "%")
             {
                 dgvLista.DataSource = _controller.ListarClientes();
+                return;
             }
-            else
-            {
-                dgvLista.DataSource = _controller.ListarClientesPorNome(txtProcurar.Text);
-            }
+            
+            dgvLista.DataSource = _controller.ListarClientesPorNome(txtProcurar.Text);
         }
 
     }

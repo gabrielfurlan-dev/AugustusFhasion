@@ -15,7 +15,6 @@ namespace AugustusFahsion.Model
         public DateTime DataNascimento { get; set; }
         public EnderecoModel Endereco { get; set; }
         public ContatoModel Contato { get; set; }
-
         public Pessoa()
         {
             Endereco = new EnderecoModel();

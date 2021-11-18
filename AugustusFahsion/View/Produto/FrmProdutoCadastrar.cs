@@ -18,10 +18,7 @@ namespace AugustusFahsion.View
         }
 
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
 
         private void btnEnviar_Click_1(object sender, EventArgs e)
         {
@@ -33,34 +30,35 @@ namespace AugustusFahsion.View
                     if (String.IsNullOrEmpty(txtNome.Text))
                     {
                         MessageBox.Show("Insira um nome.");
+                        return;
                     }
-                    else if (String.IsNullOrEmpty(txtFabricante.Text))
+                    if (String.IsNullOrEmpty(txtFabricante.Text))
                     {
                         MessageBox.Show("Insira uma marca");
+                        return;
                     }
-                    else if (nupPrecoCusto.Value < 0)
+                    if (nupPrecoCusto.Value < 0)
                     {
                         MessageBox.Show("Insira um preço de custo válido");
+                        return;
                     }
-                    else if (nupPrecoVenda.Value < 0)
+                    if (nupPrecoVenda.Value < 0)
                     {
                         MessageBox.Show("Insira um preço de venda válido");
+                        return;
                     }
-                    else
-                    {
-                        produtoModel.Nome = txtNome.Text;
-                        produtoModel.Fabricante = txtFabricante.Text;
-                        produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
-                        produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
-                        produtoModel.precoPromocao = (double)nupQuantidadeEstoque.Value;
-                        produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
-                        produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
-                        produtoModel.Condicao = cbCondicao.Text;
+                                        
+                    produtoModel.Nome = txtNome.Text;
+                    produtoModel.Fabricante = txtFabricante.Text;
+                    produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
+                    produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
+                    produtoModel.precoPromocao = (double)nupQuantidadeEstoque.Value;
+                    produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
+                    produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+                    produtoModel.Condicao = cbCondicao.Text;
 
-
-                        _controller.CadastrarProduto(produtoModel);
-                        this.Close();
-                    }
+                    _controller.CadastrarProduto(produtoModel);
+                    this.Close();
                 }
 
                 catch (Exception ex)

@@ -7,6 +7,19 @@ namespace AugustusFahsion.Controller
 {
     public class ProdutoExcluirController
     {
+        public void ExcluirProduto(ProdutoModel produto)
+        {
+            try
+            {
+               ProdutoDAO.ExcluirProduto(produto);
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+        }
+
+        //==============================
         public bool ValidarId(int id)
         {
             try
@@ -17,17 +30,6 @@ namespace AugustusFahsion.Controller
             {
                 MessageBox.Show(excecao.Message);
                 return false;
-            }
-        }
-        public void ExcluirProduto(ProdutoModel produto)
-        {
-            try
-            {
-               ProdutoDAO.ExcluirProduto(produto);
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
             }
         }
     }

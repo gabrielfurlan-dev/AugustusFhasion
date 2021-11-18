@@ -42,6 +42,10 @@
             // 
             // dgvLista
             // 
+            this.dgvLista.AllowUserToAddRows = false;
+            this.dgvLista.AllowUserToDeleteRows = false;
+            this.dgvLista.AllowUserToResizeColumns = false;
+            this.dgvLista.AllowUserToResizeRows = false;
             this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,10 +71,11 @@
             this.dgvLista.GridColor = System.Drawing.Color.Black;
             this.dgvLista.Location = new System.Drawing.Point(42, 138);
             this.dgvLista.Name = "dgvLista";
+            this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowTemplate.Height = 25;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(603, 434);
+            this.dgvLista.Size = new System.Drawing.Size(599, 433);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
@@ -82,7 +87,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(252, 42);
+            this.label1.Location = new System.Drawing.Point(250, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 30);
             this.label1.TabIndex = 1;
@@ -93,7 +98,7 @@
             this.btnFechar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFechar.Location = new System.Drawing.Point(229, 606);
+            this.btnFechar.Location = new System.Drawing.Point(227, 605);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(136, 41);
             this.btnFechar.TabIndex = 1;
@@ -107,7 +112,7 @@
             this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAlterar.Enabled = false;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAlterar.Location = new System.Drawing.Point(371, 606);
+            this.btnAlterar.Location = new System.Drawing.Point(369, 605);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(136, 41);
             this.btnAlterar.TabIndex = 1;
@@ -155,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(684, 681);
+            this.ClientSize = new System.Drawing.Size(680, 680);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtProcurar);
             this.Controls.Add(this.label4);

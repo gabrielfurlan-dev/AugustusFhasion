@@ -22,112 +22,133 @@ namespace AugustusFahsion.View.Cadastrar
             try
             {
                 if (txtNome.Text.NuloOuVazio())
-                    MessageBox.Show("Insira um nome.");
-
-                else if (txtNome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um nome.");
+                    return;
                 }
-                else if (txtSobrenome.Text.NuloOuVazio())
+
+                if (txtNome.Text.NuloOuVazio())
+                {
+                    MessageBox.Show("Insira um nome.");
+                    return;
+                }
+                if (txtSobrenome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um sobrenome");
+                    return;
                 }
-                else if (cbSexo.Text.NuloOuVazio())
+                if (cbSexo.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o sexo.");
+                    return;
                 }
-                else if (dtpDataNascimento.Value.DataDeHoje())
+                if (dtpDataNascimento.Value.DataDeHoje())
                 {
                     MessageBox.Show("Selecione uma data de nascimento valida");
+                    return;
                 }
-                else if (mtxtCep.Text.NuloOuVazio())
+                if (mtxtCep.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um CEP");
+                    return;
                 }
-                else if (nupSalario.Value < 0)
+                if (nupSalario.Value < 0)
                 {
                     MessageBox.Show("Insira um salario válido.");
+                    return;
                 }
-                else if (nupComissao.Value < 0)
+                if (nupComissao.Value < 0)
                 {
                     MessageBox.Show("Insira uma comissão válida.");
+                    return;
                 }
-                else if (txtLogradouro.Text.NuloOuVazio())
+                if (txtLogradouro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um Logradouro");
+                    return;
                 }
-                else if (txtCidade.Text.NuloOuVazio())
+                if (txtCidade.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira uma cidade");
+                    return;
                 }
-                else if (cbUf.Text.NuloOuVazio())
+                if (cbUf.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione um Estado (UF)");
+                    return;
                 }
-                else if (txtBairro.Text.NuloOuVazio())
+                if (txtBairro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um bairro");
+                    return;
                 }
-                else if (txtNumeroEndereco.Text.NuloOuVazio())
+                if (txtNumeroEndereco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um numero de endereço.");
+                    return;
                 }
-                else if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+                if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
                 {
                     MessageBox.Show("Insira um numero de celular válido");
+                    return;
                 }
-                else if (txtEmail.Text.NuloOuVazio())
+                if (txtEmail.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um endereço de email.");
+                    return;
                 }
-                else if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
+                if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
                     MessageBox.Show("Insira um CPF");
+                    return;
                 }
-                else if (txtBanco.Text.NuloOuVazio())
+                if (txtBanco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um banco");
+                    return;
                 }
-                else if (mtxtAgencia.Text.NuloOuVazio())
+                if (mtxtAgencia.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira o número da agência bancária.");
+                    return;
                 }
-                else if (mtxtConta.Text.NuloOuVazio())
+                if (mtxtConta.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira o numero da conta bancária");
+                    return;
                 }
-                else if (cbTipoConta.Text.NuloOuVazio())
+                if (cbTipoConta.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o tipo da conta bancária.");
+                    return;
                 }
-                else
-                {
-                    colaboradorModel.NomeCompleto.Nome = txtNome.Text;
-                    colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
-                    colaboradorModel.Sexo = cbSexo.Text;
-                    colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                    colaboradorModel.Salario = (double)nupSalario.Value;
-                    colaboradorModel.Comissao = (int)nupComissao.Value;
-                    colaboradorModel.Endereco.Cep = mtxtCep.Text;
-                    colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
-                    colaboradorModel.Endereco.Cidade = txtCidade.Text;
-                    colaboradorModel.Endereco.Uf = cbUf.Text;
-                    colaboradorModel.Endereco.Complemento = txtComplemento.Text;
-                    colaboradorModel.Endereco.Bairro = txtBairro.Text;
-                    colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
-                    colaboradorModel.Contato.Telefone = txtTelefone.Text;
-                    colaboradorModel.Contato.Celular = mtxtCelular.Text;
-                    colaboradorModel.Contato.Email = txtEmail.Text;
-                    colaboradorModel.Cpf = mtxtCpf.Text;
+               
+                colaboradorModel.NomeCompleto.Nome = txtNome.Text;
+                colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
+                colaboradorModel.Sexo = cbSexo.Text;
+                colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+                colaboradorModel.Salario = (double)nupSalario.Value;
+                colaboradorModel.Comissao = (int)nupComissao.Value;
+                colaboradorModel.Endereco.Cep = mtxtCep.Text;
+                colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
+                colaboradorModel.Endereco.Cidade = txtCidade.Text;
+                colaboradorModel.Endereco.Uf = cbUf.Text;
+                colaboradorModel.Endereco.Complemento = txtComplemento.Text;
+                colaboradorModel.Endereco.Bairro = txtBairro.Text;
+                colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                colaboradorModel.Contato.Telefone = txtTelefone.Text;
+                colaboradorModel.Contato.Celular = mtxtCelular.Text;
+                colaboradorModel.Contato.Email = txtEmail.Text;
+                colaboradorModel.Cpf = mtxtCpf.Text;
 
-                    colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
-                    colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
-                    colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
-                    colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
+                colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
+                colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
+                colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
+                colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
 
-                    _controller.CadastrarColaborador(colaboradorModel);
-                    this.Close();
-                }
+                _controller.CadastrarColaborador(colaboradorModel);
+                this.Close();
+                
             }
             catch (Exception excecao)
             {
@@ -135,10 +156,7 @@ namespace AugustusFahsion.View.Cadastrar
             }
             
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+        
     }
 }

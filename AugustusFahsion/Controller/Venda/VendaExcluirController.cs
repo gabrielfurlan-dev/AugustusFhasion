@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AugustusFahsion.Controller.Venda
 {
-    class AlterarVendaController
+    class VendaExcluirController
     {
     }
 }

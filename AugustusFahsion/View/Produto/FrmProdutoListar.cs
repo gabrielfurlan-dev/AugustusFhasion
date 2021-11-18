@@ -13,10 +13,9 @@ namespace AugustusFahsion.View.Listar
             InitializeComponent();
             _controller = produtoListarController;
         }
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
+        private void btnFechar_Click(object sender, EventArgs e) =>
             this.Close();
-        }
+        
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             var id = SelecionarProdutoModel();
@@ -30,14 +29,13 @@ namespace AugustusFahsion.View.Listar
             {
                 dgvLista.DataSource = _controller.ListarProdutosPorId(int.Parse(txtProcurar.Text));
             }
-            else if (txtProcurar.Text == "%")
+            if (txtProcurar.Text == "%")
             {
                 dgvLista.DataSource = _controller.ListarProdutos();
+                return;
             }
-            else
-            {
-                dgvLista.DataSource = _controller.ListarProdutosPorNome(txtProcurar.Text);
-            }
+
+            dgvLista.DataSource = _controller.ListarProdutosPorNome(txtProcurar.Text);
         }
 
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -47,10 +45,9 @@ namespace AugustusFahsion.View.Listar
             AbrirFormAlterar(produto);
         }
 
-        private int SelecionarProdutoModel()
-        {
-            return Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
-        }
+        private int SelecionarProdutoModel() =>
+                Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
+        
 
         private void AbrirFormAlterar(ProdutoModel produto)
         {
@@ -58,9 +55,7 @@ namespace AugustusFahsion.View.Listar
             this.Close();
         }
 
-        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e) =>
             btnAlterar.Enabled = true;
-        }
     }
 }

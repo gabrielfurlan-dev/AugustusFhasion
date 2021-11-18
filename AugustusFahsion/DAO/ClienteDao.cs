@@ -72,7 +72,7 @@ namespace AugustusFahsion.DAO
                 {
                     conexao.Open();
                     var query = @"select p.IdPessoa, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
-                    c.ValorLimiteAPrazo, p.IdPessoa,
+                    c.ValorLimiteAPrazo, c.IdCliente, p.IdPessoa,
                     p.Nome, p.Sobrenome, p.IdPessoa,
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                     cn.Telefone, cn.Celular, cn.Email
@@ -80,12 +80,12 @@ namespace AugustusFahsion.DAO
                     inner join Cliente c on p.IdPessoa = c.IdPessoa
                     inner join Endereco e on p.IdPessoa = e.IdPessoa
                     inner join Contato cn on p.IdPessoa = cn.IdPessoa
-                    where p.IdPessoa = @IdPessoa;";
+                    where c.IdCliente = @IdCliente;";
 
                     return conexao.Query<ClienteModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteModel>
                         (query, (clienteModel, nomeCompleto, enderecoModel, contatoModel) =>
                         MapearClienteAlterar(clienteModel, nomeCompleto, enderecoModel, contatoModel),
-                        new { IdPessoa = id }, splitOn: "IdPessoa").FirstOrDefault();
+                        new { IdCliente = id }, splitOn: "IdPessoa").FirstOrDefault();
                 }
             }
             catch (Exception ex)
@@ -95,7 +95,7 @@ namespace AugustusFahsion.DAO
         }
         public static List<ClienteListagemModel> BuscarClientePorNome(string nome)
         {
-            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
+            const string listarPessoa = @"select c.IdPessoa, c.IdCliente, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -119,8 +119,8 @@ namespace AugustusFahsion.DAO
         }
         public static List<ClienteListagemModel> BuscarClientePorId(int id) 
         {
-            const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
-                e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email
+            const string listarPessoa = @"select c.IdPessoa, c.IdCliente. p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
+                e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email,
                 from Pessoa p
                 inner join Cliente c on p.IdPessoa = c.IdPessoa
                 inner join Endereco e on p.IdPessoa = e.IdPessoa

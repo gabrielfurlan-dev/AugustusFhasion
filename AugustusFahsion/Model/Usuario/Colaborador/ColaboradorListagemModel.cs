@@ -11,7 +11,7 @@ namespace AugustusFahsion.Model
 {
     public class ColaboradorListagemModel
     {
-        public int IdPessoa { get; set; }
+        public int IdColaborador { get; set; }
         public NomeCompletoModel NomeCompleto { get; set; }
         public EnderecoModel Endereco { get; set; }
         public ContatoModel Contato { get; set; }

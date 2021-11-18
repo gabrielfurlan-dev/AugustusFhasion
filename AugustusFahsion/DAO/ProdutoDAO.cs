@@ -17,6 +17,8 @@ namespace AugustusFahsion.DAO
                     @PrecoCusto, @PrecoVenda, @CodigoBarras, 
                     @QuantidadeEstoque, @Condicao)";
                     conexao.Query<ProdutoModel>(query, produto);
+
+
                 }
             }catch(Exception ex)
             {

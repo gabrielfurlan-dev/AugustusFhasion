@@ -15,18 +15,6 @@ namespace AugustusFahsion.Controller
             ClienteExcluirController clienteExcluirController = new ClienteExcluirController();
             new FrmClienteAlterar(this, clienteModelSelecionado, clienteExcluirController).Show();
         }
-        public bool ValidarId(int id)
-        {
-            try
-            {
-                return ClienteDAO.ValidaId(id);
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-                return false;
-            }
-        }
         public static ClienteModel Buscar(int id)
         {
                 return ClienteDAO.BuscarCliente(id);
@@ -44,6 +32,20 @@ namespace AugustusFahsion.Controller
             catch (Exception excecao)
             {
                 MessageBox.Show(excecao.Message);
+            }
+        }
+
+        //================================
+        public bool ValidarId(int id)
+        {
+            try
+            {
+                return ClienteDAO.ValidaId(id);
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+                return false;
             }
         }
     }

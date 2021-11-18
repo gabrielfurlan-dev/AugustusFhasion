@@ -18,23 +18,7 @@ namespace AugustusFahsion.Controller
             new FrmProdutoAlterar(this, produtoExcluirController, produtoModelSelecionado).Show();
         }
 
-        public bool ValidarId(int id)
-        {
-            try
-            {
-                return ProdutoDAO.ValidaId(id);
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-                return false;
-            }
-        }
-
-        public static ProdutoModel Buscar(int id)
-        {
-            return ProdutoDAO.Buscar(id);    
-        }
+        public static ProdutoModel Buscar(int id) => ProdutoDAO.Buscar(id);    
 
         public void AtualizarProduto(ProdutoModel produtoModel)
         {
@@ -49,6 +33,20 @@ namespace AugustusFahsion.Controller
             catch (Exception excecao)
             {
                 MessageBox.Show(excecao.Message);
+            }
+        }
+        
+        //==============================
+        public bool ValidarId(int id)
+        {
+            try
+            {
+                return ProdutoDAO.ValidaId(id);
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+                return false;
             }
         }
     }
