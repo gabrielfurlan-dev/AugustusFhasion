@@ -12,18 +12,21 @@ namespace AugustusFahsion.Model
         public string FormaPagamento { get; set; }
         public decimal TotalBruto 
         {
-            get => VendaProdutoModel.Sum(x => (x.PrecoVenda) * (x.Quantidade)); set { }
+            get => ListaDeItens.Sum(x => (x.PrecoVenda) * (x.Quantidade));
         }
         public decimal TotalLiquido 
         {
-            get => VendaProdutoModel.Sum(x =>  ((x.PrecoLiquido) * (x.Quantidade)) - (x.Desconto)); set { }
+            get => ListaDeItens.Sum(x => x.PrecoLiquido);
         }
-        public decimal TotalDesconto 
-        { 
-            get => VendaProdutoModel.Sum(x => (x.Desconto)); set { }
+        public decimal TotalDesconto {get => ListaDeItens.Sum(x => (x.Desconto));}
+
+        public decimal TotalLucro
+        {
+            get => ListaDeItens.Sum(x => (x.Lucro));
         }
-        public List<VendaProdutoModel> VendaProdutoModel { get; set; }
-        public VendaModel() => VendaProdutoModel = new List<VendaProdutoModel>();
+
+        public List<VendaProdutoModel> ListaDeItens { get; set; }
+        public VendaModel() => ListaDeItens = new List<VendaProdutoModel>();
         
     }
 }

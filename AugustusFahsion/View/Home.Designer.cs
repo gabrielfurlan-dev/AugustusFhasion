@@ -32,18 +32,6 @@ namespace AugustusFahsion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,32 +42,31 @@ namespace AugustusFahsion
             this.btnListarProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnListarVendas = new System.Windows.Forms.Button();
+            this.btnAdicionarVenda = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnListarVendas = new System.Windows.Forms.Button();
             this.btnCadastrarColaborador = new System.Windows.Forms.Button();
             this.btnListarColaborador = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAdicionarVenda = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -88,115 +75,11 @@ namespace AugustusFahsion
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(218)))));
             this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem,
-            this.listarToolStripMenuItem,
-            this.alterarToolStripMenuItem,
-            this.excluirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1009, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1009, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastrarToolStripMenuItem
-            // 
-            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem,
-            this.colaboradorToolStripMenuItem,
-            this.produtoToolStripMenuItem});
-            this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cadastrarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(101, 23);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
-            // 
-            // clienteToolStripMenuItem
-            // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.clienteToolStripMenuItem.Text = "Cliente";
-            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.ClienteToolStripMenuItem_Click_1);
-            // 
-            // colaboradorToolStripMenuItem
-            // 
-            this.colaboradorToolStripMenuItem.Name = "colaboradorToolStripMenuItem";
-            this.colaboradorToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.colaboradorToolStripMenuItem.Text = "Colaborador";
-            this.colaboradorToolStripMenuItem.Click += new System.EventHandler(this.ColaboradorToolStripMenuItem_Click);
-            // 
-            // produtoToolStripMenuItem
-            // 
-            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.produtoToolStripMenuItem.Text = "Produto";
-            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.ProdutoToolStripMenuItem_Click);
-            // 
-            // listarToolStripMenuItem
-            // 
-            this.listarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem1,
-            this.colaboradoresToolStripMenuItem,
-            this.produtoToolStripMenuItem1});
-            this.listarToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
-            this.listarToolStripMenuItem.Text = "Listar";
-            // 
-            // clienteToolStripMenuItem1
-            // 
-            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
-            this.clienteToolStripMenuItem1.Text = "Cliente";
-            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.ClienteToolStripMenuItem1_Click);
-            // 
-            // colaboradoresToolStripMenuItem
-            // 
-            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.ColaboradoresToolStripMenuItem_Click);
-            // 
-            // produtoToolStripMenuItem1
-            // 
-            this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
-            this.produtoToolStripMenuItem1.Text = "Produto";
-            this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.ProdutoToolStripMenuItem1_Click);
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtoToolStripMenuItem2});
-            this.alterarToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.alterarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
-            this.alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // produtoToolStripMenuItem2
-            // 
-            this.produtoToolStripMenuItem2.Name = "produtoToolStripMenuItem2";
-            this.produtoToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
-            this.produtoToolStripMenuItem2.Text = "Produto";
-            this.produtoToolStripMenuItem2.Click += new System.EventHandler(this.ProdutoToolStripMenuItem2_Click);
-            // 
-            // excluirToolStripMenuItem
-            // 
-            this.excluirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtoToolStripMenuItem3});
-            this.excluirToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.excluirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
-            this.excluirToolStripMenuItem.Text = "Excluir";
-            // 
-            // produtoToolStripMenuItem3
-            // 
-            this.produtoToolStripMenuItem3.Name = "produtoToolStripMenuItem3";
-            this.produtoToolStripMenuItem3.Size = new System.Drawing.Size(180, 24);
-            this.produtoToolStripMenuItem3.Text = "Produto";
             // 
             // pictureBox4
             // 
@@ -216,7 +99,7 @@ namespace AugustusFahsion
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(83)))), ((int)(((byte)(87)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(955, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 24);
@@ -356,6 +239,35 @@ namespace AugustusFahsion
             this.panel1.Size = new System.Drawing.Size(892, 537);
             this.panel1.TabIndex = 6;
             // 
+            // btnAdicionarVenda
+            // 
+            this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAdicionarVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnAdicionarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarVenda.BackgroundImage")));
+            this.btnAdicionarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdicionarVenda.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnAdicionarVenda.Location = new System.Drawing.Point(30, 345);
+            this.btnAdicionarVenda.Name = "btnAdicionarVenda";
+            this.btnAdicionarVenda.Size = new System.Drawing.Size(221, 119);
+            this.btnAdicionarVenda.TabIndex = 12;
+            this.btnAdicionarVenda.UseVisualStyleBackColor = false;
+            this.btnAdicionarVenda.Click += new System.EventHandler(this.btnAdicionarVenda_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(538, 246);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 59);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -368,6 +280,19 @@ namespace AugustusFahsion
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(538, 204);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(161, 35);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Colaborador";
             // 
             // btnListarVendas
             // 
@@ -387,31 +312,6 @@ namespace AugustusFahsion
             this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnListarVendas.UseVisualStyleBackColor = false;
             this.btnListarVendas.Click += new System.EventHandler(this.BtnListarColaborador_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(538, 246);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(538, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 35);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Colaborador";
             // 
             // btnCadastrarColaborador
             // 
@@ -445,18 +345,18 @@ namespace AugustusFahsion
             this.btnListarColaborador.UseVisualStyleBackColor = false;
             this.btnListarColaborador.Click += new System.EventHandler(this.BtnListarColaborador_Click);
             // 
-            // pictureBox6
+            // pictureBox8
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(489, 17);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(342, 154);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox8.Location = new System.Drawing.Point(489, 337);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(342, 154);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 1;
+            this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -471,18 +371,18 @@ namespace AugustusFahsion
             this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox8
+            // pictureBox6
             // 
-            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox8.Location = new System.Drawing.Point(489, 337);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(342, 154);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 1;
-            this.pictureBox8.TabStop = false;
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(489, 17);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(342, 154);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // label1
             // 
@@ -544,23 +444,6 @@ namespace AugustusFahsion
             this.label6.TabIndex = 8;
             this.label6.Text = "Fashion";
             // 
-            // btnAdicionarVenda
-            // 
-            this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAdicionarVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarVenda.BackgroundImage")));
-            this.btnAdicionarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdicionarVenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.Location = new System.Drawing.Point(30, 345);
-            this.btnAdicionarVenda.Name = "btnAdicionarVenda";
-            this.btnAdicionarVenda.Size = new System.Drawing.Size(221, 119);
-            this.btnAdicionarVenda.TabIndex = 12;
-            this.btnAdicionarVenda.UseVisualStyleBackColor = false;
-            this.btnAdicionarVenda.Click += new System.EventHandler(this.btnAdicionarVenda_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -576,18 +459,16 @@ namespace AugustusFahsion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -599,15 +480,6 @@ namespace AugustusFahsion
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
@@ -618,9 +490,6 @@ namespace AugustusFahsion
         private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button btnListarProduto;
         private System.Windows.Forms.Button btnCadastrarProduto;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnListarColaborador;
         private System.Windows.Forms.PictureBox pictureBox3;

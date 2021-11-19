@@ -37,6 +37,8 @@ namespace AugustusFahsion.View.Venda
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnExcluirVenda = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,7 +64,7 @@ namespace AugustusFahsion.View.Venda
             this.label12 = new System.Windows.Forms.Label();
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
+            this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalLiquido = new System.Windows.Forms.Label();
             this.lblTotalDesconto = new System.Windows.Forms.Label();
@@ -70,11 +72,10 @@ namespace AugustusFahsion.View.Venda
             this.lblTotalBruto = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -82,16 +83,17 @@ namespace AugustusFahsion.View.Venda
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(470, 32);
+            this.label4.Location = new System.Drawing.Point(482, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 30);
+            this.label4.Size = new System.Drawing.Size(143, 30);
             this.label4.TabIndex = 55;
-            this.label4.Text = "Registrar venda";
+            this.label4.Text = "Alterar venda";
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.btnExcluirVenda);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnAdicionar);
@@ -118,7 +120,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.cbFormaPagamento);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.dgvCarrinho);
+            this.panel1.Controls.Add(this.dgvProdutosVenda);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblTotalLiquido);
             this.panel1.Controls.Add(this.lblTotalDesconto);
@@ -141,15 +143,42 @@ namespace AugustusFahsion.View.Venda
             this.label18.TabIndex = 113;
             this.label18.Text = "Quantidade";
             // 
+            // btnExcluirVenda
+            // 
+            this.btnExcluirVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluirVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirVenda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExcluirVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnExcluirVenda.Location = new System.Drawing.Point(709, 649);
+            this.btnExcluirVenda.Name = "btnExcluirVenda";
+            this.btnExcluirVenda.Size = new System.Drawing.Size(117, 47);
+            this.btnExcluirVenda.TabIndex = 112;
+            this.btnExcluirVenda.Text = "Excluir";
+            this.btnExcluirVenda.UseVisualStyleBackColor = false;
+            this.btnExcluirVenda.Click += new System.EventHandler(this.btnExcluirVenda_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button3.Location = new System.Drawing.Point(583, 649);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 47);
+            this.button3.TabIndex = 112;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button2.Location = new System.Drawing.Point(825, 649);
+            this.button2.Location = new System.Drawing.Point(832, 649);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 47);
+            this.button2.Size = new System.Drawing.Size(124, 47);
             this.button2.TabIndex = 112;
             this.button2.Text = "Salvar";
             this.button2.UseVisualStyleBackColor = false;
@@ -411,13 +440,13 @@ namespace AugustusFahsion.View.Venda
             this.label15.TabIndex = 106;
             this.label15.Text = "Forma de Pagamento";
             // 
-            // dgvCarrinho
+            // dgvProdutosVenda
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCarrinho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCarrinho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCarrinho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvProdutosVenda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProdutosVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutosVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -425,8 +454,8 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarrinho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutosVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -434,13 +463,13 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCarrinho.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCarrinho.GridColor = System.Drawing.Color.Black;
-            this.dgvCarrinho.Location = new System.Drawing.Point(141, 134);
-            this.dgvCarrinho.Name = "dgvCarrinho";
-            this.dgvCarrinho.ReadOnly = true;
-            this.dgvCarrinho.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvCarrinho.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvProdutosVenda.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProdutosVenda.GridColor = System.Drawing.Color.Black;
+            this.dgvProdutosVenda.Location = new System.Drawing.Point(141, 134);
+            this.dgvProdutosVenda.Name = "dgvProdutosVenda";
+            this.dgvProdutosVenda.ReadOnly = true;
+            this.dgvProdutosVenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvProdutosVenda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -448,16 +477,17 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarrinho.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCarrinho.RowHeadersVisible = false;
-            this.dgvCarrinho.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvProdutosVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProdutosVenda.RowHeadersVisible = false;
+            this.dgvProdutosVenda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCarrinho.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCarrinho.RowTemplate.Height = 25;
-            this.dgvCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarrinho.Size = new System.Drawing.Size(397, 562);
-            this.dgvCarrinho.TabIndex = 92;
+            this.dgvProdutosVenda.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProdutosVenda.RowTemplate.Height = 25;
+            this.dgvProdutosVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutosVenda.Size = new System.Drawing.Size(397, 562);
+            this.dgvProdutosVenda.TabIndex = 92;
+            this.dgvProdutosVenda.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutosVenda_CellMouseClick);
             // 
             // label2
             // 
@@ -526,19 +556,6 @@ namespace AugustusFahsion.View.Venda
             this.lbl.TabIndex = 102;
             this.lbl.Text = "Total bruto";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button3.Location = new System.Drawing.Point(688, 649);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 47);
-            this.button3.TabIndex = 112;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // FrmVendaAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -556,7 +573,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -591,7 +608,7 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbFormaPagamento;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dgvCarrinho;
+        private System.Windows.Forms.DataGridView dgvProdutosVenda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTotalLiquido;
         private System.Windows.Forms.Label lblTotalDesconto;
@@ -599,5 +616,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lblTotalBruto;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Button btnExcluirVenda;
     }
 }

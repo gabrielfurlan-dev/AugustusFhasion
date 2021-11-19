@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace AugustusFahsion.DAO
 {
-    class VendaDAO
+    public class VendaDAO
     {
         //FUNÇÕES C R U D ===============================================================
         //CRIAR
@@ -30,9 +30,9 @@ namespace AugustusFahsion.DAO
                 {
                     vendaModel.IdVenda = conexao.ExecuteScalar<int>(venda, vendaModel,transacao);
 
-                    vendaModel.VendaProdutoModel.ForEach(x => x.IdVenda = vendaModel.IdVenda);
+                    vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
 
-                    conexao.Execute(VendaProduto, vendaModel.VendaProdutoModel, transacao);
+                    conexao.Execute(VendaProduto, vendaModel.ListaDeItens, transacao);
 
                     transacao.Commit();
                 }
@@ -42,7 +42,6 @@ namespace AugustusFahsion.DAO
                  throw new Exception(ex.Message);
             }
         }
-
         public static List<VendaListagemModel> ListarVendas()
         {
             try
@@ -50,12 +49,13 @@ namespace AugustusFahsion.DAO
                 using (var conexao = new SqlConexao().Connection())
                 {
                     conexao.Open();
-                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador
-					from Venda v
-                    inner join Cliente c on v.IdCliente = c.IdCliente
-					inner join Colaborador co on v.IdColaborador = co.IdColaborador
-					inner join Pessoa p on p.IdPessoa = c.IdPessoa 
-					inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa";
+                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
+                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido
+					            from Venda v
+                                inner join Cliente c on v.IdCliente = c.IdCliente
+					            inner join Colaborador co on v.IdColaborador = co.IdColaborador
+					            inner join Pessoa p on p.IdPessoa = c.IdPessoa 
+					            inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa";
 
                     return conexao.Query<VendaListagemModel>(query).AsList();
                 }
@@ -131,5 +131,45 @@ namespace AugustusFahsion.DAO
         //        throw new Exception(ex.Message);
         //    }
         //}
+
+        public static void ExcluirVenda(VendaModel venda) 
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction())
+                {
+                    string deleteVendaProduto = @"delete from VendaProduto where IdVenda = @idVenda";
+                    string deleteVenda = @"delete from Venda where IdVenda = @idVenda";
+
+                    var idVenda = venda.IdVenda;
+                    conexao.Execute(deleteVendaProduto, transacao);
+                    conexao.Execute(deleteVenda, transacao);
+                    transacao.Commit();
+                }
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static void AtualizarEstoque(VendaModel venda) 
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction()) 
+                {
+                    string query = @"update Produto QuantidadeEstoque = @QuantidadeEstoque where IdProduto = @IdProduto";
+
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

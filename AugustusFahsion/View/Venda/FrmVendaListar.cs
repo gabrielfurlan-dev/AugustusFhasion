@@ -22,11 +22,10 @@ namespace AugustusFahsion.View.Venda
 
         private void dgvListaVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            SelecionarVendaModel();
+                
         }
 
-        private int SelecionarVendaModel() =>
-                Convert.ToInt32(dgvListaVenda.SelectedRows[0].Cells[0].Value);
+        private int SelecionarVendaModel() => Convert.ToInt32(dgvListaVenda.SelectedRows[0].Cells[0].Value);
 
         private void dgvListaVenda_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {

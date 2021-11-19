@@ -5,7 +5,7 @@ using System;
 
 namespace AugustusFahsion.Controller.Venda
 {
-    class VendaAlterarController
+    public class VendaAlterarController
     {
 
         public VendaModel BuscarVenda(int id) => VendaDAO.BuscarVenda(id);
