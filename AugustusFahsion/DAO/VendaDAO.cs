@@ -203,5 +203,57 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public static List<VendaProdutoModel> ListarProdutosDaVenda(int idVenda) 
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction()) 
+                {
+                    var query = @"select vp.IdProduto, vp.Quantidade, vp.PrecoLiquido, vp.Desconto,
+                                vp.Total, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
+					            p.Nome
+
+					            from VendaProduto vp
+					            inner join Produto p on vp.IdProduto = p.IdProduto
+					            where IdVenda = @idVenda";
+
+                    return conexao.Query< VendaProdutoModel>(query, new { idVenda }, transacao).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public static VendaProdutoModel BuscarDadosDoProdutoDaVenda(int idProduto) 
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction())
+                {
+                    var query = @"select vp.IdProduto, vp.Quantidade, vp.PrecoLiquido, vp.Desconto,
+                                vp.Total, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
+					            p.Nome
+
+					            from VendaProduto vp
+					            inner join Produto p on vp.IdProduto = p.IdProduto
+					            where vp.IdProduto = @idProduto";
+
+                    var resultado = conexao.QueryFirstOrDefault<VendaProdutoModel>(query, new { idProduto }, transacao);
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

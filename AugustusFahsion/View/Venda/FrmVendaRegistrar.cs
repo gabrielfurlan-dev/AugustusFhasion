@@ -85,15 +85,8 @@ namespace AugustusFahsion.View.Venda
         {
             var id = SelecionarProdutoModel();
             var produto = ProdutoAlterarController.Buscar(id);
-
-            lblIdProduto.Text = produto.IdProduto.ToString();
-            lblProdutoSelecionado.Text = produto.Nome;
-            lblPrecoProduto.Text = produto.PrecoVenda.ToString();
-            lblTotalProdutoSemDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblTotalProdutoComDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblProdutoLucroUnitario.Text = (produto.PrecoVenda - produto.PrecoCusto).ToString();
-            nupQuantidade.Maximum = produto.QuantidadeEstoque;
-            AtualizarPrecosProdutoSelecionado();
+            AtribuirValoresDoProdutoSelecionado(produto);
+            CalcularPrecosProdutoSelecionado();
         }
         private void dgvClienteListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -111,12 +104,11 @@ namespace AugustusFahsion.View.Venda
         }
         private void dgvCarrinho_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) => SelecionarCarrinhoModel();
 
-        //atualizar preços
-        private void NupQuantidade_ValueChanged(object sender, EventArgs e) => AtualizarPrecosProdutoSelecionado();
-        private void NupDesconto_KeyUp(object sender, KeyEventArgs e) => AtualizarPrecosProdutoSelecionado(); 
-        private void NupDesconto_ValueChanged(object sender, EventArgs e) => AtualizarPrecosProdutoSelecionado();
-        private void NupQuantidade_KeyUp(object sender, KeyEventArgs e) => AtualizarPrecosProdutoSelecionado();
-
+        //atualizar preços por ação
+        private void NupQuantidade_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
+        private void NupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado(); 
+        private void NupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
+        private void NupQuantidade_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
 
         //funções do carinhho
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -179,22 +171,26 @@ namespace AugustusFahsion.View.Venda
             RegistrarVenda();
         }
 
-
-
-
-
         //selecionar Model
-        public int SelecionarClienteModel() => Convert.ToInt32(dgvClienteListar.SelectedRows[0].Cells[0].Value);
-        public int SelecionarColaboradorModel() => Convert.ToInt32(dgvColaboradorListar.SelectedRows[0].Cells[0].Value);
-        public int SelecionarProdutoModel() => Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
-        public string SelecionarCarrinhoModel() => dgvCarrinho.SelectedRows[0].Cells[7].Value.ToString();
+        public int SelecionarClienteModel() => 
+            Convert.ToInt32(dgvClienteListar.SelectedRows[0].Cells[0].Value);
+        public int SelecionarColaboradorModel() => 
+            Convert.ToInt32(dgvColaboradorListar.SelectedRows[0].Cells[0].Value);
+        public int SelecionarProdutoModel() => 
+            Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
+        public string SelecionarCarrinhoModel() => 
+            dgvCarrinho.SelectedRows[0].Cells[7].Value.ToString();
 
         //atualizar precos
-        private decimal ValorTotalBrutoProduto() => Convert.ToDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
-        private decimal ValorTotalDescontoProduto() => ValorTotalBrutoProduto() - ValorTotalDesconto();
-        private decimal ValorProdutoLucro() => (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) - ValorTotalDescontoProduto();
-        private decimal ValorTotalDesconto() => ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
-        private void AtualizarPrecosProdutoSelecionado()
+        private decimal ValorTotalBrutoProduto() =>
+            Convert.ToDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
+        private decimal ValorTotalDescontoProduto() => 
+            ValorTotalBrutoProduto() - ValorTotalDesconto();
+        private decimal ValorProdutoLucro() => 
+            (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) - ValorTotalDescontoProduto();
+        private decimal ValorTotalDesconto() => 
+            ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
+        private void CalcularPrecosProdutoSelecionado()
         {
             lblTotalProdutoSemDesconto.Text = ValorTotalBrutoProduto().ToString("c");
             lblTotalProdutoComDesconto.Text = ValorTotalDesconto().ToString("c");
@@ -213,7 +209,16 @@ namespace AugustusFahsion.View.Venda
             lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
         }
 
-        //atribuir campos para model
+        private void AtribuirValoresDoProdutoSelecionado(ProdutoModel produto)
+        {
+            lblIdProduto.Text = produto.IdProduto.ToString();
+            lblProdutoSelecionado.Text = produto.Nome;
+            lblPrecoProduto.Text = produto.PrecoVenda.ToString();
+            lblTotalProdutoSemDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
+            lblTotalProdutoComDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
+            lblProdutoLucroUnitario.Text = (produto.PrecoVenda - produto.PrecoCusto).ToString();
+            nupQuantidade.Maximum = produto.QuantidadeEstoque;
+        }
         public void RegistrarVenda() 
         {
             _vendaRegistrarController = new VendaRegistrarController();
@@ -241,8 +246,7 @@ namespace AugustusFahsion.View.Venda
             });
         }
 
-        public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => (from x in _vendaModel.ListaDeItens
-                                                                         where x.IdProduto == id
-                                                                         select x).FirstOrDefault();
+        public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => 
+            (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
     }
 }

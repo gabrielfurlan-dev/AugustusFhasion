@@ -43,6 +43,19 @@ namespace AugustusFahsion.Controller.Venda
             }
             return new List<VendaListagemModel>();
         }
+        public List<VendaProdutoModel> ListarProdutosDaVenda(int idVenda) 
+        {
+            try
+            {
+                return VendaDAO.ListarProdutosDaVenda(idVenda);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return new List<VendaProdutoModel>();
+        }
+
         //public List<ProdutoModel> ListarProdutosPorNome(string nome)
         //{
         //    try

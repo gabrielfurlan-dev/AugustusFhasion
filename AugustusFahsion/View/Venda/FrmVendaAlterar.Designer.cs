@@ -34,11 +34,19 @@ namespace AugustusFahsion.View.Venda
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPesquisarProduto = new System.Windows.Forms.Button();
+            this.txtProcurar = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnExcluirVenda = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -53,11 +61,11 @@ namespace AugustusFahsion.View.Venda
             this.lblTotalDescontoProduto = new System.Windows.Forms.Label();
             this.lblPrecoProduto = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblProdutoSelecionado = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblIdVenda = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdProduto = new System.Windows.Forms.Label();
             this.lblIdColaborador = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.lblColaboradorSelecionado = new System.Windows.Forms.Label();
@@ -66,7 +74,9 @@ namespace AugustusFahsion.View.Venda
             this.label12 = new System.Windows.Forms.Label();
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.dgvProdutoListar = new System.Windows.Forms.DataGridView();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalLiquido = new System.Windows.Forms.Label();
             this.lblTotalDesconto = new System.Windows.Forms.Label();
@@ -77,6 +87,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoListar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,9 +105,12 @@ namespace AugustusFahsion.View.Venda
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnPesquisarProduto);
+            this.panel1.Controls.Add(this.txtProcurar);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.btnExcluirVenda);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnAdicionar);
             this.panel1.Controls.Add(this.label14);
@@ -111,11 +125,11 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lblTotalDescontoProduto);
             this.panel1.Controls.Add(this.lblPrecoProduto);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblProdutoSelecionado);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblIdVenda);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblIdProduto);
             this.panel1.Controls.Add(this.lblIdColaborador);
             this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.lblColaboradorSelecionado);
@@ -124,7 +138,9 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.cbFormaPagamento);
             this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.dgvProdutoListar);
             this.panel1.Controls.Add(this.dgvProdutosVenda);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblTotalLiquido);
             this.panel1.Controls.Add(this.lblTotalDesconto);
@@ -138,10 +154,45 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Size = new System.Drawing.Size(1078, 761);
             this.panel1.TabIndex = 56;
             // 
+            // btnPesquisarProduto
+            // 
+            this.btnPesquisarProduto.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPesquisarProduto.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPesquisarProduto.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnPesquisarProduto.Location = new System.Drawing.Point(515, 125);
+            this.btnPesquisarProduto.Name = "btnPesquisarProduto";
+            this.btnPesquisarProduto.Size = new System.Drawing.Size(23, 22);
+            this.btnPesquisarProduto.TabIndex = 127;
+            this.btnPesquisarProduto.Text = "🔎";
+            this.btnPesquisarProduto.UseVisualStyleBackColor = false;
+            this.btnPesquisarProduto.Click += new System.EventHandler(this.btnPesquisarProduto_Click);
+            // 
+            // txtProcurar
+            // 
+            this.txtProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtProcurar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProcurar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtProcurar.Location = new System.Drawing.Point(409, 125);
+            this.txtProcurar.Name = "txtProcurar";
+            this.txtProcurar.Size = new System.Drawing.Size(100, 22);
+            this.txtProcurar.TabIndex = 126;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label9.Location = new System.Drawing.Point(358, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 15);
+            this.label9.TabIndex = 125;
+            this.label9.Text = "Buscar:";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(829, 233);
+            this.label18.Location = new System.Drawing.Point(826, 211);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 15);
             this.label18.TabIndex = 113;
@@ -161,19 +212,19 @@ namespace AugustusFahsion.View.Venda
             this.btnExcluirVenda.UseVisualStyleBackColor = false;
             this.btnExcluirVenda.Click += new System.EventHandler(this.btnExcluirVenda_Click);
             // 
-            // button3
+            // btnCancelar
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button3.Location = new System.Drawing.Point(583, 649);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 47);
-            this.button3.TabIndex = 112;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Location = new System.Drawing.Point(583, 649);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(120, 47);
+            this.btnCancelar.TabIndex = 112;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // button2
             // 
@@ -194,9 +245,9 @@ namespace AugustusFahsion.View.Venda
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(869, 349);
+            this.btnAdicionar.Location = new System.Drawing.Point(875, 339);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(81, 27);
+            this.btnAdicionar.Size = new System.Drawing.Size(81, 26);
             this.btnAdicionar.TabIndex = 111;
             this.btnAdicionar.Text = "Atualizar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
@@ -204,7 +255,7 @@ namespace AugustusFahsion.View.Venda
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(678, 233);
+            this.label14.Location = new System.Drawing.Point(675, 211);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 15);
             this.label14.TabIndex = 114;
@@ -216,20 +267,22 @@ namespace AugustusFahsion.View.Venda
             this.nupQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupQuantidade.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidade.Location = new System.Drawing.Point(829, 253);
+            this.nupQuantidade.Location = new System.Drawing.Point(826, 231);
             this.nupQuantidade.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.nupQuantidade.Name = "nupQuantidade";
-            this.nupQuantidade.Size = new System.Drawing.Size(122, 25);
+            this.nupQuantidade.Size = new System.Drawing.Size(127, 25);
             this.nupQuantidade.TabIndex = 115;
             this.nupQuantidade.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nupQuantidade.ValueChanged += new System.EventHandler(this.nupQuantidade_ValueChanged);
+            this.nupQuantidade.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nupQuantidade_KeyUp);
             // 
             // nupDesconto
             // 
@@ -237,15 +290,17 @@ namespace AugustusFahsion.View.Venda
             this.nupDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupDesconto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupDesconto.Location = new System.Drawing.Point(681, 253);
+            this.nupDesconto.Location = new System.Drawing.Point(678, 231);
             this.nupDesconto.Name = "nupDesconto";
             this.nupDesconto.Size = new System.Drawing.Size(133, 25);
             this.nupDesconto.TabIndex = 116;
+            this.nupDesconto.ValueChanged += new System.EventHandler(this.nupDesconto_ValueChanged);
+            this.nupDesconto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nupDesconto_KeyUp);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(829, 290);
+            this.label29.Location = new System.Drawing.Point(835, 267);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(74, 15);
             this.label29.TabIndex = 122;
@@ -254,7 +309,7 @@ namespace AugustusFahsion.View.Venda
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(681, 289);
+            this.label28.Location = new System.Drawing.Point(678, 267);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(94, 15);
             this.label28.TabIndex = 121;
@@ -263,7 +318,7 @@ namespace AugustusFahsion.View.Venda
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(568, 289);
+            this.label25.Location = new System.Drawing.Point(565, 267);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(100, 15);
             this.label25.TabIndex = 124;
@@ -272,9 +327,9 @@ namespace AugustusFahsion.View.Venda
             // lblTotalProdutoComDesconto
             // 
             this.lblTotalProdutoComDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalProdutoComDesconto.Location = new System.Drawing.Point(829, 307);
+            this.lblTotalProdutoComDesconto.Location = new System.Drawing.Point(835, 284);
             this.lblTotalProdutoComDesconto.Name = "lblTotalProdutoComDesconto";
-            this.lblTotalProdutoComDesconto.Size = new System.Drawing.Size(122, 27);
+            this.lblTotalProdutoComDesconto.Size = new System.Drawing.Size(100, 27);
             this.lblTotalProdutoComDesconto.TabIndex = 119;
             this.lblTotalProdutoComDesconto.Text = "00,00";
             this.lblTotalProdutoComDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +337,7 @@ namespace AugustusFahsion.View.Venda
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(569, 233);
+            this.label5.Location = new System.Drawing.Point(566, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 123;
@@ -291,7 +346,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalProdutoSemDesconto
             // 
             this.lblTotalProdutoSemDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalProdutoSemDesconto.Location = new System.Drawing.Point(681, 307);
+            this.lblTotalProdutoSemDesconto.Location = new System.Drawing.Point(678, 285);
             this.lblTotalProdutoSemDesconto.Name = "lblTotalProdutoSemDesconto";
             this.lblTotalProdutoSemDesconto.Size = new System.Drawing.Size(133, 27);
             this.lblTotalProdutoSemDesconto.TabIndex = 120;
@@ -301,7 +356,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalDescontoProduto
             // 
             this.lblTotalDescontoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(568, 307);
+            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(565, 285);
             this.lblTotalDescontoProduto.Name = "lblTotalDescontoProduto";
             this.lblTotalDescontoProduto.Size = new System.Drawing.Size(100, 27);
             this.lblTotalDescontoProduto.TabIndex = 118;
@@ -311,7 +366,7 @@ namespace AugustusFahsion.View.Venda
             // lblPrecoProduto
             // 
             this.lblPrecoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblPrecoProduto.Location = new System.Drawing.Point(569, 251);
+            this.lblPrecoProduto.Location = new System.Drawing.Point(566, 229);
             this.lblPrecoProduto.Name = "lblPrecoProduto";
             this.lblPrecoProduto.Size = new System.Drawing.Size(75, 27);
             this.lblPrecoProduto.TabIndex = 117;
@@ -324,36 +379,36 @@ namespace AugustusFahsion.View.Venda
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.Location = new System.Drawing.Point(788, 349);
+            this.button1.Location = new System.Drawing.Point(794, 338);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 108;
             this.button1.Text = "Remover";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // lblProdutoSelecionado
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.label3.Location = new System.Drawing.Point(596, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 27);
-            this.label3.TabIndex = 109;
-            this.label3.Text = "Selecione um produto. . .";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblProdutoSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.lblProdutoSelecionado.Location = new System.Drawing.Point(609, 175);
+            this.lblProdutoSelecionado.Name = "lblProdutoSelecionado";
+            this.lblProdutoSelecionado.Size = new System.Drawing.Size(286, 27);
+            this.lblProdutoSelecionado.TabIndex = 109;
+            this.lblProdutoSelecionado.Text = "Selecione um produto. . .";
+            this.lblProdutoSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(866, 134);
+            this.label8.Location = new System.Drawing.Point(904, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 15);
+            this.label8.Size = new System.Drawing.Size(49, 15);
             this.label8.TabIndex = 110;
-            this.label8.Text = "Id da venda";
+            this.label8.Text = "IdVenda";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(562, 176);
+            this.label7.Location = new System.Drawing.Point(565, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 110;
@@ -363,48 +418,48 @@ namespace AugustusFahsion.View.Venda
             // 
             this.lblIdVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblIdVenda.ForeColor = System.Drawing.Color.White;
-            this.lblIdVenda.Location = new System.Drawing.Point(866, 154);
+            this.lblIdVenda.Location = new System.Drawing.Point(904, 174);
             this.lblIdVenda.Name = "lblIdVenda";
-            this.lblIdVenda.Size = new System.Drawing.Size(84, 27);
+            this.lblIdVenda.Size = new System.Drawing.Size(49, 27);
             this.lblIdVenda.TabIndex = 96;
             this.lblIdVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // lblIdProduto
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(566, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 27);
-            this.label1.TabIndex = 96;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIdProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.lblIdProduto.ForeColor = System.Drawing.Color.White;
+            this.lblIdProduto.Location = new System.Drawing.Point(565, 175);
+            this.lblIdProduto.Name = "lblIdProduto";
+            this.lblIdProduto.Size = new System.Drawing.Size(38, 27);
+            this.lblIdProduto.TabIndex = 96;
+            this.lblIdProduto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIdColaborador
             // 
             this.lblIdColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblIdColaborador.ForeColor = System.Drawing.Color.White;
-            this.lblIdColaborador.Location = new System.Drawing.Point(565, 468);
+            this.lblIdColaborador.Location = new System.Drawing.Point(568, 486);
             this.lblIdColaborador.Name = "lblIdColaborador";
-            this.lblIdColaborador.Size = new System.Drawing.Size(24, 27);
+            this.lblIdColaborador.Size = new System.Drawing.Size(41, 27);
             this.lblIdColaborador.TabIndex = 93;
-            this.lblIdColaborador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIdColaborador.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblIdCliente
             // 
             this.lblIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblIdCliente.ForeColor = System.Drawing.Color.White;
-            this.lblIdCliente.Location = new System.Drawing.Point(565, 413);
+            this.lblIdCliente.Location = new System.Drawing.Point(568, 431);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(24, 27);
+            this.lblIdCliente.Size = new System.Drawing.Size(41, 27);
             this.lblIdCliente.TabIndex = 94;
-            this.lblIdCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIdCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblColaboradorSelecionado
             // 
             this.lblColaboradorSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblColaboradorSelecionado.Location = new System.Drawing.Point(595, 468);
+            this.lblColaboradorSelecionado.Location = new System.Drawing.Point(615, 486);
             this.lblColaboradorSelecionado.Name = "lblColaboradorSelecionado";
-            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(355, 27);
+            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(338, 27);
             this.lblColaboradorSelecionado.TabIndex = 95;
             this.lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
             this.lblColaboradorSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -412,9 +467,9 @@ namespace AugustusFahsion.View.Venda
             // lblClienteSelecionado
             // 
             this.lblClienteSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblClienteSelecionado.Location = new System.Drawing.Point(595, 413);
+            this.lblClienteSelecionado.Location = new System.Drawing.Point(615, 431);
             this.lblClienteSelecionado.Name = "lblClienteSelecionado";
-            this.lblClienteSelecionado.Size = new System.Drawing.Size(358, 27);
+            this.lblClienteSelecionado.Size = new System.Drawing.Size(341, 27);
             this.lblClienteSelecionado.TabIndex = 97;
             this.lblClienteSelecionado.Text = "Selecione um cliente. . .";
             this.lblClienteSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -423,7 +478,7 @@ namespace AugustusFahsion.View.Venda
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label13.Location = new System.Drawing.Point(561, 450);
+            this.label13.Location = new System.Drawing.Point(564, 468);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 15);
             this.label13.TabIndex = 104;
@@ -433,7 +488,7 @@ namespace AugustusFahsion.View.Venda
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(565, 395);
+            this.label12.Location = new System.Drawing.Point(568, 413);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 15);
             this.label12.TabIndex = 105;
@@ -443,13 +498,14 @@ namespace AugustusFahsion.View.Venda
             // 
             this.cbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.cbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFormaPagamento.Enabled = false;
             this.cbFormaPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFormaPagamento.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cbFormaPagamento.FormattingEnabled = true;
             this.cbFormaPagamento.Items.AddRange(new object[] {
             "A vista (Dinheiro)",
             "A prazo"});
-            this.cbFormaPagamento.Location = new System.Drawing.Point(832, 545);
+            this.cbFormaPagamento.Location = new System.Drawing.Point(835, 563);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
             this.cbFormaPagamento.Size = new System.Drawing.Size(118, 23);
             this.cbFormaPagamento.TabIndex = 107;
@@ -458,19 +514,19 @@ namespace AugustusFahsion.View.Venda
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(832, 525);
+            this.label15.Location = new System.Drawing.Point(835, 543);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(121, 15);
             this.label15.TabIndex = 106;
             this.label15.Text = "Forma de Pagamento";
             // 
-            // dgvProdutosVenda
+            // dgvProdutoListar
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosVenda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProdutosVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvProdutosVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvProdutoListar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProdutoListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutoListar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -478,8 +534,8 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutosVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutoListar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProdutoListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -487,13 +543,13 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProdutosVenda.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProdutosVenda.GridColor = System.Drawing.Color.Black;
-            this.dgvProdutosVenda.Location = new System.Drawing.Point(141, 134);
-            this.dgvProdutosVenda.Name = "dgvProdutosVenda";
-            this.dgvProdutosVenda.ReadOnly = true;
-            this.dgvProdutosVenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvProdutosVenda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvProdutoListar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProdutoListar.GridColor = System.Drawing.Color.Black;
+            this.dgvProdutoListar.Location = new System.Drawing.Point(141, 154);
+            this.dgvProdutoListar.Name = "dgvProdutoListar";
+            this.dgvProdutoListar.ReadOnly = true;
+            this.dgvProdutoListar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvProdutoListar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -501,23 +557,82 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutosVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvProdutosVenda.RowHeadersVisible = false;
-            this.dgvProdutosVenda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvProdutoListar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProdutoListar.RowHeadersVisible = false;
+            this.dgvProdutoListar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosVenda.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProdutoListar.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProdutoListar.RowTemplate.Height = 25;
+            this.dgvProdutoListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProdutoListar.Size = new System.Drawing.Size(397, 222);
+            this.dgvProdutoListar.TabIndex = 92;
+            this.dgvProdutoListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutoListar_CellMouseClick);
+            // 
+            // dgvProdutosVenda
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosVenda.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvProdutosVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvProdutosVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutosVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvProdutosVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProdutosVenda.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvProdutosVenda.GridColor = System.Drawing.Color.Black;
+            this.dgvProdutosVenda.Location = new System.Drawing.Point(141, 413);
+            this.dgvProdutosVenda.Name = "dgvProdutosVenda";
+            this.dgvProdutosVenda.ReadOnly = true;
+            this.dgvProdutosVenda.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvProdutosVenda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutosVenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvProdutosVenda.RowHeadersVisible = false;
+            this.dgvProdutosVenda.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosVenda.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProdutosVenda.RowTemplate.Height = 25;
             this.dgvProdutosVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutosVenda.Size = new System.Drawing.Size(397, 562);
+            this.dgvProdutosVenda.Size = new System.Drawing.Size(397, 283);
             this.dgvProdutosVenda.TabIndex = 92;
             this.dgvProdutosVenda.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutosVenda_CellMouseClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(141, 389);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 21);
+            this.label6.TabIndex = 91;
+            this.label6.Text = "Carrinho";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(142, 102);
+            this.label2.Location = new System.Drawing.Point(141, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 21);
             this.label2.TabIndex = 91;
@@ -526,7 +641,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalLiquido
             // 
             this.lblTotalLiquido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalLiquido.Location = new System.Drawing.Point(738, 543);
+            this.lblTotalLiquido.Location = new System.Drawing.Point(741, 561);
             this.lblTotalLiquido.Name = "lblTotalLiquido";
             this.lblTotalLiquido.Size = new System.Drawing.Size(81, 27);
             this.lblTotalLiquido.TabIndex = 100;
@@ -536,7 +651,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalDesconto
             // 
             this.lblTotalDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalDesconto.Location = new System.Drawing.Point(647, 543);
+            this.lblTotalDesconto.Location = new System.Drawing.Point(650, 561);
             this.lblTotalDesconto.Name = "lblTotalDesconto";
             this.lblTotalDesconto.Size = new System.Drawing.Size(81, 27);
             this.lblTotalDesconto.TabIndex = 99;
@@ -546,7 +661,7 @@ namespace AugustusFahsion.View.Venda
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(738, 525);
+            this.label17.Location = new System.Drawing.Point(741, 543);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(75, 15);
             this.label17.TabIndex = 103;
@@ -555,7 +670,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalBruto
             // 
             this.lblTotalBruto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalBruto.Location = new System.Drawing.Point(562, 544);
+            this.lblTotalBruto.Location = new System.Drawing.Point(565, 562);
             this.lblTotalBruto.Name = "lblTotalBruto";
             this.lblTotalBruto.Size = new System.Drawing.Size(71, 27);
             this.lblTotalBruto.TabIndex = 98;
@@ -565,7 +680,7 @@ namespace AugustusFahsion.View.Venda
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(647, 525);
+            this.lbl2.Location = new System.Drawing.Point(650, 543);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(84, 15);
             this.lbl2.TabIndex = 101;
@@ -574,7 +689,7 @@ namespace AugustusFahsion.View.Venda
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(561, 526);
+            this.lbl.Location = new System.Drawing.Point(564, 544);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(64, 15);
             this.lbl.TabIndex = 102;
@@ -593,10 +708,12 @@ namespace AugustusFahsion.View.Venda
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVendaAlterar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmVendaAlterar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoListar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             this.ResumeLayout(false);
 
@@ -606,7 +723,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Label label14;
@@ -621,9 +737,9 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lblTotalDescontoProduto;
         private System.Windows.Forms.Label lblPrecoProduto;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblProdutoSelecionado;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIdProduto;
         private System.Windows.Forms.Label lblIdColaborador;
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblColaboradorSelecionado;
@@ -643,5 +759,11 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Button btnExcluirVenda;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblIdVenda;
+        private System.Windows.Forms.DataGridView dgvProdutoListar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnPesquisarProduto;
+        private System.Windows.Forms.TextBox txtProcurar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
