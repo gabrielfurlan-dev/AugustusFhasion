@@ -177,9 +177,6 @@ namespace AugustusFahsion.View.Venda
             }
 
             RegistrarVenda();
-            
-
-            
         }
 
 
@@ -247,7 +244,5 @@ namespace AugustusFahsion.View.Venda
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => (from x in _vendaModel.ListaDeItens
                                                                          where x.IdProduto == id
                                                                          select x).FirstOrDefault();
-
-
     }
 }

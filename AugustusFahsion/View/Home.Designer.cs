@@ -46,7 +46,6 @@ namespace AugustusFahsion
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnListarVendas = new System.Windows.Forms.Button();
             this.btnCadastrarColaborador = new System.Windows.Forms.Button();
             this.btnListarColaborador = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -58,6 +57,7 @@ namespace AugustusFahsion
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnListarVendas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -215,6 +215,7 @@ namespace AugustusFahsion
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel1.Controls.Add(this.btnListarVendas);
             this.panel1.Controls.Add(this.btnAdicionarVenda);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -225,7 +226,6 @@ namespace AugustusFahsion
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnCadastrarProduto);
             this.panel1.Controls.Add(this.btnListarCliente);
-            this.panel1.Controls.Add(this.btnListarVendas);
             this.panel1.Controls.Add(this.btnListarProduto);
             this.panel1.Controls.Add(this.btnCadastrarColaborador);
             this.panel1.Controls.Add(this.btnListarColaborador);
@@ -293,25 +293,6 @@ namespace AugustusFahsion
             this.label4.Size = new System.Drawing.Size(161, 35);
             this.label4.TabIndex = 2;
             this.label4.Text = "Colaborador";
-            // 
-            // btnListarVendas
-            // 
-            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
-            this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnListarVendas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.Location = new System.Drawing.Point(248, 345);
-            this.btnListarVendas.Name = "btnListarVendas";
-            this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnListarVendas.Size = new System.Drawing.Size(183, 119);
-            this.btnListarVendas.TabIndex = 10;
-            this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListarVendas.UseVisualStyleBackColor = false;
-            this.btnListarVendas.Click += new System.EventHandler(this.BtnListarColaborador_Click);
             // 
             // btnCadastrarColaborador
             // 
@@ -444,6 +425,25 @@ namespace AugustusFahsion
             this.label6.TabIndex = 8;
             this.label6.Text = "Fashion";
             // 
+            // btnListarVendas
+            // 
+            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
+            this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListarVendas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnListarVendas.Location = new System.Drawing.Point(257, 345);
+            this.btnListarVendas.Name = "btnListarVendas";
+            this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnListarVendas.Size = new System.Drawing.Size(183, 119);
+            this.btnListarVendas.TabIndex = 13;
+            this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnListarVendas.UseVisualStyleBackColor = false;
+            this.btnListarVendas.Click += new System.EventHandler(this.btnListarVendas_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -495,7 +495,6 @@ namespace AugustusFahsion
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnCadastrarColaborador;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button btnListarVendas;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -506,6 +505,7 @@ namespace AugustusFahsion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdicionarVenda;
+        private System.Windows.Forms.Button btnListarVendas;
     }
 }
 

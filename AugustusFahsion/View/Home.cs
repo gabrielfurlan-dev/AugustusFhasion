@@ -73,5 +73,10 @@ namespace AugustusFahsion
         {
             new VendaRegistrarController().AbrirFormulario();
         }
+
+        private void btnListarVendas_Click(object sender, EventArgs e)
+        {
+            new VendaListarController().AbrirLista();
+        }
     }
 }

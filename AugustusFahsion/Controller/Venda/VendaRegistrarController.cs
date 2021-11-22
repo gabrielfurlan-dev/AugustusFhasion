@@ -23,5 +23,16 @@ namespace AugustusFahsion.Controller.Venda
                 MessageBox.Show(ex.Message);
             }
         }
+        public void AtualizarEstoque(VendaModel vendaModel)
+        {
+            try
+            {
+                VendaDAO.AtualizarEstoque(vendaModel);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

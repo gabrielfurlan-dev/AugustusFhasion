@@ -16,11 +16,25 @@ namespace AugustusFahsion.Controller.Venda
         public void AbrirLista() =>
             new FrmVendaListar(this).Show();
         
-        public List<VendaListagemModel> ListarProdutos()
+        public List<VendaListagemModel> ListarVendas()
         {
             try
             {
                 var lista = VendaDAO.ListarVendas();
+                return lista;
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show(excecao.Message);
+            }
+            return new List<VendaListagemModel>();
+        }
+
+        public List<VendaListagemModel> ListarVendaSelecionada(int idVenda)
+        {
+            try
+            {
+                var lista = VendaDAO.ListarVendaSelecionada(idVenda);
                 return lista;
             }
             catch (Exception excecao)

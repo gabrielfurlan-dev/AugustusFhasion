@@ -18,7 +18,7 @@ namespace AugustusFahsion.View.Venda
             _vendaListagemcontroller = vendaListarController;
         }
         private void btnFechar_Click(object sender, EventArgs e) => this.Close();
-        private void btnProcurar_Click(object sender, EventArgs e) => dgvListaVenda.DataSource = _vendaListagemcontroller.ListarProdutos();
+        private void btnProcurar_Click(object sender, EventArgs e) => dgvListaVenda.DataSource = _vendaListagemcontroller.ListarVendas();
 
         private void dgvListaVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -31,7 +31,7 @@ namespace AugustusFahsion.View.Venda
         {
             int id = SelecionarVendaModel();
             var venda = _alterarVendaController.BuscarVenda(id);
-            //_alterarVendaController.AbrirFormulario(venda);
+            _alterarVendaController.AbrirFormulario(venda);
         }
     }
 }

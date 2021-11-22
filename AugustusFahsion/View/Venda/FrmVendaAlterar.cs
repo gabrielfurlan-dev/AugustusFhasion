@@ -1,14 +1,6 @@
 ﻿using AugustusFahsion.Controller.Venda;
 using AugustusFahsion.Model;
-using AugustusFahsion.Model.Venda;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AugustusFahsion.View.Venda
@@ -17,47 +9,47 @@ namespace AugustusFahsion.View.Venda
     {
         private VendaAlterarController _controllerAlterar;
         private VendaExcluirController _controllerExcluir;
-        private VendaModel vendaModel;
+        private VendaModel vendaModelSelecionada;
         public FrmVendaAlterar()
         {
             InitializeComponent();
         }
-        public FrmVendaAlterar(
-            VendaAlterarController vendaAlterarController,
-            VendaExcluirController vendaExcluirController,
-            VendaModel produtoModelSelecionado
-            )
+        public FrmVendaAlterar(VendaAlterarController vendaAlterarController, VendaModel vendaModel)
         {
             InitializeComponent();
             _controllerAlterar = vendaAlterarController;
-            vendaModel = produtoModelSelecionado;
+            vendaModelSelecionada = vendaModel;
 
             AtribuirModelParaCampos(vendaModel);
-            _controllerExcluir = vendaExcluirController;
+            _controllerExcluir = new VendaExcluirController();
         }
 
-        public void AtribuirModelParaCampos(VendaModel vendaModel) 
+        public void AtribuirModelParaCampos(VendaModel vendaModelSelecionada)
         {
-            SelecionarVendaModel();
-            var id = SelecionarVendaModel();
-            var venda = _controllerAlterar.BuscarVenda(id);
 
+            var id = vendaModelSelecionada.IdVenda;
+            var vendaModel = _controllerAlterar.BuscarVenda(id);
+            var vendaListagemModel = new VendaListarController().ListarVendaSelecionada(id);
 
+            lblIdVenda.Text = vendaModel.IdVenda.ToString();
+            lblClienteSelecionado.Text = vendaListagemModel[0].NomeCliente;
+            lblColaboradorSelecionado.Text = vendaListagemModel[0].NomeColaborador;
+
+ 
         }
 
-        //public VendaModel SelecionarModelVenda(int id) => _controllerAlterar.BuscarVenda(id);
+        public VendaModel SelecionarVendaModel(int id) => _controllerAlterar.BuscarVenda(id);
         
-        public int SelecionarVendaModel() => Convert.ToInt32(dgvProdutosVenda.SelectedRows[0].Cells[0].Value);
 
         private void btnExcluirVenda_Click(object sender, EventArgs e)
         {
-            //_controllerExcluir.ExcluirVenda();
+            //_controllerExcluir.ExcluirVenda(vendaModel);
         }
 
         private void dgvProdutosVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var id = SelecionarVendaModel();
-            var venda = _controllerAlterar.BuscarVenda(id);
+            //var id = SelecionarVendaModel();
+            //var venda = _controllerAlterar.BuscarVenda(id);
 
             //lblIdProduto.Text = produto.IdProduto.ToString();
             //lblProdutoSelecionado.Text = produto.Nome;
@@ -65,6 +57,11 @@ namespace AugustusFahsion.View.Venda
             //lblTotalProdutoSemDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
             //lblTotalProdutoComDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
             //AtualizarPrecosProdutoSelecionado();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

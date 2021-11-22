@@ -8,19 +8,20 @@ namespace AugustusFahsion.DAO
 {
     public class VendaDAO
     {
-        //FUNÇÕES C R U D ===============================================================
-        //CRIAR
         public static void RegistrarVenda(VendaModel vendaModel)
         {
+            string updateEstoque = @"update Produto set QuantidadeEstoque -= @Quantidade where IdProduto = @IdProduto";
+
+
             var venda = @"insert into Venda (IdCliente, IdColaborador, FormaPagamento, TotalBruto, TotalDesconto, 
-		                        TotalLiquido)
+		                        TotalLiquido, Condicao)
                                 output inserted.IdVenda
                                 values ( @IdCliente, @IdColaborador, @FormaPagamento, 
                                 @TotalBruto, @TotalDesconto, @TotalLiquido)";
 
             var VendaProduto = @"insert VendaProduto (IdProdutoGuid, IdProduto, IdVenda, PrecoVenda, Quantidade,
                                     PrecoLiquido, Desconto, Total) values (@IdProdutoGuid, @IdProduto, @IdVenda , @PrecoVenda,
-                                    @Quantidade, @PrecoLiquido, @Desconto, @Total)";
+                                    @Quantidade, @PrecoLiquido, @Desconto, @Total, 'Ativo')";
 
             try
             {
@@ -34,7 +35,11 @@ namespace AugustusFahsion.DAO
 
                     conexao.Execute(VendaProduto, vendaModel.ListaDeItens, transacao);
 
+                    conexao.Execute(updateEstoque, vendaModel.ListaDeItens, transacao);
+
+
                     transacao.Commit();
+
                 }
             }
             catch (Exception ex) 
@@ -65,13 +70,38 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public static List<VendaListagemModel> ListarVendaSelecionada(int idVenda)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
+                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido
+					            from Venda v
+                                inner join Cliente c on v.IdCliente = c.IdCliente
+					            inner join Colaborador co on v.IdColaborador = co.IdColaborador
+					            inner join Pessoa p on p.IdPessoa = c.IdPessoa 
+					            inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
+                                where IdVenda=@idVenda";
+
+                    return conexao.Query<VendaListagemModel>(query, new { idVenda}).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public static VendaModel BuscarVenda(int id)
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select * from Produto where IdProduto=@id";
+                    var query = @"select * from Venda where IdVenda=@id";
                     var parametros = new DynamicParameters();
                     parametros.Add("@id", id, System.Data.DbType.Int32);
                     var resultado = conexao.QueryFirstOrDefault<VendaModel>(query, parametros);
@@ -154,16 +184,18 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        public static void AtualizarEstoque(VendaModel venda) 
+        public static void AtualizarEstoque(VendaModel vendaModel) 
         {
+            string query = @"update Produto QuantidadeEstoque = QuantidadeEstoque - @QuantidadeEstoque where IdProduto = @IdProduto";
+
             try
             {
                 using var conexao = new SqlConexao().Connection();
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction()) 
                 {
-                    string query = @"update Produto QuantidadeEstoque = @QuantidadeEstoque where IdProduto = @IdProduto";
-
+                    conexao.Execute(query, vendaModel.ListaDeItens, transacao);
+                    transacao.Commit();
                 }
             }
             catch(Exception ex)

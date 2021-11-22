@@ -54,7 +54,9 @@ namespace AugustusFahsion.View.Venda
             this.lblPrecoProduto = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblIdVenda = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblIdColaborador = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
@@ -110,7 +112,9 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lblPrecoProduto);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.lblIdVenda);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblIdColaborador);
             this.panel1.Controls.Add(this.lblIdCliente);
@@ -129,7 +133,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lbl2);
             this.panel1.Controls.Add(this.lbl);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, -10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 761);
             this.panel1.TabIndex = 56;
@@ -137,7 +141,7 @@ namespace AugustusFahsion.View.Venda
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(828, 190);
+            this.label18.Location = new System.Drawing.Point(829, 233);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 15);
             this.label18.TabIndex = 113;
@@ -153,7 +157,7 @@ namespace AugustusFahsion.View.Venda
             this.btnExcluirVenda.Name = "btnExcluirVenda";
             this.btnExcluirVenda.Size = new System.Drawing.Size(117, 47);
             this.btnExcluirVenda.TabIndex = 112;
-            this.btnExcluirVenda.Text = "Excluir";
+            this.btnExcluirVenda.Text = "Inativar";
             this.btnExcluirVenda.UseVisualStyleBackColor = false;
             this.btnExcluirVenda.Click += new System.EventHandler(this.btnExcluirVenda_Click);
             // 
@@ -169,6 +173,7 @@ namespace AugustusFahsion.View.Venda
             this.button3.TabIndex = 112;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -189,7 +194,7 @@ namespace AugustusFahsion.View.Venda
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(868, 306);
+            this.btnAdicionar.Location = new System.Drawing.Point(869, 349);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(81, 27);
             this.btnAdicionar.TabIndex = 111;
@@ -199,7 +204,7 @@ namespace AugustusFahsion.View.Venda
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(677, 190);
+            this.label14.Location = new System.Drawing.Point(678, 233);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 15);
             this.label14.TabIndex = 114;
@@ -211,7 +216,7 @@ namespace AugustusFahsion.View.Venda
             this.nupQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupQuantidade.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidade.Location = new System.Drawing.Point(828, 210);
+            this.nupQuantidade.Location = new System.Drawing.Point(829, 253);
             this.nupQuantidade.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -232,7 +237,7 @@ namespace AugustusFahsion.View.Venda
             this.nupDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupDesconto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupDesconto.Location = new System.Drawing.Point(680, 210);
+            this.nupDesconto.Location = new System.Drawing.Point(681, 253);
             this.nupDesconto.Name = "nupDesconto";
             this.nupDesconto.Size = new System.Drawing.Size(133, 25);
             this.nupDesconto.TabIndex = 116;
@@ -240,7 +245,7 @@ namespace AugustusFahsion.View.Venda
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(828, 247);
+            this.label29.Location = new System.Drawing.Point(829, 290);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(74, 15);
             this.label29.TabIndex = 122;
@@ -249,7 +254,7 @@ namespace AugustusFahsion.View.Venda
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(680, 246);
+            this.label28.Location = new System.Drawing.Point(681, 289);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(94, 15);
             this.label28.TabIndex = 121;
@@ -258,7 +263,7 @@ namespace AugustusFahsion.View.Venda
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(567, 246);
+            this.label25.Location = new System.Drawing.Point(568, 289);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(100, 15);
             this.label25.TabIndex = 124;
@@ -267,7 +272,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalProdutoComDesconto
             // 
             this.lblTotalProdutoComDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalProdutoComDesconto.Location = new System.Drawing.Point(828, 264);
+            this.lblTotalProdutoComDesconto.Location = new System.Drawing.Point(829, 307);
             this.lblTotalProdutoComDesconto.Name = "lblTotalProdutoComDesconto";
             this.lblTotalProdutoComDesconto.Size = new System.Drawing.Size(122, 27);
             this.lblTotalProdutoComDesconto.TabIndex = 119;
@@ -277,7 +282,7 @@ namespace AugustusFahsion.View.Venda
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(568, 190);
+            this.label5.Location = new System.Drawing.Point(569, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 123;
@@ -286,7 +291,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalProdutoSemDesconto
             // 
             this.lblTotalProdutoSemDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalProdutoSemDesconto.Location = new System.Drawing.Point(680, 264);
+            this.lblTotalProdutoSemDesconto.Location = new System.Drawing.Point(681, 307);
             this.lblTotalProdutoSemDesconto.Name = "lblTotalProdutoSemDesconto";
             this.lblTotalProdutoSemDesconto.Size = new System.Drawing.Size(133, 27);
             this.lblTotalProdutoSemDesconto.TabIndex = 120;
@@ -296,7 +301,7 @@ namespace AugustusFahsion.View.Venda
             // lblTotalDescontoProduto
             // 
             this.lblTotalDescontoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(567, 264);
+            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(568, 307);
             this.lblTotalDescontoProduto.Name = "lblTotalDescontoProduto";
             this.lblTotalDescontoProduto.Size = new System.Drawing.Size(100, 27);
             this.lblTotalDescontoProduto.TabIndex = 118;
@@ -306,7 +311,7 @@ namespace AugustusFahsion.View.Venda
             // lblPrecoProduto
             // 
             this.lblPrecoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lblPrecoProduto.Location = new System.Drawing.Point(568, 208);
+            this.lblPrecoProduto.Location = new System.Drawing.Point(569, 251);
             this.lblPrecoProduto.Name = "lblPrecoProduto";
             this.lblPrecoProduto.Size = new System.Drawing.Size(75, 27);
             this.lblPrecoProduto.TabIndex = 117;
@@ -319,7 +324,7 @@ namespace AugustusFahsion.View.Venda
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.Location = new System.Drawing.Point(787, 306);
+            this.button1.Location = new System.Drawing.Point(788, 349);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 27);
             this.button1.TabIndex = 108;
@@ -329,27 +334,46 @@ namespace AugustusFahsion.View.Venda
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.label3.Location = new System.Drawing.Point(595, 154);
+            this.label3.Location = new System.Drawing.Point(596, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(354, 27);
             this.label3.TabIndex = 109;
             this.label3.Text = "Selecione um produto. . .";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(866, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 15);
+            this.label8.TabIndex = 110;
+            this.label8.Text = "Id da venda";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(561, 133);
+            this.label7.Location = new System.Drawing.Point(562, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 110;
             this.label7.Text = "Produto selecionado";
             // 
+            // lblIdVenda
+            // 
+            this.lblIdVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.lblIdVenda.ForeColor = System.Drawing.Color.White;
+            this.lblIdVenda.Location = new System.Drawing.Point(866, 154);
+            this.lblIdVenda.Name = "lblIdVenda";
+            this.lblIdVenda.Size = new System.Drawing.Size(84, 27);
+            this.lblIdVenda.TabIndex = 96;
+            this.lblIdVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(565, 154);
+            this.label1.Location = new System.Drawing.Point(566, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 27);
             this.label1.TabIndex = 96;
@@ -561,7 +585,7 @@ namespace AugustusFahsion.View.Venda
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(1102, 785);
+            this.ClientSize = new System.Drawing.Size(1102, 740);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -617,5 +641,7 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl;
         private System.Windows.Forms.Button btnExcluirVenda;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblIdVenda;
     }
 }
