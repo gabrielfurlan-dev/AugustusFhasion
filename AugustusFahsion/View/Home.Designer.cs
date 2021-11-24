@@ -42,6 +42,7 @@ namespace AugustusFahsion
             this.btnListarProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnListarVendas = new System.Windows.Forms.Button();
             this.btnAdicionarVenda = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -57,7 +58,6 @@ namespace AugustusFahsion
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnListarVendas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -239,6 +239,25 @@ namespace AugustusFahsion
             this.panel1.Size = new System.Drawing.Size(892, 537);
             this.panel1.TabIndex = 6;
             // 
+            // btnListarVendas
+            // 
+            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
+            this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListarVendas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnListarVendas.Location = new System.Drawing.Point(257, 345);
+            this.btnListarVendas.Name = "btnListarVendas";
+            this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnListarVendas.Size = new System.Drawing.Size(183, 119);
+            this.btnListarVendas.TabIndex = 13;
+            this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnListarVendas.UseVisualStyleBackColor = false;
+            this.btnListarVendas.Click += new System.EventHandler(this.btnListarVendas_Click);
+            // 
             // btnAdicionarVenda
             // 
             this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -324,7 +343,7 @@ namespace AugustusFahsion
             this.btnListarColaborador.Size = new System.Drawing.Size(41, 50);
             this.btnListarColaborador.TabIndex = 10;
             this.btnListarColaborador.UseVisualStyleBackColor = false;
-            this.btnListarColaborador.Click += new System.EventHandler(this.BtnListarColaborador_Click);
+            this.btnListarColaborador.Click += new System.EventHandler(this.btnListarColaborador_Click);
             // 
             // pictureBox8
             // 
@@ -424,25 +443,6 @@ namespace AugustusFahsion
             this.label6.Size = new System.Drawing.Size(121, 47);
             this.label6.TabIndex = 8;
             this.label6.Text = "Fashion";
-            // 
-            // btnListarVendas
-            // 
-            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
-            this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnListarVendas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.Location = new System.Drawing.Point(257, 345);
-            this.btnListarVendas.Name = "btnListarVendas";
-            this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnListarVendas.Size = new System.Drawing.Size(183, 119);
-            this.btnListarVendas.TabIndex = 13;
-            this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnListarVendas.UseVisualStyleBackColor = false;
-            this.btnListarVendas.Click += new System.EventHandler(this.btnListarVendas_Click);
             // 
             // Home
             // 

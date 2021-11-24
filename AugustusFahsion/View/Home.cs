@@ -53,9 +53,6 @@ namespace AugustusFahsion
         
         private void BtnAlterarColaborador_Click(object sender, EventArgs e) =>
             new ColaboradorAlterarController().AbrirFormulario();
-    
-        private void BtnListarColaborador_Click(object sender, EventArgs e) =>
-            new VendaListarController().AbrirLista();
 
         private void BtnCadastrarProduto_Click(object sender, EventArgs e) =>
             new ProdutoCadastrarController().AbrirFormulario();
@@ -69,14 +66,10 @@ namespace AugustusFahsion
         private void BtnFechar_Click(object sender, EventArgs e) =>
             this.Close();
 
-        private void btnAdicionarVenda_Click(object sender, EventArgs e)
-        {
-            new VendaRegistrarController().AbrirFormulario();
-        }
+        private void btnAdicionarVenda_Click(object sender, EventArgs e) => new VendaRegistrarController().AbrirFormulario();
 
-        private void btnListarVendas_Click(object sender, EventArgs e)
-        {
-            new VendaListarController().AbrirLista();
-        }
+        private void btnListarVendas_Click(object sender, EventArgs e) => new VendaListarController().AbrirLista();
+
+        private void btnListarColaborador_Click(object sender, EventArgs e) => new ColaboradorListarController().AbrirLista();
     }
 }

@@ -9,6 +9,6 @@
         public decimal TotalBruto { get; set; }
         public decimal TotalDesconto { get; set; }
         public decimal TotalLiquido { get; set; }
-        public decimal Lucro { get; set; }
+        public string Condicao { get; set; }
     }
 }

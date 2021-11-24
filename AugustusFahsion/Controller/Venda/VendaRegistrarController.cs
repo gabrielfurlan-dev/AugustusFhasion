@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller.Venda
 {
-    public class VendaRegistrarController
+    public class  VendaRegistrarController
     {
         public void AbrirFormulario() =>
             new FrmVendaRegistrar(this).Show();
@@ -22,17 +22,6 @@ namespace AugustusFahsion.Controller.Venda
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        public void AtualizarEstoque(VendaModel vendaModel)
-        {
-            try
-            {
-                VendaDAO.AtualizarEstoque(vendaModel);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        }       
     }
 }

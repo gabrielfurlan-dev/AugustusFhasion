@@ -187,7 +187,9 @@ namespace AugustusFahsion.View.Venda
             this.cbFormaPagamento.FormattingEnabled = true;
             this.cbFormaPagamento.Items.AddRange(new object[] {
             "A vista (Dinheiro)",
-            "A prazo"});
+            "A vista (Cartão)",
+            "A prazo",
+            "Picz"});
             this.cbFormaPagamento.Location = new System.Drawing.Point(347, 409);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
             this.cbFormaPagamento.Size = new System.Drawing.Size(118, 23);
