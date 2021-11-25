@@ -10,15 +10,17 @@ namespace AugustusFahsion.Controller
     {
         public void AbrirFormulario() =>
             new FrmClienteAlterar(this).Show();
+
         public void AbrirFormulario(ClienteModel clienteModelSelecionado)
         {
-            ClienteExcluirController clienteExcluirController = new ClienteExcluirController();
-            new FrmClienteAlterar(this, clienteModelSelecionado, clienteExcluirController).Show();
+            new FrmClienteAlterar(this, clienteModelSelecionado).Show();
         }
+
         public static ClienteModel Buscar(int id)
         {
                 return ClienteDAO.BuscarCliente(id);
         }
+
         public void AtualizarCliente(ClienteModel clienteModel)
         {
             try

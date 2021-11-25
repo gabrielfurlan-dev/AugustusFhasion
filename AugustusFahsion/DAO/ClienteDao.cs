@@ -11,10 +11,7 @@ using System.Linq;
 namespace AugustusFahsion.DAO
 {
     public class ClienteDAO
-    {
-        // FUNÇÕES C R U D ===============================================================
-        
-        //CRIAR
+    {   
         public static void CadastrarCliente(ClienteModel cliente)
         {
             const string insertPessoa = @"insert into Pessoa output inserted.IdPessoa values
@@ -72,7 +69,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        // LISTAR
+
         public static ClienteModel BuscarCliente(int id)
         {
             try
@@ -81,7 +78,7 @@ namespace AugustusFahsion.DAO
                 {
                     conexao.Open();
                     var query = @"select p.IdPessoa, p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
-                    c.ValorLimiteAPrazo, c.IdCliente, p.IdPessoa,
+                    c.ValorLimiteAPrazo, c.IdCliente, c.Condicao, p.IdPessoa,
                     p.Nome, p.Sobrenome, p.IdPessoa,
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                     cn.Telefone, cn.Celular, cn.Email
@@ -102,9 +99,10 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
         public static List<ClienteListagemModel> BuscarClientePorNome(string nome)
         {
-            const string listarPessoa = @"select c.IdPessoa, c.IdCliente, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
+            const string listarPessoa = @"select c.IdPessoa, c.IdCliente, c.Condicao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -126,9 +124,10 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
         public static List<ClienteListagemModel> BuscarClientePorId(int id) 
         {
-            const string listarPessoa = @"select c.IdPessoa, c.IdCliente. p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
+            const string listarPessoa = @"select c.IdPessoa, c.IdCliente, c.Condicao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
                 e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email,
                 from Pessoa p
                 inner join Cliente c on p.IdPessoa = c.IdPessoa
@@ -149,6 +148,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
         public static List<ClienteListagemModel> ListarClientes()
         {
             const string listarPessoa = @"select c.IdPessoa, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
@@ -173,7 +173,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        //ALTERAR
+
         public static void AlterarCliente(ClienteModel cliente)
         {
             try
@@ -181,7 +181,7 @@ namespace AugustusFahsion.DAO
                 const string updatePessoa = @"update Pessoa set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, 
                 DataNascimento = @DataNascimento, Cpf = @Cpf where IdPessoa = @IdPessoa";
 
-                const string updateCliente = @"update Cliente set ValorLimiteAPrazo = @ValorLimiteAPrazo where IdPessoa = @IdPessoa";
+                const string updateCliente = @"update Cliente set ValorLimiteAPrazo = @ValorLimiteAPrazo, Condicao = @Condicao where IdPessoa = @IdPessoa";
 
                 const string updateEndereco = @"update Endereco set Cep = @Cep, Logradouro = @Logradouro, Cidade = @Cidade, 
                 Uf = @Uf, Complemento = @Complemento, Bairro = @Bairro, NumeroEndereco = @NumeroEndereco where IdPessoa = @IdPessoa";
@@ -234,34 +234,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        //EXCLUIR
-        public static void ExcluirCliente(ClienteModel cliente)
-        {
-            var idPessoa = cliente.IdPessoa;
-            string deleteContato = @"delete from Contato where IdPessoa =" + idPessoa;
-            string deleteEndereco = @"delete from Endereco where IdPessoa = " + idPessoa;
-            string deleteCliente = @"delete from Cliente where IdPessoa = " + idPessoa;
-            string deletePessoa = @"delete from Pessoa where IdPessoa = " + idPessoa;
-            try
-            {
-                using var conexao = new SqlConexao().Connection();
-                conexao.Open();
-                using (var transacao = conexao.BeginTransaction())
-                {
-                    conexao.Execute(deleteContato, idPessoa, transacao);
-                    conexao.Execute(deleteEndereco, idPessoa, transacao);
-                    conexao.Execute(deleteCliente, idPessoa, transacao);
-                    conexao.Execute(deletePessoa, idPessoa, transacao);
-                    transacao.Commit();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
 
-        // MAPEAMENTO ===================================================================
         public static ClienteListagemModel MapearClienteListagem(ClienteListagemModel clienteListagem, 
             NomeCompletoModel nomeCompleto, EnderecoModel endereco, ContatoModel contato)
         {
@@ -270,6 +243,7 @@ namespace AugustusFahsion.DAO
             clienteListagem.Endereco = endereco;
             return clienteListagem;
         }
+
         public static ClienteModel MapearClienteAlterar(ClienteModel clienteModel,
             NomeCompletoModel nomeCompleto, EnderecoModel endereco, ContatoModel contato)
         {
@@ -279,7 +253,8 @@ namespace AugustusFahsion.DAO
             return clienteModel;
         }
 
-        // VALIDAÇÕES ===================================================================
+
+        //===================================================================
         public static bool ValidaId(int id)
         {
             try

@@ -30,7 +30,6 @@ namespace AugustusFahsion.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -72,6 +71,8 @@ namespace AugustusFahsion.View
             this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbCondicao = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,30 +82,17 @@ namespace AugustusFahsion.View
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.cbCondicao);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.label20);
             this.panel1.Location = new System.Drawing.Point(20, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1021, 526);
             this.panel1.TabIndex = 0;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnExcluir.Location = new System.Drawing.Point(445, 461);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 39);
-            this.btnExcluir.TabIndex = 51;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -112,7 +100,7 @@ namespace AugustusFahsion.View
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnCancelar.Location = new System.Drawing.Point(341, 461);
+            this.btnCancelar.Location = new System.Drawing.Point(389, 461);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 39);
             this.btnCancelar.TabIndex = 52;
@@ -333,7 +321,7 @@ namespace AugustusFahsion.View
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSalvar.Location = new System.Drawing.Point(549, 461);
+            this.btnSalvar.Location = new System.Drawing.Point(493, 461);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(98, 39);
             this.btnSalvar.TabIndex = 50;
@@ -605,6 +593,30 @@ namespace AugustusFahsion.View
             this.label4.TabIndex = 7;
             this.label4.Text = "Telefone";
             // 
+            // cbCondicao
+            // 
+            this.cbCondicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.cbCondicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCondicao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbCondicao.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCondicao.FormattingEnabled = true;
+            this.cbCondicao.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbCondicao.Location = new System.Drawing.Point(862, 91);
+            this.cbCondicao.Name = "cbCondicao";
+            this.cbCondicao.Size = new System.Drawing.Size(91, 23);
+            this.cbCondicao.TabIndex = 53;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(862, 73);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 15);
+            this.label20.TabIndex = 7;
+            this.label20.Text = "Condição";
+            // 
             // FrmClienteAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -670,10 +682,11 @@ namespace AugustusFahsion.View
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbCondicao;
+        private System.Windows.Forms.Label label20;
     }
 }

@@ -9,7 +9,6 @@ namespace AugustusFahsion.View
     public partial class FrmClienteAlterar : Form
     {
         private ClienteAlterarController _controllerAlterar;
-        private ClienteExcluirController _controllerExcluir;
         private ClienteModel clienteModel;
 
         public FrmClienteAlterar(ClienteAlterarController clienteAlterarController)
@@ -22,9 +21,7 @@ namespace AugustusFahsion.View
 
         public FrmClienteAlterar(
             ClienteAlterarController clienteAlterarController,
-            ClienteModel clienteModelSelecionado,
-            ClienteExcluirController clienteExcluirController
-            )
+            ClienteModel clienteModelSelecionado)
         {
             InitializeComponent();
 
@@ -33,7 +30,6 @@ namespace AugustusFahsion.View
 
             AtribuirModelParaCampos(clienteModelSelecionado);
             btnSalvar.Enabled = true;
-            _controllerExcluir = clienteExcluirController;
         }
         public void AtribuirModelParaCampos(ClienteModel clienteModel)
         {
@@ -54,6 +50,7 @@ namespace AugustusFahsion.View
             mtxtCelular.Text = clienteModel.Contato.Celular.ToString();
             txtEmail.Text = clienteModel.Contato.Email;
             mtxtCpf.Text = clienteModel.Cpf.RetornarValor;
+            cbCondicao.Text = clienteModel.Condicao;
         }
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
@@ -147,6 +144,7 @@ namespace AugustusFahsion.View
                 clienteModel.Contato.Celular = mtxtCelular.Text;
                 clienteModel.Contato.Email = txtEmail.Text;
                 clienteModel.Cpf = mtxtCpf.Text;
+                clienteModel.Condicao = cbCondicao.Text;
 
                 _controllerAlterar.AtualizarCliente(clienteModel);
                 this.Close();
@@ -159,30 +157,5 @@ namespace AugustusFahsion.View
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id;
-                Int32.TryParse(txtId.Text, out id);
-
-                var validaID = new ClienteExcluirController().ValidarId(id);
-                if (id > 0 && validaID)
-                {
-                    clienteModel.IdPessoa = int.Parse(txtId.Text);
-                    _controllerExcluir.ExcluirCliente(clienteModel);
-                    MessageBox.Show("Cliente excluido com sucesso");
-                    this.Close();
-                    return;
-                }
-
-                MessageBox.Show("id invalido!");
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-            }
-        }
     }
 }
