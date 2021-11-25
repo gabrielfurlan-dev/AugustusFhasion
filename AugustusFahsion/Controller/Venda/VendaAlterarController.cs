@@ -38,5 +38,15 @@ namespace AugustusFahsion.Controller.Venda
                 MessageBox.Show(excecao.Message);
             }
         }
+
+        internal int BuscarQuantidadeOriginalDaVenda(int idProduto, int IdVenda)
+        {
+            return VendaDAO.BuscarQuantidadeOriginalDaVenda(idProduto, IdVenda);
+        }
+
+        internal int BuscarEstoqueOriginal(int idProduto)
+        {
+            return ProdutoDAO.BuscarEstoqueOriginal(idProduto);
+        }
     }
 }

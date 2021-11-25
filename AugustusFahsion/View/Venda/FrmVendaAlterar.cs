@@ -11,11 +11,13 @@ namespace AugustusFahsion.View.Venda
 {
     public partial class FrmVendaAlterar : Form
     {
-        private VendaAlterarController _controllerAlterar;
+        private VendaAlterarController _controllerVendaAlterar;
         private VendaListarController _controllerVendaListar;
         private ProdutoListarController _produtoListarController;
         private VendaModel _vendaModelSelecionada;
         private VendaRegistrarController _vendaRegistrarController;
+        private int _quantidadeOriginal = 0;
+        private int _estoqueOriginal = 0;
         public FrmVendaAlterar()
         {
             InitializeComponent();
@@ -23,13 +25,14 @@ namespace AugustusFahsion.View.Venda
         public FrmVendaAlterar(VendaAlterarController vendaAlterarController, VendaModel vendaModel)
         {
             InitializeComponent();
-            _controllerAlterar = vendaAlterarController;
+            _controllerVendaAlterar = vendaAlterarController;
             _vendaModelSelecionada = vendaModel;
 
             AtribuirModelParaCampos(vendaModel);
             _produtoListarController = new ProdutoListarController();
             _controllerVendaListar = new VendaListarController();
             _vendaRegistrarController = new VendaRegistrarController();
+
         }
 
         private void FrmVendaAlterar_Load(object sender, EventArgs e)
@@ -50,14 +53,7 @@ namespace AugustusFahsion.View.Venda
         }
         private void dgvProdutosVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            lblIdProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[0].Value.ToString();
-            lblProdutoSelecionado.Text = dgvProdutosVenda.SelectedRows[0].Cells[1].Value.ToString();
-            lblPrecoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[3].Value.ToString();
-            nupQuantidade.Value = Convert.ToDecimal(dgvProdutosVenda.SelectedRows[0].Cells[4].Value);
-            lblTotalBrutoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[5].ToString();
-            nupDesconto.Value = Convert.ToDecimal(dgvProdutosVenda.SelectedRows[0].Cells[6].Value);
-            lblTotalLiquidoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[7].ToString();
-
+            AtribuirValoresProdutosDoCarrinhoSelecionados();
             CalcularPrecosProdutoSelecionado();
         }
 
@@ -67,14 +63,13 @@ namespace AugustusFahsion.View.Venda
         private void nupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
         private void nupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
 
-        public VendaModel SelecionarVendaModel(int id) => _controllerAlterar.BuscarVenda(id);
+        public VendaModel SelecionarVendaModel(int id) => _controllerVendaAlterar.BuscarVenda(id);
 
         //atribuir Valores
         public void AtribuirModelParaCampos(VendaModel vendaModelSelecionada)
         {
-
             var id = vendaModelSelecionada.IdVenda;
-            var vendaModel = _controllerAlterar.BuscarVenda(id);
+            var vendaModel = _controllerVendaAlterar.BuscarVenda(id);
             var vendaListagemModel = new VendaListarController().ListarVendaSelecionada(id);
 
             lblIdVenda.Text = vendaListagemModel[0].IdVenda.ToString();
@@ -94,18 +89,17 @@ namespace AugustusFahsion.View.Venda
             lblPrecoProduto.Text = produto.PrecoVenda.ToString();
             lblTotalBrutoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
             lblTotalLiquidoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            //lblProdutoLucroUnitario.Text = (produto.PrecoVenda - produto.PrecoCusto).ToString();
-            nupQuantidade.Maximum = produto.QuantidadeEstoque;
             CalcularPrecosProdutoSelecionado();
         }
-        private void AtribuirValoresProdutosDoCarrinhoSelecionados(VendaProdutoModel vendaProdutoModel)
+        private void AtribuirValoresProdutosDoCarrinhoSelecionados()
         {
-            lblIdProduto.Text = vendaProdutoModel.IdProduto.ToString();
-            lblProdutoSelecionado.Text = vendaProdutoModel.Nome;
-            lblPrecoProduto.Text = vendaProdutoModel.PrecoVenda.ToString();
-            lblTotalBrutoProduto.Text = (Convert.ToDecimal(vendaProdutoModel.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblTotalLiquidoProduto.Text = (Convert.ToDecimal(vendaProdutoModel.PrecoVenda) * nupQuantidade.Value).ToString();
-            //lblProdutoLucroUnitario.Text = (vendaProdutoModel.PrecoVenda - vendaProdutoModel.PrecoCusto).ToString();
+            lblIdProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[0].Value.ToString();
+            lblProdutoSelecionado.Text = dgvProdutosVenda.SelectedRows[0].Cells[1].Value.ToString();
+            lblPrecoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[3].Value.ToString();
+            nupQuantidade.Value = Convert.ToDecimal(dgvProdutosVenda.SelectedRows[0].Cells[4].Value);
+            lblTotalBrutoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[5].ToString();
+            nupDesconto.Value = Convert.ToDecimal(dgvProdutosVenda.SelectedRows[0].Cells[6].Value);
+            lblTotalLiquidoProduto.Text = dgvProdutosVenda.SelectedRows[0].Cells[7].ToString();
             CalcularPrecosProdutoSelecionado();
         }
         private decimal ValorTotalBrutoProduto() =>
@@ -114,16 +108,27 @@ namespace AugustusFahsion.View.Venda
             ValorTotalBrutoProduto() - ValorTotalDesconto();
         private decimal ValorTotalDesconto() =>
             ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * nupDesconto.Value * Convert.ToDecimal(0.01));
-        public int SelecionarProdutoModel() =>
-            Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
-        //private decimal ValorProdutoLucro() =>
-        //    (Convert.ToDecimal(Extensoes.RealParaDecimal(lblProdutoLucroUnitario.Text)) * nupQuantidade.Value) - ValorTotalDescontoProduto();
+        public int SelecionarProdutoModel() 
+        { 
+            int idProduto = Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
+            setarQuantidadeEstoqueMaximum(idProduto, Convert.ToInt32(lblIdVenda.Text));
+            return idProduto;
+        }
+
+        public int SelecionarProdutoModelDoCarrinho() =>
+            Convert.ToInt32(dgvProdutosVenda.SelectedRows[0].Cells[0].Value);
+
         private void CalcularPrecosProdutoSelecionado()
         {
             lblTotalBrutoProduto.Text = ValorTotalBrutoProduto().ToString("c");
             lblTotalLiquidoProduto.Text = ValorTotalDesconto().ToString("c");
             lblTotalDescontoProduto.Text = ValorTotalDescontoProduto().ToString("c");
-            //lblProdutoLucroUnitario.Text = ValorProdutoLucro().ToString("c");
+        }
+        private void setarQuantidadeEstoqueMaximum(int idProduto, int idVenda)
+        {
+            _quantidadeOriginal = _controllerVendaAlterar.BuscarQuantidadeOriginalDaVenda(idProduto, idVenda);
+            _estoqueOriginal = _controllerVendaAlterar.BuscarEstoqueOriginal(idProduto);
+            nupQuantidade.Maximum = _quantidadeOriginal + _estoqueOriginal;
         }
 
         //funções do carrinho
@@ -139,7 +144,7 @@ namespace AugustusFahsion.View.Venda
                 MessageBox.Show("Informe a quantidade");
                 return;
             }
-            var produto = VerificarSeExisteNoCarrinho(SelecionarProdutoModel());
+            var produto = VerificarSeExisteNoCarrinho(Convert.ToInt32(lblIdProduto.Text));
             if (produto != null)
             {
                 var index = _vendaModelSelecionada.ListaDeItens.IndexOf(produto);
@@ -166,10 +171,6 @@ namespace AugustusFahsion.View.Venda
             AtualizarCarrinho();
             AtualizarPrecosTotais();
         }
-
-        public int SelecionarProdutoModelDoCarrinho() => 
-            Convert.ToInt32(dgvProdutosVenda.SelectedRows[0].Cells[0].Value);
-
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
@@ -244,7 +245,7 @@ namespace AugustusFahsion.View.Venda
 
         private void BtnInativarVenda_Click(object sender, EventArgs e)
         {
-            var vendaSelecionada = _controllerAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
+            var vendaSelecionada = _controllerVendaAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
             VendaAlterarController.InativarVenda(vendaSelecionada);
             MessageBox.Show("Venda Inativada.");
             this.Close(); 
@@ -283,5 +284,6 @@ namespace AugustusFahsion.View.Venda
         }
 
         private void btnFehcar_Click(object sender, EventArgs e) => this.Close();
+     
     }
 }

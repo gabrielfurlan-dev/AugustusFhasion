@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace AugustusFahsion.DAO
 {
@@ -50,6 +51,24 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        internal static int BuscarQuantidadeOriginalDaVenda(int idProduto, int idVenda)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select Quantidade from VendaProduto where IdVenda=@IdVenda and IdProduto=@IdProduto";
+                    return conexao.Query<int>(query, new { idProduto, idVenda }).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public static List<VendaListagemModel> ListarVendas()
         {
             try

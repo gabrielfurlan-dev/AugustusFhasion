@@ -56,13 +56,31 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        internal static int BuscarEstoqueOriginal(int idProduto)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select QuantidadeEstoque from Produto where IdProduto=@idProduto";
+                    return conexao.Query<int>(query, new { idProduto }).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public static List<ProdutoModel> ListarProdutosPorNome(string nome)
         {
             try
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select * from Produto where Nome like @nome + '%' " ;
+                    var query = @"select * from Produto where Nome like @nome + '%'";
                     return conexao.Query<ProdutoModel>(query, new { nome }).AsList();
                 }
             }
@@ -111,7 +129,7 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select * from Produto where IdProduto = @id and Condicao = 'Ativo';";
+                    var query = @"select * from Produto where IdProduto = @id and Condicao = 'Ativo'";
                     return conexao.Query<ProdutoModel>(query, new { id }).AsList();
                 }
             }
