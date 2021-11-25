@@ -15,6 +15,7 @@ namespace AugustusFahsion.Model
         public NomeCompletoModel NomeCompleto { get; set; }
         public EnderecoModel Endereco { get; set; }
         public ContatoModel Contato { get; set; }
+        public string Condicao { get; set; }
 
         //public decimal Salario { get; set; }
         //public int Comissao { get; set; }

@@ -16,7 +16,6 @@ namespace AugustusFahsion.Controller.Venda
             try
             {
                 VendaDAO.RegistrarVenda(vendaModel);
-                MessageBox.Show("Venda Registrada");
             }
             catch (Exception ex)
             {

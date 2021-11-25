@@ -169,6 +169,7 @@ namespace AugustusFahsion.View.Venda
             }
 
             RegistrarVenda();
+            MessageBox.Show("Venda Registrada");
         }
 
         //selecionar Model
@@ -248,5 +249,8 @@ namespace AugustusFahsion.View.Venda
 
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => 
             (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
+
+        private void button2_Click(object sender, EventArgs e) => this.Close();
+            
     }
 }

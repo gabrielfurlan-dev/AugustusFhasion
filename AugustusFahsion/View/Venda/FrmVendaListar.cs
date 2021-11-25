@@ -33,5 +33,7 @@ namespace AugustusFahsion.View.Venda
             var venda = _alterarVendaController.BuscarVenda(id);
             _alterarVendaController.AbrirFormulario(venda);
         }
+
+        private void button2_Click(object sender, EventArgs e) => this.Close();
     }
 }

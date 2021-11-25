@@ -8,6 +8,7 @@ namespace AugustusFahsion.Model
         public int IdColaborador { get; set; }
         public double Salario { get; set; }
         public int Comissao { get; set; }
+        public string Condicao { get; set; }
 
         public ContaBancariaModel ContaBancaria { get; set; }
 

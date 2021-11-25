@@ -196,6 +196,7 @@ namespace AugustusFahsion.View.Venda
             {
                 IdProdutoGuid = Guid.NewGuid(),
                 IdProduto = lblIdProduto.Text.IntOuZero(),
+                IdVenda = Convert.ToInt32(lblIdVenda.Text),
                 Nome = lblProdutoSelecionado.Text,
                 Quantidade = Convert.ToInt32(nupQuantidade.Value),
                 Desconto = (int)nupDesconto.Value,
@@ -203,7 +204,7 @@ namespace AugustusFahsion.View.Venda
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
                 Total = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 //Lucro = lblLucroProduto.Text.RealParaDecimal()
-            });
+            }) ;
         }
         public void AdicionarProdutosRegistradosDaVendaNaLista()
         {
@@ -213,6 +214,7 @@ namespace AugustusFahsion.View.Venda
                 _vendaModelSelecionada.ListaDeItens.Add(new VendaProdutoModel()
                 {
                     IdProdutoGuid = item.IdProdutoGuid,
+                    IdVenda = item.IdVenda,
                     IdProduto = item.IdProduto,
                     Nome = item.Nome,
                     Quantidade = item.Quantidade,
@@ -272,20 +274,14 @@ namespace AugustusFahsion.View.Venda
             }
 
             AlterarVenda();
-
-            
         }
 
         private void AlterarVenda()
         {
             VendaAlterarController.AlterarVenda(_vendaModelSelecionada);
-
-            _vendaRegistrarController = new VendaRegistrarController();
-            _vendaModelSelecionada.IdColaborador = Convert.ToInt32(lblIdColaborador.Text);
-            _vendaModelSelecionada.IdCliente = Convert.ToInt32(lblIdCliente.Text);
-            _vendaModelSelecionada.FormaPagamento = cbFormaPagamento.Text;
-
-            _vendaRegistrarController.RegistrarVenda(_vendaModelSelecionada);
+            MessageBox.Show("Venda Alterada!");
         }
+
+        private void btnFehcar_Click(object sender, EventArgs e) => this.Close();
     }
 }

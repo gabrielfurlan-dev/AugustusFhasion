@@ -155,6 +155,7 @@ namespace AugustusFahsion.View.Alterar
                     colaboradorModel.Contato.Celular = mtxtCelular.Text;
                     colaboradorModel.Contato.Email = txtEmail.Text;
                     colaboradorModel.Cpf = mtxtCpf.Text;
+                    colaboradorModel.Condicao = cbCondicao.Text;
 
                     colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
                     colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
@@ -170,30 +171,30 @@ namespace AugustusFahsion.View.Alterar
                 MessageBox.Show(ex.Message, "Erro ao tentar gravar");
             }
         }
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
+        //private void btnInativar_Click(object sender, EventArgs e)
+        //{
 
-            try
-            {
-                int id;
-                Int32.TryParse(txtId.Text, out id);
+        //    try
+        //    {
+        //        int id;
+        //        Int32.TryParse(txtId.Text, out id);
 
-                var validaID = new ColaboradorExcluirController().ValidarId(id);
-                if (id > 0 && validaID)
-                {
-                    colaboradorModel.Id = int.Parse(txtId.Text);
-                    _controllerExcluir.ExcluirColaborador(colaboradorModel);
-                    MessageBox.Show("Colaborador excluido com sucesso");
-                    this.Close();
-                    return;
-                }
-                MessageBox.Show("id invalido!");
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-            }
-        }
+        //        var validaID = new ColaboradorExcluirController().ValidarId(id);
+        //        if (id > 0 && validaID)
+        //        {
+        //            colaboradorModel.Id = int.Parse(txtId.Text);
+        //            _controllerExcluir.Inativar(colaboradorModel);
+        //            MessageBox.Show("Colaborador excluido com sucesso");
+        //            this.Close();
+        //            return;
+        //        }
+        //        MessageBox.Show("id invalido!");
+        //    }
+        //    catch (Exception excecao)
+        //    {
+        //        MessageBox.Show(excecao.Message);
+        //    }
+        //}
 
         private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
         {
@@ -215,6 +216,7 @@ namespace AugustusFahsion.View.Alterar
             mtxtCelular.Text = colaboradorModel.Contato.Celular.ToString();
             txtEmail.Text = colaboradorModel.Contato.Email;
             mtxtCpf.Text = colaboradorModel.Cpf.RetornarValor;
+            cbCondicao.Text = colaboradorModel.Condicao;
 
             txtBanco.Text = colaboradorModel.ContaBancaria.Banco;
             mtxtAgencia.Text = colaboradorModel.ContaBancaria.Agencia;

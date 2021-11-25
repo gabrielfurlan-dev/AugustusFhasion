@@ -107,7 +107,7 @@ namespace AugustusFahsion.DAO
                     conexao.Open();
                     var query = @"select p.IdPessoa, p.IdPessoa,
                     p.Sexo, p.DataNascimento, p.Cpf, p.IdPessoa,
-                    c.IdColaborador, c.Salario, c.Comissao, p.IdPessoa,
+                    c.IdColaborador, c.Salario, c.Condicao, c.Comissao, p.IdPessoa,
                     p.Nome, p.Sobrenome, p.IdPessoa,
                     e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
                     cn.Telefone, cn.Celular, cn.Email, p.IdPessoa,
@@ -132,7 +132,7 @@ namespace AugustusFahsion.DAO
         }
         public static List<ColaboradorListagemModel> BuscarColaboradoresPorNome(string nome)
         {
-            const string query = @"select co.IdColaborador, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
+            const string query = @"select co.IdColaborador, co.Condicao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -156,7 +156,7 @@ namespace AugustusFahsion.DAO
         }
         public static List<ColaboradorListagemModel> BuscarColaboradoresPorId(int id)
         {
-            const string query = @"select c.IdColaborador, c.Salario, c.Comissao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
+            const string query = @"select c.IdColaborador, c.Condicao, c.Salario, c.Comissao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, 
                 e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, 
                 cn.Telefone, cn.Celular, cn.Email
                 from Pessoa p
@@ -186,7 +186,7 @@ namespace AugustusFahsion.DAO
             {
                 const string updatePessoa = @"update Pessoa set Nome = @Nome, Sobrenome = @Sobrenome, Sexo = @Sexo, 
                 DataNascimento = @DataNascimento, Cpf =  @Cpf where IdPessoa = @IdPessoa";
-                const string updateColaborador = @"update Colaborador set Salario = @Salario, Comissao = @Comissao where IdColaborador = @IdColaborador";
+                const string updateColaborador = @"update Colaborador set Salario = @Salario, Comissao = @Comissao, Condicao = @Condicao where IdColaborador = @IdColaborador";
                 const string updateEndereco = @"update Endereco set Cep = @Cep, Logradouro = @Logradouro, Cidade = @Cidade, 
                 Uf = @Uf, Complemento = @Complemento, Bairro = @Bairro, NumeroEndereco = @NumeroEndereco where IdPessoa = @IdPessoa";
                 const string updateContato = @"update Contato set Telefone = @Telefone, Celular = @Celular, Email = @Email where IdPessoa = @IdPessoa";
@@ -244,14 +244,9 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static void ExcluirColaborador(ColaboradorModel colaborador)
+        public static void InativarColaborador(ColaboradorModel colaborador)
         {
-            var IdColaborador = colaborador.IdColaborador;
-            string deleteContaBancaria = @"delete from ContaBancaria where IdColaborador =" + IdColaborador;
-            string deleteContato = @"delete from Contato where IdColaborador =" + IdColaborador;
-            string deleteEndereco = @"delete from Endereco where IdColaborador = " + IdColaborador;
-            string deleteColaborador = @"delete from Colaborador where IdColaborador = " + IdColaborador;
-            string deletePessoa = @"delete from Pessoa where IdColaborador = " + IdColaborador;
+            var query = @"update Colaborador set Condicao = 'Inativo' where IdColaborador = @IdColaborador";
             try
             {
                 using var conexao = new SqlConexao().Connection();
@@ -259,10 +254,7 @@ namespace AugustusFahsion.DAO
                 using (var transacao = conexao.BeginTransaction())
                 {
 
-                    conexao.Execute(deleteContato, IdColaborador, transacao);
-                    conexao.Execute(deleteEndereco, IdColaborador, transacao);
-                    conexao.Execute(deleteColaborador, IdColaborador, transacao);
-                    conexao.Execute(deletePessoa, IdColaborador, transacao);
+                    conexao.Execute(query, colaborador, transacao);
                     transacao.Commit();
                 }
             }

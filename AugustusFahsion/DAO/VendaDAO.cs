@@ -173,20 +173,18 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    const string deleteVendaProduto = @"delete from VendaProduto where IdVenda = @IdVenda";
+                    const string deleteVendaProduto = @"delete VendaProduto where IdVenda = @IdVenda";
 
-                    const string insertVendaProduto = @"insert VendaProduto (IdProdutoGuid, IdProduto, IdVenda, PrecoVenda, Quantidade,
+                    const string insertVendaProduto = @"insert into VendaProduto (IdProdutoGuid, IdProduto, IdVenda, PrecoVenda, Quantidade,
                                     PrecoLiquido, Desconto, Total) values (@IdProdutoGuid, @IdProduto, @IdVenda , @PrecoVenda,
                                     @Quantidade, @PrecoLiquido, @Desconto, @Total)";
 
-                    const string updateVenda = @"update Venda set (FormaPagamento, TotalBruto, TotalDesconto, TotalLiquido)
-                                values ( @FormaPagamento, @TotalBruto, @TotalDesconto, @TotalLiquido) where IdVenda = @IdVenda";
+                    const string updateVenda = @"update Venda set FormaPagamento =  @FormaPagamento, TotalBruto = @TotalBruto, TotalDesconto = @TotalDesconto, TotalLiquido = @TotalLiquido
+                                 where IdVenda = @IdVenda";
 
                     const string retornarEstoque = @"update Produto set QuantidadeEstoque += @QuantidadeEstoque where IdProduto = @IdProduto";
 
                     const string queryListaProdutosAntigos = @"select IdProduto, Quantidade from VendaProduto where IdVenda = @IdVenda";
-
-                    //const string atualizarEstoque = @"update Produto QuantidadeEstoque = QuantidadeEstoque - @QuantidadeEstoque where IdProduto = @IdProduto";
 
 
 
@@ -196,7 +194,6 @@ namespace AugustusFahsion.DAO
                     {
                         conexao.Execute(retornarEstoque, new { IdProduto = item.IdProduto, QuantidadeEstoque = item.Quantidade }, transacao);
                     }
-
 
                     conexao.Execute(deleteVendaProduto, new { venda.IdVenda }, transacao);
 
@@ -229,7 +226,6 @@ namespace AugustusFahsion.DAO
                 {
                     conexao.Execute(query, new { IdProduto = item.IdProduto, QuantidadeEstoque = item.Quantidade }, transacao);
                 }
-                transacao.Commit();
             }
             catch (Exception ex)
             {

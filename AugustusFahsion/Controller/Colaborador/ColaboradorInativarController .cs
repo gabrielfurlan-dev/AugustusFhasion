@@ -6,11 +6,11 @@ namespace AugustusFahsion.Controller
 {
     public class ColaboradorExcluirController
     {
-        public void ExcluirColaborador(ColaboradorModel colaborador)
+        public void Inativar(ColaboradorModel colaborador)
         {
             try
             {
-                    ColaboradorDAO.ExcluirColaborador(colaborador);
+                    ColaboradorDAO.InativarColaborador(colaborador);
             }
             catch (Exception excecao)
             {

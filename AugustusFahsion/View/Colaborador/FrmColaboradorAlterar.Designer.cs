@@ -30,7 +30,6 @@ namespace AugustusFahsion.View.Alterar
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -55,10 +54,11 @@ namespace AugustusFahsion.View.Alterar
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtBanco = new System.Windows.Forms.TextBox();
-            this.cbTipoConta = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.cbTipoConta = new System.Windows.Forms.ComboBox();
             this.mtxtAgencia = new System.Windows.Forms.MaskedTextBox();
             this.mtxtConta = new System.Windows.Forms.MaskedTextBox();
+            this.cbCondicao = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -84,6 +84,7 @@ namespace AugustusFahsion.View.Alterar
             this.label16 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -95,31 +96,18 @@ namespace AugustusFahsion.View.Alterar
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Controls.Add(this.cbCondicao);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(27, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(997, 519);
             this.panel1.TabIndex = 42;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnExcluir.Location = new System.Drawing.Point(440, 466);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 39);
-            this.btnExcluir.TabIndex = 54;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCancelar
             // 
@@ -127,7 +115,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnCancelar.Location = new System.Drawing.Point(336, 466);
+            this.btnCancelar.Location = new System.Drawing.Point(398, 466);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 39);
             this.btnCancelar.TabIndex = 55;
@@ -359,7 +347,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSalvar.Location = new System.Drawing.Point(544, 466);
+            this.btnSalvar.Location = new System.Drawing.Point(502, 466);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(98, 39);
             this.btnSalvar.TabIndex = 53;
@@ -375,8 +363,8 @@ namespace AugustusFahsion.View.Alterar
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.txtBanco);
-            this.groupBox4.Controls.Add(this.cbTipoConta);
             this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.cbTipoConta);
             this.groupBox4.Controls.Add(this.mtxtAgencia);
             this.groupBox4.Controls.Add(this.mtxtConta);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -437,6 +425,17 @@ namespace AugustusFahsion.View.Alterar
             this.txtBanco.Size = new System.Drawing.Size(95, 16);
             this.txtBanco.TabIndex = 20;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label26.Location = new System.Drawing.Point(23, 15);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(152, 25);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Dados bancários";
+            // 
             // cbTipoConta
             // 
             this.cbTipoConta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -450,21 +449,10 @@ namespace AugustusFahsion.View.Alterar
             "Conta salário",
             "Conta digital",
             "Conta universitária"});
-            this.cbTipoConta.Location = new System.Drawing.Point(230, 65);
+            this.cbTipoConta.Location = new System.Drawing.Point(232, 64);
             this.cbTipoConta.Name = "cbTipoConta";
             this.cbTipoConta.Size = new System.Drawing.Size(91, 23);
             this.cbTipoConta.TabIndex = 22;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label26.Location = new System.Drawing.Point(23, 15);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(152, 25);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "Dados bancários";
             // 
             // mtxtAgencia
             // 
@@ -489,6 +477,21 @@ namespace AugustusFahsion.View.Alterar
             this.mtxtConta.Size = new System.Drawing.Size(84, 16);
             this.mtxtConta.TabIndex = 23;
             this.mtxtConta.ValidatingType = typeof(System.DateTime);
+            // 
+            // cbCondicao
+            // 
+            this.cbCondicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.cbCondicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCondicao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbCondicao.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbCondicao.FormattingEnabled = true;
+            this.cbCondicao.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.cbCondicao.Location = new System.Drawing.Point(871, 86);
+            this.cbCondicao.Name = "cbCondicao";
+            this.cbCondicao.Size = new System.Drawing.Size(91, 23);
+            this.cbCondicao.TabIndex = 22;
             // 
             // label19
             // 
@@ -790,6 +793,16 @@ namespace AugustusFahsion.View.Alterar
             this.label4.TabIndex = 7;
             this.label4.Text = "Telefone";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(869, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Condição";
+            // 
             // FrmColaboradorAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -868,10 +881,11 @@ namespace AugustusFahsion.View.Alterar
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbCondicao;
+        private System.Windows.Forms.Label label1;
     }
 }
