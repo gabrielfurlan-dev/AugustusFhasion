@@ -36,7 +36,6 @@ namespace AugustusFahsion.Controller
             string.IsNullOrEmpty(texto);
         public static bool DataDeHoje(this DateTime dataNascimento) =>
             dataNascimento == DateTime.Now;
-
         public static int IntOuZero(this string valor)
         {
             int.TryParse(valor, out int resultado);

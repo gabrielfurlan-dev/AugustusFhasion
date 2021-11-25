@@ -13,7 +13,6 @@ namespace AugustusFahsion.Model
         public string Fabricante { get; set; }
         public double PrecoCusto { get; set; }
         public double PrecoVenda { get; set; }
-        public double precoPromocao { get; set; }
         public string CodigoBarras { get; set; }
         public int QuantidadeEstoque { get; set; }
         public string Condicao { get; set; }

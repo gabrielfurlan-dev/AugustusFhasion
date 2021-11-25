@@ -76,7 +76,6 @@ namespace AugustusFahsion.View.Alterar
                 produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
                 produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
                 produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
-                produtoModel.CodigoBarras = cbCondicao.Text;
 
                 _controllerAlterar.AtualizarProduto(produtoModel);
                 this.Close();

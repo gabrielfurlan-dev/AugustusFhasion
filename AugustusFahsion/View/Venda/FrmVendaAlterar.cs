@@ -275,6 +275,7 @@ namespace AugustusFahsion.View.Venda
             }
 
             AlterarVenda();
+            this.Close();
         }
 
         private void AlterarVenda()

@@ -18,9 +18,9 @@ namespace AugustusFahsion.View
         }
 
 
-        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
-        private void btnEnviar_Click_1(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
 
             {
@@ -52,7 +52,6 @@ namespace AugustusFahsion.View
                     produtoModel.Fabricante = txtFabricante.Text;
                     produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
                     produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
-                    produtoModel.precoPromocao = (double)nupQuantidadeEstoque.Value;
                     produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
                     produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
                     produtoModel.Condicao = cbCondicao.Text;

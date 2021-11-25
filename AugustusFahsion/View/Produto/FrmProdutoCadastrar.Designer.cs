@@ -79,7 +79,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label4
             // 
@@ -103,7 +103,7 @@
             this.btnEnviar.TabIndex = 22;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
-            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click_1);
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // groupBox1
             // 
@@ -173,7 +173,7 @@
             0,
             0});
             this.nupQuantidadeEstoque.Name = "nupQuantidadeEstoque";
-            this.nupQuantidadeEstoque.Size = new System.Drawing.Size(114, 19);
+            this.nupQuantidadeEstoque.Size = new System.Drawing.Size(143, 19);
             this.nupQuantidadeEstoque.TabIndex = 8;
             // 
             // nupPrecoVenda
@@ -269,7 +269,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(290, 110);
+            this.label6.Location = new System.Drawing.Point(292, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 15);
             this.label6.TabIndex = 6;

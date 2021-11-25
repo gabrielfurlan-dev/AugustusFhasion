@@ -87,6 +87,8 @@ namespace AugustusFahsion.View.Venda
             var produto = ProdutoAlterarController.Buscar(id);
             AtribuirValoresDoProdutoSelecionado(produto);
             CalcularPrecosProdutoSelecionado();
+            nupQuantidade.Enabled = true;
+            nupDesconto.Enabled = true;
         }
         private void dgvClienteListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -137,6 +139,7 @@ namespace AugustusFahsion.View.Venda
             AdicionarProdutoNoCarrinho();
             AtualizarCarrinho();
             AtualizarPrecosTotais();
+            LimparCamposDoProduto();
         }
         private void BtnRemover(object sender, EventArgs e)
         {
@@ -148,28 +151,64 @@ namespace AugustusFahsion.View.Venda
         }
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
+            if (!VerificaSeCamposEstãoPreenchidos()) return;
+
+            RegistrarVenda();
+            MessageBox.Show("Venda Registrada");
+            LimparTodosOsCampos();
+        }
+
+        private bool VerificaSeCamposEstãoPreenchidos()
+        {
             if (lblClienteSelecionado.Text.Equals("Selecione um cliente. . ."))
             {
                 MessageBox.Show("Selecione um cliente");
-                return;
+                return false;
             }
             if (lblColaboradorSelecionado.Text.Equals("Selecione um colaborador. . ."))
             {
                 MessageBox.Show("Selecione um colaborador");
-                return;
+                return false;
             }
-            if (_vendaModel.ListaDeItens.Count.Equals(0)) {
+            if (_vendaModel.ListaDeItens.Count.Equals(0))
+            {
                 MessageBox.Show("Selecione pelo menos 1 item ao seu carrinho");
-                return;
+                return false;
             }
             if (String.IsNullOrEmpty(cbFormaPagamento.Text))
             {
                 MessageBox.Show("Selecione uma forma de pagamento.");
-                return;
+                return false;
             }
+            return true;
+        }
 
-            RegistrarVenda();
-            MessageBox.Show("Venda Registrada");
+        private void LimparCamposDoProduto()
+        {
+            lblProdutoSelecionado.Text = "Selecione um produto. . .";
+            lblIdProduto.Text = "";
+            lblPrecoProduto.Text = "R$ 00,00";
+            nupQuantidade.Value = 1;
+            nupDesconto.Value = 0;
+            lblTotalDescontoProduto.Text = "R$ 00,00";
+            lblTotalProdutoSemDesconto.Text = "R$ 00,00";
+            lblLucroProduto.Text = "R$ 00,00";
+            lblTotalProdutoComDesconto.Text = "R$ 00,00";
+            nupQuantidade.Enabled = false;
+            nupDesconto.Enabled = false;
+        }
+
+        private void LimparTodosOsCampos()
+        {
+            lblClienteSelecionado.Text = "Selecione um cliente. . .";
+            lblIdCliente.Text = "";
+            lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
+            lblIdColaborador.Text = "";
+
+            LimparCamposDoProduto();
+            AtualizarCarrinho();
+
+            _vendaModel.ListaDeItens = new List<VendaProdutoModel>();
         }
 
         //selecionar Model

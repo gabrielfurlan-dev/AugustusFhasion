@@ -4,7 +4,6 @@ using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace AugustusFahsion.DAO
@@ -13,8 +12,6 @@ namespace AugustusFahsion.DAO
     {
         public static void RegistrarVenda(VendaModel vendaModel)
         {
-            string updateEstoque = @"update Produto set QuantidadeEstoque -= @Quantidade where IdProduto = @IdProduto";
-
 
             var venda = @"insert into Venda (IdCliente, IdColaborador, FormaPagamento, TotalBruto, TotalDesconto, 
 		                        TotalLiquido)
@@ -37,8 +34,6 @@ namespace AugustusFahsion.DAO
                     vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
 
                     conexao.Execute(VendaProduto, vendaModel.ListaDeItens, transacao);
-
-                    conexao.Execute(updateEstoque, vendaModel.ListaDeItens, transacao);
 
                     AtualizarEstoque(vendaModel, conexao, transacao);
 

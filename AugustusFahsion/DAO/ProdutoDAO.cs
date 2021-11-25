@@ -180,7 +180,7 @@ namespace AugustusFahsion.DAO
                 using (var conexao = new SqlConexao().Connection())
                 {
                     var id = produto.IdProduto;
-                    conexao.Query(@"delete from Produto where Id=" + id);
+                    conexao.Query(@"update Produto set Condicao = 'Inativo' where Id=" + id);
                 }
             }catch(Exception ex)
             {

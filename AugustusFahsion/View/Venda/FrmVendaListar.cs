@@ -8,6 +8,7 @@ namespace AugustusFahsion.View.Venda
     {
         VendaListarController _vendaListagemcontroller = new VendaListarController();
         VendaAlterarController _alterarVendaController = new VendaAlterarController();
+        private int _idVendamodelSelecionada = 0;
         public FrmVendaListar()
         {
             InitializeComponent();
@@ -18,11 +19,14 @@ namespace AugustusFahsion.View.Venda
             _vendaListagemcontroller = vendaListarController;
         }
         private void btnFechar_Click(object sender, EventArgs e) => this.Close();
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+
         private void btnProcurar_Click(object sender, EventArgs e) => dgvListaVenda.DataSource = _vendaListagemcontroller.ListarVendas();
 
         private void dgvListaVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-                
+            _idVendamodelSelecionada = SelecionarVendaModel();
+            btnAlterar.Enabled = true;
         }
 
         private int SelecionarVendaModel() => Convert.ToInt32(dgvListaVenda.SelectedRows[0].Cells[0].Value);
@@ -33,7 +37,12 @@ namespace AugustusFahsion.View.Venda
             var venda = _alterarVendaController.BuscarVenda(id);
             _alterarVendaController.AbrirFormulario(venda);
         }
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            var venda = _alterarVendaController.BuscarVenda(_idVendamodelSelecionada);
+            _alterarVendaController.AbrirFormulario(venda);
+        }
 
-        private void button2_Click(object sender, EventArgs e) => this.Close();
+        private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
     }
 }

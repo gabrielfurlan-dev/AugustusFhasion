@@ -36,10 +36,14 @@ namespace AugustusFashionTeste
         [DataRow ("string", false)]
         [DataRow ("40028922", true)]
         [DataRow ("uhausd12863", false)]
-        public void se_conversao_para_inteiro_for_valida_retorna_true(string valor, bool resultado)
-        {
-            Assert.AreEqual(valor.EhNumerico(), resultado);
-        }
+        public void se_conversao_para_inteiro_for_valida_retorna_true(string valor, bool resultado) => Assert.AreEqual(valor.EhNumerico(), resultado);
 
+        [DataTestMethod]
+        [DataRow("R$ 01,20", true)]
+        [DataRow("01,20", true)]
+        [DataRow("x", false)]
+        [DataRow("x 01,20", false)]
+        public void se_conversao_de_um_valor_em_real_para_decimal_for_valida_retorna_true(string real, bool resultado) => 
+            Assert.AreEqual(real.RealParaDecimal(), resultado);
     }
 }
