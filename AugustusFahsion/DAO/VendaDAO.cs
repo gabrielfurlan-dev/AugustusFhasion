@@ -131,53 +131,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        //public static List<ClienteListagemModel> BuscarClientePorNome(string nome)
-        //{
-        //    const string listarPessoa = @"select c.IdPessoa, c.IdCliente, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa,
-        //        e.Cep, e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa,
-        //        cn.Telefone, cn.Celular, cn.Email
-        //        from Pessoa p
-        //        inner join Cliente c on p.IdPessoa = c.IdPessoa
-        //        inner join Endereco e on p.IdPessoa = e.IdPessoa
-        //        inner join Contato cn on p.IdPessoa = cn.IdPessoa
-        //        where p.Nome like @nome + '%'";
-        //    try
-        //    {
-        //        using (var conexao = new SqlConexao().Connection())
-        //        {
-        //            //return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-        //            //    (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
-        //            //    new { nome }, splitOn: "IdPessoa").AsList();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
-        //public static List<ClienteListagemModel> BuscarClientePorId(int id)
-        //{
-        //    const string listarPessoa = @"select c.IdPessoa, c.IdCliente. p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
-        //        e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email,
-        //        from Pessoa p
-        //        inner join Cliente c on p.IdPessoa = c.IdPessoa
-        //        inner join Endereco e on p.IdPessoa = e.IdPessoa
-        //        inner join Contato cn on p.IdPessoa = cn.IdPessoa 
-        //        where p.IdPessoa = @id";
-        //    try
-        //    {
-        //        using (var conexao = new SqlConexao().Connection())
-        //        {
-        //            //return conexao.Query<ClienteListagemModel, NomeCompletoModel, EnderecoModel, ContatoModel, ClienteListagemModel>(listarPessoa,
-        //            //    (clienteListagem, nomeCompleto, endereco, contato) => MapearClienteListagem(clienteListagem, nomeCompleto, endereco, contato),
-        //            //    new { id }, splitOn: "IdPessoa").AsList();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        
 
         public static void AlterarVenda(VendaModel venda)
         {

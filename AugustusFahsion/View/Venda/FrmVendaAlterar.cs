@@ -38,7 +38,6 @@ namespace AugustusFahsion.View.Venda
         private void FrmVendaAlterar_Load(object sender, EventArgs e)
         {
             AdicionarProdutosRegistradosDaVendaNaLista();
-
             AtualizarCarrinho();
         }
         
@@ -245,8 +244,8 @@ namespace AugustusFahsion.View.Venda
 
         private void BtnInativarVenda_Click(object sender, EventArgs e)
         {
-            var vendaSelecionada = _controllerVendaAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
-            VendaAlterarController.InativarVenda(vendaSelecionada);
+            //var vendaSelecionada = _controllerVendaAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
+            VendaAlterarController.InativarVenda(_vendaModelSelecionada);
             MessageBox.Show("Venda Inativada.");
             this.Close(); 
         }
