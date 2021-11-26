@@ -84,7 +84,6 @@ namespace AugustusFahsion.View.Venda
             this.lblTotalBruto = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
-            this.btnFehcar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).BeginInit();
@@ -700,28 +699,12 @@ namespace AugustusFahsion.View.Venda
             this.lbl.TabIndex = 102;
             this.lbl.Text = "Total bruto";
             // 
-            // btnFehcar
-            // 
-            this.btnFehcar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFehcar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(83)))), ((int)(((byte)(87)))));
-            this.btnFehcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFehcar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFehcar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFehcar.Location = new System.Drawing.Point(1047, 0);
-            this.btnFehcar.Name = "btnFehcar";
-            this.btnFehcar.Size = new System.Drawing.Size(54, 24);
-            this.btnFehcar.TabIndex = 57;
-            this.btnFehcar.Text = "X";
-            this.btnFehcar.UseVisualStyleBackColor = false;
-            this.btnFehcar.Click += new System.EventHandler(this.btnFehcar_Click);
-            // 
             // FrmVendaAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1102, 740);
-            this.Controls.Add(this.btnFehcar);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -786,6 +769,5 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lblTotalLiquidoProduto;
         private System.Windows.Forms.Label lblTotalBrutoProduto;
         private System.Windows.Forms.Button btnSalvarAlteracoes;
-        private System.Windows.Forms.Button btnFehcar;
     }
 }

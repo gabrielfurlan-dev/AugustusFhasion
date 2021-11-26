@@ -63,6 +63,5 @@ namespace AugustusFahsion.View
             
             dgvLista.DataSource = _controller.ListarClientesPorNome(txtProcurar.Text);
         }
-
     }
 }
