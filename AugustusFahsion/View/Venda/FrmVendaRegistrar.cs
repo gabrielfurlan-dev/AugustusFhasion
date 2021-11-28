@@ -143,8 +143,11 @@ namespace AugustusFahsion.View.Venda
         }
         private void BtnRemover(object sender, EventArgs e)
         {
-            int selecionado = Convert.ToInt32(dgvCarrinho.SelectedRows[0].Index);
-            _vendaModel.ListaDeItens.RemoveAt(selecionado);
+            if(_vendaModel.ListaDeItens.Count() > 0)
+            {
+                int selecionado = Convert.ToInt32(dgvCarrinho.SelectedRows[0].Index);
+                _vendaModel.ListaDeItens.RemoveAt(selecionado); 
+            }
 
             AtualizarCarrinho();
             AtualizarPrecosTotais();
@@ -247,6 +250,7 @@ namespace AugustusFahsion.View.Venda
         private void AtualizarPrecosTotais() {
             lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ToString("c");
             lblTotalLiquido.Text = _vendaModel.TotalLiquido.ToString("c");
+            lbl41.Text = _vendaModel.TotalLiquido.ToString("c");
             lblTotalDesconto.Text = _vendaModel.TotalDesconto.ToString("c");
             lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
         }
@@ -291,7 +295,8 @@ namespace AugustusFahsion.View.Venda
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => 
             (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
 
-        private void button2_Click(object sender, EventArgs e) => this.Close();
-            
-    }
+        private void button2_Click(object sender, EventArgs e) => this.Close(); 
+
+        private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
+        }
 }
