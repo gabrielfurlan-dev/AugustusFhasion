@@ -185,9 +185,7 @@ namespace AugustusFahsion.View.Alterar
             // 
             this.nupQuantidadeEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.nupQuantidadeEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nupQuantidadeEstoque.DecimalPlaces = 2;
             this.nupQuantidadeEstoque.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidadeEstoque.Hexadecimal = true;
             this.nupQuantidadeEstoque.Location = new System.Drawing.Point(292, 128);
             this.nupQuantidadeEstoque.Maximum = new decimal(new int[] {
             9999,
@@ -195,7 +193,7 @@ namespace AugustusFahsion.View.Alterar
             0,
             0});
             this.nupQuantidadeEstoque.Name = "nupQuantidadeEstoque";
-            this.nupQuantidadeEstoque.Size = new System.Drawing.Size(114, 19);
+            this.nupQuantidadeEstoque.Size = new System.Drawing.Size(143, 19);
             this.nupQuantidadeEstoque.TabIndex = 8;
             // 
             // nupPrecoVenda

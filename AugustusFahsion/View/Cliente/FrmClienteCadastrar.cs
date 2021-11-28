@@ -18,20 +18,8 @@ namespace AugustusFahsion.View
             _controller = clienteCadastrarController;
             clienteModel = new ClienteModel{};
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnCancelar_Click_1(object sender, EventArgs e) =>this.Close();
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {

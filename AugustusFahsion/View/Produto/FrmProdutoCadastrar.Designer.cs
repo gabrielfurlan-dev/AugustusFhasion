@@ -164,7 +164,6 @@
             // 
             this.nupQuantidadeEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.nupQuantidadeEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nupQuantidadeEstoque.DecimalPlaces = 2;
             this.nupQuantidadeEstoque.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.nupQuantidadeEstoque.Location = new System.Drawing.Point(292, 128);
             this.nupQuantidadeEstoque.Maximum = new decimal(new int[] {

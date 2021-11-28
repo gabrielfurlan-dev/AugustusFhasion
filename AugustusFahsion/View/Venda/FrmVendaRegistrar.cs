@@ -187,13 +187,13 @@ namespace AugustusFahsion.View.Venda
         {
             lblProdutoSelecionado.Text = "Selecione um produto. . .";
             lblIdProduto.Text = "";
-            lblPrecoProduto.Text = "R$ 00,00";
-            nupQuantidade.Value = 1;
             nupDesconto.Value = 0;
+            nupQuantidade.Value = 1;
             lblTotalDescontoProduto.Text = "R$ 00,00";
             lblTotalProdutoSemDesconto.Text = "R$ 00,00";
-            lblLucroProduto.Text = "R$ 00,00";
             lblTotalProdutoComDesconto.Text = "R$ 00,00";
+            lblLucroProduto.Text = "R$ 00,00";
+            lblPrecoProduto.Text = "R$ 00,00";
             nupQuantidade.Enabled = false;
             nupDesconto.Enabled = false;
         }
@@ -222,8 +222,10 @@ namespace AugustusFahsion.View.Venda
             dgvCarrinho.SelectedRows[0].Cells[7].Value.ToString();
 
         //atualizar precos
+
+            
         private decimal ValorTotalBrutoProduto() =>
-            Convert.ToDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
+            Extensoes.RealParaDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
         private decimal ValorTotalDescontoProduto() => 
             ValorTotalBrutoProduto() - ValorTotalDesconto();
         private decimal ValorProdutoLucro() => 
@@ -282,7 +284,7 @@ namespace AugustusFahsion.View.Venda
                 PrecoLiquido = desconto,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
                 Total = lblTotalProdutoSemDesconto.Text.RealParaDecimal(),
-                Lucro = lblLucroProduto.Text.RealParaDecimal()
+                //Lucro = lblLucroProduto.Text.RealParaDecimal()
             });
         }
 

@@ -236,7 +236,7 @@ namespace AugustusFahsion.View
             this.txtLogradouro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogradouro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtLogradouro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtLogradouro.Location = new System.Drawing.Point(287, 134);
+            this.txtLogradouro.Location = new System.Drawing.Point(79, 81);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(201, 20);
             this.txtLogradouro.TabIndex = 13;
@@ -288,7 +288,7 @@ namespace AugustusFahsion.View
             this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCidade.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCidade.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCidade.Location = new System.Drawing.Point(79, 81);
+            this.txtCidade.Location = new System.Drawing.Point(287, 134);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(193, 20);
             this.txtCidade.TabIndex = 9;
