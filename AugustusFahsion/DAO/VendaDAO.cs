@@ -13,13 +13,13 @@ namespace AugustusFahsion.DAO
         public static void RegistrarVenda(VendaModel vendaModel)
         {
 
-            var venda = @"insert into Venda (IdCliente, IdColaborador, FormaPagamento, TotalBruto, TotalDesconto, 
+            var insertVenda = @"insert into Venda (IdCliente, IdColaborador, FormaPagamento, TotalBruto, TotalDesconto, 
 		                        TotalLiquido)
                                 output inserted.IdVenda
                                 values ( @IdCliente, @IdColaborador, @FormaPagamento, 
                                 @TotalBruto, @TotalDesconto, @TotalLiquido)";
 
-            var VendaProduto = @"insert VendaProduto (IdProdutoGuid, IdProduto, IdVenda, PrecoVenda, Quantidade,
+            var insertVendaProduto = @"insert VendaProduto (IdProdutoGuid, IdProduto, IdVenda, PrecoVenda, Quantidade,
                                     PrecoLiquido, Desconto, Total) values (@IdProdutoGuid, @IdProduto, @IdVenda , @PrecoVenda,
                                     @Quantidade, @PrecoLiquido, @Desconto, @Total)";
 
@@ -29,11 +29,31 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    vendaModel.IdVenda = conexao.ExecuteScalar<int>(venda, vendaModel, transacao);
+                    conexao.ExecuteScalar<int>(insertVenda, new { 
+                            vendaModel.IdCliente,
+                            vendaModel.IdColaborador,
+                            vendaModel.FormaPagamento,
+                            TotalBruto = vendaModel.TotalBruto.RetornarValor,
+                            TotalDesconto = vendaModel.TotalDesconto.RetornarValor,
+                            TotalLiquido = vendaModel.TotalLiquido.RetornarValor
 
-                    vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
+                    }, transacao);
 
-                    conexao.Execute(VendaProduto, vendaModel.ListaDeItens, transacao);
+                    foreach (var item in vendaModel.ListaDeItens)
+                    {
+                        conexao.Execute(insertVendaProduto, new
+                        {
+                            item.IdProdutoGuid,
+                            item.IdProduto,
+                            item.IdVenda,
+                            PrecoVenda = item.PrecoVenda.RetornarValor,
+                            item.Quantidade,
+                            PrecoLiquido = item.PrecoLiquido.RetornarValor,
+                            item.Desconto,
+                            Total = item.Total.RetornarValor
+
+                        }, transacao);
+                    }
 
                     AtualizarEstoque(vendaModel, conexao, transacao);
 
@@ -165,9 +185,29 @@ namespace AugustusFahsion.DAO
 
                     conexao.Execute(deleteVendaProduto, new { venda.IdVenda }, transacao);
 
-                    conexao.Execute(insertVendaProduto, venda.ListaDeItens, transacao);
+                    foreach (var item in venda.ListaDeItens)
+                    {
+                        conexao.Execute(insertVendaProduto, new {
+                            item.IdProdutoGuid,
+                            item.IdProduto,
+                            item.IdVenda,
+                            PrecoVenda = item.PrecoVenda.RetornarValor,
+                            item.Quantidade,
+                            PrecoLiquido = item.PrecoLiquido.RetornarValor,
+                            item.Desconto,
+                            Total = item.Total.RetornarValor
 
-                    conexao.Execute(updateVenda, venda, transacao);
+                        }, transacao);
+                    }
+
+                    conexao.Execute(updateVenda, 
+                        new {
+                            venda.FormaPagamento,
+                            venda.IdVenda,
+                            TotalBruto = venda.TotalBruto.RetornarValor,
+                            TotalDesconto = venda.TotalDesconto.RetornarValor,
+                            TotalLiquido = venda.TotalLiquido.RetornarValor
+                        }, transacao);
 
                     AtualizarEstoque(venda, conexao, transacao);
 

@@ -144,12 +144,12 @@ namespace AugustusFahsion
             this.btnListarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarCliente.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnListarCliente.Location = new System.Drawing.Point(723, 90);
+            this.btnListarCliente.Location = new System.Drawing.Point(724, 90);
             this.btnListarCliente.Name = "btnListarCliente";
             this.btnListarCliente.Size = new System.Drawing.Size(41, 50);
             this.btnListarCliente.TabIndex = 10;
             this.btnListarCliente.UseVisualStyleBackColor = false;
-            this.btnListarCliente.Click += new System.EventHandler(this.Button3_Click_1);
+            this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click);
             // 
             // btnCadastrarCliente
             // 
@@ -165,7 +165,7 @@ namespace AugustusFahsion
             this.btnCadastrarCliente.Size = new System.Drawing.Size(50, 50);
             this.btnCadastrarCliente.TabIndex = 11;
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
-            this.btnCadastrarCliente.Click += new System.EventHandler(this.Button4_Click_1);
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
             // label5
             // 

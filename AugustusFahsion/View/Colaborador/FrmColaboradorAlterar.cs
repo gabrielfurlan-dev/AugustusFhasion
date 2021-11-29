@@ -142,7 +142,7 @@ namespace AugustusFahsion.View.Alterar
                     colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
                     colaboradorModel.Sexo = cbSexo.Text;
                     colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                    colaboradorModel.Salario = (double)nupSalario.Value;
+                    colaboradorModel.Salario = nupSalario.Value;
                     colaboradorModel.Comissao = (int)nupComissao.Value;
                     colaboradorModel.Endereco.Cep = mtxtCep.Text;
                     colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
@@ -204,7 +204,7 @@ namespace AugustusFahsion.View.Alterar
             dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
             cbSexo.Text = colaboradorModel.Sexo;
             mtxtCep.Text = colaboradorModel.Endereco.Cep.ToString();
-            nupSalario.Value = (decimal)colaboradorModel.Salario;
+            nupSalario.Value = colaboradorModel.Salario.RetornarValor;
             nupComissao.Value = colaboradorModel.Comissao;
             txtLogradouro.Text = colaboradorModel.Endereco.Logradouro;
             txtCidade.Text = colaboradorModel.Endereco.Cidade;

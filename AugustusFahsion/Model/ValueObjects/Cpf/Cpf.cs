@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AugustusFahsion.Model.ValueObjects
 {
@@ -26,8 +22,3 @@ namespace AugustusFahsion.Model.ValueObjects
 
     }
 }
-
-        //public ValidationResult Validar()
-        //{
-        //    return new CpfValidator().Validate(this);
-        //}

@@ -127,7 +127,7 @@ namespace AugustusFahsion.View.Cadastrar
                 colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
                 colaboradorModel.Sexo = cbSexo.Text;
                 colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                colaboradorModel.Salario = (double)nupSalario.Value;
+                colaboradorModel.Salario = nupSalario.Value;
                 colaboradorModel.Comissao = (int)nupComissao.Value;
                 colaboradorModel.Endereco.Cep = mtxtCep.Text;
                 colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;

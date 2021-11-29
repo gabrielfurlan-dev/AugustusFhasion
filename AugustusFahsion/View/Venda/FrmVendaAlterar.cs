@@ -74,9 +74,9 @@ namespace AugustusFahsion.View.Venda
             lblIdVenda.Text = vendaListagemModel[0].IdVenda.ToString();
             lblClienteSelecionado.Text = vendaListagemModel[0].NomeCliente;
             lblColaboradorSelecionado.Text = vendaListagemModel[0].NomeColaborador;
-            lblTotalBruto.Text = vendaListagemModel[0].TotalBruto.ToString("c");
-            lblTotalLiquido.Text = vendaListagemModel[0].TotalLiquido.ToString("c");
-            lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ToString("c");
+            lblTotalBruto.Text = vendaListagemModel[0].TotalBruto.ValorFormatado;
+            lblTotalLiquido.Text = vendaListagemModel[0].TotalLiquido.ValorFormatado;
+            lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
             lblIdCliente.Text = vendaModel.IdCliente.ToString();
             lblIdColaborador.Text = vendaModel.IdColaborador.ToString();

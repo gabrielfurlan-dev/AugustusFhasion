@@ -188,12 +188,11 @@ namespace AugustusFahsion.View.Venda
             nupDesconto.Value = 0;
             nupQuantidade.Value = 0;
             lblTotalDescontoProduto.Text = "R$ 00,00";
-            lblTotalProdutoSemDesconto.Text = "R$ 00,00";
-            lblTotalProdutoComDesconto.Text = "R$ 00,00";
+            lblTotalLiquidoProduto.Text = "R$ 00,00";
+            lblTotalBrutoProduto.Text = "R$ 00,00";
             lblLucroProduto.Text = "R$ 00,00";
             lblPrecoProduto.Text = "R$ 00,00";
         }
-
         private void LimparTodosOsCampos()
         {
             nupDesconto.Enabled = false;
@@ -221,9 +220,8 @@ namespace AugustusFahsion.View.Venda
         public string SelecionarCarrinhoModel() => 
             dgvCarrinho.SelectedRows[0].Cells[7].Value.ToString();
 
-        //atualizar precos
 
-            
+        //atualizar precos    
         private decimal ValorTotalBrutoProduto() =>
             Extensoes.RealParaDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
         private decimal ValorTotalDescontoProduto() => 
@@ -234,8 +232,8 @@ namespace AugustusFahsion.View.Venda
             ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
         private void CalcularPrecosProdutoSelecionado()
         {
-            lblTotalProdutoSemDesconto.Text = ValorTotalBrutoProduto().ToString("c");
-            lblTotalProdutoComDesconto.Text = ValorTotalDesconto().ToString("c");
+            lblTotalLiquidoProduto.Text = ValorTotalBrutoProduto().ToString("c");
+            lblTotalBrutoProduto.Text = ValorTotalDesconto().ToString("c");
             lblTotalDescontoProduto.Text = ValorTotalDescontoProduto().ToString("c");
             lblLucroProduto.Text = ValorProdutoLucro().ToString("c");
         }
@@ -245,11 +243,11 @@ namespace AugustusFahsion.View.Venda
             dgvCarrinho.DataSource = _vendaModel.ListaDeItens;
         }
         private void AtualizarPrecosTotais() {
-            lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ToString("c");
-            lblTotalLiquido.Text = _vendaModel.TotalLiquido.ToString("c");
-            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ToString("c");
-            lblTotalDesconto.Text = _vendaModel.TotalDesconto.ToString("c");
-            lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
+            lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ValorFormatado;
+            lblTotalLiquido.Text = _vendaModel.TotalLiquido.ValorFormatado;
+            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ValorFormatado;
+            lblTotalDesconto.Text = _vendaModel.TotalDesconto.ValorFormatado;
+            lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("C");
         }
 
         private void AtribuirValoresDoProdutoSelecionado(ProdutoModel produto)
@@ -257,9 +255,9 @@ namespace AugustusFahsion.View.Venda
             lblIdProduto.Text = produto.IdProduto.ToString();
             lblProdutoSelecionado.Text = produto.Nome;
             lblPrecoProduto.Text = produto.PrecoVenda.ToString();
-            lblTotalProdutoSemDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblTotalProdutoComDesconto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblProdutoLucroUnitario.Text = (produto.PrecoVenda - produto.PrecoCusto).ToString();
+            lblTotalLiquidoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda.RetornarValor) * nupQuantidade.Value).ToString();
+            lblTotalBrutoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda.RetornarValor) * nupQuantidade.Value).ToString();
+            lblProdutoLucroUnitario.Text = (produto.PrecoVenda.RetornarValor - produto.PrecoCusto.RetornarValor).ToString();
             nupQuantidade.Maximum = produto.QuantidadeEstoque;
         }
         public void RegistrarVenda() 
@@ -270,7 +268,6 @@ namespace AugustusFahsion.View.Venda
             _vendaModel.FormaPagamento = cbFormaPagamento.Text;
 
             _vendaRegistrarController.RegistrarVenda(_vendaModel);
-
         }
         public void AdicionarProdutoNoCarrinho() {
             var desconto = ValorTotalDesconto();
@@ -284,7 +281,7 @@ namespace AugustusFahsion.View.Venda
                 Desconto = (int)nupDesconto.Value,
                 PrecoLiquido = desconto,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
-                Total = lblTotalProdutoSemDesconto.Text.RealParaDecimal(),
+                Total = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 //Lucro = lblLucroProduto.Text.RealParaDecimal()
             });
         }
@@ -292,8 +289,6 @@ namespace AugustusFahsion.View.Venda
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => 
             (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
 
-        private void button2_Click(object sender, EventArgs e) => this.Close(); 
-
         private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
-        }
+     }
 }

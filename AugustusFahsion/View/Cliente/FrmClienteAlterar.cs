@@ -39,7 +39,7 @@ namespace AugustusFahsion.View
             dtpDataNascimento.Text = clienteModel.DataNascimento.ToString();
             cbSexo.Text = clienteModel.Sexo;
             mtxtCep.Text = clienteModel.Endereco.Cep.ToString();
-            nupValorLimiteAPrazo.Value = (decimal)clienteModel.ValorLimiteAPrazo;
+            nupValorLimiteAPrazo.Value = clienteModel.ValorLimiteAPrazo.RetornarValor;
             txtLogradouro.Text = clienteModel.Endereco.Logradouro;
             txtCidade.Text = clienteModel.Endereco.Cidade;
             cbUf.Text = clienteModel.Endereco.Uf;
@@ -132,7 +132,7 @@ namespace AugustusFahsion.View
                 clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
                 clienteModel.Sexo = cbSexo.Text;
                 clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                clienteModel.ValorLimiteAPrazo = double.Parse(nupValorLimiteAPrazo.Text);
+                clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
                 clienteModel.Endereco.Cep = mtxtCep.Text;
                 clienteModel.Endereco.Logradouro = txtLogradouro.Text;
                 clienteModel.Endereco.Cidade = txtCidade.Text;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AugustusFahsion.Model.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,8 @@ namespace AugustusFahsion.Model
         public int IdProduto { get; set; }
         public string Nome { get; set; }
         public string Fabricante { get; set; }
-        public double PrecoCusto { get; set; }
-        public double PrecoVenda { get; set; }
+        public DinheiroModel PrecoCusto { get; set; }
+        public DinheiroModel PrecoVenda { get; set; }
         public string CodigoBarras { get; set; }
         public int QuantidadeEstoque { get; set; }
         public string Condicao { get; set; }

@@ -16,7 +16,18 @@ namespace AugustusFahsion.DAO
                     var query = @"insert into Produto values(@Nome, @Fabricante,
                     @PrecoCusto, @PrecoVenda, @CodigoBarras, 
                     @QuantidadeEstoque, @Condicao)";
-                    conexao.Query<ProdutoModel>(query, produto);
+                    conexao.Query<ProdutoModel>(query, 
+                        new 
+                        {
+                            produto.Nome,
+                            produto.Fabricante,
+                            PrecoCusto = produto.PrecoCusto.RetornarValor,
+                            PrecoVenda = produto.PrecoVenda.RetornarValor,
+                            produto.CodigoBarras,
+                            produto.QuantidadeEstoque,
+                            produto.Condicao
+                        }
+                    );
 
 
                 }
@@ -161,9 +172,29 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"update Produto set Nome = @Nome, Fabricante = @Fabricante, PrecoCusto = @PrecoCusto, 
-                    PrecoVenda = @PrecoVenda, QuantidadeEstoque = @QuantidadeEstoque, CodigoBarras = @CodigoBarras, Condicao = @Condicao where IdProduto = @IdProduto";
-                    conexao.Query<ProdutoModel>(query, produto);
+                    var query = @"update Produto set 
+                                Nome = @Nome, 
+                                Fabricante = @Fabricante, 
+                                PrecoCusto = @PrecoCusto, 
+                                PrecoVenda = @PrecoVenda, 
+                                QuantidadeEstoque = @QuantidadeEstoque, 
+                                CodigoBarras = @CodigoBarras, 
+                                Condicao = @Condicao 
+                                where IdProduto = @IdProduto";
+
+                    conexao.Query<ProdutoModel>(query, 
+                        new 
+                        { 
+                            produto.IdProduto,
+                            produto.Nome,
+                            produto.Fabricante,
+                            PrecoCusto = produto.PrecoCusto.RetornarValor,
+                            PrecoVenda = produto.PrecoVenda.RetornarValor,
+                            produto.QuantidadeEstoque,
+                            produto.CodigoBarras,
+                            produto.Condicao
+                        }
+                    );
                 }
             }
             catch (Exception ex)
@@ -188,7 +219,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        //=================================================================
+        
         public static bool ValidaId(int id)
         {
             try

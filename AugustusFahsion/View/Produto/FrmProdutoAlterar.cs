@@ -38,8 +38,8 @@ namespace AugustusFahsion.View.Alterar
             txtId.Text = produto.IdProduto.ToString();
             txtNome.Text = produto.Nome;
             txtFabricante.Text = produto.Fabricante;
-            nupPrecoCusto.Value = (decimal)produto.PrecoCusto;
-            nupPrecoVenda.Value = (decimal)produto.PrecoVenda;
+            nupPrecoCusto.Value = produto.PrecoCusto.RetornarValor;
+            nupPrecoVenda.Value = produto.PrecoVenda.RetornarValor;
             nupQuantidadeEstoque.Value = produto.QuantidadeEstoque;
             mtxtCodigoBarras.Text = produto.CodigoBarras;
             cbCondicao.Text = produto.Condicao;
@@ -72,8 +72,8 @@ namespace AugustusFahsion.View.Alterar
                 
                 produtoModel.Nome = txtNome.Text;
                 produtoModel.Fabricante = txtFabricante.Text;
-                produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
-                produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
+                produtoModel.PrecoCusto = nupPrecoCusto.Value;
+                produtoModel.PrecoVenda = nupPrecoVenda.Value;
                 produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
                 produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
 

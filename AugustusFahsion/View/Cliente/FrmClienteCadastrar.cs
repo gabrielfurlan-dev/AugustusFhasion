@@ -90,7 +90,7 @@ namespace AugustusFahsion.View
                     clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
                     clienteModel.Sexo = cbSexo.Text;
                     clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                    clienteModel.ValorLimiteAPrazo = (double)nupValorLimiteAPrazo.Value;
+                    clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
                     clienteModel.Endereco.Cep = mtxtCep.Text;
                     clienteModel.Endereco.Logradouro = txtLogradouro.Text;
                     clienteModel.Endereco.Cidade = txtCidade.Text;

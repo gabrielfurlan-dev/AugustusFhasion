@@ -86,9 +86,9 @@ namespace AugustusFahsion.View.Venda
             this.label28 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.lblProdutoLucroUnitario = new System.Windows.Forms.Label();
-            this.lblTotalProdutoComDesconto = new System.Windows.Forms.Label();
+            this.lblTotalBrutoProduto = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblTotalProdutoSemDesconto = new System.Windows.Forms.Label();
+            this.lblTotalLiquidoProduto = new System.Windows.Forms.Label();
             this.lblProdutoSelecionado = new System.Windows.Forms.Label();
             this.lblTotalDescontoProduto = new System.Windows.Forms.Label();
             this.lblPrecoProduto = new System.Windows.Forms.Label();
@@ -397,9 +397,9 @@ namespace AugustusFahsion.View.Venda
             this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.lblProdutoLucroUnitario);
-            this.groupBox2.Controls.Add(this.lblTotalProdutoComDesconto);
+            this.groupBox2.Controls.Add(this.lblTotalBrutoProduto);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.lblTotalProdutoSemDesconto);
+            this.groupBox2.Controls.Add(this.lblTotalLiquidoProduto);
             this.groupBox2.Controls.Add(this.lblProdutoSelecionado);
             this.groupBox2.Controls.Add(this.lblTotalDescontoProduto);
             this.groupBox2.Controls.Add(this.lblPrecoProduto);
@@ -641,13 +641,13 @@ namespace AugustusFahsion.View.Venda
             // 
             // lblTotalProdutoComDesconto
             // 
-            this.lblTotalProdutoComDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalProdutoComDesconto.Location = new System.Drawing.Point(248, 404);
-            this.lblTotalProdutoComDesconto.Name = "lblTotalProdutoComDesconto";
-            this.lblTotalProdutoComDesconto.Size = new System.Drawing.Size(85, 27);
-            this.lblTotalProdutoComDesconto.TabIndex = 44;
-            this.lblTotalProdutoComDesconto.Text = "00,00";
-            this.lblTotalProdutoComDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalBrutoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalBrutoProduto.Location = new System.Drawing.Point(248, 404);
+            this.lblTotalBrutoProduto.Name = "lblTotalProdutoComDesconto";
+            this.lblTotalBrutoProduto.Size = new System.Drawing.Size(85, 27);
+            this.lblTotalBrutoProduto.TabIndex = 44;
+            this.lblTotalBrutoProduto.Text = "00,00";
+            this.lblTotalBrutoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -660,13 +660,13 @@ namespace AugustusFahsion.View.Venda
             // 
             // lblTotalProdutoSemDesconto
             // 
-            this.lblTotalProdutoSemDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalProdutoSemDesconto.Location = new System.Drawing.Point(102, 404);
-            this.lblTotalProdutoSemDesconto.Name = "lblTotalProdutoSemDesconto";
-            this.lblTotalProdutoSemDesconto.Size = new System.Drawing.Size(66, 27);
-            this.lblTotalProdutoSemDesconto.TabIndex = 44;
-            this.lblTotalProdutoSemDesconto.Text = "00,00";
-            this.lblTotalProdutoSemDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalLiquidoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalLiquidoProduto.Location = new System.Drawing.Point(102, 404);
+            this.lblTotalLiquidoProduto.Name = "lblTotalProdutoSemDesconto";
+            this.lblTotalLiquidoProduto.Size = new System.Drawing.Size(66, 27);
+            this.lblTotalLiquidoProduto.TabIndex = 44;
+            this.lblTotalLiquidoProduto.Text = "00,00";
+            this.lblTotalLiquidoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblProdutoSelecionado
             // 
@@ -1146,8 +1146,8 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label lblTotalProdutoComDesconto;
-        private System.Windows.Forms.Label lblTotalProdutoSemDesconto;
+        private System.Windows.Forms.Label lblTotalBrutoProduto;
+        private System.Windows.Forms.Label lblTotalLiquidoProduto;
         private System.Windows.Forms.Label lblTotalDescontoProduto;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.MenuStrip menuStrip1;

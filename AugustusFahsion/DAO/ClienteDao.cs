@@ -48,7 +48,13 @@ namespace AugustusFahsion.DAO
                     cliente.Endereco.IdPessoa = id;
                     cliente.Contato.IdPessoa = id;
 
-                    conexao.Execute(insertCliente, cliente, transacao);
+                    conexao.Execute(insertCliente, 
+                        new 
+                        {
+                            cliente.IdPessoa,
+                            ValorLimiteAPrazo = cliente.ValorLimiteAPrazo.RetornarValor
+                        },
+                    transacao);
                     conexao.Execute(insertEndereco, new
                     {
                         IdPessoa = cliente.IdPessoa,
@@ -203,7 +209,16 @@ namespace AugustusFahsion.DAO
                             cliente.DataNascimento,
                             Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
                         }, transacao);
-                    conexao.Execute(updateCliente, cliente, transacao);
+
+                    conexao.Execute(updateCliente, 
+                        new
+                        {
+                            cliente.IdPessoa,
+                            ValorLimiteAPrazo = cliente.ValorLimiteAPrazo.RetornarValor,
+                            cliente.Condicao
+                        }, 
+                    transacao);
+
                     conexao.Execute(updateEndereco,
                         new
                         {

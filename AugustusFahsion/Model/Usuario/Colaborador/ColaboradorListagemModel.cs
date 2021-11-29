@@ -1,11 +1,6 @@
 ﻿using AugustusFahsion.Model.Contato;
 using AugustusFahsion.Model.Enderecos;
 using AugustusFahsion.Model.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AugustusFahsion.Model
 {
@@ -16,9 +11,6 @@ namespace AugustusFahsion.Model
         public EnderecoModel Endereco { get; set; }
         public ContatoModel Contato { get; set; }
         public string Condicao { get; set; }
-
-        //public decimal Salario { get; set; }
-        //public int Comissao { get; set; }
 
         public ColaboradorListagemModel()
         {

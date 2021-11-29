@@ -49,7 +49,14 @@ namespace AugustusFahsion.DAO
                     colaborador.Contato.IdPessoa = id;
                     colaborador.ContaBancaria.IdPessoa = id;
 
-                    conexao.Execute(insertColaborador, colaborador, transacao);
+                    conexao.Execute(insertColaborador, 
+                        new 
+                        { 
+                            colaborador.IdPessoa, 
+                            Salario = colaborador.Salario.RetornarValor, 
+                            colaborador.Comissao
+                        }, transacao);
+
                     conexao.Execute(insertEndereco, new
                     {
                         colaborador.IdPessoa,
@@ -208,7 +215,13 @@ namespace AugustusFahsion.DAO
                             Cpf = Metodos.RemoverMascaraDeFormatacao(colaborador.Cpf.RetornarValor)
                         }, transacao);
 
-                    conexao.Execute(updateColaborador, colaborador, transacao);
+                    conexao.Execute(updateColaborador, new
+                    {
+                        colaborador.IdColaborador,
+                        Salario = colaborador.Salario.RetornarValor,
+                        colaborador.Comissao,
+                        colaborador.Condicao
+                    }, transacao);
 
                     conexao.Execute(updateEndereco,
                         new {

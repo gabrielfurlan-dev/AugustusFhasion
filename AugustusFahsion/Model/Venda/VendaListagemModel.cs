@@ -1,4 +1,6 @@
-﻿namespace AugustusFahsion.Model.Venda
+﻿using AugustusFahsion.Model.ValueObjects;
+
+namespace AugustusFahsion.Model.Venda
 {
     public class VendaListagemModel
     {
@@ -6,9 +8,9 @@
         public string NomeCliente { get; set; }
         public string NomeColaborador{ get; set; }
         public string FormaPagamento { get; set; }
-        public decimal TotalBruto { get; set; }
-        public decimal TotalDesconto { get; set; }
-        public decimal TotalLiquido { get; set; }
+        public DinheiroModel TotalBruto { get; set; }
+        public DinheiroModel TotalDesconto { get; set; }
+        public DinheiroModel TotalLiquido { get; set; }
         public string Condicao { get; set; }
     }
 }

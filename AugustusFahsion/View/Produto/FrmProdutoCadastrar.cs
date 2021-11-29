@@ -50,8 +50,8 @@ namespace AugustusFahsion.View
                                         
                     produtoModel.Nome = txtNome.Text;
                     produtoModel.Fabricante = txtFabricante.Text;
-                    produtoModel.PrecoCusto = (double)nupPrecoCusto.Value;
-                    produtoModel.PrecoVenda = (double)nupPrecoVenda.Value;
+                    produtoModel.PrecoCusto = nupPrecoCusto.Value;
+                    produtoModel.PrecoVenda = nupPrecoVenda.Value;
                     produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
                     produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
                     produtoModel.Condicao = cbCondicao.Text;
