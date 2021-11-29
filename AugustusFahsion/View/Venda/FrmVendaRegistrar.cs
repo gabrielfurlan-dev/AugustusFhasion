@@ -131,9 +131,6 @@ namespace AugustusFahsion.View.Venda
 
                 _vendaModel.ListaDeItens[index].Quantidade = Convert.ToInt32(nupQuantidade.Value);
                 _vendaModel.ListaDeItens[index].Desconto = Convert.ToInt32(nupDesconto.Value);
-                AtualizarCarrinho();
-                AtualizarPrecosTotais();
-                return;
             }
 
             AdicionarProdutoNoCarrinho();
@@ -188,25 +185,25 @@ namespace AugustusFahsion.View.Venda
 
         private void LimparCamposDoProduto()
         {
-            lblProdutoSelecionado.Text = "Selecione um produto. . .";
-            lblIdProduto.Text = "";
             nupDesconto.Value = 0;
-            nupQuantidade.Value = 1;
+            nupQuantidade.Value = 0;
             lblTotalDescontoProduto.Text = "R$ 00,00";
             lblTotalProdutoSemDesconto.Text = "R$ 00,00";
             lblTotalProdutoComDesconto.Text = "R$ 00,00";
             lblLucroProduto.Text = "R$ 00,00";
             lblPrecoProduto.Text = "R$ 00,00";
-            nupQuantidade.Enabled = false;
-            nupDesconto.Enabled = false;
         }
 
         private void LimparTodosOsCampos()
         {
+            nupDesconto.Enabled = false;
+            nupQuantidade.Enabled = false;
             lblClienteSelecionado.Text = "Selecione um cliente. . .";
             lblIdCliente.Text = "";
             lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
             lblIdColaborador.Text = "";
+            lblProdutoSelecionado.Text = "Selecione um produto. . .";
+            lblIdProduto.Text = "";
 
             LimparCamposDoProduto();
             AtualizarCarrinho();
@@ -250,7 +247,7 @@ namespace AugustusFahsion.View.Venda
         private void AtualizarPrecosTotais() {
             lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ToString("c");
             lblTotalLiquido.Text = _vendaModel.TotalLiquido.ToString("c");
-            lbl41.Text = _vendaModel.TotalLiquido.ToString("c");
+            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ToString("c");
             lblTotalDesconto.Text = _vendaModel.TotalDesconto.ToString("c");
             lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
         }

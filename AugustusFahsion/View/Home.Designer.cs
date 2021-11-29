@@ -235,7 +235,7 @@ namespace AugustusFahsion
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panel1.Location = new System.Drawing.Point(62, 209);
+            this.panel1.Location = new System.Drawing.Point(62, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(892, 537);
             this.panel1.TabIndex = 6;
@@ -250,10 +250,10 @@ namespace AugustusFahsion
             this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.Location = new System.Drawing.Point(257, 345);
+            this.btnListarVendas.Location = new System.Drawing.Point(254, 355);
             this.btnListarVendas.Name = "btnListarVendas";
             this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnListarVendas.Size = new System.Drawing.Size(183, 119);
+            this.btnListarVendas.Size = new System.Drawing.Size(164, 119);
             this.btnListarVendas.TabIndex = 13;
             this.btnListarVendas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnListarVendas.UseVisualStyleBackColor = false;
@@ -269,9 +269,9 @@ namespace AugustusFahsion
             this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.Location = new System.Drawing.Point(30, 345);
+            this.btnAdicionarVenda.Location = new System.Drawing.Point(66, 355);
             this.btnAdicionarVenda.Name = "btnAdicionarVenda";
-            this.btnAdicionarVenda.Size = new System.Drawing.Size(221, 119);
+            this.btnAdicionarVenda.Size = new System.Drawing.Size(189, 119);
             this.btnAdicionarVenda.TabIndex = 12;
             this.btnAdicionarVenda.UseVisualStyleBackColor = false;
             this.btnAdicionarVenda.Click += new System.EventHandler(this.btnAdicionarVenda_Click);
@@ -294,7 +294,7 @@ namespace AugustusFahsion
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(101, 49);
+            this.pictureBox5.Location = new System.Drawing.Point(111, 63);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(276, 256);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -426,7 +426,7 @@ namespace AugustusFahsion
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(54, 84);
+            this.panel2.Location = new System.Drawing.Point(62, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 110);
             this.panel2.TabIndex = 10;
@@ -450,7 +450,7 @@ namespace AugustusFahsion
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1024, 740);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
