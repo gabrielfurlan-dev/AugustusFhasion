@@ -38,10 +38,10 @@ namespace AugustusFahsion.View.Alterar
             _controllerExcluir = colaboradorExcluirController;   
         }
 
-        private void btnCancelar_Click_2(object sender, EventArgs e) => this.Close();
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
 
-        private void btnSalvar_Click_1(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -106,14 +106,19 @@ namespace AugustusFahsion.View.Alterar
                     return;
                 }
 
-                if (String.IsNullOrEmpty(txtEmail.Text))
+                if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
                 {
-                    MessageBox.Show("Insira um endereço de email.");
+                    MessageBox.Show("Insira um endereço de email válido.");
                     return;
                 }
-                if (!new Regex("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}").Match(mtxtCpf.Text).Success)
+                if (!Regex.IsMatch(mtxtCpf.Text, @"[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
-                    MessageBox.Show("Insira um CPF");
+                    MessageBox.Show("Insira um CPF válido");
+                    return;
+                }
+                if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+                {
+                    MessageBox.Show("Insira um numero de celular válido");
                     return;
                 }
                 if (String.IsNullOrEmpty(txtBanco.Text))
@@ -137,33 +142,33 @@ namespace AugustusFahsion.View.Alterar
                     return;
                 }
                 
-                    colaboradorModel.IdColaborador = Convert.ToInt32(txtId.Text);
-                    colaboradorModel.NomeCompleto.Nome = txtNome.Text;
-                    colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
-                    colaboradorModel.Sexo = cbSexo.Text;
-                    colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                    colaboradorModel.Salario = nupSalario.Value;
-                    colaboradorModel.Comissao = (int)nupComissao.Value;
-                    colaboradorModel.Endereco.Cep = mtxtCep.Text;
-                    colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
-                    colaboradorModel.Endereco.Cidade = txtCidade.Text;
-                    colaboradorModel.Endereco.Uf = cbUf.Text;
-                    colaboradorModel.Endereco.Complemento = txtComplemento.Text;
-                    colaboradorModel.Endereco.Bairro = txtBairro.Text;
-                    colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
-                    colaboradorModel.Contato.Telefone = txtTelefone.Text;
-                    colaboradorModel.Contato.Celular = mtxtCelular.Text;
-                    colaboradorModel.Contato.Email = txtEmail.Text;
-                    colaboradorModel.Cpf = mtxtCpf.Text;
-                    colaboradorModel.Condicao = cbCondicao.Text;
+                colaboradorModel.IdColaborador = Convert.ToInt32(txtId.Text);
+                colaboradorModel.NomeCompleto.Nome = txtNome.Text;
+                colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
+                colaboradorModel.Sexo = cbSexo.Text;
+                colaboradorModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+                colaboradorModel.Salario = nupSalario.Value;
+                colaboradorModel.Comissao = (int)nupComissao.Value;
+                colaboradorModel.Endereco.Cep = mtxtCep.Text;
+                colaboradorModel.Endereco.Logradouro = txtLogradouro.Text;
+                colaboradorModel.Endereco.Cidade = txtCidade.Text;
+                colaboradorModel.Endereco.Uf = cbUf.Text;
+                colaboradorModel.Endereco.Complemento = txtComplemento.Text;
+                colaboradorModel.Endereco.Bairro = txtBairro.Text;
+                colaboradorModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                colaboradorModel.Contato.Telefone = txtTelefone.Text;
+                colaboradorModel.Contato.Celular = mtxtCelular.Text;
+                colaboradorModel.Contato.Email = txtEmail.Text;
+                colaboradorModel.Cpf = mtxtCpf.Text;
+                colaboradorModel.Condicao = cbCondicao.Text;
 
-                    colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
-                    colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
-                    colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
-                    colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
+                colaboradorModel.ContaBancaria.Banco = txtBanco.Text;
+                colaboradorModel.ContaBancaria.Agencia = mtxtAgencia.Text;
+                colaboradorModel.ContaBancaria.Conta = mtxtConta.Text;
+                colaboradorModel.ContaBancaria.TipoConta = cbTipoConta.Text;
 
-                    _controller.AtualizarColaborador(colaboradorModel);
-                    this.Close();
+                _controller.AtualizarColaborador(colaboradorModel);
+                this.Close();
             }
 
             catch (Exception ex)
@@ -171,30 +176,6 @@ namespace AugustusFahsion.View.Alterar
                 MessageBox.Show(ex.Message, "Erro ao tentar gravar");
             }
         }
-        //private void btnInativar_Click(object sender, EventArgs e)
-        //{
-
-        //    try
-        //    {
-        //        int id;
-        //        Int32.TryParse(txtId.Text, out id);
-
-        //        var validaID = new ColaboradorExcluirController().ValidarId(id);
-        //        if (id > 0 && validaID)
-        //        {
-        //            colaboradorModel.Id = int.Parse(txtId.Text);
-        //            _controllerExcluir.Inativar(colaboradorModel);
-        //            MessageBox.Show("Colaborador excluido com sucesso");
-        //            this.Close();
-        //            return;
-        //        }
-        //        MessageBox.Show("id invalido!");
-        //    }
-        //    catch (Exception excecao)
-        //    {
-        //        MessageBox.Show(excecao.Message);
-        //    }
-        //}
 
         private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
         {

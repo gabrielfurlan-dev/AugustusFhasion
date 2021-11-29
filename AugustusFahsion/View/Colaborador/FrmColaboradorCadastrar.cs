@@ -92,9 +92,9 @@ namespace AugustusFahsion.View.Cadastrar
                     MessageBox.Show("Insira um numero de celular válido");
                     return;
                 }
-                if (txtEmail.Text.NuloOuVazio())
+                else if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
                 {
-                    MessageBox.Show("Insira um endereço de email.");
+                    MessageBox.Show("Insira um endereço de email válido.");
                     return;
                 }
                 if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))

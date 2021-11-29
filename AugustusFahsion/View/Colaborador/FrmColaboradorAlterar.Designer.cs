@@ -121,7 +121,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnCancelar.TabIndex = 55;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_2);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBox2
             // 
@@ -266,6 +266,7 @@ namespace AugustusFahsion.View.Alterar
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtComplemento.Location = new System.Drawing.Point(24, 178);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(337, 16);
             this.txtComplemento.TabIndex = 18;
@@ -353,7 +354,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnSalvar.TabIndex = 53;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // groupBox4
             // 
@@ -681,7 +682,7 @@ namespace AugustusFahsion.View.Alterar
             this.mtxtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCelular.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.mtxtCelular.Location = new System.Drawing.Point(338, 187);
-            this.mtxtCelular.Mask = "(099) 000-0000";
+            this.mtxtCelular.Mask = "(099) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 16);
             this.mtxtCelular.TabIndex = 10;

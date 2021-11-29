@@ -28,84 +28,96 @@ namespace AugustusFahsion.View
                 if (txtNome.Text.NuloOuVazio())
                     MessageBox.Show("Insira um nome.");
 
-                else if (txtNome.Text.NuloOuVazio())
+                if (txtNome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um nome.");
+                    return;
                 }
-                else if (txtSobrenome.Text.NuloOuVazio())
+                if (txtSobrenome.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um sobrenome");
+                    return;
                 }
-                else if (cbSexo.Text.NuloOuVazio())
+                if (cbSexo.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione o sexo.");
+                    return;
                 }
-                else if (dtpDataNascimento.Value.DataDeHoje())
+                if (dtpDataNascimento.Value.DataDeHoje())
                 {
                     MessageBox.Show("Selecione uma data de nascimento valida");
+                    return;
                 }
-                else if (nupValorLimiteAPrazo.Value < 0)
+                if (nupValorLimiteAPrazo.Value < 0)
                 {
                     MessageBox.Show("Insira um valor a prazo válido");
+                    return;
                 }
-                else if (mtxtCep.Text.NuloOuVazio())
+                if (mtxtCep.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um CEP");
+                    return;
                 }
-                else if (txtLogradouro.Text.NuloOuVazio())
+                if (txtLogradouro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um Logradouro");
+                    return;
                 }
-                else if (txtCidade.Text.NuloOuVazio())
+                if (txtCidade.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira uma cidade");
+                    return;
                 }
-                else if (cbUf.Text.NuloOuVazio())
+                if (cbUf.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Selecione um Estado (UF)");
+                    return;
                 }
-                else if (txtBairro.Text.NuloOuVazio())
+                if (txtBairro.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um bairro");
+                    return;
                 }
-                else if (txtNumeroEndereco.Text.NuloOuVazio())
+                if (txtNumeroEndereco.Text.NuloOuVazio())
                 {
                     MessageBox.Show("Insira um numero de endereço.");
+                    return;
                 }
-                else if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+                if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
                 {
                     MessageBox.Show("Insira um numero de celular válido");
+                    return;
                 }
-                else if (txtEmail.Text.NuloOuVazio())
+                if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
                 {
-                    MessageBox.Show("Insira um endereço de email.");
+                    MessageBox.Show("Insira um endereço de email válido.");
+                    return;
                 }
-                else if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
+                if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
                     MessageBox.Show("Insira um CPF");
+                    return;
                 }
-                else
-                {
-                    clienteModel.NomeCompleto.Nome = txtNome.Text;
-                    clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
-                    clienteModel.Sexo = cbSexo.Text;
-                    clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                    clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
-                    clienteModel.Endereco.Cep = mtxtCep.Text;
-                    clienteModel.Endereco.Logradouro = txtLogradouro.Text;
-                    clienteModel.Endereco.Cidade = txtCidade.Text;
-                    clienteModel.Endereco.Uf = cbUf.Text;
-                    clienteModel.Endereco.Complemento = txtComplemento.Text;
-                    clienteModel.Endereco.Bairro = txtBairro.Text;
-                    clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
-                    clienteModel.Contato.Telefone = txtTelefone.Text;
-                    clienteModel.Contato.Celular = mtxtCelular.Text;
-                    clienteModel.Contato.Email = txtEmail.Text;
-                    clienteModel.Cpf = mtxtCpf.Text;
 
-                    _controller.CadastrarCliente(clienteModel);
-                    this.Close();
-                }
+                clienteModel.NomeCompleto.Nome = txtNome.Text;
+                clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
+                clienteModel.Sexo = cbSexo.Text;
+                clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+                clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
+                clienteModel.Endereco.Cep = mtxtCep.Text;
+                clienteModel.Endereco.Logradouro = txtLogradouro.Text;
+                clienteModel.Endereco.Cidade = txtCidade.Text;
+                clienteModel.Endereco.Uf = cbUf.Text;
+                clienteModel.Endereco.Complemento = txtComplemento.Text;
+                clienteModel.Endereco.Bairro = txtBairro.Text;
+                clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+                clienteModel.Contato.Telefone = txtTelefone.Text;
+                clienteModel.Contato.Celular = mtxtCelular.Text;
+                clienteModel.Contato.Email = txtEmail.Text;
+                clienteModel.Cpf = mtxtCpf.Text;
+
+                _controller.CadastrarCliente(clienteModel);
+                this.Close();
             }
             catch (Exception excecao)
             {

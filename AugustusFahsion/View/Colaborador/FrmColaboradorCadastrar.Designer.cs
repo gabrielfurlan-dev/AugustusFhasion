@@ -379,6 +379,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtComplemento.Location = new System.Drawing.Point(23, 159);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(337, 16);
             this.txtComplemento.TabIndex = 16;

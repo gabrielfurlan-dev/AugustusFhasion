@@ -111,22 +111,22 @@ namespace AugustusFahsion.View
                     MessageBox.Show("Insira um numero de endereço.");
                     return;
                 }
-                if (!new Regex("[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{3}").Match(mtxtCelular.Text).Success)
+                if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
                 {
                     MessageBox.Show("Insira um numero de celular válido");
                     return;
                 }
-                if (String.IsNullOrEmpty(txtEmail.Text))
+                if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
                 {
-                    MessageBox.Show("Insira um endereço de email.");
+                    MessageBox.Show("Insira um endereço de email válido.");
                     return;
                 }
-                if (!new Regex("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}").Match(mtxtCpf.Text).Success)
+                if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
                 {
                     MessageBox.Show("Insira um CPF");
                     return;
                 }
-                
+
                 clienteModel.IdCliente = int.Parse(txtId.Text);
                 clienteModel.NomeCompleto.Nome = txtNome.Text;
                 clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;

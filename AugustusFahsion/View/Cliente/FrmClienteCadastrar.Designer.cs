@@ -216,6 +216,7 @@ namespace AugustusFahsion.View
             this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtComplemento.Location = new System.Drawing.Point(79, 186);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(337, 20);
             this.txtComplemento.TabIndex = 14;
