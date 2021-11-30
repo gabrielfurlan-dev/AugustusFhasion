@@ -83,6 +83,8 @@ namespace AugustusFahsion.View.Venda
         //DvgCellMouseCLick
         private void dgvProdutoListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex == -1)
+                return;
             var id = SelecionarProdutoModel();
             var produto = ProdutoAlterarController.Buscar(id);
             AtribuirValoresDoProdutoSelecionado(produto);
@@ -124,6 +126,7 @@ namespace AugustusFahsion.View.Venda
                 MessageBox.Show("Informe a quantidade");
                 return;
             }
+
             var produto = VerificarSeExisteNoCarrinho(SelecionarProdutoModel());
             if (produto != null) 
             {
@@ -145,7 +148,6 @@ namespace AugustusFahsion.View.Venda
                 int selecionado = Convert.ToInt32(dgvCarrinho.SelectedRows[0].Index);
                 _vendaModel.ListaDeItens.RemoveAt(selecionado); 
             }
-
             AtualizarCarrinho();
             AtualizarPrecosTotais();
         }
@@ -191,7 +193,6 @@ namespace AugustusFahsion.View.Venda
             lblTotalLiquidoProduto.Text = "R$ 00,00";
             lblTotalBrutoProduto.Text = "R$ 00,00";
             lblLucroProduto.Text = "R$ 00,00";
-            lblPrecoProduto.Text = "R$ 00,00";
         }
         private void LimparTodosOsCampos()
         {
@@ -222,21 +223,25 @@ namespace AugustusFahsion.View.Venda
 
 
         //atualizar precos    
-        private decimal ValorTotalBrutoProduto() =>
-            Extensoes.RealParaDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
-        private decimal ValorTotalDescontoProduto() => 
-            ValorTotalBrutoProduto() - ValorTotalDesconto();
-        private decimal ValorProdutoLucro() => 
-            (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) - ValorTotalDescontoProduto();
-        private decimal ValorTotalDesconto() => 
-            ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
+        private decimal ValorProdutoLucro()
+        {
+           return (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) -
+            (VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value),
+                Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)));
+        }
+        private decimal ValorTotalDesconto() {
+            var valorTotalBrutoProduto = VendaAlterarController.ValorTotalBrutoProduto(Extensoes.RealParaDecimal(lblPrecoProduto.Text), Convert.ToInt32(nupQuantidade.Value));
+            return valorTotalBrutoProduto - (valorTotalBrutoProduto * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
+        } 
         private void CalcularPrecosProdutoSelecionado()
         {
-            lblTotalLiquidoProduto.Text = ValorTotalBrutoProduto().ToString("c");
+            lblTotalLiquidoProduto.Text = VendaAlterarController.ValorTotalBrutoProduto(Extensoes.RealParaDecimal(lblPrecoProduto.Text), Convert.ToInt32(nupQuantidade.Value)).ToString("c");
             lblTotalBrutoProduto.Text = ValorTotalDesconto().ToString("c");
-            lblTotalDescontoProduto.Text = ValorTotalDescontoProduto().ToString("c");
+            lblTotalDescontoProduto.Text = VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)).ToString("c");
             lblLucroProduto.Text = ValorProdutoLucro().ToString("c");
         }
+
+
         private void AtualizarCarrinho()
         {
             dgvCarrinho.DataSource = null;
@@ -290,5 +295,11 @@ namespace AugustusFahsion.View.Venda
             (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
 
         private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
-     }
+
+        private void dgvProdutoListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+        }
+    }
 }

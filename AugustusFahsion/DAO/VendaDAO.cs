@@ -29,15 +29,17 @@ namespace AugustusFahsion.DAO
                 conexao.Open();
                 using (var transacao = conexao.BeginTransaction())
                 {
-                    conexao.ExecuteScalar<int>(insertVenda, new { 
+
+                    vendaModel.IdVenda = conexao.ExecuteScalar<int>(insertVenda, new { 
                             vendaModel.IdCliente,
                             vendaModel.IdColaborador,
                             vendaModel.FormaPagamento,
                             TotalBruto = vendaModel.TotalBruto.RetornarValor,
                             TotalDesconto = vendaModel.TotalDesconto.RetornarValor,
                             TotalLiquido = vendaModel.TotalLiquido.RetornarValor
-
                     }, transacao);
+
+                    vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
 
                     foreach (var item in vendaModel.ListaDeItens)
                     {
@@ -45,7 +47,7 @@ namespace AugustusFahsion.DAO
                         {
                             item.IdProdutoGuid,
                             item.IdProduto,
-                            item.IdVenda,
+                            IdVenda = item.IdVenda,
                             PrecoVenda = item.PrecoVenda.RetornarValor,
                             item.Quantidade,
                             PrecoLiquido = item.PrecoLiquido.RetornarValor,

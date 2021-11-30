@@ -48,5 +48,19 @@ namespace AugustusFahsion.Controller.Venda
         {
             return ProdutoDAO.BuscarEstoqueOriginal(idProduto);
         }
+
+        public static decimal ValorTotalBrutoProduto(decimal precoProduto, int quantidade) => (precoProduto) * quantidade;
+
+        public static decimal ValorTotalDesconto(int desconto, int quantidade, decimal precoProduto)
+        {
+            var valorTotalBrutoProduto = VendaAlterarController.ValorTotalBrutoProduto(precoProduto, quantidade);
+            return valorTotalBrutoProduto - (valorTotalBrutoProduto * (desconto * Convert.ToDecimal(0.01)));
+        }
+
+        public static decimal ValorTotalDescontoProduto(int desconto, int quantidade, decimal precoProduto) => 
+            VendaAlterarController.ValorTotalBrutoProduto(precoProduto, quantidade) - ValorTotalDesconto(desconto, quantidade, precoProduto);
+
+        public static decimal ValorProdutoLucro(decimal ProdutoLucroUnitario, int desconto, int quantidade, decimal precoProduto) =>
+            (ProdutoLucroUnitario * quantidade) - ValorTotalDescontoProduto(desconto, quantidade, precoProduto);
     }
 }

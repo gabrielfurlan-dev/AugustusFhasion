@@ -85,9 +85,9 @@ namespace AugustusFahsion.View.Venda
         {
             lblIdProduto.Text = produto.IdProduto.ToString();
             lblProdutoSelecionado.Text = produto.Nome;
-            lblPrecoProduto.Text = produto.PrecoVenda.ToString();
-            lblTotalBrutoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
-            lblTotalLiquidoProduto.Text = (Convert.ToDecimal(produto.PrecoVenda) * nupQuantidade.Value).ToString();
+            lblPrecoProduto.Text = produto.PrecoVenda.ValorFormatado;
+            lblTotalBrutoProduto.Text = (produto.PrecoVenda.RetornarValor * nupQuantidade.Value).ToString();
+            lblTotalLiquidoProduto.Text = (produto.PrecoVenda.RetornarValor * nupQuantidade.Value).ToString();
             CalcularPrecosProdutoSelecionado();
         }
         private void AtribuirValoresProdutosDoCarrinhoSelecionados()
@@ -102,7 +102,7 @@ namespace AugustusFahsion.View.Venda
             CalcularPrecosProdutoSelecionado();
         }
         private decimal ValorTotalBrutoProduto() =>
-            Convert.ToDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
+            Extensoes.RealParaDecimal(lblPrecoProduto.Text) * nupQuantidade.Value;
         private decimal ValorTotalDescontoProduto() =>
             ValorTotalBrutoProduto() - ValorTotalDesconto();
         private decimal ValorTotalDesconto() =>
