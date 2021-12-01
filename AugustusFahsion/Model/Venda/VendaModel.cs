@@ -9,7 +9,7 @@ namespace AugustusFahsion.Model
     {
         public int IdVenda { get; set; }
         public int IdColaborador { get; set; }
-        public int IdCliente { get; set; }
+        public ClienteModel Cliente { get; set; }
         public string FormaPagamento { get; set; }
         public DinheiroModel TotalBruto {get => ListaDeItens.Sum(x => (x.PrecoVenda.RetornarValor) * (x.Quantidade));}
         public DinheiroModel TotalLiquido {get => ListaDeItens.Sum(x => x.PrecoLiquido.RetornarValor);}
@@ -17,6 +17,10 @@ namespace AugustusFahsion.Model
         public decimal TotalLucro {get => ListaDeItens.Sum(x => x.Lucro);}
 
         public List<VendaProdutoModel> ListaDeItens { get; set; }
-        public VendaModel() => ListaDeItens = new List<VendaProdutoModel>();
+        public VendaModel()
+        {
+            ListaDeItens = new List<VendaProdutoModel>();
+            Cliente = new ClienteModel();
+        }
     }
 }

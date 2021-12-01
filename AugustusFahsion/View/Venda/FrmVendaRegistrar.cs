@@ -6,6 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using AugustusFahsion.Controller.Email;
 
 namespace AugustusFahsion.View.Venda
 {
@@ -157,6 +161,12 @@ namespace AugustusFahsion.View.Venda
 
             RegistrarVenda();
             MessageBox.Show("Venda Registrada");
+            if (chkEnviarEmail.Checked) 
+            {
+                var id = SelecionarClienteModel();
+                var cliente = ClienteAlterarController.Buscar(id);
+                EmailController.EnviarEmailRegistroVenda(cliente, _vendaModel);
+            }
             LimparTodosOsCampos();
         }
 
@@ -269,7 +279,7 @@ namespace AugustusFahsion.View.Venda
         {
             _vendaRegistrarController = new VendaRegistrarController();
             _vendaModel.IdColaborador = Convert.ToInt32(lblIdColaborador.Text);
-            _vendaModel.IdCliente = Convert.ToInt32(lblIdCliente.Text);
+            _vendaModel.Cliente.IdCliente = Convert.ToInt32(lblIdCliente.Text);
             _vendaModel.FormaPagamento = cbFormaPagamento.Text;
 
             _vendaRegistrarController.RegistrarVenda(_vendaModel);

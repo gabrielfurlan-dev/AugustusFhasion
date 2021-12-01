@@ -62,13 +62,13 @@ namespace AugustusFahsion.View.Venda
         private void nupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
         private void nupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
 
-        public VendaModel SelecionarVendaModel(int id) => _controllerVendaAlterar.BuscarVenda(id);
+        public VendaModel SelecionarVendaModel(int id) => VendaAlterarController.BuscarVenda(id);
 
         //atribuir Valores
         public void AtribuirModelParaCampos(VendaModel vendaModelSelecionada)
         {
             var id = vendaModelSelecionada.IdVenda;
-            var vendaModel = _controllerVendaAlterar.BuscarVenda(id);
+            var vendaModel = VendaAlterarController.BuscarVenda(id);
             var vendaListagemModel = new VendaListarController().ListarVendaSelecionada(id);
 
             lblIdVenda.Text = vendaListagemModel[0].IdVenda.ToString();
@@ -78,7 +78,7 @@ namespace AugustusFahsion.View.Venda
             lblTotalLiquido.Text = vendaListagemModel[0].TotalLiquido.ValorFormatado;
             lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
-            lblIdCliente.Text = vendaModel.IdCliente.ToString();
+            lblIdCliente.Text = vendaModel.Cliente.IdCliente.ToString();
             lblIdColaborador.Text = vendaModel.IdColaborador.ToString();
         }
         private void AtribuirValoresProdutoSelecionado(ProdutoModel produto)
@@ -125,8 +125,8 @@ namespace AugustusFahsion.View.Venda
         }
         private void setarQuantidadeEstoqueMaximum(int idProduto, int idVenda)
         {
-            _quantidadeOriginal = _controllerVendaAlterar.BuscarQuantidadeOriginalDaVenda(idProduto, idVenda);
-            _estoqueOriginal = _controllerVendaAlterar.BuscarEstoqueOriginal(idProduto);
+            _quantidadeOriginal = VendaAlterarController.BuscarQuantidadeOriginalDaVenda(idProduto, idVenda);
+            _estoqueOriginal = VendaAlterarController.BuscarEstoqueOriginal(idProduto);
             nupQuantidade.Maximum = _quantidadeOriginal + _estoqueOriginal;
         }
 

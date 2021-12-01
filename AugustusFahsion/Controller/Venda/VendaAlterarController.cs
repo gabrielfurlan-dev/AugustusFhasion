@@ -10,10 +10,10 @@ namespace AugustusFahsion.Controller.Venda
     public class VendaAlterarController
     {
         public void AbrirFormulario(VendaModel venda) => new FrmVendaAlterar(this, venda).Show();
-        public VendaModel BuscarVenda(int id) => 
+        public static VendaModel BuscarVenda(int id) => 
             VendaDAO.BuscarVenda(id);
 
-        public VendaProdutoModel BuscarDadosDoProdutoDaVenda(int idProduto) =>
+        public static VendaProdutoModel BuscarDadosDoProdutoDaVenda(int idProduto) =>
                 VendaDAO.BuscarDadosDoProdutoDaVenda(idProduto);
 
         public static void InativarVenda(VendaModel vendaModel)
@@ -39,12 +39,12 @@ namespace AugustusFahsion.Controller.Venda
             }
         }
 
-        internal int BuscarQuantidadeOriginalDaVenda(int idProduto, int IdVenda)
+        internal static int BuscarQuantidadeOriginalDaVenda(int idProduto, int IdVenda)
         {
             return VendaDAO.BuscarQuantidadeOriginalDaVenda(idProduto, IdVenda);
         }
 
-        internal int BuscarEstoqueOriginal(int idProduto)
+        internal static int BuscarEstoqueOriginal(int idProduto)
         {
             return ProdutoDAO.BuscarEstoqueOriginal(idProduto);
         }

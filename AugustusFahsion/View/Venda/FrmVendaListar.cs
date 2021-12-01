@@ -34,12 +34,12 @@ namespace AugustusFahsion.View.Venda
         private void dgvListaVenda_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = SelecionarVendaModel();
-            var venda = _alterarVendaController.BuscarVenda(id);
+            var venda = VendaAlterarController.BuscarVenda(id);
             _alterarVendaController.AbrirFormulario(venda);
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            var venda = _alterarVendaController.BuscarVenda(_idVendamodelSelecionada);
+            var venda = VendaAlterarController.BuscarVenda(_idVendamodelSelecionada);
             _alterarVendaController.AbrirFormulario(venda);
         }
 

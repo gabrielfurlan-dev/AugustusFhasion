@@ -42,8 +42,8 @@ namespace AugustusFahsion.DAO
                             Sexo = cliente.Sexo,
                             DataNascimento = cliente.DataNascimento,
                             Cpf = Metodos.RemoverMascaraDeFormatacao(cliente.Cpf.RetornarValor)
-                        }
-                        , transacao);
+                        },
+                        transacao);
                     cliente.IdPessoa = id;
                     cliente.Endereco.IdPessoa = id;
                     cliente.Contato.IdPessoa = id;

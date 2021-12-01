@@ -27,41 +27,39 @@ namespace AugustusFahsion.DAO
             {
                 using var conexao = new SqlConexao().Connection();
                 conexao.Open();
-                using (var transacao = conexao.BeginTransaction())
+                using var transacao = conexao.BeginTransaction();
+
+                vendaModel.IdVenda = conexao.ExecuteScalar<int>(insertVenda, new
                 {
+                    vendaModel.Cliente.IdCliente,
+                    vendaModel.IdColaborador,
+                    vendaModel.FormaPagamento,
+                    TotalBruto = vendaModel.TotalBruto.RetornarValor,
+                    TotalDesconto = vendaModel.TotalDesconto.RetornarValor,
+                    TotalLiquido = vendaModel.TotalLiquido.RetornarValor
+                }, transacao);
 
-                    vendaModel.IdVenda = conexao.ExecuteScalar<int>(insertVenda, new { 
-                            vendaModel.IdCliente,
-                            vendaModel.IdColaborador,
-                            vendaModel.FormaPagamento,
-                            TotalBruto = vendaModel.TotalBruto.RetornarValor,
-                            TotalDesconto = vendaModel.TotalDesconto.RetornarValor,
-                            TotalLiquido = vendaModel.TotalLiquido.RetornarValor
-                    }, transacao);
+                vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
 
-                    vendaModel.ListaDeItens.ForEach(x => x.IdVenda = vendaModel.IdVenda);
-
-                    foreach (var item in vendaModel.ListaDeItens)
+                foreach (var item in vendaModel.ListaDeItens)
+                {
+                    conexao.Execute(insertVendaProduto, new
                     {
-                        conexao.Execute(insertVendaProduto, new
-                        {
-                            item.IdProdutoGuid,
-                            item.IdProduto,
-                            IdVenda = item.IdVenda,
-                            PrecoVenda = item.PrecoVenda.RetornarValor,
-                            item.Quantidade,
-                            PrecoLiquido = item.PrecoLiquido.RetornarValor,
-                            item.Desconto,
-                            Total = item.Total.RetornarValor
+                        item.IdProdutoGuid,
+                        item.IdProduto,
+                        IdVenda = item.IdVenda,
+                        PrecoVenda = item.PrecoVenda.RetornarValor,
+                        item.Quantidade,
+                        PrecoLiquido = item.PrecoLiquido.RetornarValor,
+                        item.Desconto,
+                        Total = item.Total.RetornarValor
 
-                        }, transacao);
-                    }
-
-                    AtualizarEstoque(vendaModel, conexao, transacao);
-
-                    transacao.Commit();
-
+                    }, transacao);
                 }
+
+                AtualizarEstoque(vendaModel, conexao, transacao);
+
+                transacao.Commit();
             }
             catch (Exception ex)
             {
@@ -140,10 +138,12 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select * from Venda where IdVenda=@id";
-                    var parametros = new DynamicParameters();
-                    parametros.Add("@id", id, System.Data.DbType.Int32);
-                    var resultado = conexao.QueryFirstOrDefault<VendaModel>(query, parametros);
+                    var query = @"select IdVenda, IdColaborador, FormaPagamento, Condicao,
+                                TotalBruto, TotalDesconto, TotalLiquido, IdVenda, IdCliente from Venda 
+                                where IdVenda = @id";
+                    var resultado = conexao.Query<VendaModel, ClienteModel, VendaModel>(query,
+                        (vendaModel, cliente) => MapearVenda(vendaModel, cliente),
+                        new { id }, splitOn: "IdVenda").FirstOrDefault();
                     return resultado;
                 }
             }
@@ -152,8 +152,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
-        
 
         public static void AlterarVenda(VendaModel venda)
         {
@@ -221,10 +219,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
-
-        //string deleteVenda = @"update from Venda where IdVenda = @idVenda";
-        //conexao.Execute(deleteVenda, venda, transacao);
 
         public static void AtualizarEstoque(VendaModel vendaModel, IDbConnection conexao, IDbTransaction transacao)
         {
@@ -308,6 +302,12 @@ namespace AugustusFahsion.DAO
                 }
             }
             catch (Exception ex) { throw new Exception(ex.Message); }
+        }
+
+        public static VendaModel MapearVenda(VendaModel vendaModel, ClienteModel cliente)
+        {
+            vendaModel.Cliente = cliente;
+            return vendaModel;
         }
     }
 }
