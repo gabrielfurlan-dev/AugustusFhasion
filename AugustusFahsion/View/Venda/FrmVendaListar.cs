@@ -21,7 +21,6 @@ namespace AugustusFahsion.View.Venda
         private void btnFechar_Click(object sender, EventArgs e) => this.Close();
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
-        private void btnProcurar_Click(object sender, EventArgs e) => dgvListaVenda.DataSource = _vendaListagemcontroller.ListarVendas();
 
         private void dgvListaVenda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -44,5 +43,32 @@ namespace AugustusFahsion.View.Venda
         }
 
         private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
+
+        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
+
+        private void dateDataFinal_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarPorData();
+        }
+
+
+        private void dateDataInicial_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarPorData();
+        }
+        private void FiltrarPorData()
+        {
+            dgvListaVenda.DataSource = VendaListarController.FiltrarPorData(dateDataInicial.Value, dateDataFinal.Value);
+        }
+
+        private void btnFiltrarPorCliente_Click(object sender, EventArgs e) =>
+            dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPorCliente(txtFiltrarPorCliente.Text);
+
+        private void btnFiltrarPorColaborador_Click(object sender, EventArgs e) =>
+            dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPorColaborador(txtFiltrarPorColaborador.Text);
+
+        private void btnFiltrarPorProduto_Click(object sender, EventArgs e) =>
+            dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPorProduto(txtBuscarPorProduto.Text);
+    
     }
 }

@@ -77,13 +77,13 @@ namespace AugustusFashionTeste
             venda.ListaDeItens.Add(
                     new VendaProdutoModel()
                     {
-                        PrecoLiquido = 21.3m
+                        TotalLiquido = 21.3m
                     }
                 );
             venda.ListaDeItens.Add(
                     new VendaProdutoModel()
                     {
-                        PrecoLiquido = 1
+                        TotalLiquido = 1
                     }
                 );
 

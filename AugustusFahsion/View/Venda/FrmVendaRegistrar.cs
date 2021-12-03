@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller;
+using AugustusFahsion.Controller.Email;
 using AugustusFahsion.Controller.Venda;
 using AugustusFahsion.Model;
 using AugustusFahsion.Model.Venda;
@@ -6,10 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
-using System.Text;
-using AugustusFahsion.Controller.Email;
 
 namespace AugustusFahsion.View.Venda
 {
@@ -100,6 +97,10 @@ namespace AugustusFahsion.View.Venda
         {
             var id = SelecionarClienteModel();
             var cliente = ClienteAlterarController.Buscar(id);
+
+            if (cliente.DataNascimento.Month == DateTime.Now.Month && cliente.DataNascimento.Day == DateTime.Now.Day)
+                MessageBox.Show($"{cliente.NomeCompleto.Nome} está fazendo aniversário hoje.");
+
             lblIdCliente.Text = id.ToString();
             lblClienteSelecionado.Text = cliente.NomeCompleto.ToString();
         }
@@ -160,6 +161,7 @@ namespace AugustusFahsion.View.Venda
             if (!VerificaSeCamposEstãoPreenchidos()) return;
 
             RegistrarVenda();
+
             MessageBox.Show("Venda Registrada");
             if (chkEnviarEmail.Checked) 
             {
@@ -246,7 +248,9 @@ namespace AugustusFahsion.View.Venda
         private void CalcularPrecosProdutoSelecionado()
         {
             lblTotalLiquidoProduto.Text = VendaAlterarController.ValorTotalBrutoProduto(Extensoes.RealParaDecimal(lblPrecoProduto.Text), Convert.ToInt32(nupQuantidade.Value)).ToString("c");
+
             lblTotalBrutoProduto.Text = ValorTotalDesconto().ToString("c");
+
             lblTotalDescontoProduto.Text = VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)).ToString("c");
             lblLucroProduto.Text = ValorProdutoLucro().ToString("c");
         }
@@ -281,6 +285,13 @@ namespace AugustusFahsion.View.Venda
             _vendaModel.IdColaborador = Convert.ToInt32(lblIdColaborador.Text);
             _vendaModel.Cliente.IdCliente = Convert.ToInt32(lblIdCliente.Text);
             _vendaModel.FormaPagamento = cbFormaPagamento.Text;
+            if (cbFormaPagamento.Text == "A prazo")
+            {
+                _vendaModel.Pago = 0;
+            }
+            else _vendaModel.Pago = 1;
+
+            _vendaModel.DataVenda = DateTime.Now;
 
             _vendaRegistrarController.RegistrarVenda(_vendaModel);
         }
@@ -294,9 +305,9 @@ namespace AugustusFahsion.View.Venda
                 Nome = lblProdutoSelecionado.Text,
                 Quantidade = Convert.ToInt32(nupQuantidade.Value),
                 Desconto = (int)nupDesconto.Value,
-                PrecoLiquido = desconto,
+                TotalLiquido = desconto,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
-                Total = lblTotalLiquidoProduto.Text.RealParaDecimal(),
+                TotalBruto = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 //Lucro = lblLucroProduto.Text.RealParaDecimal()
             });
         }

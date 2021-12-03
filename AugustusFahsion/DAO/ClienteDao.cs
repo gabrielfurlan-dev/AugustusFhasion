@@ -269,6 +269,25 @@ namespace AugustusFahsion.DAO
         }
 
 
+        public static List<DinheiroModel> ValorLimiteGasto(int id) 
+        {
+            const string query = @"";
+
+            using var conexao = new SqlConexao().Connection();
+            conexao.Open();
+            using (var transacao = conexao.BeginTransaction()) 
+            {
+                try
+                {
+                    return conexao.Query<DinheiroModel>(query, transacao).ToList();
+                }
+                catch (Exception ex) 
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
         //===================================================================
         public static bool ValidaId(int id)
         {

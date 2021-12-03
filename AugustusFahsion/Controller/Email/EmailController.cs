@@ -31,7 +31,7 @@ namespace AugustusFahsion.Controller.Email
         {
             foreach (var item in vendaModel.ListaDeItens)
             {
-                corpoEmail.Append($"\t{item.Quantidade}x {item.Nome}: {item.PrecoLiquido}");
+                corpoEmail.Append($"\t{item.Quantidade}x {item.Nome}: {item.TotalLiquido}");
                 corpoEmail.AppendLine();
             }
             return corpoEmail;
@@ -85,7 +85,7 @@ namespace AugustusFahsion.Controller.Email
             corpoEmail.AppendLine();
             foreach (var item in vendaModel.ListaDeItens)
             {
-                corpoEmail.Append($"\t{item.Quantidade}x {item.Nome}: {item.PrecoLiquido}");
+                corpoEmail.Append($"\t{item.Quantidade}x {item.Nome}: {item.TotalLiquido}");
                 corpoEmail.AppendLine();
             }
             corpoEmail.Append($"Total: {vendaModel.TotalLiquido}");

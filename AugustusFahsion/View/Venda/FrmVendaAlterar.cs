@@ -61,6 +61,11 @@ namespace AugustusFahsion.View.Venda
         private void nupQuantidade_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
         private void nupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
         private void nupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
+        private void cbFormaPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFormaPagamento.Text != "A prazo") cbPago.Visible = false;
+            if (cbFormaPagamento.Text == "A prazo") cbPago.Visible = true;
+        }
 
         public VendaModel SelecionarVendaModel(int id) => VendaAlterarController.BuscarVenda(id);
 
@@ -78,6 +83,12 @@ namespace AugustusFahsion.View.Venda
             lblTotalLiquido.Text = vendaListagemModel[0].TotalLiquido.ValorFormatado;
             lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
+            if (vendaListagemModel[0].Pago == true) { cbPago.Text = "Sim"; } else { cbPago.Text = "Não"; }
+            if (cbFormaPagamento.Text != "A prazo") 
+            { 
+                cbPago.Visible = false;
+            }
+            
             lblIdCliente.Text = vendaModel.Cliente.IdCliente.ToString();
             lblIdColaborador.Text = vendaModel.IdColaborador.ToString();
         }
@@ -151,7 +162,7 @@ namespace AugustusFahsion.View.Venda
                 CalcularPrecosProdutoSelecionado();
                 _vendaModelSelecionada.ListaDeItens[index].Quantidade = Convert.ToInt32(nupQuantidade.Value);
                 _vendaModelSelecionada.ListaDeItens[index].Desconto = Convert.ToInt32(nupDesconto.Value);
-                _vendaModelSelecionada.ListaDeItens[index].PrecoLiquido = Extensoes.RealParaDecimal(lblTotalLiquidoProduto.Text);
+                _vendaModelSelecionada.ListaDeItens[index].TotalLiquido = Extensoes.RealParaDecimal(lblTotalLiquidoProduto.Text);
 
                 AtualizarCarrinho();
                 AtualizarPrecosTotais();
@@ -200,9 +211,9 @@ namespace AugustusFahsion.View.Venda
                 Nome = lblProdutoSelecionado.Text,
                 Quantidade = Convert.ToInt32(nupQuantidade.Value),
                 Desconto = (int)nupDesconto.Value,
-                PrecoLiquido = desconto,
+                TotalLiquido = desconto,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
-                Total = lblTotalLiquidoProduto.Text.RealParaDecimal(),
+                TotalBruto = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 //Lucro = lblLucroProduto.Text.RealParaDecimal()
             }) ;
         }
@@ -219,9 +230,9 @@ namespace AugustusFahsion.View.Venda
                     Nome = item.Nome,
                     Quantidade = item.Quantidade,
                     Desconto = item.Desconto,
-                    PrecoLiquido = item.PrecoLiquido,
+                    TotalLiquido = item.TotalLiquido,
                     PrecoVenda = item.PrecoVenda,
-                    Total = item.Total,
+                    TotalBruto = item.TotalBruto,
                     Lucro = item.Lucro
                 });
             }
@@ -272,18 +283,18 @@ namespace AugustusFahsion.View.Venda
                 MessageBox.Show("Selecione uma forma de pagamento.");
                 return;
             }
+            if (cbPago.Text == "Sim")
+                _vendaModelSelecionada.Pago = 1;
+
 
             AlterarVenda();
             this.Close();
         }
-
         private void AlterarVenda()
         {
             VendaAlterarController.AlterarVenda(_vendaModelSelecionada);
             MessageBox.Show("Venda Alterada!");
         }
 
-        private void btnFehcar_Click(object sender, EventArgs e) => this.Close();
-     
     }
 }

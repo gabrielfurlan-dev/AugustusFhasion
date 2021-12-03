@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Model.ValueObjects;
+using System;
 
 namespace AugustusFahsion.Model.Venda
 {
@@ -12,5 +13,7 @@ namespace AugustusFahsion.Model.Venda
         public DinheiroModel TotalDesconto { get; set; }
         public DinheiroModel TotalLiquido { get; set; }
         public string Condicao { get; set; }
+        public bool Pago { get; set; }
+        public DateTime DataVenda { get; set; }
     }
 }

@@ -72,6 +72,7 @@ namespace AugustusFahsion.View.Venda
             this.lblClienteSelecionado = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cbPago = new System.Windows.Forms.ComboBox();
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvProdutoListar = new System.Windows.Forms.DataGridView();
@@ -136,6 +137,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lblClienteSelecionado);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.cbPago);
             this.panel1.Controls.Add(this.cbFormaPagamento);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.dgvProdutoListar);
@@ -149,7 +151,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lbl2);
             this.panel1.Controls.Add(this.lbl);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Location = new System.Drawing.Point(12, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1052, 707);
             this.panel1.TabIndex = 56;
@@ -497,6 +499,21 @@ namespace AugustusFahsion.View.Venda
             this.label12.TabIndex = 105;
             this.label12.Text = "Cliente:";
             // 
+            // cbPago
+            // 
+            this.cbPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.cbPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPago.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbPago.FormattingEnabled = true;
+            this.cbPago.Items.AddRange(new object[] {
+            "Sim",
+            "Não"});
+            this.cbPago.Location = new System.Drawing.Point(843, 123);
+            this.cbPago.Name = "cbPago";
+            this.cbPago.Size = new System.Drawing.Size(114, 23);
+            this.cbPago.TabIndex = 107;
+            // 
             // cbFormaPagamento
             // 
             this.cbFormaPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -513,6 +530,7 @@ namespace AugustusFahsion.View.Venda
             this.cbFormaPagamento.Name = "cbFormaPagamento";
             this.cbFormaPagamento.Size = new System.Drawing.Size(118, 23);
             this.cbFormaPagamento.TabIndex = 107;
+            this.cbFormaPagamento.SelectedIndexChanged += new System.EventHandler(this.cbFormaPagamento_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -769,5 +787,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lblTotalLiquidoProduto;
         private System.Windows.Forms.Label lblTotalBrutoProduto;
         private System.Windows.Forms.Button btnSalvarAlteracoes;
+        private System.Windows.Forms.ComboBox cbPago;
     }
 }
