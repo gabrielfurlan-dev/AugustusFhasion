@@ -1,5 +1,6 @@
 ﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
+using AugustusFahsion.Model.ValueObjects;
 using AugustusFahsion.Model.Venda;
 using AugustusFahsion.View.Venda;
 using System;

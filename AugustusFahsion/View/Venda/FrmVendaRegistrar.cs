@@ -159,6 +159,13 @@ namespace AugustusFahsion.View.Venda
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
             if (!VerificaSeCamposEstãoPreenchidos()) return;
+            if (cbFormaPagamento.Text == "A prazo") 
+            {
+                if (!VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text))) 
+                {
+                    return;
+                }
+            }
 
             RegistrarVenda();
 
@@ -170,6 +177,23 @@ namespace AugustusFahsion.View.Venda
                 EmailController.EnviarEmailRegistroVenda(cliente, _vendaModel);
             }
             LimparTodosOsCampos();
+        }
+
+        private bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int id)
+        {
+            var valorGasto = VendaRegistrarController.ValorLimiteGasto(id);
+            var cliente = ClienteAlterarController.Buscar(id);
+            var valorLimite = cliente.ValorLimiteAPrazo;
+            var valorCompra = _vendaModel.TotalLiquido;
+
+            if (valorGasto.RetornarValor + valorCompra.RetornarValor > valorLimite.RetornarValor) 
+            {
+                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {valorLimite.ValorFormatado}" +
+                                $"\nValor total gasto em compras a prazo {valorGasto.ValorFormatado}" +
+                                $"\nValor da compra: {valorCompra.ValorFormatado}");
+                return false;
+            }
+            return true;
         }
 
         private bool VerificaSeCamposEstãoPreenchidos()

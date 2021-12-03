@@ -269,17 +269,20 @@ namespace AugustusFahsion.DAO
         }
 
 
-        public static List<DinheiroModel> ValorLimiteGasto(int id) 
+        public static decimal ValorLimiteGasto(int id) 
         {
-            const string query = @"";
+            const string query = @"SELECT Sum(vp.TotalLiquido) 
+                                    FROM VendaProduto vp
+                                    INNER JOIN Venda v ON vp.IdVenda = v.IdVenda
+                                    WHERE v.FormaPagamento = 'A prazo' and v.IdCliente = @id and v.Condicao = 'Ativa'";
 
             using var conexao = new SqlConexao().Connection();
             conexao.Open();
-            using (var transacao = conexao.BeginTransaction()) 
             {
                 try
                 {
-                    return conexao.Query<DinheiroModel>(query, transacao).ToList();
+                    var valor = conexao.ExecuteScalar<decimal>(query, new { id });
+                    return valor;
                 }
                 catch (Exception ex) 
                 {
@@ -288,7 +291,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        //===================================================================
+        //
         public static bool ValidaId(int id)
         {
             try

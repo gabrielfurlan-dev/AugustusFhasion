@@ -1,5 +1,6 @@
 ﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
+using AugustusFahsion.Model.ValueObjects;
 using AugustusFahsion.Model.Venda;
 using AugustusFahsion.View.Venda;
 using System;
@@ -21,6 +22,17 @@ namespace AugustusFahsion.Controller.Venda
             {
                 MessageBox.Show(ex.Message);
             }
-        }       
+        }
+        public static DinheiroModel ValorLimiteGasto(int id)
+        {
+            try
+            {
+                return ClienteDAO.ValorLimiteGasto(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
