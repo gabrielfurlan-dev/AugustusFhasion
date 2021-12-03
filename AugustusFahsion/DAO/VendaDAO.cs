@@ -69,85 +69,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static List<VendaListagemModel> FiltrarPorCliente(string nomeCliente)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
-                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
-                                from Venda v
-                                inner join Cliente c on v.IdCliente = c.IdCliente
-                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
-                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
-                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
-                                WHERE p.Nome LIKE @nomeCliente + '%'";
 
-                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeCliente }).ToList();
-                    return lista;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        internal static List<VendaListagemModel> FiltrarPorProduto(string nomeProduto)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
-                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
-                                from Venda v
-                                inner join Cliente c on v.IdCliente = c.IdCliente
-                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
-                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
-                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
-                                inner join VendaProduto vp on v.IdVenda = vp.IdVenda
-                                inner join Produto pr on vp.IdProduto = pr.IdProduto
-                                WHERE pr.Nome LIKE @nomeProduto + '%'";
-
-                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeProduto }).ToList();
-                    return lista;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public static List<VendaListagemModel> FiltrarPorColaborador(string nomeColaborador)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
-                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
-                                from Venda v
-                                inner join Cliente c on v.IdCliente = c.IdCliente
-                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
-                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
-                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
-                                WHERE p2.Nome LIKE @nomeColaborador + '%'";
-
-                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeColaborador }).AsList();
-                    return lista;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
 
 
         internal static int BuscarQuantidadeOriginalDaVenda(int idProduto, int idVenda)
@@ -412,6 +334,83 @@ namespace AugustusFahsion.DAO
             {
 
                 throw new Exception (ex.Message);
+            }
+        }
+        public static List<VendaListagemModel> FiltrarPorCliente(string nomeCliente)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
+                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
+                                from Venda v
+                                inner join Cliente c on v.IdCliente = c.IdCliente
+                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
+                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
+                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
+                                WHERE p.Nome LIKE @nomeCliente + '%'";
+
+                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeCliente }).ToList();
+                    return lista;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        internal static List<VendaListagemModel> FiltrarPorProduto(string nomeProduto)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
+                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
+                                from Venda v
+                                inner join Cliente c on v.IdCliente = c.IdCliente
+                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
+                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
+                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
+                                inner join VendaProduto vp on v.IdVenda = vp.IdVenda
+                                inner join Produto pr on vp.IdProduto = pr.IdProduto
+                                WHERE pr.Nome LIKE @nomeProduto + '%'";
+
+                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeProduto }).ToList();
+                    return lista;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static List<VendaListagemModel> FiltrarPorColaborador(string nomeColaborador)
+        {
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
+                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
+                                from Venda v
+                                inner join Cliente c on v.IdCliente = c.IdCliente
+                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
+                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
+                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
+                                WHERE p2.Nome LIKE @nomeColaborador + '%'";
+
+                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeColaborador }).AsList();
+                    return lista;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 

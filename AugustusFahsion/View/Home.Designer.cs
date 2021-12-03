@@ -42,6 +42,7 @@ namespace AugustusFahsion
             this.btnListarProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnRelatorio = new System.Windows.Forms.Button();
             this.btnListarVendas = new System.Windows.Forms.Button();
             this.btnAdicionarVenda = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -216,6 +217,7 @@ namespace AugustusFahsion
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panel1.Controls.Add(this.BtnRelatorio);
             this.panel1.Controls.Add(this.btnListarVendas);
             this.panel1.Controls.Add(this.btnAdicionarVenda);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -239,6 +241,20 @@ namespace AugustusFahsion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(892, 537);
             this.panel1.TabIndex = 6;
+            // 
+            // BtnRelatorio
+            // 
+            this.BtnRelatorio.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRelatorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRelatorio.BackgroundImage")));
+            this.BtnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRelatorio.Location = new System.Drawing.Point(101, 465);
+            this.BtnRelatorio.Name = "BtnRelatorio";
+            this.BtnRelatorio.Size = new System.Drawing.Size(96, 40);
+            this.BtnRelatorio.TabIndex = 11;
+            this.BtnRelatorio.Text = "Relatório";
+            this.BtnRelatorio.UseVisualStyleBackColor = false;
+            this.BtnRelatorio.Click += new System.EventHandler(this.BtnRelatorio_Click);
             // 
             // btnListarVendas
             // 
@@ -507,6 +523,7 @@ namespace AugustusFahsion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdicionarVenda;
         private System.Windows.Forms.Button btnListarVendas;
+        private System.Windows.Forms.Button BtnRelatorio;
     }
 }
 

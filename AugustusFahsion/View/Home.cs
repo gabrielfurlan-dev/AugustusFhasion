@@ -26,5 +26,7 @@ namespace AugustusFahsion
         private void btnListarVendas_Click(object sender, EventArgs e) => new VendaListarController().AbrirLista();
 
         private void btnListarColaborador_Click(object sender, EventArgs e) => new ColaboradorListarController().AbrirLista();
+
+        private void BtnRelatorio_Click(object sender, EventArgs e) => new RelatorioDeVendasController().AbrirRelatorio();
     }
 }
