@@ -69,9 +69,6 @@ namespace AugustusFahsion.DAO
             }
         }
 
-
-
-
         internal static int BuscarQuantidadeOriginalDaVenda(int idProduto, int idVenda)
         {
             try
@@ -112,7 +109,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-
         public static List<VendaListagemModel> ListarVendaSelecionada(int idVenda)
         {
             try
@@ -137,6 +133,32 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+        public static List<VendaProdutoModel> ListarProdutosDaVenda(int idVenda)
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction())
+                {
+                    var query = @"select vp.IdProduto, vp.Quantidade, vp.TotalLiquido, vp.Desconto,
+                                vp.TotalBruto, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
+					            p.Nome
+
+					            from VendaProduto vp
+					            inner join Produto p on vp.IdProduto = p.IdProduto
+					            where IdVenda = @idVenda";
+
+                    return conexao.Query<VendaProdutoModel>(query, new { idVenda }, transacao).AsList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
         public static VendaModel BuscarVenda(int id)
         {
             try
@@ -156,6 +178,27 @@ namespace AugustusFahsion.DAO
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public static VendaProdutoModel BuscarDadosDoProdutoDaVenda(int idProduto)
+        {
+            try
+            {
+                using var conexao = new SqlConexao().Connection();
+                conexao.Open();
+                using (var transacao = conexao.BeginTransaction())
+                {
+                    const string query = @"select vp.IdProduto, vp.Quantidade, vp.TotalLiquido, vp.Desconto,
+                                        vp.TotalBruto, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
+					                    p.Nome
+
+					                    from VendaProduto vp
+					                    inner join Produto p on vp.IdProduto = p.IdProduto
+					                    where vp.IdProduto = @idProduto";
+
+                    return conexao.QueryFirstOrDefault<VendaProdutoModel>(query, new { idProduto }, transacao);
+                }
+            }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
         public static void AlterarVenda(VendaModel venda)
@@ -242,53 +285,6 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static List<VendaProdutoModel> ListarProdutosDaVenda(int idVenda)
-        {
-            try
-            {
-                using var conexao = new SqlConexao().Connection();
-                conexao.Open();
-                using (var transacao = conexao.BeginTransaction())
-                {
-                    var query = @"select vp.IdProduto, vp.Quantidade, vp.TotalLiquido, vp.Desconto,
-                                vp.TotalBruto, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
-					            p.Nome
-
-					            from VendaProduto vp
-					            inner join Produto p on vp.IdProduto = p.IdProduto
-					            where IdVenda = @idVenda";
-
-                    return conexao.Query<VendaProdutoModel>(query, new { idVenda }, transacao).AsList();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-        }
-        public static VendaProdutoModel BuscarDadosDoProdutoDaVenda(int idProduto)
-        {
-            try
-            {
-                using var conexao = new SqlConexao().Connection();
-                conexao.Open();
-                using (var transacao = conexao.BeginTransaction())
-                {
-                    const string query = @"select vp.IdProduto, vp.Quantidade, vp.TotalLiquido, vp.Desconto,
-                                        vp.TotalBruto, vp.IdVenda, vp.PrecoVenda, vp.IdProdutoGuid,
-					                    p.Nome
-
-					                    from VendaProduto vp
-					                    inner join Produto p on vp.IdProduto = p.IdProduto
-					                    where vp.IdProduto = @idProduto";
-
-                    return conexao.QueryFirstOrDefault<VendaProdutoModel>(query, new { idProduto }, transacao);
-                }
-            }
-            catch (Exception ex) { throw new Exception(ex.Message); }
-        }
-
         public static void InativarVenda(VendaModel vendaModel)
         {
             try
@@ -309,7 +305,6 @@ namespace AugustusFahsion.DAO
             catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
-        //Filtros
         public static List<VendaListagemModel> FiltrarPorData(DateTime dataInicial, DateTime dataFinal) 
         {
             try
@@ -361,33 +356,6 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
-        internal static List<VendaListagemModel> FiltrarPorProduto(string nomeProduto)
-        {
-            try
-            {
-                using (var conexao = new SqlConexao().Connection())
-                {
-                    conexao.Open();
-                    var query = @"select v.IdVenda, p.Nome as NomeCliente, p2.Nome as NomeColaborador,
-                                v.FormaPagamento, v.TotalBruto, v.TotalDesconto, v.TotalLiquido, v.Condicao, v.Pago, v.Datavenda
-                                from Venda v
-                                inner join Cliente c on v.IdCliente = c.IdCliente
-                                inner join Colaborador co on v.IdColaborador = co.IdColaborador
-                                inner join Pessoa p on p.IdPessoa = c.IdPessoa 
-                                inner join Pessoa p2 on p2.IdPessoa = co.IdPessoa
-                                inner join VendaProduto vp on v.IdVenda = vp.IdVenda
-                                inner join Produto pr on vp.IdProduto = pr.IdProduto
-                                WHERE pr.Nome LIKE @nomeProduto + '%'";
-
-                    var lista = conexao.Query<VendaListagemModel>(query, new { nomeProduto }).ToList();
-                    return lista;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
         public static List<VendaListagemModel> FiltrarPorColaborador(string nomeColaborador)
         {
             try
@@ -413,6 +381,7 @@ namespace AugustusFahsion.DAO
                 throw new Exception(ex.Message);
             }
         }
+
 
         //Mapeamento
         public static VendaModel MapearVenda(VendaModel vendaModel, ClienteModel cliente)

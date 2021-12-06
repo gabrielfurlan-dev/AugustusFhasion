@@ -67,8 +67,8 @@ namespace AugustusFahsion.View.Venda
         private void btnFiltrarPorColaborador_Click(object sender, EventArgs e) =>
             dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPorColaborador(txtFiltrarPorColaborador.Text);
 
-        private void btnFiltrarPorProduto_Click(object sender, EventArgs e) =>
-            dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPorProduto(txtBuscarPorProduto.Text);
+        //private void btnFiltrarPorProduto_Click(object sender, EventArgs e) =>
+        //    dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPor();
     
     }
 }

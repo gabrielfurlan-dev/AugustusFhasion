@@ -266,7 +266,6 @@ namespace AugustusFahsion.View.Venda
             this.btnFiltrarPorProduto.TabIndex = 23;
             this.btnFiltrarPorProduto.Text = "🔎";
             this.btnFiltrarPorProduto.UseVisualStyleBackColor = false;
-            this.btnFiltrarPorProduto.Click += new System.EventHandler(this.btnFiltrarPorProduto_Click);
             // 
             // label6
             // 

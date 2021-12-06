@@ -34,22 +34,21 @@ namespace AugustusFahsion.View.Venda
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dateDataInicial = new System.Windows.Forms.DateTimePicker();
-            this.dateDataFinal = new System.Windows.Forms.DateTimePicker();
+            this.dtDataInicial = new System.Windows.Forms.DateTimePicker();
+            this.dtDataFinal = new System.Windows.Forms.DateTimePicker();
             this.btnFiltrarPorProduto = new System.Windows.Forms.Button();
-            this.txtFiltrarPorColaborador = new System.Windows.Forms.TextBox();
-            this.txtBuscarPorProduto = new System.Windows.Forms.TextBox();
-            this.txtFiltrarPorCliente = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvListaVenda = new System.Windows.Forms.DataGridView();
-            this.BtnAbrirFiltros = new System.Windows.Forms.Button();
+            this.btnListarRelatorios = new System.Windows.Forms.Button();
             this.panelFiltros = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.BtnFecharFiltros = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMostrarFiltros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).BeginInit();
             this.panelFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +62,9 @@ namespace AugustusFahsion.View.Venda
             this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.BtnFechar.Location = new System.Drawing.Point(1097, 53);
-            this.BtnFechar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnFechar.Location = new System.Drawing.Point(960, 40);
             this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(56, 53);
+            this.BtnFechar.Size = new System.Drawing.Size(49, 40);
             this.BtnFechar.TabIndex = 6;
             this.BtnFechar.UseVisualStyleBackColor = false;
             this.BtnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
@@ -78,30 +76,28 @@ namespace AugustusFahsion.View.Venda
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1170, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // dateDataInicial
+            // dtDataInicial
             // 
-            this.dateDataInicial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDataInicial.Location = new System.Drawing.Point(17, 208);
-            this.dateDataInicial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateDataInicial.Name = "dateDataInicial";
-            this.dateDataInicial.Size = new System.Drawing.Size(116, 27);
-            this.dateDataInicial.TabIndex = 44;
+            this.dtDataInicial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataInicial.Location = new System.Drawing.Point(24, 156);
+            this.dtDataInicial.Name = "dtDataInicial";
+            this.dtDataInicial.Size = new System.Drawing.Size(102, 23);
+            this.dtDataInicial.TabIndex = 44;
+            this.dtDataInicial.Value = new System.DateTime(2021, 11, 10, 0, 0, 0, 0);
             // 
-            // dateDataFinal
+            // dtDataFinal
             // 
-            this.dateDataFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDataFinal.Location = new System.Drawing.Point(159, 208);
-            this.dateDataFinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateDataFinal.Name = "dateDataFinal";
-            this.dateDataFinal.Size = new System.Drawing.Size(116, 27);
-            this.dateDataFinal.TabIndex = 45;
+            this.dtDataFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataFinal.Location = new System.Drawing.Point(148, 156);
+            this.dtDataFinal.Name = "dtDataFinal";
+            this.dtDataFinal.Size = new System.Drawing.Size(102, 23);
+            this.dtDataFinal.TabIndex = 45;
             // 
             // btnFiltrarPorProduto
             // 
@@ -111,90 +107,44 @@ namespace AugustusFahsion.View.Venda
             this.btnFiltrarPorProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrarPorProduto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrarPorProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrarPorProduto.Location = new System.Drawing.Point(83, 460);
-            this.btnFiltrarPorProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFiltrarPorProduto.Location = new System.Drawing.Point(72, 306);
             this.btnFiltrarPorProduto.Name = "btnFiltrarPorProduto";
-            this.btnFiltrarPorProduto.Size = new System.Drawing.Size(128, 64);
+            this.btnFiltrarPorProduto.Size = new System.Drawing.Size(112, 48);
             this.btnFiltrarPorProduto.TabIndex = 42;
             this.btnFiltrarPorProduto.Text = "Filtrar";
             this.btnFiltrarPorProduto.UseVisualStyleBackColor = false;
             this.btnFiltrarPorProduto.Click += new System.EventHandler(this.btnFiltrarPorProduto_Click);
             // 
-            // txtFiltrarPorColaborador
+            // txtIdCliente
             // 
-            this.txtFiltrarPorColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtFiltrarPorColaborador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltrarPorColaborador.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFiltrarPorColaborador.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtFiltrarPorColaborador.Location = new System.Drawing.Point(19, 337);
-            this.txtFiltrarPorColaborador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFiltrarPorColaborador.Name = "txtFiltrarPorColaborador";
-            this.txtFiltrarPorColaborador.Size = new System.Drawing.Size(256, 25);
-            this.txtFiltrarPorColaborador.TabIndex = 38;
-            // 
-            // txtBuscarPorProduto
-            // 
-            this.txtBuscarPorProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtBuscarPorProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarPorProduto.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscarPorProduto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBuscarPorProduto.Location = new System.Drawing.Point(19, 397);
-            this.txtBuscarPorProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBuscarPorProduto.Name = "txtBuscarPorProduto";
-            this.txtBuscarPorProduto.Size = new System.Drawing.Size(256, 25);
-            this.txtBuscarPorProduto.TabIndex = 39;
-            // 
-            // txtFiltrarPorCliente
-            // 
-            this.txtFiltrarPorCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtFiltrarPorCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltrarPorCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFiltrarPorCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtFiltrarPorCliente.Location = new System.Drawing.Point(19, 277);
-            this.txtFiltrarPorCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFiltrarPorCliente.Name = "txtFiltrarPorCliente";
-            this.txtFiltrarPorCliente.Size = new System.Drawing.Size(256, 25);
-            this.txtFiltrarPorCliente.TabIndex = 40;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(19, 313);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Colaborador:";
+            this.txtIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtIdCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtIdCliente.Location = new System.Drawing.Point(12, 265);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(231, 22);
+            this.txtIdCliente.TabIndex = 40;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(159, 184);
+            this.label3.Location = new System.Drawing.Point(148, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 34;
             this.label3.Text = "Data Final:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(19, 372);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Produto:";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(17, 184);
+            this.label2.Location = new System.Drawing.Point(24, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(68, 15);
             this.label2.TabIndex = 36;
             this.label2.Text = "Data Inicial:";
             // 
@@ -202,11 +152,11 @@ namespace AugustusFahsion.View.Venda
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(19, 253);
+            this.label4.Location = new System.Drawing.Point(12, 247);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 20);
+            this.label4.Size = new System.Drawing.Size(68, 15);
             this.label4.TabIndex = 37;
-            this.label4.Text = "Cliente:";
+            this.label4.Text = "Cliente (id):";
             // 
             // dgvListaVenda
             // 
@@ -237,56 +187,71 @@ namespace AugustusFahsion.View.Venda
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaVenda.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaVenda.GridColor = System.Drawing.Color.Black;
-            this.dgvListaVenda.Location = new System.Drawing.Point(35, 260);
-            this.dgvListaVenda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvListaVenda.Location = new System.Drawing.Point(31, 195);
             this.dgvListaVenda.Name = "dgvListaVenda";
             this.dgvListaVenda.ReadOnly = true;
             this.dgvListaVenda.RowHeadersVisible = false;
             this.dgvListaVenda.RowHeadersWidth = 51;
             this.dgvListaVenda.RowTemplate.Height = 25;
             this.dgvListaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaVenda.Size = new System.Drawing.Size(1097, 640);
+            this.dgvListaVenda.Size = new System.Drawing.Size(960, 480);
             this.dgvListaVenda.TabIndex = 32;
             // 
-            // BtnAbrirFiltros
+            // btnListarRelatorios
             // 
-            this.BtnAbrirFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnAbrirFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAbrirFiltros.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAbrirFiltros.BackgroundImage")));
-            this.BtnAbrirFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnAbrirFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAbrirFiltros.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnAbrirFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.BtnAbrirFiltros.Location = new System.Drawing.Point(1064, 188);
-            this.BtnAbrirFiltros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnAbrirFiltros.Name = "BtnAbrirFiltros";
-            this.BtnAbrirFiltros.Size = new System.Drawing.Size(51, 60);
-            this.BtnAbrirFiltros.TabIndex = 42;
-            this.BtnAbrirFiltros.UseVisualStyleBackColor = false;
-            this.BtnAbrirFiltros.Click += new System.EventHandler(this.BtnAbrirFiltros_Click);
+            this.btnListarRelatorios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnListarRelatorios.BackColor = System.Drawing.Color.Transparent;
+            this.btnListarRelatorios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarRelatorios.BackgroundImage")));
+            this.btnListarRelatorios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnListarRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarRelatorios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnListarRelatorios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnListarRelatorios.Location = new System.Drawing.Point(832, 136);
+            this.btnListarRelatorios.Name = "btnListarRelatorios";
+            this.btnListarRelatorios.Size = new System.Drawing.Size(50, 56);
+            this.btnListarRelatorios.TabIndex = 42;
+            this.btnListarRelatorios.UseVisualStyleBackColor = false;
             // 
             // panelFiltros
             // 
             this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panelFiltros.Controls.Add(this.dateDataInicial);
+            this.panelFiltros.Controls.Add(this.label5);
+            this.panelFiltros.Controls.Add(this.txtNomeProduto);
+            this.panelFiltros.Controls.Add(this.dtDataInicial);
             this.panelFiltros.Controls.Add(this.label4);
-            this.panelFiltros.Controls.Add(this.dateDataFinal);
+            this.panelFiltros.Controls.Add(this.dtDataFinal);
             this.panelFiltros.Controls.Add(this.label2);
             this.panelFiltros.Controls.Add(this.BtnFecharFiltros);
-            this.panelFiltros.Controls.Add(this.label5);
             this.panelFiltros.Controls.Add(this.btnFiltrarPorProduto);
             this.panelFiltros.Controls.Add(this.label3);
-            this.panelFiltros.Controls.Add(this.txtFiltrarPorColaborador);
-            this.panelFiltros.Controls.Add(this.label6);
-            this.panelFiltros.Controls.Add(this.txtBuscarPorProduto);
-            this.panelFiltros.Controls.Add(this.txtFiltrarPorCliente);
-            this.panelFiltros.Location = new System.Drawing.Point(879, 25);
-            this.panelFiltros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelFiltros.Controls.Add(this.txtIdCliente);
+            this.panelFiltros.Location = new System.Drawing.Point(760, 27);
             this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(291, 1000);
+            this.panelFiltros.Size = new System.Drawing.Size(264, 745);
             this.panelFiltros.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(12, 197);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Produto:";
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtNomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNomeProduto.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNomeProduto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtNomeProduto.Location = new System.Drawing.Point(12, 216);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(231, 22);
+            this.txtNomeProduto.TabIndex = 47;
             // 
             // BtnFecharFiltros
             // 
@@ -297,10 +262,10 @@ namespace AugustusFahsion.View.Venda
             this.BtnFecharFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFecharFiltros.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnFecharFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.BtnFecharFiltros.Location = new System.Drawing.Point(19, 20);
+            this.BtnFecharFiltros.Location = new System.Drawing.Point(26, 15);
             this.BtnFecharFiltros.Margin = new System.Windows.Forms.Padding(0);
             this.BtnFecharFiltros.Name = "BtnFecharFiltros";
-            this.BtnFecharFiltros.Size = new System.Drawing.Size(51, 60);
+            this.BtnFecharFiltros.Size = new System.Drawing.Size(45, 45);
             this.BtnFecharFiltros.TabIndex = 6;
             this.BtnFecharFiltros.Text = ">";
             this.BtnFecharFiltros.UseVisualStyleBackColor = false;
@@ -313,26 +278,42 @@ namespace AugustusFahsion.View.Venda
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(416, 133);
+            this.label1.Location = new System.Drawing.Point(364, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 37);
+            this.label1.Size = new System.Drawing.Size(223, 30);
             this.label1.TabIndex = 47;
             this.label1.Text = "Relatorio de Produtos";
             // 
+            // btnMostrarFiltros
+            // 
+            this.btnMostrarFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMostrarFiltros.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarFiltros.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrarFiltros.BackgroundImage")));
+            this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnMostrarFiltros.Location = new System.Drawing.Point(887, 140);
+            this.btnMostrarFiltros.Name = "btnMostrarFiltros";
+            this.btnMostrarFiltros.Size = new System.Drawing.Size(116, 46);
+            this.btnMostrarFiltros.TabIndex = 48;
+            this.btnMostrarFiltros.Text = "Filtrar";
+            this.btnMostrarFiltros.UseVisualStyleBackColor = false;
+            this.btnMostrarFiltros.Click += new System.EventHandler(this.btnMostrarFiltros_Click);
+            // 
             // FrmRelatorioDeProdutos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(1170, 1024);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);
-            this.Controls.Add(this.BtnAbrirFiltros);
             this.Controls.Add(this.dgvListaVenda);
             this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btnListarRelatorios);
+            this.Controls.Add(this.btnMostrarFiltros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmRelatorioDeProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatorioDeVendas";
@@ -350,21 +331,20 @@ namespace AugustusFahsion.View.Venda
 
         private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DateTimePicker dateDataInicial;
-        private System.Windows.Forms.DateTimePicker dateDataFinal;
+        private System.Windows.Forms.DateTimePicker dtDataInicial;
+        private System.Windows.Forms.DateTimePicker dtDataFinal;
         private System.Windows.Forms.Button btnFiltrarPorProduto;
-        private System.Windows.Forms.TextBox txtFiltrarPorColaborador;
-        private System.Windows.Forms.TextBox txtBuscarPorProduto;
-        private System.Windows.Forms.TextBox txtFiltrarPorCliente;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvListaVenda;
-        private System.Windows.Forms.Button BtnAbrirFiltros;
+        private System.Windows.Forms.Button btnListarRelatorios;
         private System.Windows.Forms.Panel panelFiltros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnFecharFiltros;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNomeProduto;
+        private System.Windows.Forms.Button btnMostrarFiltros;
     }
 }

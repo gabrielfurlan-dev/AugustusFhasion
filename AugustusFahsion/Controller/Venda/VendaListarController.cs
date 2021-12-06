@@ -94,18 +94,18 @@ namespace AugustusFahsion.Controller.Venda
             return new List<VendaListagemModel>();
         }
 
-        public List<VendaListagemModel> FiltrarPorProduto(string nomeProduto)
-        {
-            try
-            {
-                return VendaDAO.FiltrarPorProduto(nomeProduto);
+        //public List<VendaListagemModel> FiltrarPorProduto(string nomeProduto)
+        //{
+        //    try
+        //    {
+        //        return VendaDAO.FiltrarPorProduto(nomeProduto);
 
-            }
-            catch (Exception excecao)
-            {
-                MessageBox.Show(excecao.Message);
-            }
-            return new List<VendaListagemModel>();
-        }
+        //    }
+        //    catch (Exception excecao)
+        //    {
+        //        MessageBox.Show(excecao.Message);
+        //    }
+        //    return new List<VendaListagemModel>();
+        //}
     }
 }
