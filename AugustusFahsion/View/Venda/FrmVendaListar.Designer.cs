@@ -342,7 +342,6 @@ namespace AugustusFahsion.View.Venda
             this.Name = "FrmVendaListar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmListarVenda";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

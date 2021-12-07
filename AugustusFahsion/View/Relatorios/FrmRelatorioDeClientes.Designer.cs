@@ -32,15 +32,18 @@ namespace AugustusFahsion.View.Relatorios
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
             this.cbOdenarRelatorio = new System.Windows.Forms.ComboBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.dtDataInicial = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +56,6 @@ namespace AugustusFahsion.View.Relatorios
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.dgvListaRelatorioClientes = new System.Windows.Forms.DataGridView();
-            this.BtnFechar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,29 +69,27 @@ namespace AugustusFahsion.View.Relatorios
             this.lblProdutosVendidos = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnMostrarFiltros = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
             this.panelFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRelatorioClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnFechar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.Location = new System.Drawing.Point(960, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 40);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnFechar.Location = new System.Drawing.Point(960, 40);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(49, 40);
+            this.btnFechar.TabIndex = 6;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // menuStrip1
             // 
@@ -143,6 +143,7 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(264, 745);
             this.panelFiltros.TabIndex = 63;
+            this.panelFiltros.Visible = false;
             // 
             // cbOdenarRelatorio
             // 
@@ -154,6 +155,15 @@ namespace AugustusFahsion.View.Relatorios
             this.cbOdenarRelatorio.Name = "cbOdenarRelatorio";
             this.cbOdenarRelatorio.Size = new System.Drawing.Size(231, 23);
             this.cbOdenarRelatorio.TabIndex = 49;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.numericUpDown2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.numericUpDown2.Location = new System.Drawing.Point(18, 447);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(231, 23);
+            this.numericUpDown2.TabIndex = 48;
             // 
             // numericUpDown1
             // 
@@ -194,6 +204,26 @@ namespace AugustusFahsion.View.Relatorios
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(231, 22);
             this.txtNomeProduto.TabIndex = 47;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label16.Location = new System.Drawing.Point(18, 372);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(131, 15);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Total liquido a partir de:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label15.Location = new System.Drawing.Point(18, 429);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 15);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Quantidade de clientes";
             // 
             // dtDataInicial
             // 
@@ -260,6 +290,7 @@ namespace AugustusFahsion.View.Relatorios
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 6;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -363,21 +394,6 @@ namespace AugustusFahsion.View.Relatorios
             this.dgvListaRelatorioClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaRelatorioClientes.Size = new System.Drawing.Size(960, 480);
             this.dgvListaRelatorioClientes.TabIndex = 50;
-            // 
-            // BtnFechar
-            // 
-            this.BtnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnFechar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnFechar.BackgroundImage")));
-            this.BtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.BtnFechar.Location = new System.Drawing.Point(945, 25);
-            this.BtnFechar.Name = "BtnFechar";
-            this.BtnFechar.Size = new System.Drawing.Size(49, 40);
-            this.BtnFechar.TabIndex = 49;
-            this.BtnFechar.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -531,35 +547,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnMostrarFiltros.TabIndex = 65;
             this.btnMostrarFiltros.Text = "Filtrar";
             this.btnMostrarFiltros.UseVisualStyleBackColor = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(18, 429);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 15);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "Quantidade de clientes";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.numericUpDown2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.numericUpDown2.Location = new System.Drawing.Point(18, 447);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(231, 23);
-            this.numericUpDown2.TabIndex = 48;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label16.Location = new System.Drawing.Point(18, 372);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 15);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Total liquido a partir de:";
+            this.btnMostrarFiltros.Click += new System.EventHandler(this.btnMostrarFiltros_Click);
             // 
             // FrmRelatorioDeClientes
             // 
@@ -570,7 +558,6 @@ namespace AugustusFahsion.View.Relatorios
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.dgvListaRelatorioClientes);
-            this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -584,17 +571,18 @@ namespace AugustusFahsion.View.Relatorios
             this.Controls.Add(this.lblProdutosVendidos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnMostrarFiltros);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRelatorioDeClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRelatorioDeClientes";
             this.panelFiltros.ResumeLayout(false);
             this.panelFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRelatorioClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,7 +590,7 @@ namespace AugustusFahsion.View.Relatorios
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelFiltros;
@@ -623,7 +611,6 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.DataGridView dgvListaRelatorioClientes;
-        private System.Windows.Forms.Button BtnFechar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

@@ -38,8 +38,33 @@ namespace AugustusFahsion.View.Alterar
             _controllerExcluir = colaboradorExcluirController;   
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+        private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
+        {
+            txtId.Text = colaboradorModel.IdColaborador.ToString();
+            txtNome.Text = colaboradorModel.NomeCompleto.Nome;
+            txtSobrenome.Text = colaboradorModel.NomeCompleto.Sobrenome;
+            dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
+            cbSexo.Text = colaboradorModel.Sexo;
+            mtxtCep.Text = colaboradorModel.Endereco.Cep.ToString();
+            nupSalario.Value = colaboradorModel.Salario.RetornarValor;
+            nupComissao.Value = colaboradorModel.Comissao;
+            txtLogradouro.Text = colaboradorModel.Endereco.Logradouro;
+            txtCidade.Text = colaboradorModel.Endereco.Cidade;
+            cbUf.Text = colaboradorModel.Endereco.Uf;
+            txtComplemento.Text = colaboradorModel.Endereco.Complemento;
+            txtBairro.Text = colaboradorModel.Endereco.Bairro;
+            txtNumeroEndereco.Text = colaboradorModel.Endereco.NumeroEndereco.ToString();
+            txtTelefone.Text = colaboradorModel.Contato.Telefone.ToString();
+            mtxtCelular.Text = colaboradorModel.Contato.Celular.ToString();
+            txtEmail.Text = colaboradorModel.Contato.Email;
+            mtxtCpf.Text = colaboradorModel.Cpf.RetornarValor;
+            cbCondicao.Text = colaboradorModel.Condicao;
 
+            txtBanco.Text = colaboradorModel.ContaBancaria.Banco;
+            mtxtAgencia.Text = colaboradorModel.ContaBancaria.Agencia;
+            cbTipoConta.Text = colaboradorModel.ContaBancaria.TipoConta;
+            mtxtConta.Text = colaboradorModel.ContaBancaria.Conta;
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -141,7 +166,7 @@ namespace AugustusFahsion.View.Alterar
                     MessageBox.Show("Selecione o tipo da conta bancária.");
                     return;
                 }
-                
+
                 colaboradorModel.IdColaborador = Convert.ToInt32(txtId.Text);
                 colaboradorModel.NomeCompleto.Nome = txtNome.Text;
                 colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
@@ -177,33 +202,9 @@ namespace AugustusFahsion.View.Alterar
             }
         }
 
-        private void AtribuirModelParaCampos(ColaboradorModel colaboradorModel)
-        {
-            txtId.Text = colaboradorModel.IdColaborador.ToString();
-            txtNome.Text = colaboradorModel.NomeCompleto.Nome;
-            txtSobrenome.Text = colaboradorModel.NomeCompleto.Sobrenome;
-            dtpDataNascimento.Text = colaboradorModel.DataNascimento.ToString();
-            cbSexo.Text = colaboradorModel.Sexo;
-            mtxtCep.Text = colaboradorModel.Endereco.Cep.ToString();
-            nupSalario.Value = colaboradorModel.Salario.RetornarValor;
-            nupComissao.Value = colaboradorModel.Comissao;
-            txtLogradouro.Text = colaboradorModel.Endereco.Logradouro;
-            txtCidade.Text = colaboradorModel.Endereco.Cidade;
-            cbUf.Text = colaboradorModel.Endereco.Uf;
-            txtComplemento.Text = colaboradorModel.Endereco.Complemento;
-            txtBairro.Text = colaboradorModel.Endereco.Bairro;
-            txtNumeroEndereco.Text = colaboradorModel.Endereco.NumeroEndereco.ToString();
-            txtTelefone.Text = colaboradorModel.Contato.Telefone.ToString();
-            mtxtCelular.Text = colaboradorModel.Contato.Celular.ToString();
-            txtEmail.Text = colaboradorModel.Contato.Email;
-            mtxtCpf.Text = colaboradorModel.Cpf.RetornarValor;
-            cbCondicao.Text = colaboradorModel.Condicao;
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
-            txtBanco.Text = colaboradorModel.ContaBancaria.Banco;
-            mtxtAgencia.Text = colaboradorModel.ContaBancaria.Agencia;
-            cbTipoConta.Text = colaboradorModel.ContaBancaria.TipoConta;
-            mtxtConta.Text = colaboradorModel.ContaBancaria.Conta;
-        }
+        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
     }
 
 }

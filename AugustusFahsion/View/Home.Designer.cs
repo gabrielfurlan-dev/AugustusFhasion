@@ -174,7 +174,7 @@ namespace AugustusFahsion
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(161, 402);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(161, 262);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(38, 40);
             this.btnCadastrarCliente.TabIndex = 11;
@@ -478,7 +478,7 @@ namespace AugustusFahsion
             this.btnCadastrarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarColaborador.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarColaborador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnCadastrarColaborador.Location = new System.Drawing.Point(161, 262);
+            this.btnCadastrarColaborador.Location = new System.Drawing.Point(161, 402);
             this.btnCadastrarColaborador.Name = "btnCadastrarColaborador";
             this.btnCadastrarColaborador.Size = new System.Drawing.Size(38, 40);
             this.btnCadastrarColaborador.TabIndex = 11;
@@ -669,8 +669,8 @@ namespace AugustusFahsion
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelRelatorios);
             this.Controls.Add(this.panelVendas);
+            this.Controls.Add(this.panelRelatorios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

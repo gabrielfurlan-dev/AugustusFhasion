@@ -11,5 +11,11 @@ namespace AugustusFahsion.View.Relatorios
             _relatorioDeClientesController = relatorioDeClientesController;
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, System.EventArgs e) => panelFiltros.Visible = false;
+
+        private void btnFechar_Click(object sender, System.EventArgs e) => this.Close();
+
+        private void btnMostrarFiltros_Click(object sender, System.EventArgs e) => panelFiltros.Visible = true;
     }
 }

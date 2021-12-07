@@ -122,7 +122,7 @@ namespace AugustusFahsion.View.Cadastrar
                     MessageBox.Show("Selecione o tipo da conta bancária.");
                     return;
                 }
-               
+
                 colaboradorModel.NomeCompleto.Nome = txtNome.Text;
                 colaboradorModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
                 colaboradorModel.Sexo = cbSexo.Text;
@@ -148,15 +148,17 @@ namespace AugustusFahsion.View.Cadastrar
 
                 _controller.CadastrarColaborador(colaboradorModel);
                 this.Close();
-                
+
             }
             catch (Exception excecao)
             {
                 MessageBox.Show(excecao.Message);
             }
-            
+
         }
+
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
-        
+
+        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
     }
 }

@@ -1,10 +1,7 @@
 ﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model.Relatorio;
-using AugustusFahsion.Model.Venda;
 using AugustusFahsion.View.Venda;
-using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace AugustusFahsion.Controller.Venda
 {
