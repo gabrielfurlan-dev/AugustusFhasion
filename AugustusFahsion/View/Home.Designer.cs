@@ -41,14 +41,20 @@ namespace AugustusFahsion
             this.label5 = new System.Windows.Forms.Label();
             this.btnListarProduto = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panelVendas = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnListarVendas = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAdicionarVenda = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnListarVendas = new System.Windows.Forms.Button();
-            this.BtnRelatorio = new System.Windows.Forms.Button();
+            this.panelRelatorios = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnRelatorioClientes = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnRelatorioProdutos = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCadastrarColaborador = new System.Windows.Forms.Button();
@@ -61,10 +67,16 @@ namespace AugustusFahsion
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblVendas = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panelRelatorios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,7 +117,7 @@ namespace AugustusFahsion
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.Location = new System.Drawing.Point(600, 6);
+            this.button1.Location = new System.Drawing.Point(594, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(49, 40);
             this.button1.TabIndex = 4;
@@ -214,100 +226,40 @@ namespace AugustusFahsion
             this.btnCadastrarProduto.UseVisualStyleBackColor = false;
             this.btnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
             // 
-            // panel1
+            // panelVendas
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnAdicionarVenda);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.btnListarVendas);
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panel1.Location = new System.Drawing.Point(369, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(655, 640);
-            this.panel1.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(277, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 50);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Vendas";
+            this.panelVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panelVendas.Controls.Add(this.label8);
+            this.panelVendas.Controls.Add(this.btnListarVendas);
+            this.panelVendas.Controls.Add(this.label9);
+            this.panelVendas.Controls.Add(this.label7);
+            this.panelVendas.Controls.Add(this.btnAdicionarVenda);
+            this.panelVendas.Controls.Add(this.pictureBox5);
+            this.panelVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panelVendas.Location = new System.Drawing.Point(510, 161);
+            this.panelVendas.Name = "panelVendas";
+            this.panelVendas.Size = new System.Drawing.Size(356, 514);
+            this.panelVendas.TabIndex = 6;
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(412, 432);
+            this.label8.Location = new System.Drawing.Point(234, 392);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 18);
             this.label8.TabIndex = 2;
             this.label8.Text = "Consultar";
             // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(230, 432);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 18);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Registrar";
-            // 
-            // btnAdicionarVenda
-            // 
-            this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAdicionarVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarVenda.BackgroundImage")));
-            this.btnAdicionarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdicionarVenda.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.Location = new System.Drawing.Point(165, 432);
-            this.btnAdicionarVenda.MaximumSize = new System.Drawing.Size(450, 450);
-            this.btnAdicionarVenda.Name = "btnAdicionarVenda";
-            this.btnAdicionarVenda.Size = new System.Drawing.Size(189, 119);
-            this.btnAdicionarVenda.TabIndex = 12;
-            this.btnAdicionarVenda.UseVisualStyleBackColor = false;
-            this.btnAdicionarVenda.Click += new System.EventHandler(this.btnAdicionarVenda_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(212, 129);
-            this.pictureBox5.MaximumSize = new System.Drawing.Size(450, 450);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(282, 256);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
             // btnListarVendas
             // 
-            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
             this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -315,7 +267,7 @@ namespace AugustusFahsion
             this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.Location = new System.Drawing.Point(360, 432);
+            this.btnListarVendas.Location = new System.Drawing.Point(182, 392);
             this.btnListarVendas.MaximumSize = new System.Drawing.Size(450, 450);
             this.btnListarVendas.Name = "btnListarVendas";
             this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -325,31 +277,180 @@ namespace AugustusFahsion
             this.btnListarVendas.UseVisualStyleBackColor = false;
             this.btnListarVendas.Click += new System.EventHandler(this.btnListarVendas_Click);
             // 
-            // BtnRelatorio
+            // label9
             // 
-            this.BtnRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BtnRelatorio.BackColor = System.Drawing.Color.Transparent;
-            this.BtnRelatorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRelatorio.BackgroundImage")));
-            this.BtnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRelatorio.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnRelatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.BtnRelatorio.Location = new System.Drawing.Point(498, 5);
-            this.BtnRelatorio.Name = "BtnRelatorio";
-            this.BtnRelatorio.Size = new System.Drawing.Size(96, 40);
-            this.BtnRelatorio.TabIndex = 11;
-            this.BtnRelatorio.Text = "Relatório";
-            this.BtnRelatorio.UseVisualStyleBackColor = false;
-            this.BtnRelatorio.Click += new System.EventHandler(this.BtnRelatorio_Click);
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(105, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(149, 50);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Vendas";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(79, 391);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Registrar";
+            // 
+            // btnAdicionarVenda
+            // 
+            this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdicionarVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnAdicionarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarVenda.BackgroundImage")));
+            this.btnAdicionarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdicionarVenda.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnAdicionarVenda.Location = new System.Drawing.Point(14, 391);
+            this.btnAdicionarVenda.MaximumSize = new System.Drawing.Size(450, 450);
+            this.btnAdicionarVenda.Name = "btnAdicionarVenda";
+            this.btnAdicionarVenda.Size = new System.Drawing.Size(189, 119);
+            this.btnAdicionarVenda.TabIndex = 12;
+            this.btnAdicionarVenda.UseVisualStyleBackColor = false;
+            this.btnAdicionarVenda.Click += new System.EventHandler(this.btnAdicionarVenda_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(40, 92);
+            this.pictureBox5.MaximumSize = new System.Drawing.Size(450, 450);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(282, 256);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panelRelatorios
+            // 
+            this.panelRelatorios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRelatorios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.panelRelatorios.Controls.Add(this.label11);
+            this.panelRelatorios.Controls.Add(this.label12);
+            this.panelRelatorios.Controls.Add(this.label13);
+            this.panelRelatorios.Controls.Add(this.btnRelatorioClientes);
+            this.panelRelatorios.Controls.Add(this.pictureBox7);
+            this.panelRelatorios.Controls.Add(this.btnRelatorioProdutos);
+            this.panelRelatorios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panelRelatorios.Location = new System.Drawing.Point(510, 161);
+            this.panelRelatorios.Name = "panelRelatorios";
+            this.panelRelatorios.Size = new System.Drawing.Size(356, 511);
+            this.panelRelatorios.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(77, -1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(205, 50);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Relatórios";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Location = new System.Drawing.Point(77, 389);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Clientes";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(236, 389);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 18);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Produtos";
+            // 
+            // btnRelatorioClientes
+            // 
+            this.btnRelatorioClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRelatorioClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnRelatorioClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorioClientes.BackgroundImage")));
+            this.btnRelatorioClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorioClientes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRelatorioClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioClientes.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorioClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnRelatorioClientes.Location = new System.Drawing.Point(23, 397);
+            this.btnRelatorioClientes.MaximumSize = new System.Drawing.Size(450, 450);
+            this.btnRelatorioClientes.Name = "btnRelatorioClientes";
+            this.btnRelatorioClientes.Size = new System.Drawing.Size(169, 107);
+            this.btnRelatorioClientes.TabIndex = 12;
+            this.btnRelatorioClientes.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(40, 87);
+            this.pictureBox7.MaximumSize = new System.Drawing.Size(450, 450);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(282, 256);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
+            // 
+            // btnRelatorioProdutos
+            // 
+            this.btnRelatorioProdutos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRelatorioProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnRelatorioProdutos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorioProdutos.BackgroundImage")));
+            this.btnRelatorioProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRelatorioProdutos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRelatorioProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorioProdutos.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorioProdutos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnRelatorioProdutos.Location = new System.Drawing.Point(191, 392);
+            this.btnRelatorioProdutos.MaximumSize = new System.Drawing.Size(450, 450);
+            this.btnRelatorioProdutos.Name = "btnRelatorioProdutos";
+            this.btnRelatorioProdutos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRelatorioProdutos.Size = new System.Drawing.Size(156, 112);
+            this.btnRelatorioProdutos.TabIndex = 13;
+            this.btnRelatorioProdutos.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnRelatorioProdutos.UseVisualStyleBackColor = false;
+            this.btnRelatorioProdutos.Click += new System.EventHandler(this.btnRelatorioProdutos_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(53, 376);
+            this.pictureBox3.Location = new System.Drawing.Point(53, 372);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(54, 54);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -492,12 +593,71 @@ namespace AugustusFahsion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.BtnRelatorio);
-            this.panel4.Location = new System.Drawing.Point(366, 27);
+            this.panel4.Controls.Add(this.lblVendas);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Location = new System.Drawing.Point(366, 26);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(658, 54);
             this.panel4.TabIndex = 13;
+            // 
+            // lblVendas
+            // 
+            this.lblVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.lblVendas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblVendas.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblVendas.Location = new System.Drawing.Point(380, 13);
+            this.lblVendas.Name = "lblVendas";
+            this.lblVendas.Size = new System.Drawing.Size(85, 31);
+            this.lblVendas.TabIndex = 16;
+            this.lblVendas.Text = "Vendas";
+            this.lblVendas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVendas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblVendas_MouseClick);
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.Location = new System.Drawing.Point(483, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 32);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Relatórios";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.label10_MouseClick);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button2.Location = new System.Drawing.Point(375, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 40);
+            this.button2.TabIndex = 17;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button3.Location = new System.Drawing.Point(477, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 40);
+            this.button3.TabIndex = 18;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -505,19 +665,23 @@ namespace AugustusFahsion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 740);
+            this.Controls.Add(this.panelRelatorios);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelVendas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelVendas.ResumeLayout(false);
+            this.panelVendas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panelRelatorios.ResumeLayout(false);
+            this.panelRelatorios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -539,7 +703,7 @@ namespace AugustusFahsion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelVendas;
         private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button btnListarProduto;
@@ -557,12 +721,22 @@ namespace AugustusFahsion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdicionarVenda;
         private System.Windows.Forms.Button btnListarVendas;
-        private System.Windows.Forms.Button BtnRelatorio;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelRelatorios;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnRelatorioClientes;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button btnRelatorioProdutos;
+        private System.Windows.Forms.Label lblVendas;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

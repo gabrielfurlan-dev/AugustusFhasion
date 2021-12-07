@@ -225,7 +225,7 @@ namespace AugustusFahsion.View.Venda
             this.panelFiltros.Controls.Add(this.btnFiltrarPorProduto);
             this.panelFiltros.Controls.Add(this.label3);
             this.panelFiltros.Controls.Add(this.txtIdCliente);
-            this.panelFiltros.Location = new System.Drawing.Point(760, 24);
+            this.panelFiltros.Location = new System.Drawing.Point(760, 27);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(264, 745);
             this.panelFiltros.TabIndex = 46;
@@ -389,9 +389,8 @@ namespace AugustusFahsion.View.Venda
             this.lblProdutosVendidos.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblProdutosVendidos.Location = new System.Drawing.Point(138, 711);
             this.lblProdutosVendidos.Name = "lblProdutosVendidos";
-            this.lblProdutosVendidos.Size = new System.Drawing.Size(43, 15);
+            this.lblProdutosVendidos.Size = new System.Drawing.Size(0, 15);
             this.lblProdutosVendidos.TabIndex = 36;
-            this.lblProdutosVendidos.Text = "000000";
             // 
             // lblPrecoBruto
             // 
@@ -401,9 +400,8 @@ namespace AugustusFahsion.View.Venda
             this.lblPrecoBruto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPrecoBruto.Location = new System.Drawing.Point(294, 711);
             this.lblPrecoBruto.Name = "lblPrecoBruto";
-            this.lblPrecoBruto.Size = new System.Drawing.Size(43, 15);
+            this.lblPrecoBruto.Size = new System.Drawing.Size(0, 15);
             this.lblPrecoBruto.TabIndex = 36;
-            this.lblPrecoBruto.Text = "000000";
             // 
             // lblDescontos
             // 
@@ -413,9 +411,8 @@ namespace AugustusFahsion.View.Venda
             this.lblDescontos.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblDescontos.Location = new System.Drawing.Point(452, 711);
             this.lblDescontos.Name = "lblDescontos";
-            this.lblDescontos.Size = new System.Drawing.Size(43, 15);
+            this.lblDescontos.Size = new System.Drawing.Size(0, 15);
             this.lblDescontos.TabIndex = 36;
-            this.lblDescontos.Text = "000000";
             // 
             // lblPrecoLiquido
             // 
@@ -425,9 +422,8 @@ namespace AugustusFahsion.View.Venda
             this.lblPrecoLiquido.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblPrecoLiquido.Location = new System.Drawing.Point(618, 711);
             this.lblPrecoLiquido.Name = "lblPrecoLiquido";
-            this.lblPrecoLiquido.Size = new System.Drawing.Size(43, 15);
+            this.lblPrecoLiquido.Size = new System.Drawing.Size(0, 15);
             this.lblPrecoLiquido.TabIndex = 36;
-            this.lblPrecoLiquido.Text = "000000";
             // 
             // lblCusto
             // 
@@ -437,9 +433,8 @@ namespace AugustusFahsion.View.Venda
             this.lblCusto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblCusto.Location = new System.Drawing.Point(749, 711);
             this.lblCusto.Name = "lblCusto";
-            this.lblCusto.Size = new System.Drawing.Size(43, 15);
+            this.lblCusto.Size = new System.Drawing.Size(0, 15);
             this.lblCusto.TabIndex = 36;
-            this.lblCusto.Text = "000000";
             // 
             // lblLucro
             // 
@@ -449,9 +444,8 @@ namespace AugustusFahsion.View.Venda
             this.lblLucro.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblLucro.Location = new System.Drawing.Point(881, 711);
             this.lblLucro.Name = "lblLucro";
-            this.lblLucro.Size = new System.Drawing.Size(43, 15);
+            this.lblLucro.Size = new System.Drawing.Size(0, 15);
             this.lblLucro.TabIndex = 36;
-            this.lblLucro.Text = "000000";
             // 
             // FrmRelatorioDeProdutos
             // 
