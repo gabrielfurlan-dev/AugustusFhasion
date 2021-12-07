@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller;
+using AugustusFahsion.Controller.Relatorios;
 using AugustusFahsion.Controller.Venda;
 using System;
 using System.Windows.Forms;
@@ -45,5 +46,7 @@ namespace AugustusFahsion
             panelVendas.Visible = false;
             panelRelatorios.Visible = true;
         }
+
+        private void btnRelatorioClientes_Click(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
     }
 }
