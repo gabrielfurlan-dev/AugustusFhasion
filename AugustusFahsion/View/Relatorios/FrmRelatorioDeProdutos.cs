@@ -10,12 +10,12 @@ namespace AugustusFahsion.View.Venda
     public partial class FrmRelatorioDeProdutos : Form
     {
         private RelatorioDeProdutosController _relatorioDeVendasController;
-        private FiltrosRelatorioProduto _filtros;
+        private FiltrosRelatorioProdutos _filtros;
         public FrmRelatorioDeProdutos(RelatorioDeProdutosController relatorioDeVendasController)
         {
             InitializeComponent();
             _relatorioDeVendasController = relatorioDeVendasController;
-            _filtros = new FiltrosRelatorioProduto();
+            _filtros = new FiltrosRelatorioProdutos();
         }
 
         private void BtnFechar_Click(object sender, EventArgs e) => this.Close();
@@ -35,7 +35,7 @@ namespace AugustusFahsion.View.Venda
             PreencherFiltros();
             try
             {
-                var resultado = _relatorioDeVendasController.Filtrar(_filtros);
+                var resultado = _relatorioDeVendasController.FiltrarRelatorioProdutos(_filtros);
                     dgvListaVenda.DataSource = resultado;
                     AtualizarTotais(resultado);
 

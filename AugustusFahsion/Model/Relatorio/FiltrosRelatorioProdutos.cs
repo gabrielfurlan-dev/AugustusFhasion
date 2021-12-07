@@ -2,7 +2,7 @@
 
 namespace AugustusFahsion.Model.Relatorio
 {
-    class FiltrosRelatorioProduto
+    class FiltrosRelatorioProdutos
     {
         public int IdCliente { get; set; }
         public string NomeProduto { get; set; }

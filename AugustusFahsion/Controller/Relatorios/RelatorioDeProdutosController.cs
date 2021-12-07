@@ -10,6 +10,6 @@ namespace AugustusFahsion.Controller.Venda
         public void AbrirRelatorio() =>
             new FrmRelatorioDeProdutos(this).Show();
 
-        internal List<RelatorioProdutos> Filtrar(FiltrosRelatorioProduto filtros) => RelatorioDAO.Filtrar(filtros);
+        internal List<RelatorioProdutos> FiltrarRelatorioProdutos(FiltrosRelatorioProdutos filtros) => RelatorioDAO.FiltrarRelatorioProdutos(filtros);
     }
 }

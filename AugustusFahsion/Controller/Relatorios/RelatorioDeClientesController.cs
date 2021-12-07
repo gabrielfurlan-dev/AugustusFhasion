@@ -1,4 +1,7 @@
-﻿using AugustusFahsion.View.Relatorios;
+﻿using AugustusFahsion.DAO;
+using AugustusFahsion.Model.Relatorio;
+using AugustusFahsion.View.Relatorios;
+using System.Collections.Generic;
 
 namespace AugustusFahsion.Controller.Relatorios
 {
@@ -7,6 +10,6 @@ namespace AugustusFahsion.Controller.Relatorios
         public void AbrirRelatorio() =>
            new FrmRelatorioDeClientes(this).Show();
             
-        //internal List<RelatorioProdutos> Filtrar(FiltrosRelatorioProduto filtros) => RelatorioDAO.Filtrar(filtros);
+        internal List<RelatorioClientes> FiltrarRelatorioClientes(FiltrosRelatorioClientes filtros) => RelatorioDAO.FiltrarRelatorioClientes(filtros);
     }
 }

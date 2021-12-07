@@ -7,7 +7,7 @@ namespace AugustusFahsion.DAO
 {
     public class RelatorioDAO
     {
-        internal static List<RelatorioProdutos> Filtrar(FiltrosRelatorioProduto filtros)
+        internal static List<RelatorioProdutos> FiltrarRelatorioProdutos(FiltrosRelatorioProdutos filtros)
         {
 
             var query = @"SELECT p.Nome, sum(vp.Quantidade) AS QuantidadeVendida, Sum(vp.TotalBruto) AS TotalBruto,
@@ -30,6 +30,37 @@ namespace AugustusFahsion.DAO
                 {
                     conexao.Open();
                     var a = conexao.Query<RelatorioProdutos>(query, filtros).AsList();
+                    return a;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        internal static List<RelatorioClientes>FiltrarRelatorioClientes(FiltrosRelatorioClientes filtros)
+        {
+
+            var query = filtros.GerarFiltrosSelect();
+            query += @" count(v.IdVenda) as QuantidadeVenda, pe.Nome, sum(v.TotalBruto) as TotalBruto,
+	                        sum(v.TotalDesconto) as Desconto, sum(v.TotalLiquido) as TotalLiquido
+	                        FROM Venda v
+	                        INNER JOIN Cliente c on v.IdCliente = c.IdCliente
+	                        INNER JOIN Pessoa pe on c.IdPessoa = pe.IdPessoa ";
+
+            query += filtros.GerarFiltrosWhere();
+
+            query += " GROUP BY pe.Nome ";
+
+            query += filtros.GerarFiltrosOrderBy();
+
+            try
+            {
+                using (var conexao = new SqlConexao().Connection())
+                {
+                    conexao.Open();
+                    var a = conexao.Query<RelatorioClientes>(query, filtros).AsList();
                     return a;
                 }
             }
