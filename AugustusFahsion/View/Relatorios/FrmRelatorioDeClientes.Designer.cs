@@ -36,6 +36,7 @@ namespace AugustusFahsion.View.Relatorios
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
+            this.cbDirecaoOrdem = new System.Windows.Forms.ComboBox();
             this.cbOdenarPor = new System.Windows.Forms.ComboBox();
             this.nupQuantidadeClientes = new System.Windows.Forms.NumericUpDown();
             this.nupTotalLiquidoInicial = new System.Windows.Forms.NumericUpDown();
@@ -114,6 +115,7 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panelFiltros.Controls.Add(this.cbDirecaoOrdem);
             this.panelFiltros.Controls.Add(this.cbOdenarPor);
             this.panelFiltros.Controls.Add(this.nupQuantidadeClientes);
             this.panelFiltros.Controls.Add(this.nupTotalLiquidoInicial);
@@ -137,6 +139,20 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.TabIndex = 63;
             this.panelFiltros.Visible = false;
             // 
+            // cbDirecaoOrdem
+            // 
+            this.cbDirecaoOrdem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbDirecaoOrdem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbDirecaoOrdem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbDirecaoOrdem.FormattingEnabled = true;
+            this.cbDirecaoOrdem.Items.AddRange(new object[] {
+            "Crescente",
+            "Decrescente"});
+            this.cbDirecaoOrdem.Location = new System.Drawing.Point(138, 234);
+            this.cbDirecaoOrdem.Name = "cbDirecaoOrdem";
+            this.cbDirecaoOrdem.Size = new System.Drawing.Size(111, 23);
+            this.cbDirecaoOrdem.TabIndex = 50;
+            // 
             // cbOdenarPor
             // 
             this.cbOdenarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
@@ -146,11 +162,10 @@ namespace AugustusFahsion.View.Relatorios
             this.cbOdenarPor.Items.AddRange(new object[] {
             "Quantidade",
             "Total  desconto",
-            "Total  liquido (Crescente)",
-            "Total  liquido (Decrescente)"});
+            "Total  liquido"});
             this.cbOdenarPor.Location = new System.Drawing.Point(18, 234);
             this.cbOdenarPor.Name = "cbOdenarPor";
-            this.cbOdenarPor.Size = new System.Drawing.Size(231, 23);
+            this.cbOdenarPor.Size = new System.Drawing.Size(109, 23);
             this.cbOdenarPor.TabIndex = 49;
             // 
             // nupQuantidadeClientes
@@ -222,7 +237,7 @@ namespace AugustusFahsion.View.Relatorios
             this.dtDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDataInicial.Location = new System.Drawing.Point(18, 159);
             this.dtDataInicial.Name = "dtDataInicial";
-            this.dtDataInicial.Size = new System.Drawing.Size(107, 23);
+            this.dtDataInicial.Size = new System.Drawing.Size(109, 23);
             this.dtDataInicial.TabIndex = 44;
             this.dtDataInicial.Value = new System.DateTime(2021, 11, 10, 0, 0, 0, 0);
             // 
@@ -249,9 +264,9 @@ namespace AugustusFahsion.View.Relatorios
             // 
             this.dtDataFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataFinal.Location = new System.Drawing.Point(147, 159);
+            this.dtDataFinal.Location = new System.Drawing.Point(138, 159);
             this.dtDataFinal.Name = "dtDataFinal";
-            this.dtDataFinal.Size = new System.Drawing.Size(102, 23);
+            this.dtDataFinal.Size = new System.Drawing.Size(111, 23);
             this.dtDataFinal.TabIndex = 45;
             // 
             // label13
@@ -556,5 +571,6 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblTotalDesconto;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbDirecaoOrdem;
     }
 }

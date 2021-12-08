@@ -131,7 +131,7 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        public static List<ClienteListagemModel> BuscarClientePorId(int id) 
+        public static List<ClienteListagemModel> BuscarClientePorId(int id)
         {
             const string listarPessoa = @"select c.IdPessoa, c.IdCliente, c.Condicao, p.IdPessoa, p.Nome, p.Sobrenome, p.IdPessoa, e.Cep, 
                 e.Logradouro, e.Cidade, e.Uf, e.Complemento, e.Bairro, e.NumeroEndereco, p.IdPessoa, cn.Telefone, cn.Celular, cn.Email,

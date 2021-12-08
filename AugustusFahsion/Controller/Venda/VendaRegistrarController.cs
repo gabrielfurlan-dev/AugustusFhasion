@@ -13,14 +13,18 @@ namespace AugustusFahsion.Controller.Venda
         public void AbrirFormulario() =>
             new FrmVendaRegistrar(this).Show();
 
-        internal void ProcurarCliente()
+        internal ClienteModel ProcurarCliente()
         {
-            new FrmSelecionarModel(new ClienteListarController()).Show();
+            var form = new FrmSelecionarModel(new ClienteListarController());
+            form.ShowDialog();
+            return form.Cliente;
         }
 
-        internal void ProcurarColaborador()
+        internal ColaboradorModel ProcurarColaborador()
         {
-            new FrmSelecionarModel(new ColaboradorListarController()).Show();
+            var form = new FrmSelecionarModel(new ColaboradorListarController());
+            form.ShowDialog();
+            return form.Colaborador;
         }
 
         public void RegistrarVenda(VendaModel vendaModel) {

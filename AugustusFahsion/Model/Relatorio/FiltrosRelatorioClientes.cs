@@ -1,12 +1,17 @@
-﻿using AugustusFahsion.Model.ValueObjects;
+﻿using AugustusFahsion.Enum;
+using AugustusFahsion.Model.ValueObjects;
 using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 
 namespace AugustusFahsion.Model.Relatorio
 {
     class FiltrosRelatorioClientes
     {
         public string NomeCliente { get; set; }
-        public string OrdenarPor { get; set; }
+        public OrdemRelatorioDeVenda OrdenarPor { get; set; }
+        public string DirecaoOrdem { get; set; }
         public decimal TotalLiquidoInicial{ get; set; }
         public int QuantidadeDeClientes { get; set; }
         public DateTime DataInicial{ get; set; }
@@ -31,20 +36,39 @@ namespace AugustusFahsion.Model.Relatorio
             return having;
         }
 
-        internal string GerarFiltrosOrderBy()
+        public static string GetEnumDescription(OrdemRelatorioDeVenda value)
         {
-            var orderBy = @" ";
+            FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            if (OrdenarPor == "Quantidade")
-                orderBy = @" ORDER BY QuantidadeVenda DESC ";
-            if (OrdenarPor == "Total  desconto")
-                orderBy = @" ORDER BY Desconto DESC ";
-            if (OrdenarPor == "Total  liquido (Crescente)")
-                orderBy = @" ORDER BY TotalLiquido DESC ";
-            if (OrdenarPor == "Total  liquido (Decrescente)")
-                orderBy = @" ORDER BY TotalLiquido ";
+            try
+            {
+                DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+                if (attributes != null && attributes.Any())
+                {
+                    return attributes.First().Description;
+                }
 
-            return orderBy;
+                return value.ToString();
+
+            }
+            catch (Exception)
+            {
+                return " ";
+            }
+
         }
+
+        internal string GerarFiltrosOrderBy() => GetEnumDescription(OrdenarPor);
+
+        internal string GerarDirecaoDaOrdem() 
+        {
+            var direcao = @" ";
+            if (DirecaoOrdem == "Decrescente")
+                direcao = " DESC ";
+
+            return direcao;
+        }
+
+        
     }
 }

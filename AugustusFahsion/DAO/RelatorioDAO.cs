@@ -56,6 +56,8 @@ namespace AugustusFahsion.DAO
 
             query += filtros.GerarFiltrosOrderBy();
 
+            query += filtros.GerarDirecaoDaOrdem();
+
             query += filtros.GerarFiltrosHaving();
 
             try

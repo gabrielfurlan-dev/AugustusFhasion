@@ -1,6 +1,5 @@
 ﻿using AugustusFahsion.Controller;
 using AugustusFahsion.Model;
-using AugustusFahsion.View.Venda;
 using System;
 using System.Windows.Forms;
 

@@ -40,11 +40,9 @@ namespace AugustusFahsion.View.Venda
                     var resultado = _relatorioDeVendasController.FiltrarRelatorioProdutos(_filtros);
                         dgvListaVenda.DataSource = resultado;
                         AtualizarTotais(resultado);
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -71,6 +69,5 @@ namespace AugustusFahsion.View.Venda
         }
 
         private void btnMostrarFiltros_Click(object sender, EventArgs e) => panelFiltros.Visible = true;
-
     }
 }

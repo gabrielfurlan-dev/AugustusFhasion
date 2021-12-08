@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller.Relatorios;
+using AugustusFahsion.Enum;
 using AugustusFahsion.Model.Relatorio;
 using System;
 using System.Collections.Generic;
@@ -55,10 +56,11 @@ namespace AugustusFahsion.View.Relatorios
         public void PreencherFiltros()
         {
             _filtros.NomeCliente = txtNomeCliente.Text;
-            _filtros.OrdenarPor = cbOdenarPor.Text;
+            _filtros.OrdenarPor = (OrdemRelatorioDeVenda)cbOdenarPor.SelectedIndex;
             _filtros.QuantidadeDeClientes = (int)nupQuantidadeClientes.Value;
             _filtros.DataInicial = dtDataInicial.Value;
             _filtros.DataFinal = dtDataFinal.Value;
+            _filtros.DirecaoOrdem = cbDirecaoOrdem.Text;
         }
 
         public void AtualizarTotais(List<RelatorioClientes> resultado) 
