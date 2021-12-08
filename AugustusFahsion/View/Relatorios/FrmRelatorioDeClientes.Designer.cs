@@ -30,8 +30,8 @@ namespace AugustusFahsion.View.Relatorios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,19 +54,15 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFiltrarPorCliente = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvListaRelatorioClientes = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblLucro = new System.Windows.Forms.Label();
-            this.lblCusto = new System.Windows.Forms.Label();
-            this.lblPrecoLiquido = new System.Windows.Forms.Label();
-            this.lblDescontos = new System.Windows.Forms.Label();
-            this.lblPrecoBruto = new System.Windows.Forms.Label();
-            this.lblProdutosVendidos = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalVendas = new System.Windows.Forms.Label();
             this.btnMostrarFiltros = new System.Windows.Forms.Button();
+            this.lblTotalBruto = new System.Windows.Forms.Label();
+            this.lblTotalLiquido = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblTotalDesconto = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidadeClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupTotalLiquidoInicial)).BeginInit();
@@ -135,7 +131,7 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.Controls.Add(this.BtnFecharFiltros);
             this.panelFiltros.Controls.Add(this.btnFiltrarPorCliente);
             this.panelFiltros.Controls.Add(this.label3);
-            this.panelFiltros.Location = new System.Drawing.Point(760, 25);
+            this.panelFiltros.Location = new System.Drawing.Point(760, 27);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(264, 745);
             this.panelFiltros.TabIndex = 63;
@@ -352,23 +348,23 @@ namespace AugustusFahsion.View.Relatorios
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaRelatorioClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaRelatorioClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaRelatorioClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaRelatorioClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaRelatorioClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaRelatorioClientes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaRelatorioClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaRelatorioClientes.GridColor = System.Drawing.Color.Black;
             this.dgvListaRelatorioClientes.Location = new System.Drawing.Point(16, 180);
             this.dgvListaRelatorioClientes.Name = "dgvListaRelatorioClientes";
@@ -380,53 +376,17 @@ namespace AugustusFahsion.View.Relatorios
             this.dgvListaRelatorioClientes.Size = new System.Drawing.Size(960, 480);
             this.dgvListaRelatorioClientes.TabIndex = 50;
             // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(825, 696);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 15);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "Lucro:";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(692, 696);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 15);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "Custo:";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.Location = new System.Drawing.Point(519, 696);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 15);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "Preço Liquido:";
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.Location = new System.Drawing.Point(370, 696);
+            this.label9.Location = new System.Drawing.Point(268, 687);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 15);
+            this.label9.Size = new System.Drawing.Size(67, 15);
             this.label9.TabIndex = 55;
-            this.label9.Text = "Descontos:";
+            this.label9.Text = "Total bruto:";
             // 
             // label8
             // 
@@ -434,89 +394,23 @@ namespace AugustusFahsion.View.Relatorios
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(205, 696);
+            this.label8.Location = new System.Drawing.Point(20, 687);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 15);
+            this.label8.Size = new System.Drawing.Size(128, 15);
             this.label8.TabIndex = 51;
-            this.label8.Text = "Preço Bruto:";
+            this.label8.Text = "Quantidade de vendas:";
             // 
-            // lblLucro
+            // lblTotalVendas
             // 
-            this.lblLucro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLucro.AutoSize = true;
-            this.lblLucro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLucro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblLucro.Location = new System.Drawing.Point(866, 696);
-            this.lblLucro.Name = "lblLucro";
-            this.lblLucro.Size = new System.Drawing.Size(0, 15);
-            this.lblLucro.TabIndex = 57;
-            // 
-            // lblCusto
-            // 
-            this.lblCusto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCusto.AutoSize = true;
-            this.lblCusto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCusto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblCusto.Location = new System.Drawing.Point(734, 696);
-            this.lblCusto.Name = "lblCusto";
-            this.lblCusto.Size = new System.Drawing.Size(0, 15);
-            this.lblCusto.TabIndex = 58;
-            // 
-            // lblPrecoLiquido
-            // 
-            this.lblPrecoLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrecoLiquido.AutoSize = true;
-            this.lblPrecoLiquido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPrecoLiquido.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPrecoLiquido.Location = new System.Drawing.Point(603, 696);
-            this.lblPrecoLiquido.Name = "lblPrecoLiquido";
-            this.lblPrecoLiquido.Size = new System.Drawing.Size(0, 15);
-            this.lblPrecoLiquido.TabIndex = 59;
-            // 
-            // lblDescontos
-            // 
-            this.lblDescontos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDescontos.AutoSize = true;
-            this.lblDescontos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescontos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblDescontos.Location = new System.Drawing.Point(437, 696);
-            this.lblDescontos.Name = "lblDescontos";
-            this.lblDescontos.Size = new System.Drawing.Size(0, 15);
-            this.lblDescontos.TabIndex = 60;
-            // 
-            // lblPrecoBruto
-            // 
-            this.lblPrecoBruto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrecoBruto.AutoSize = true;
-            this.lblPrecoBruto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPrecoBruto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPrecoBruto.Location = new System.Drawing.Point(279, 696);
-            this.lblPrecoBruto.Name = "lblPrecoBruto";
-            this.lblPrecoBruto.Size = new System.Drawing.Size(0, 15);
-            this.lblPrecoBruto.TabIndex = 61;
-            // 
-            // lblProdutosVendidos
-            // 
-            this.lblProdutosVendidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProdutosVendidos.AutoSize = true;
-            this.lblProdutosVendidos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblProdutosVendidos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblProdutosVendidos.Location = new System.Drawing.Point(123, 696);
-            this.lblProdutosVendidos.Name = "lblProdutosVendidos";
-            this.lblProdutosVendidos.Size = new System.Drawing.Size(0, 15);
-            this.lblProdutosVendidos.TabIndex = 62;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(16, 696);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 15);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Produtos vendidos:";
+            this.lblTotalVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalVendas.AutoSize = true;
+            this.lblTotalVendas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalVendas.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalVendas.Location = new System.Drawing.Point(154, 687);
+            this.lblTotalVendas.Name = "lblTotalVendas";
+            this.lblTotalVendas.Size = new System.Drawing.Size(13, 15);
+            this.lblTotalVendas.TabIndex = 61;
+            this.lblTotalVendas.Text = "0";
             // 
             // btnMostrarFiltros
             // 
@@ -534,6 +428,66 @@ namespace AugustusFahsion.View.Relatorios
             this.btnMostrarFiltros.UseVisualStyleBackColor = false;
             this.btnMostrarFiltros.Click += new System.EventHandler(this.btnMostrarFiltros_Click);
             // 
+            // lblTotalBruto
+            // 
+            this.lblTotalBruto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalBruto.AutoSize = true;
+            this.lblTotalBruto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalBruto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalBruto.Location = new System.Drawing.Point(341, 687);
+            this.lblTotalBruto.Name = "lblTotalBruto";
+            this.lblTotalBruto.Size = new System.Drawing.Size(13, 15);
+            this.lblTotalBruto.TabIndex = 61;
+            this.lblTotalBruto.Text = "0";
+            // 
+            // lblTotalLiquido
+            // 
+            this.lblTotalLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalLiquido.AutoSize = true;
+            this.lblTotalLiquido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalLiquido.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalLiquido.Location = new System.Drawing.Point(697, 687);
+            this.lblTotalLiquido.Name = "lblTotalLiquido";
+            this.lblTotalLiquido.Size = new System.Drawing.Size(13, 15);
+            this.lblTotalLiquido.TabIndex = 61;
+            this.lblTotalLiquido.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.Location = new System.Drawing.Point(624, 687);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 15);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Total liquido:";
+            // 
+            // lblTotalDesconto
+            // 
+            this.lblTotalDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalDesconto.AutoSize = true;
+            this.lblTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalDesconto.Location = new System.Drawing.Point(519, 687);
+            this.lblTotalDesconto.Name = "lblTotalDesconto";
+            this.lblTotalDesconto.Size = new System.Drawing.Size(13, 15);
+            this.lblTotalDesconto.TabIndex = 61;
+            this.lblTotalDesconto.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label17.Location = new System.Drawing.Point(426, 687);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 15);
+            this.label17.TabIndex = 55;
+            this.label17.Text = "Total desconto:";
+            // 
             // FrmRelatorioDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -543,18 +497,14 @@ namespace AugustusFahsion.View.Relatorios
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.dgvListaRelatorioClientes);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblTotalDesconto);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.lblLucro);
-            this.Controls.Add(this.lblCusto);
-            this.Controls.Add(this.lblPrecoLiquido);
-            this.Controls.Add(this.lblDescontos);
-            this.Controls.Add(this.lblPrecoBruto);
-            this.Controls.Add(this.lblProdutosVendidos);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblTotalLiquido);
+            this.Controls.Add(this.lblTotalBruto);
+            this.Controls.Add(this.lblTotalVendas);
             this.Controls.Add(this.btnMostrarFiltros);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.menuStrip1);
@@ -594,21 +544,17 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Button btnFiltrarPorCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvListaRelatorioClientes;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblLucro;
-        private System.Windows.Forms.Label lblCusto;
-        private System.Windows.Forms.Label lblPrecoLiquido;
-        private System.Windows.Forms.Label lblDescontos;
-        private System.Windows.Forms.Label lblPrecoBruto;
-        private System.Windows.Forms.Label lblProdutosVendidos;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTotalVendas;
         private System.Windows.Forms.Button btnMostrarFiltros;
         private System.Windows.Forms.NumericUpDown nupQuantidadeClientes;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblTotalBruto;
+        private System.Windows.Forms.Label lblTotalLiquido;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblTotalDesconto;
+        private System.Windows.Forms.Label label17;
     }
 }

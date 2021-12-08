@@ -29,97 +29,81 @@ namespace AugustusFahsion.View.Venda
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVendaRegistrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVendaRegistrar));
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chkEnviarEmail = new System.Windows.Forms.CheckBox();
+            this.btnAbrirDeSelecaoDeCliente = new System.Windows.Forms.Button();
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalLucro = new System.Windows.Forms.Label();
-            this.lblTotalLiquido = new System.Windows.Forms.Label();
-            this.lblTotalDesconto = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblTotalBrutoVenda = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.lblIdColaborador = new System.Windows.Forms.Label();
+            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
+            this.lblIdCliente = new System.Windows.Forms.Label();
+            this.chkEnviarEmail = new System.Windows.Forms.CheckBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.btnAbrirSelecaoDeColaborador = new System.Windows.Forms.Button();
             this.lblLucroProduto = new System.Windows.Forms.Label();
+            this.lblColaboradorSelecionado = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgvProdutoListar = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblTotalBrutoVenda = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotalDesconto = new System.Windows.Forms.Label();
             this.lblIdProduto = new System.Windows.Forms.Label();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnPesquisarProduto = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtProcurar = new System.Windows.Forms.TextBox();
-            this.nupQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.nupDesconto = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblProdutoLucroUnitario = new System.Windows.Forms.Label();
-            this.lblTotalBrutoProduto = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTotalLiquidoProduto = new System.Windows.Forms.Label();
-            this.lblProdutoSelecionado = new System.Windows.Forms.Label();
-            this.lblTotalDescontoProduto = new System.Windows.Forms.Label();
-            this.lblPrecoProduto = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblTotalLiquido = new System.Windows.Forms.Label();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.lblTotalLucro = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnPesquisarProduto = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblPrecoTotal = new System.Windows.Forms.Label();
+            this.txtProcurar = new System.Windows.Forms.TextBox();
             this.lbl41 = new System.Windows.Forms.Label();
+            this.nupQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.nupDesconto = new System.Windows.Forms.NumericUpDown();
+            this.lblPrecoProduto = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lblTotalDescontoProduto = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblProdutoSelecionado = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblTotalLiquidoProduto = new System.Windows.Forms.Label();
+            this.lblProdutoLucroUnitario = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalBrutoProduto = new System.Windows.Forms.Label();
+            this.lblClienteSelecionado = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.txtPesquisarCliente = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPesquisarCliente = new System.Windows.Forms.Button();
-            this.lblColaboradorSelecionado = new System.Windows.Forms.Label();
-            this.btnPesquisarColaborador = new System.Windows.Forms.Button();
-            this.lblClienteSelecionado = new System.Windows.Forms.Label();
-            this.lblIdCliente = new System.Windows.Forms.Label();
-            this.lblIdColaborador = new System.Windows.Forms.Label();
-            this.dgvClienteListar = new System.Windows.Forms.DataGridView();
-            this.dgvColaboradorListar = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoListar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClienteListar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradorListar)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -139,32 +123,27 @@ namespace AugustusFahsion.View.Venda
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.panel1.Controls.Add(this.dgvColaboradorListar);
+            this.panel1.Controls.Add(this.btnAbrirDeSelecaoDeCliente);
             this.panel1.Controls.Add(this.cbFormaPagamento);
-            this.panel1.Controls.Add(this.dgvClienteListar);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.lblIdColaborador);
             this.panel1.Controls.Add(this.dgvCarrinho);
             this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.chkEnviarEmail);
-            this.panel1.Controls.Add(this.lblClienteSelecionado);
             this.panel1.Controls.Add(this.lbl);
-            this.panel1.Controls.Add(this.btnPesquisarColaborador);
+            this.panel1.Controls.Add(this.btnAbrirSelecaoDeColaborador);
             this.panel1.Controls.Add(this.lblLucroProduto);
             this.panel1.Controls.Add(this.lblColaboradorSelecionado);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.btnPesquisarCliente);
             this.panel1.Controls.Add(this.lbl2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dgvProdutoListar);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.lblTotalBrutoVenda);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.txtPesquisarCliente);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label11);
@@ -199,21 +178,22 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.lblProdutoLucroUnitario);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblTotalBrutoProduto);
+            this.panel1.Controls.Add(this.lblClienteSelecionado);
             this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 720);
             this.panel1.TabIndex = 27;
             // 
-            // chkEnviarEmail
+            // btnAbrirDeSelecaoDeCliente
             // 
-            this.chkEnviarEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkEnviarEmail.AutoSize = true;
-            this.chkEnviarEmail.Location = new System.Drawing.Point(795, 690);
-            this.chkEnviarEmail.Name = "chkEnviarEmail";
-            this.chkEnviarEmail.Size = new System.Drawing.Size(144, 19);
-            this.chkEnviarEmail.TabIndex = 55;
-            this.chkEnviarEmail.Text = "Enviar Email ao cliente";
-            this.chkEnviarEmail.UseVisualStyleBackColor = true;
+            this.btnAbrirDeSelecaoDeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirDeSelecaoDeCliente.Location = new System.Drawing.Point(389, 108);
+            this.btnAbrirDeSelecaoDeCliente.Name = "btnAbrirDeSelecaoDeCliente";
+            this.btnAbrirDeSelecaoDeCliente.Size = new System.Drawing.Size(73, 23);
+            this.btnAbrirDeSelecaoDeCliente.TabIndex = 58;
+            this.btnAbrirDeSelecaoDeCliente.Text = "Selecionar";
+            this.btnAbrirDeSelecaoDeCliente.UseVisualStyleBackColor = true;
+            this.btnAbrirDeSelecaoDeCliente.Click += new System.EventHandler(this.btnAbrirSelecaoDeCliente_Click);
             // 
             // cbFormaPagamento
             // 
@@ -227,255 +207,219 @@ namespace AugustusFahsion.View.Venda
             "A vista (Cartão)",
             "A prazo",
             "Picz"});
-            this.cbFormaPagamento.Location = new System.Drawing.Point(840, 436);
+            this.cbFormaPagamento.Location = new System.Drawing.Point(843, 564);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
             this.cbFormaPagamento.Size = new System.Drawing.Size(118, 23);
             this.cbFormaPagamento.TabIndex = 57;
             // 
-            // label15
+            // label23
             // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(840, 418);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 15);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "Forma de Pagamento";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(201, 542);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 15);
+            this.label23.TabIndex = 53;
+            this.label23.Text = "Lucro";
+            // 
+            // lblIdColaborador
+            // 
+            this.lblIdColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblIdColaborador.ForeColor = System.Drawing.Color.White;
+            this.lblIdColaborador.Location = new System.Drawing.Point(659, 136);
+            this.lblIdColaborador.Name = "lblIdColaborador";
+            this.lblIdColaborador.Size = new System.Drawing.Size(24, 27);
+            this.lblIdColaborador.TabIndex = 43;
+            this.lblIdColaborador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgvCarrinho
             // 
             this.dgvCarrinho.AllowUserToResizeColumns = false;
             this.dgvCarrinho.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCarrinho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvCarrinho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCarrinho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCarrinho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarrinho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarrinho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCarrinho.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCarrinho.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCarrinho.GridColor = System.Drawing.Color.Black;
-            this.dgvCarrinho.Location = new System.Drawing.Point(513, 86);
+            this.dgvCarrinho.Location = new System.Drawing.Point(516, 214);
             this.dgvCarrinho.Name = "dgvCarrinho";
             this.dgvCarrinho.ReadOnly = true;
             this.dgvCarrinho.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvCarrinho.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCarrinho.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCarrinho.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCarrinho.RowHeadersVisible = false;
             this.dgvCarrinho.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCarrinho.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvCarrinho.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCarrinho.RowTemplate.Height = 25;
             this.dgvCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarrinho.Size = new System.Drawing.Size(451, 269);
             this.dgvCarrinho.TabIndex = 35;
             this.dgvCarrinho.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCarrinho_CellMouseClick);
             // 
-            // label2
+            // lblIdCliente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(514, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 21);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Carrinho";
+            this.lblIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblIdCliente.ForeColor = System.Drawing.Color.White;
+            this.lblIdCliente.Location = new System.Drawing.Point(161, 136);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(24, 27);
+            this.lblIdCliente.TabIndex = 43;
+            this.lblIdCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // chkEnviarEmail
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.button1.Location = new System.Drawing.Point(889, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Remover";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.BtnRemover);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label3.Location = new System.Drawing.Point(512, 385);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(371, 27);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Selecione um produto. . .";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(512, 367);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 15);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Produto selecionado";
-            // 
-            // lblTotalLucro
-            // 
-            this.lblTotalLucro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalLucro.Location = new System.Drawing.Point(753, 436);
-            this.lblTotalLucro.Name = "lblTotalLucro";
-            this.lblTotalLucro.Size = new System.Drawing.Size(81, 23);
-            this.lblTotalLucro.TabIndex = 44;
-            this.lblTotalLucro.Text = "00,00";
-            this.lblTotalLucro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTotalLiquido
-            // 
-            this.lblTotalLiquido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalLiquido.Location = new System.Drawing.Point(663, 436);
-            this.lblTotalLiquido.Name = "lblTotalLiquido";
-            this.lblTotalLiquido.Size = new System.Drawing.Size(81, 23);
-            this.lblTotalLiquido.TabIndex = 44;
-            this.lblTotalLiquido.Text = "00,00";
-            this.lblTotalLiquido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTotalDesconto
-            // 
-            this.lblTotalDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalDesconto.Location = new System.Drawing.Point(591, 436);
-            this.lblTotalDesconto.Name = "lblTotalDesconto";
-            this.lblTotalDesconto.Size = new System.Drawing.Size(66, 23);
-            this.lblTotalDesconto.TabIndex = 44;
-            this.lblTotalDesconto.Text = "00,00";
-            this.lblTotalDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(753, 418);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 15);
-            this.label11.TabIndex = 48;
-            this.label11.Text = "Total Lucro";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(663, 418);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 15);
-            this.label17.TabIndex = 48;
-            this.label17.Text = "Total Liquido";
-            // 
-            // lblTotalBrutoVenda
-            // 
-            this.lblTotalBrutoVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalBrutoVenda.Location = new System.Drawing.Point(514, 436);
-            this.lblTotalBrutoVenda.Name = "lblTotalBrutoVenda";
-            this.lblTotalBrutoVenda.Size = new System.Drawing.Size(71, 23);
-            this.lblTotalBrutoVenda.TabIndex = 44;
-            this.lblTotalBrutoVenda.Text = "00,00";
-            this.lblTotalBrutoVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(591, 418);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(62, 15);
-            this.lbl2.TabIndex = 48;
-            this.lbl2.Text = "Total desc.";
+            this.chkEnviarEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkEnviarEmail.AutoSize = true;
+            this.chkEnviarEmail.Location = new System.Drawing.Point(795, 671);
+            this.chkEnviarEmail.Name = "chkEnviarEmail";
+            this.chkEnviarEmail.Size = new System.Drawing.Size(144, 19);
+            this.chkEnviarEmail.TabIndex = 55;
+            this.chkEnviarEmail.Text = "Enviar Email ao cliente";
+            this.chkEnviarEmail.UseVisualStyleBackColor = true;
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(513, 418);
+            this.lbl.Location = new System.Drawing.Point(516, 546);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(64, 15);
             this.lbl.TabIndex = 48;
             this.lbl.Text = "Total bruto";
             // 
-            // label23
+            // btnAbrirSelecaoDeColaborador
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(198, 414);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 15);
-            this.label23.TabIndex = 53;
-            this.label23.Text = "Lucro";
+            this.btnAbrirSelecaoDeColaborador.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbrirSelecaoDeColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirSelecaoDeColaborador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAbrirSelecaoDeColaborador.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAbrirSelecaoDeColaborador.Location = new System.Drawing.Point(885, 107);
+            this.btnAbrirSelecaoDeColaborador.Name = "btnAbrirSelecaoDeColaborador";
+            this.btnAbrirSelecaoDeColaborador.Size = new System.Drawing.Size(73, 23);
+            this.btnAbrirSelecaoDeColaborador.TabIndex = 51;
+            this.btnAbrirSelecaoDeColaborador.Text = "Selecionar";
+            this.btnAbrirSelecaoDeColaborador.UseVisualStyleBackColor = false;
+            this.btnAbrirSelecaoDeColaborador.Click += new System.EventHandler(this.btAbrirSelecaoDeColaborador_Click);
             // 
             // lblLucroProduto
             // 
             this.lblLucroProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblLucroProduto.Location = new System.Drawing.Point(198, 431);
+            this.lblLucroProduto.Location = new System.Drawing.Point(201, 559);
             this.lblLucroProduto.Name = "lblLucroProduto";
             this.lblLucroProduto.Size = new System.Drawing.Size(66, 27);
             this.lblLucroProduto.TabIndex = 52;
             this.lblLucroProduto.Text = "00,00";
             this.lblLucroProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // lblColaboradorSelecionado
+            // 
+            this.lblColaboradorSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblColaboradorSelecionado.Location = new System.Drawing.Point(689, 136);
+            this.lblColaboradorSelecionado.Name = "lblColaboradorSelecionado";
+            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(278, 27);
+            this.lblColaboradorSelecionado.TabIndex = 43;
+            this.lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
+            this.lblColaboradorSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label15.Location = new System.Drawing.Point(843, 546);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(121, 15);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "Forma de Pagamento";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(594, 546);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(62, 15);
+            this.lbl2.TabIndex = 48;
+            this.lbl2.Text = "Total desc.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(38, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 15);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Buscar cliente:";
+            // 
             // dgvProdutoListar
             // 
             this.dgvProdutoListar.AllowUserToResizeColumns = false;
             this.dgvProdutoListar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutoListar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutoListar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProdutoListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProdutoListar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProdutoListar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutoListar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProdutoListar.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutoListar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProdutoListar.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProdutoListar.GridColor = System.Drawing.Color.Black;
-            this.dgvProdutoListar.Location = new System.Drawing.Point(38, 86);
+            this.dgvProdutoListar.Location = new System.Drawing.Point(41, 214);
             this.dgvProdutoListar.Name = "dgvProdutoListar";
             this.dgvProdutoListar.ReadOnly = true;
             this.dgvProdutoListar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvProdutoListar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutoListar.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutoListar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProdutoListar.RowHeadersVisible = false;
             this.dgvProdutoListar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutoListar.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutoListar.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProdutoListar.RowTemplate.Height = 25;
             this.dgvProdutoListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutoListar.Size = new System.Drawing.Size(425, 269);
@@ -483,34 +427,153 @@ namespace AugustusFahsion.View.Venda
             this.dgvProdutoListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutoListar_CellContentClick);
             this.dgvProdutoListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutoListar_CellMouseClick);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.Location = new System.Drawing.Point(42, 142);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(113, 15);
+            this.label12.TabIndex = 49;
+            this.label12.Text = "Cliente selecionado:";
+            // 
+            // lblTotalBrutoVenda
+            // 
+            this.lblTotalBrutoVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalBrutoVenda.Location = new System.Drawing.Point(517, 564);
+            this.lblTotalBrutoVenda.Name = "lblTotalBrutoVenda";
+            this.lblTotalBrutoVenda.Size = new System.Drawing.Size(71, 23);
+            this.lblTotalBrutoVenda.TabIndex = 44;
+            this.lblTotalBrutoVenda.Text = "00,00";
+            this.lblTotalBrutoVenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(38, 54);
+            this.label10.Location = new System.Drawing.Point(41, 182);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 21);
             this.label10.TabIndex = 34;
             this.label10.Text = "Produtos";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label13.Location = new System.Drawing.Point(516, 142);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(142, 15);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "Colaborador selecionado:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(666, 546);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 15);
+            this.label17.TabIndex = 48;
+            this.label17.Text = "Total Liquido";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label9.Location = new System.Drawing.Point(514, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(112, 15);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Buscar colaborador:";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(408, 367);
+            this.label18.Location = new System.Drawing.Point(411, 495);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(27, 15);
             this.label18.TabIndex = 40;
             this.label18.Text = "Qtd";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(517, 182);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 21);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Carrinho";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(756, 546);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 15);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "Total Lucro";
+            // 
+            // lblTotalDesconto
+            // 
+            this.lblTotalDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalDesconto.Location = new System.Drawing.Point(594, 564);
+            this.lblTotalDesconto.Name = "lblTotalDesconto";
+            this.lblTotalDesconto.Size = new System.Drawing.Size(66, 23);
+            this.lblTotalDesconto.TabIndex = 44;
+            this.lblTotalDesconto.Text = "00,00";
+            this.lblTotalDesconto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblIdProduto
             // 
             this.lblIdProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.lblIdProduto.ForeColor = System.Drawing.Color.White;
-            this.lblIdProduto.Location = new System.Drawing.Point(42, 385);
+            this.lblIdProduto.Location = new System.Drawing.Point(45, 513);
             this.lblIdProduto.Name = "lblIdProduto";
             this.lblIdProduto.Size = new System.Drawing.Size(24, 27);
             this.lblIdProduto.TabIndex = 43;
             this.lblIdProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button1.Location = new System.Drawing.Point(892, 512);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Remover";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.BtnRemover);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnCancelar.Location = new System.Drawing.Point(792, 629);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(83, 40);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblTotalLiquido
+            // 
+            this.lblTotalLiquido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalLiquido.Location = new System.Drawing.Point(666, 564);
+            this.lblTotalLiquido.Name = "lblTotalLiquido";
+            this.lblTotalLiquido.Size = new System.Drawing.Size(81, 23);
+            this.lblTotalLiquido.TabIndex = 44;
+            this.lblTotalLiquido.Text = "00,00";
+            this.lblTotalLiquido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnAdicionar
             // 
@@ -518,7 +581,7 @@ namespace AugustusFahsion.View.Venda
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(363, 431);
+            this.btnAdicionar.Location = new System.Drawing.Point(366, 559);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(99, 28);
             this.btnAdicionar.TabIndex = 38;
@@ -526,13 +589,50 @@ namespace AugustusFahsion.View.Venda
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
+            // lblTotalLucro
+            // 
+            this.lblTotalLucro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalLucro.Location = new System.Drawing.Point(756, 564);
+            this.lblTotalLucro.Name = "lblTotalLucro";
+            this.lblTotalLucro.Size = new System.Drawing.Size(81, 23);
+            this.lblTotalLucro.TabIndex = 44;
+            this.lblTotalLucro.Text = "00,00";
+            this.lblTotalLucro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEnviar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnviar.BackgroundImage")));
+            this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnEnviar.Location = new System.Drawing.Point(881, 629);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(86, 40);
+            this.btnEnviar.TabIndex = 36;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label3.Location = new System.Drawing.Point(515, 513);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(371, 27);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Selecione um produto. . .";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnPesquisarProduto
             // 
             this.btnPesquisarProduto.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPesquisarProduto.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisarProduto.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnPesquisarProduto.Location = new System.Drawing.Point(442, 56);
+            this.btnPesquisarProduto.Location = new System.Drawing.Point(445, 184);
             this.btnPesquisarProduto.Name = "btnPesquisarProduto";
             this.btnPesquisarProduto.Size = new System.Drawing.Size(23, 22);
             this.btnPesquisarProduto.TabIndex = 51;
@@ -540,14 +640,35 @@ namespace AugustusFahsion.View.Venda
             this.btnPesquisarProduto.UseVisualStyleBackColor = false;
             this.btnPesquisarProduto.Click += new System.EventHandler(this.btnPesquisarProduto_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(515, 495);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 15);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Produto selecionado";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(341, 367);
+            this.label14.Location = new System.Drawing.Point(344, 495);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 15);
             this.label14.TabIndex = 40;
             this.label14.Text = "Dsct (%)";
+            // 
+            // lblPrecoTotal
+            // 
+            this.lblPrecoTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPrecoTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecoTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrecoTotal.Location = new System.Drawing.Point(203, 633);
+            this.lblPrecoTotal.Name = "lblPrecoTotal";
+            this.lblPrecoTotal.Size = new System.Drawing.Size(281, 41);
+            this.lblPrecoTotal.TabIndex = 44;
+            this.lblPrecoTotal.Text = "00,00";
+            this.lblPrecoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtProcurar
             // 
@@ -555,10 +676,21 @@ namespace AugustusFahsion.View.Venda
             this.txtProcurar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProcurar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtProcurar.Location = new System.Drawing.Point(336, 56);
+            this.txtProcurar.Location = new System.Drawing.Point(339, 184);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(100, 22);
             this.txtProcurar.TabIndex = 50;
+            // 
+            // lbl41
+            // 
+            this.lbl41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl41.AutoSize = true;
+            this.lbl41.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl41.Location = new System.Drawing.Point(37, 637);
+            this.lbl41.Name = "lbl41";
+            this.lbl41.Size = new System.Drawing.Size(156, 32);
+            this.lbl41.TabIndex = 48;
+            this.lbl41.Text = "Total Liquido:";
             // 
             // nupQuantidade
             // 
@@ -566,7 +698,7 @@ namespace AugustusFahsion.View.Venda
             this.nupQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupQuantidade.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidade.Location = new System.Drawing.Point(408, 387);
+            this.nupQuantidade.Location = new System.Drawing.Point(411, 515);
             this.nupQuantidade.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -583,15 +715,33 @@ namespace AugustusFahsion.View.Venda
             this.nupQuantidade.ValueChanged += new System.EventHandler(this.NupQuantidade_ValueChanged);
             this.nupQuantidade.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NupQuantidade_KeyUp);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 494);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Produto selecionado";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(285, 59);
+            this.label8.Location = new System.Drawing.Point(288, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 15);
             this.label8.TabIndex = 49;
             this.label8.Text = "Buscar:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(45, 495);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 15);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "Id";
             // 
             // nupDesconto
             // 
@@ -599,7 +749,7 @@ namespace AugustusFahsion.View.Venda
             this.nupDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupDesconto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupDesconto.Location = new System.Drawing.Point(344, 387);
+            this.nupDesconto.Location = new System.Drawing.Point(347, 515);
             this.nupDesconto.Maximum = new decimal(new int[] {
             99,
             0,
@@ -611,176 +761,111 @@ namespace AugustusFahsion.View.Venda
             this.nupDesconto.ValueChanged += new System.EventHandler(this.NupDesconto_ValueChanged);
             this.nupDesconto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.NupDesconto_KeyUp);
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(272, 414);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(51, 15);
-            this.label29.TabIndex = 48;
-            this.label29.Text = "Total liq.";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(126, 414);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(64, 15);
-            this.label28.TabIndex = 48;
-            this.label28.Text = "Total bruto";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(42, 414);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 15);
-            this.label25.TabIndex = 48;
-            this.label25.Text = "Total de desc.";
-            // 
-            // lblProdutoLucroUnitario
-            // 
-            this.lblProdutoLucroUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblProdutoLucroUnitario.Location = new System.Drawing.Point(117, 53);
-            this.lblProdutoLucroUnitario.Name = "lblProdutoLucroUnitario";
-            this.lblProdutoLucroUnitario.Size = new System.Drawing.Size(85, 27);
-            this.lblProdutoLucroUnitario.TabIndex = 44;
-            this.lblProdutoLucroUnitario.Text = "00,00";
-            this.lblProdutoLucroUnitario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTotalBrutoProduto
-            // 
-            this.lblTotalBrutoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalBrutoProduto.Location = new System.Drawing.Point(272, 431);
-            this.lblTotalBrutoProduto.Name = "lblTotalBrutoProduto";
-            this.lblTotalBrutoProduto.Size = new System.Drawing.Size(85, 27);
-            this.lblTotalBrutoProduto.TabIndex = 44;
-            this.lblTotalBrutoProduto.Text = "00,00";
-            this.lblTotalBrutoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 368);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Preço";
-            // 
-            // lblTotalLiquidoProduto
-            // 
-            this.lblTotalLiquidoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalLiquidoProduto.Location = new System.Drawing.Point(126, 431);
-            this.lblTotalLiquidoProduto.Name = "lblTotalLiquidoProduto";
-            this.lblTotalLiquidoProduto.Size = new System.Drawing.Size(66, 27);
-            this.lblTotalLiquidoProduto.TabIndex = 44;
-            this.lblTotalLiquidoProduto.Text = "00,00";
-            this.lblTotalLiquidoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblProdutoSelecionado
-            // 
-            this.lblProdutoSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblProdutoSelecionado.Location = new System.Drawing.Point(76, 385);
-            this.lblProdutoSelecionado.Name = "lblProdutoSelecionado";
-            this.lblProdutoSelecionado.Size = new System.Drawing.Size(181, 27);
-            this.lblProdutoSelecionado.TabIndex = 43;
-            this.lblProdutoSelecionado.Text = "Selecione um produto. . .";
-            this.lblProdutoSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTotalDescontoProduto
-            // 
-            this.lblTotalDescontoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(42, 431);
-            this.lblTotalDescontoProduto.Name = "lblTotalDescontoProduto";
-            this.lblTotalDescontoProduto.Size = new System.Drawing.Size(76, 27);
-            this.lblTotalDescontoProduto.TabIndex = 44;
-            this.lblTotalDescontoProduto.Text = "00,00";
-            this.lblTotalDescontoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lblPrecoProduto
             // 
             this.lblPrecoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblPrecoProduto.Location = new System.Drawing.Point(263, 386);
+            this.lblPrecoProduto.Location = new System.Drawing.Point(266, 514);
             this.lblPrecoProduto.Name = "lblPrecoProduto";
             this.lblPrecoProduto.Size = new System.Drawing.Size(75, 27);
             this.lblPrecoProduto.TabIndex = 44;
             this.lblPrecoProduto.Text = "00,00";
             this.lblPrecoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label20
+            // label29
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(42, 367);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(17, 15);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "Id";
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(275, 542);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(51, 15);
+            this.label29.TabIndex = 48;
+            this.label29.Text = "Total liq.";
             // 
-            // label1
+            // lblTotalDescontoProduto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 366);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 15);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Produto selecionado";
+            this.lblTotalDescontoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalDescontoProduto.Location = new System.Drawing.Point(45, 559);
+            this.lblTotalDescontoProduto.Name = "lblTotalDescontoProduto";
+            this.lblTotalDescontoProduto.Size = new System.Drawing.Size(76, 27);
+            this.lblTotalDescontoProduto.TabIndex = 44;
+            this.lblTotalDescontoProduto.Text = "00,00";
+            this.lblTotalDescontoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnCancelar
+            // label28
             // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnCancelar.Location = new System.Drawing.Point(792, 648);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(83, 40);
-            this.btnCancelar.TabIndex = 41;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(129, 542);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(64, 15);
+            this.label28.TabIndex = 48;
+            this.label28.Text = "Total bruto";
             // 
-            // btnEnviar
+            // lblProdutoSelecionado
             // 
-            this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnviar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnviar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnviar.BackgroundImage")));
-            this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnEnviar.Location = new System.Drawing.Point(881, 648);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(86, 40);
-            this.btnEnviar.TabIndex = 36;
-            this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.UseVisualStyleBackColor = false;
-            this.btnEnviar.Click += new System.EventHandler(this.BtnEnviar_Click);
+            this.lblProdutoSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblProdutoSelecionado.Location = new System.Drawing.Point(79, 513);
+            this.lblProdutoSelecionado.Name = "lblProdutoSelecionado";
+            this.lblProdutoSelecionado.Size = new System.Drawing.Size(181, 27);
+            this.lblProdutoSelecionado.TabIndex = 43;
+            this.lblProdutoSelecionado.Text = "Selecione um produto. . .";
+            this.lblProdutoSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblPrecoTotal
+            // label25
             // 
-            this.lblPrecoTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPrecoTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecoTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPrecoTotal.Location = new System.Drawing.Point(197, 669);
-            this.lblPrecoTotal.Name = "lblPrecoTotal";
-            this.lblPrecoTotal.Size = new System.Drawing.Size(281, 41);
-            this.lblPrecoTotal.TabIndex = 44;
-            this.lblPrecoTotal.Text = "00,00";
-            this.lblPrecoTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(45, 542);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 15);
+            this.label25.TabIndex = 48;
+            this.label25.Text = "Total de desc.";
             // 
-            // lbl41
+            // lblTotalLiquidoProduto
             // 
-            this.lbl41.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl41.AutoSize = true;
-            this.lbl41.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl41.Location = new System.Drawing.Point(31, 673);
-            this.lbl41.Name = "lbl41";
-            this.lbl41.Size = new System.Drawing.Size(156, 32);
-            this.lbl41.TabIndex = 48;
-            this.lbl41.Text = "Total Liquido:";
+            this.lblTotalLiquidoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalLiquidoProduto.Location = new System.Drawing.Point(129, 559);
+            this.lblTotalLiquidoProduto.Name = "lblTotalLiquidoProduto";
+            this.lblTotalLiquidoProduto.Size = new System.Drawing.Size(66, 27);
+            this.lblTotalLiquidoProduto.TabIndex = 44;
+            this.lblTotalLiquidoProduto.Text = "00,00";
+            this.lblTotalLiquidoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblProdutoLucroUnitario
+            // 
+            this.lblProdutoLucroUnitario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblProdutoLucroUnitario.Location = new System.Drawing.Point(120, 181);
+            this.lblProdutoLucroUnitario.Name = "lblProdutoLucroUnitario";
+            this.lblProdutoLucroUnitario.Size = new System.Drawing.Size(85, 27);
+            this.lblProdutoLucroUnitario.TabIndex = 44;
+            this.lblProdutoLucroUnitario.Text = "00,00";
+            this.lblProdutoLucroUnitario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 496);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Preço";
+            // 
+            // lblTotalBrutoProduto
+            // 
+            this.lblTotalBrutoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblTotalBrutoProduto.Location = new System.Drawing.Point(275, 559);
+            this.lblTotalBrutoProduto.Name = "lblTotalBrutoProduto";
+            this.lblTotalBrutoProduto.Size = new System.Drawing.Size(85, 27);
+            this.lblTotalBrutoProduto.TabIndex = 44;
+            this.lblTotalBrutoProduto.Text = "00,00";
+            this.lblTotalBrutoProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblClienteSelecionado
+            // 
+            this.lblClienteSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lblClienteSelecionado.Location = new System.Drawing.Point(184, 136);
+            this.lblClienteSelecionado.Name = "lblClienteSelecionado";
+            this.lblClienteSelecionado.Size = new System.Drawing.Size(281, 27);
+            this.lblClienteSelecionado.TabIndex = 43;
+            this.lblClienteSelecionado.Text = "Selecione um cliente. . .";
+            this.lblClienteSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnFechar
             // 
@@ -808,242 +893,6 @@ namespace AugustusFahsion.View.Venda
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // txtPesquisarCliente
-            // 
-            this.txtPesquisarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtPesquisarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisarCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPesquisarCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtPesquisarCliente.Location = new System.Drawing.Point(336, 496);
-            this.txtPesquisarCliente.Name = "txtPesquisarCliente";
-            this.txtPesquisarCliente.Size = new System.Drawing.Size(100, 22);
-            this.txtPesquisarCliente.TabIndex = 50;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.Location = new System.Drawing.Point(514, 495);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 15);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "Buscar colaborador:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label13.Location = new System.Drawing.Point(515, 605);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(142, 15);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Colaborador selecionado:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox2.Location = new System.Drawing.Point(838, 499);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 50;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(41, 605);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 15);
-            this.label12.TabIndex = 49;
-            this.label12.Text = "Cliente selecionado:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(38, 499);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 15);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Buscar cliente:";
-            // 
-            // btnPesquisarCliente
-            // 
-            this.btnPesquisarCliente.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPesquisarCliente.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisarCliente.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnPesquisarCliente.Location = new System.Drawing.Point(442, 496);
-            this.btnPesquisarCliente.Name = "btnPesquisarCliente";
-            this.btnPesquisarCliente.Size = new System.Drawing.Size(23, 22);
-            this.btnPesquisarCliente.TabIndex = 51;
-            this.btnPesquisarCliente.Text = "🔎";
-            this.btnPesquisarCliente.UseVisualStyleBackColor = false;
-            this.btnPesquisarCliente.Click += new System.EventHandler(this.btnPesquisarCliente_Click);
-            // 
-            // lblColaboradorSelecionado
-            // 
-            this.lblColaboradorSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblColaboradorSelecionado.Location = new System.Drawing.Point(688, 599);
-            this.lblColaboradorSelecionado.Name = "lblColaboradorSelecionado";
-            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(278, 27);
-            this.lblColaboradorSelecionado.TabIndex = 43;
-            this.lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
-            this.lblColaboradorSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnPesquisarColaborador
-            // 
-            this.btnPesquisarColaborador.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisarColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPesquisarColaborador.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisarColaborador.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnPesquisarColaborador.Location = new System.Drawing.Point(944, 499);
-            this.btnPesquisarColaborador.Name = "btnPesquisarColaborador";
-            this.btnPesquisarColaborador.Size = new System.Drawing.Size(23, 22);
-            this.btnPesquisarColaborador.TabIndex = 51;
-            this.btnPesquisarColaborador.Text = "🔎";
-            this.btnPesquisarColaborador.UseVisualStyleBackColor = false;
-            this.btnPesquisarColaborador.Click += new System.EventHandler(this.btnPesquisarColaborador_Click);
-            // 
-            // lblClienteSelecionado
-            // 
-            this.lblClienteSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblClienteSelecionado.Location = new System.Drawing.Point(184, 599);
-            this.lblClienteSelecionado.Name = "lblClienteSelecionado";
-            this.lblClienteSelecionado.Size = new System.Drawing.Size(281, 27);
-            this.lblClienteSelecionado.TabIndex = 43;
-            this.lblClienteSelecionado.Text = "Selecione um cliente. . .";
-            this.lblClienteSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblIdCliente.ForeColor = System.Drawing.Color.White;
-            this.lblIdCliente.Location = new System.Drawing.Point(154, 599);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(24, 27);
-            this.lblIdCliente.TabIndex = 43;
-            this.lblIdCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblIdColaborador
-            // 
-            this.lblIdColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lblIdColaborador.ForeColor = System.Drawing.Color.White;
-            this.lblIdColaborador.Location = new System.Drawing.Point(658, 599);
-            this.lblIdColaborador.Name = "lblIdColaborador";
-            this.lblIdColaborador.Size = new System.Drawing.Size(24, 27);
-            this.lblIdColaborador.TabIndex = 43;
-            this.lblIdColaborador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dgvClienteListar
-            // 
-            this.dgvClienteListar.AllowUserToResizeColumns = false;
-            this.dgvClienteListar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvClienteListar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvClienteListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvClienteListar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClienteListar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvClienteListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClienteListar.ColumnHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClienteListar.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvClienteListar.GridColor = System.Drawing.Color.Black;
-            this.dgvClienteListar.Location = new System.Drawing.Point(41, 524);
-            this.dgvClienteListar.Name = "dgvClienteListar";
-            this.dgvClienteListar.ReadOnly = true;
-            this.dgvClienteListar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvClienteListar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClienteListar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvClienteListar.RowHeadersVisible = false;
-            this.dgvClienteListar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvClienteListar.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvClienteListar.RowTemplate.Height = 25;
-            this.dgvClienteListar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvClienteListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClienteListar.Size = new System.Drawing.Size(424, 72);
-            this.dgvClienteListar.TabIndex = 35;
-            this.dgvClienteListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvClienteListar_CellMouseClick);
-            // 
-            // dgvColaboradorListar
-            // 
-            this.dgvColaboradorListar.AllowUserToResizeColumns = false;
-            this.dgvColaboradorListar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvColaboradorListar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvColaboradorListar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvColaboradorListar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvColaboradorListar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvColaboradorListar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvColaboradorListar.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvColaboradorListar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvColaboradorListar.GridColor = System.Drawing.Color.Black;
-            this.dgvColaboradorListar.Location = new System.Drawing.Point(514, 524);
-            this.dgvColaboradorListar.Name = "dgvColaboradorListar";
-            this.dgvColaboradorListar.ReadOnly = true;
-            this.dgvColaboradorListar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dgvColaboradorListar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvColaboradorListar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvColaboradorListar.RowHeadersVisible = false;
-            this.dgvColaboradorListar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvColaboradorListar.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvColaboradorListar.RowTemplate.Height = 25;
-            this.dgvColaboradorListar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvColaboradorListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvColaboradorListar.Size = new System.Drawing.Size(452, 72);
-            this.dgvColaboradorListar.TabIndex = 35;
-            this.dgvColaboradorListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvColaboradorListar_CellMouseClick);
-            // 
             // FrmVendaRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1064,8 +913,6 @@ namespace AugustusFahsion.View.Venda
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutoListar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClienteListar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradorListar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1122,19 +969,15 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.CheckBox chkEnviarEmail;
-        private System.Windows.Forms.DataGridView dgvColaboradorListar;
-        private System.Windows.Forms.DataGridView dgvClienteListar;
         private System.Windows.Forms.Label lblIdColaborador;
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblClienteSelecionado;
-        private System.Windows.Forms.Button btnPesquisarColaborador;
+        private System.Windows.Forms.Button btnAbrirSelecaoDeColaborador;
         private System.Windows.Forms.Label lblColaboradorSelecionado;
-        private System.Windows.Forms.Button btnPesquisarCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPesquisarCliente;
+        private System.Windows.Forms.Button btnAbrirDeSelecaoDeCliente;
     }
 }

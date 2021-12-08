@@ -15,18 +15,20 @@ namespace AugustusFahsion.Model.Relatorio
         public string GerarFiltrosSelect() 
         {
             var select = @"SELECT ";
+
             if (QuantidadeDeClientes != 0)
-                select += @" TOP @QuantidadeDeClientes";
+                select = @"SELECT TOP " + QuantidadeDeClientes;
+
             return select;
         }
-        public string GerarFiltrosWhere()
+        public string GerarFiltrosHaving()
         {
-            var where = @" WHERE pe.NOME LIKE @NomeCliente + '%' AND v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' ";
+            var having = @" ";
 
-            if ( TotalLiquidoInicial != 0)
-                where += @" AND TotalLiquido > @TotalLiquidoInicial ";
+            if (TotalLiquidoInicial != 0)
+                having += @" HAVING sum(v.TotalLiquido) > @TotalLiquidoInicial ";
 
-            return where;
+            return having;
         }
 
         internal string GerarFiltrosOrderBy()
@@ -41,7 +43,6 @@ namespace AugustusFahsion.Model.Relatorio
                 orderBy = @" ORDER BY TotalLiquido DESC ";
             if (OrdenarPor == "Total  liquido (Decrescente)")
                 orderBy = @" ORDER BY TotalLiquido ";
-
 
             return orderBy;
         }

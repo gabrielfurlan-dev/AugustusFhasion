@@ -1,7 +1,7 @@
 ﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
 using AugustusFahsion.Model.ValueObjects;
-using AugustusFahsion.Model.Venda;
+using AugustusFahsion.View.Selecao;
 using AugustusFahsion.View.Venda;
 using System;
 using System.Windows.Forms;
@@ -12,6 +12,16 @@ namespace AugustusFahsion.Controller.Venda
     {
         public void AbrirFormulario() =>
             new FrmVendaRegistrar(this).Show();
+
+        internal void ProcurarCliente()
+        {
+            new FrmSelecionarModel(new ClienteListarController()).Show();
+        }
+
+        internal void ProcurarColaborador()
+        {
+            new FrmSelecionarModel(new ColaboradorListarController()).Show();
+        }
 
         public void RegistrarVenda(VendaModel vendaModel) {
             try

@@ -1,6 +1,8 @@
 ﻿using AugustusFahsion.Controller.Relatorios;
 using AugustusFahsion.Model.Relatorio;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AugustusFahsion.View.Relatorios
@@ -27,7 +29,9 @@ namespace AugustusFahsion.View.Relatorios
             PreencherFiltros();
             try
             {
-                dgvListaRelatorioClientes.DataSource = _relatorioDeClientesController.FiltrarRelatorioClientes(_filtros);
+                var resultado = _relatorioDeClientesController.FiltrarRelatorioClientes(_filtros);
+                dgvListaRelatorioClientes.DataSource = resultado;
+                AtualizarTotais(resultado);
             }
             catch (Exception ex) 
             { 
@@ -35,13 +39,21 @@ namespace AugustusFahsion.View.Relatorios
             }
         }
 
-        private void PreencherFiltros()
+        public void PreencherFiltros()
         {
             _filtros.NomeCliente = txtNomeCliente.Text;
             _filtros.OrdenarPor = cbOdenarPor.Text;
-            _filtros.QuantidadeDeClientes = int.TryParse(nupQuantidadeClientes.Text, out int saida) ? saida : 0;
+            _filtros.QuantidadeDeClientes = (int)nupQuantidadeClientes.Value;
             _filtros.DataInicial = dtDataInicial.Value;
             _filtros.DataFinal = dtDataFinal.Value;
+        }
+
+        public void AtualizarTotais(List<RelatorioClientes> resultado) 
+        {
+            lblTotalVendas.Text = resultado.Sum(x => (x.QuantidadeVenda)).ToString();
+            lblTotalBruto.Text = resultado.Sum(x => (x.TotalBruto.RetornarValor)).ToString("c");
+            lblTotalLiquido.Text = resultado.Sum(x => (x.TotalLiquido.RetornarValor)).ToString("c");
+            lblTotalDesconto.Text = resultado.Sum(x => (x.Desconto.RetornarValor)).ToString("c");
         }
     }
 }

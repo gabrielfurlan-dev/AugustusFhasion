@@ -39,7 +39,6 @@ namespace AugustusFahsion.View.Venda
                     dgvListaVenda.DataSource = resultado;
                     AtualizarTotais(resultado);
 
-
             }
             catch (Exception ex)
             {

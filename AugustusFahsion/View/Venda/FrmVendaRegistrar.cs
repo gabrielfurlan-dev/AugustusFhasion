@@ -3,6 +3,7 @@ using AugustusFahsion.Controller.Email;
 using AugustusFahsion.Controller.Venda;
 using AugustusFahsion.Model;
 using AugustusFahsion.Model.Venda;
+using AugustusFahsion.View.Selecao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace AugustusFahsion.View.Venda
 {
     public partial class FrmVendaRegistrar : Form
     {
-        VendaRegistrarController _controllerRegistrar;
+        ClienteModel _cliente;
+        ColaboradorModel _colaborador;
+
         ClienteListarController _clienteListarController;
         ColaboradorListarController _colaboradorListarController;
         ProdutoListarController _produtoListarController;
@@ -24,7 +27,7 @@ namespace AugustusFahsion.View.Venda
         public FrmVendaRegistrar(VendaRegistrarController vendaRegistrarController)
         {
             InitializeComponent();
-            _controllerRegistrar = vendaRegistrarController;
+            _vendaRegistrarController = vendaRegistrarController;
             _clienteListarController = new ClienteListarController();
             _colaboradorListarController = new ColaboradorListarController();
             _produtoListarController = new ProdutoListarController();
@@ -36,35 +39,15 @@ namespace AugustusFahsion.View.Venda
 
 
         //Botoes de Busca
-        private void btnPesquisarCliente_Click(object sender, EventArgs e)
+        private void btAbrirSelecaoDeColaborador_Click(object sender, EventArgs e)
         {
-            if (Validacoes.EhNumerico(txtProcurar.Text))
-            {
-                dgvClienteListar.DataSource = _clienteListarController.ListarClientesPorId(int.Parse(txtPesquisarCliente.Text));
-            }
-            else if (txtProcurar.Text == "%")
-            {
-                dgvClienteListar.DataSource = _clienteListarController.ListarClientes();
-            }
-            else
-            {
-                dgvClienteListar.DataSource = _clienteListarController.ListarClientesPorNome(txtPesquisarCliente.Text);
-            }
+            _vendaRegistrarController.ProcurarColaborador();
         }
-        private void btnPesquisarColaborador_Click(object sender, EventArgs e)
+
+        private void btnAbrirSelecaoDeCliente_Click(object sender, EventArgs e) 
         {
-            if (Validacoes.EhNumerico(txtProcurar.Text))
-            {
-                dgvColaboradorListar.DataSource = _colaboradorListarController.ListarColaboradorPorId(int.Parse(txtPesquisarCliente.Text));
-            }
-            else if (txtProcurar.Text == "%")
-            {
-                dgvColaboradorListar.DataSource = _colaboradorListarController.ListarColaborador();
-            }
-            else
-            {
-                dgvColaboradorListar.DataSource = _colaboradorListarController.ListarColaboradorPorNome(txtPesquisarCliente.Text);
-            }
+            _vendaRegistrarController.ProcurarCliente();
+            
         }
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
         {
@@ -93,24 +76,7 @@ namespace AugustusFahsion.View.Venda
             nupQuantidade.Enabled = true;
             nupDesconto.Enabled = true;
         }
-        private void dgvClienteListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var id = SelecionarClienteModel();
-            var cliente = ClienteAlterarController.Buscar(id);
 
-            if (cliente.DataNascimento.Month == DateTime.Now.Month && cliente.DataNascimento.Day == DateTime.Now.Day)
-                MessageBox.Show($"{cliente.NomeCompleto.Nome} está fazendo aniversário hoje.");
-
-            lblIdCliente.Text = id.ToString();
-            lblClienteSelecionado.Text = cliente.NomeCompleto.ToString();
-        }
-        private void dgvColaboradorListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var id = SelecionarColaboradorModel();
-            var colaborador = ColaboradorAlterarController.Buscar(id);
-            lblIdColaborador.Text = id.ToString();
-            lblColaboradorSelecionado.Text = colaborador.NomeCompleto.ToString();
-        }
         private void dgvCarrinho_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) => SelecionarCarrinhoModel();
 
         //atualizar preços por ação
@@ -172,7 +138,7 @@ namespace AugustusFahsion.View.Venda
             MessageBox.Show("Venda Registrada");
             if (chkEnviarEmail.Checked) 
             {
-                var id = SelecionarClienteModel();
+                int id = Convert.ToInt32(lblIdCliente.Text);
                 var cliente = ClienteAlterarController.Buscar(id);
                 EmailController.EnviarEmailRegistroVenda(cliente, _vendaModel);
             }
@@ -195,7 +161,6 @@ namespace AugustusFahsion.View.Venda
             }
             return true;
         }
-
         private bool VerificaSeCamposEstãoPreenchidos()
         {
             if (lblClienteSelecionado.Text.Equals("Selecione um cliente. . ."))
@@ -248,10 +213,6 @@ namespace AugustusFahsion.View.Venda
         }
 
         //selecionar Model
-        public int SelecionarClienteModel() => 
-            Convert.ToInt32(dgvClienteListar.SelectedRows[0].Cells[0].Value);
-        public int SelecionarColaboradorModel() => 
-            Convert.ToInt32(dgvColaboradorListar.SelectedRows[0].Cells[0].Value);
         public int SelecionarProdutoModel() => 
             Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
         public string SelecionarCarrinhoModel() => 
@@ -278,7 +239,6 @@ namespace AugustusFahsion.View.Venda
             lblTotalDescontoProduto.Text = VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)).ToString("c");
             lblLucroProduto.Text = ValorProdutoLucro().ToString("c");
         }
-
 
         private void AtualizarCarrinho()
         {
@@ -341,6 +301,7 @@ namespace AugustusFahsion.View.Venda
 
         private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
 
+        //
         private void dgvProdutoListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
