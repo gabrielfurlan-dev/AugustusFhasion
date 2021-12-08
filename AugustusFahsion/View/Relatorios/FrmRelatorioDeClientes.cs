@@ -26,17 +26,30 @@ namespace AugustusFahsion.View.Relatorios
 
         private void btnFiltrarPorCliente_Click(object sender, System.EventArgs e)
         {
-            PreencherFiltros();
-            try
+            if (ValidarCampos())
             {
-                var resultado = _relatorioDeClientesController.FiltrarRelatorioClientes(_filtros);
-                dgvListaRelatorioClientes.DataSource = resultado;
-                AtualizarTotais(resultado);
+                PreencherFiltros();
+                try
+                {
+                    var resultado = _relatorioDeClientesController.FiltrarRelatorioClientes(_filtros);
+                    dgvListaRelatorioClientes.DataSource = resultado;
+                    AtualizarTotais(resultado);
+                }
+                catch (Exception ex) 
+                { 
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex) 
-            { 
-                MessageBox.Show(ex.Message);
+        }
+
+        private bool ValidarCampos()
+        {
+            if (dtDataInicial.Value > dtDataFinal.Value) 
+            {
+                MessageBox.Show("A data inicial não pode ser maior que a data final.");
+                return false;
             }
+            return true;
         }
 
         public void PreencherFiltros()

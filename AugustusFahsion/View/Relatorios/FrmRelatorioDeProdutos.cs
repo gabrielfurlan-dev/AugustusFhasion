@@ -32,19 +32,32 @@ namespace AugustusFahsion.View.Venda
 
         private void btnFiltrarPorProduto_Click(object sender, EventArgs e)
         {
-            PreencherFiltros();
-            try
-            {
-                var resultado = _relatorioDeVendasController.FiltrarRelatorioProdutos(_filtros);
-                    dgvListaVenda.DataSource = resultado;
-                    AtualizarTotais(resultado);
+            if(ValidarCampos())
+            { 
+                PreencherFiltros();
+                try
+                {
+                    var resultado = _relatorioDeVendasController.FiltrarRelatorioProdutos(_filtros);
+                        dgvListaVenda.DataSource = resultado;
+                        AtualizarTotais(resultado);
 
-            }
-            catch (Exception ex)
-            {
+                }
+                catch (Exception ex)
+                {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (dtDataInicial.Value > dtDataFinal.Value) 
+            {
+                MessageBox.Show("A data Inicial não pode ser menor que a data final.");
+                return false;
+            }
+            return true;
         }
 
         private void AtualizarTotais(List<RelatorioProdutos> resultado)
