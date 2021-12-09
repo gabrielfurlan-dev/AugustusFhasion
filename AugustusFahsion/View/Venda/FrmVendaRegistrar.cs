@@ -114,9 +114,11 @@ namespace AugustusFahsion.View.Venda
 
                 _vendaModel.ListaDeItens[index].Quantidade = Convert.ToInt32(nupQuantidade.Value);
                 _vendaModel.ListaDeItens[index].Desconto = Convert.ToInt32(nupDesconto.Value);
+                AtualizarCarrinho();
+                return;
             }
-
             AdicionarProdutoNoCarrinho();
+
             AtualizarCarrinho();
             AtualizarPrecosTotais();
             LimparCamposDoProduto();
@@ -198,11 +200,7 @@ namespace AugustusFahsion.View.Venda
         private void LimparCamposDoProduto()
         {
             nupDesconto.Value = 0;
-            nupQuantidade.Value = 0;
-            lblTotalDescontoProduto.Text = "R$ 00,00";
-            lblTotalLiquidoProduto.Text = "R$ 00,00";
-            lblTotalBrutoProduto.Text = "R$ 00,00";
-            lblLucroProduto.Text = "R$ 00,00";
+            nupQuantidade.Value = 1;
         }
         private void LimparTodosOsCampos()
         {
@@ -214,11 +212,26 @@ namespace AugustusFahsion.View.Venda
             lblIdColaborador.Text = "";
             lblProdutoSelecionado.Text = "Selecione um produto. . .";
             lblIdProduto.Text = "";
+            lblTotalDescontoProduto.Text = "R$ 00,00";
+            lblTotalLiquidoProduto.Text = "R$ 00,00";
+            lblTotalBrutoProduto.Text = "R$ 00,00";
+            lblLucroProduto.Text = "R$ 00,00";
+            lblPrecoProduto.Text = "R$ 00,00";
+
+            
+            _vendaModel.ListaDeItens = new List<VendaProdutoModel>();
+            dgvCarrinho.DataSource = null;
+            dgvProdutoListar.DataSource = null;
+
+            lblTotalLiquido.Text = "R$ 00,00";
+            lblTotalLucro.Text = "R$ 00,00";
+            lblTotalDesconto.Text = "R$ 00,00";
+            lblTotalBrutoVenda.Text = "R$ 00,00";
+            lblPrecoTotal.Text = "R$ 00,00";
 
             LimparCamposDoProduto();
             AtualizarCarrinho();
 
-            _vendaModel.ListaDeItens = new List<VendaProdutoModel>();
         }
 
         //selecionar Model
