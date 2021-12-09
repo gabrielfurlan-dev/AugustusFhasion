@@ -34,18 +34,8 @@ namespace AugustusFahsion.View.Selecao
         {
             InitializeComponent();
             _produtoListarController = produtoListarController;
-            
-            return;
-        }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            if(_clienteListarController != null)
-                PesquisarCliente();
-            else if(_colaboradorListarController != null)
-                    PesquisaColaborador();
-            else
-                PesquisarProduto();
+            return;
         }
         private void PesquisarProduto()
         {
@@ -54,7 +44,7 @@ namespace AugustusFahsion.View.Selecao
                 dgvLista.DataSource = _produtoListarController.ListarProdutosPorId(int.Parse(txtProcurar.Text));
             }
             else if (txtProcurar.Text == "%")
-            { 
+            {
                 dgvLista.DataSource = _produtoListarController.ListarProdutos();
             }
             else
@@ -77,7 +67,7 @@ namespace AugustusFahsion.View.Selecao
                 dgvLista.DataSource = _colaboradorListarController.ListarColaboradorPorNome(txtProcurar.Text);
             }
         }
-        private void PesquisarCliente() 
+        private void PesquisarCliente()
         {
             if (Validacoes.EhNumerico(txtProcurar.Text))
             {
@@ -93,6 +83,24 @@ namespace AugustusFahsion.View.Selecao
             }
         }
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (_clienteListarController != null)
+            {
+                lblTitulo.Text += " Cliente";
+                PesquisarCliente();
+            }
+            else if (_colaboradorListarController != null)
+            {
+                lblTitulo.Text += " Colaborador";
+                PesquisaColaborador();
+            }
+            else
+            {
+                lblTitulo.Text += " Produto";
+                PesquisarProduto();
+            }
+        }
         private void dgvLista_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var idSelecionado = Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
@@ -100,16 +108,21 @@ namespace AugustusFahsion.View.Selecao
             if (_clienteListarController != null)
             {
                 _cliente = ClienteAlterarController.Buscar(idSelecionado);
+                lblSelecionado.Text = _cliente.NomeCompleto.Nome + " " + _cliente.NomeCompleto.Sobrenome;
             }
             else if (_colaboradorListarController != null)
             {
                 _colaborador = ColaboradorAlterarController.Buscar(idSelecionado);
+                lblSelecionado.Text = _colaborador.NomeCompleto.Nome + " " + _colaborador.NomeCompleto.Sobrenome;
             }
             else
             {
                 _produto = ProdutoAlterarController.Buscar(idSelecionado);
+                lblSelecionado.Text = _produto.Nome;
             }
 
         }
+        private void btnContinuar_Click(object sender, EventArgs e) => this.Close();
+
     }
 }

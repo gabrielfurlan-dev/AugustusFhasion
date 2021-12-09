@@ -41,13 +41,22 @@ namespace AugustusFahsion.View.Venda
         //Botoes de Busca
         private void btAbrirSelecaoDeColaborador_Click(object sender, EventArgs e)
         {
-            _vendaRegistrarController.ProcurarColaborador();
+            _colaborador = _vendaRegistrarController.ProcurarColaborador();
+            if (_colaborador != null)
+            {
+                lblColaboradorSelecionado.Text = _colaborador.NomeCompleto.Nome + " " + _colaborador.NomeCompleto.Sobrenome;
+                lblIdColaborador.Text = _colaborador.IdColaborador.ToString();
+            }
         }
 
         private void btnAbrirSelecaoDeCliente_Click(object sender, EventArgs e) 
         {
-            _vendaRegistrarController.ProcurarCliente();
-            
+            _cliente = _vendaRegistrarController.ProcurarCliente();
+            if (_cliente != null)
+            {
+                lblClienteSelecionado.Text = _cliente.NomeCompleto.Nome + " " + _cliente.NomeCompleto.Sobrenome;
+                lblIdCliente.Text = _cliente.IdCliente.ToString();
+            }
         }
         private void btnPesquisarProduto_Click(object sender, EventArgs e)
         {
