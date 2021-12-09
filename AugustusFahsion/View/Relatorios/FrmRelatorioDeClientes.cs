@@ -1,5 +1,5 @@
 ﻿using AugustusFahsion.Controller.Relatorios;
-using AugustusFahsion.Enum;
+using AugustusFahsion.Enums;
 using AugustusFahsion.Model.Relatorio;
 using System;
 using System.Collections.Generic;
@@ -56,11 +56,13 @@ namespace AugustusFahsion.View.Relatorios
         public void PreencherFiltros()
         {
             _filtros.NomeCliente = txtNomeCliente.Text;
-            _filtros.OrdenarPor = (OrdemRelatorioDeVenda)cbOdenarPor.SelectedIndex;
+            _filtros.FiltrarPor = (EFiltroRelatorioDeVenda)cbFiltrarPor.SelectedIndex;
             _filtros.QuantidadeDeClientes = (int)nupQuantidadeClientes.Value;
+            _filtros.OrdenarPor = (EOrdemRelatorioDeVenda)cbOrdenarPor.SelectedIndex;
+            _filtros.DirecaoOrdem = cbDirecaoOrdem.Text;
             _filtros.DataInicial = dtDataInicial.Value;
             _filtros.DataFinal = dtDataFinal.Value;
-            _filtros.DirecaoOrdem = cbDirecaoOrdem.Text;
+            _filtros.APartirDe = nupAPartirDe.Value;
         }
 
         public void AtualizarTotais(List<RelatorioClientes> resultado) 
@@ -70,5 +72,7 @@ namespace AugustusFahsion.View.Relatorios
             lblTotalLiquido.Text = resultado.Sum(x => (x.TotalLiquido.RetornarValor)).ToString("c");
             lblTotalDesconto.Text = resultado.Sum(x => (x.Desconto.RetornarValor)).ToString("c");
         }
+
+        private void cbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e) => cbDirecaoOrdem.Enabled = true;
     }
 }

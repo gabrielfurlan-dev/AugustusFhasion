@@ -45,20 +45,22 @@ namespace AugustusFahsion.DAO
             var query = filtros.GerarFiltrosSelect();
 
             query += @" count(v.IdVenda) as QuantidadeVenda, pe.Nome, sum(v.TotalBruto) as TotalBruto,
-	                    sum(v.TotalDesconto) as Desconto, sum(v.TotalLiquido) as TotalLiquido
-	                    FROM Venda v
-	                    INNER JOIN Cliente c on v.IdCliente = c.IdCliente
-	                    INNER JOIN Pessoa pe on c.IdPessoa = pe.IdPessoa ";
+	        sum(v.TotalDesconto) as Desconto, sum(v.TotalLiquido) as TotalLiquido
+	        FROM Venda v
+	        INNER JOIN Cliente c on v.IdCliente = c.IdCliente
+	        INNER JOIN Pessoa pe on c.IdPessoa = pe.IdPessoa ";
 
             query += @" WHERE pe.NOME LIKE @NomeCliente + '%' AND v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' ";
 
             query += " GROUP BY pe.Nome ";
 
+
+
+            query += filtros.GerarFiltrosHaving();
+
             query += filtros.GerarFiltrosOrderBy();
 
             query += filtros.GerarDirecaoDaOrdem();
-
-            query += filtros.GerarFiltrosHaving();
 
             try
             {

@@ -37,15 +37,18 @@ namespace AugustusFahsion.View.Relatorios
             this.label1 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
             this.cbDirecaoOrdem = new System.Windows.Forms.ComboBox();
-            this.cbOdenarPor = new System.Windows.Forms.ComboBox();
+            this.cbOrdenarPor = new System.Windows.Forms.ComboBox();
+            this.cbFiltrarPor = new System.Windows.Forms.ComboBox();
             this.nupQuantidadeClientes = new System.Windows.Forms.NumericUpDown();
-            this.nupTotalLiquidoInicial = new System.Windows.Forms.NumericUpDown();
+            this.nupAPartirDe = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dtDataInicial = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtDataFinal = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,7 +69,7 @@ namespace AugustusFahsion.View.Relatorios
             this.label17 = new System.Windows.Forms.Label();
             this.panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidadeClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupTotalLiquidoInicial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupAPartirDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRelatorioClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,15 +119,18 @@ namespace AugustusFahsion.View.Relatorios
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panelFiltros.Controls.Add(this.cbDirecaoOrdem);
-            this.panelFiltros.Controls.Add(this.cbOdenarPor);
+            this.panelFiltros.Controls.Add(this.cbOrdenarPor);
+            this.panelFiltros.Controls.Add(this.cbFiltrarPor);
             this.panelFiltros.Controls.Add(this.nupQuantidadeClientes);
-            this.panelFiltros.Controls.Add(this.nupTotalLiquidoInicial);
+            this.panelFiltros.Controls.Add(this.nupAPartirDe);
             this.panelFiltros.Controls.Add(this.label5);
             this.panelFiltros.Controls.Add(this.txtNomeCliente);
             this.panelFiltros.Controls.Add(this.label16);
             this.panelFiltros.Controls.Add(this.label15);
             this.panelFiltros.Controls.Add(this.dtDataInicial);
             this.panelFiltros.Controls.Add(this.label6);
+            this.panelFiltros.Controls.Add(this.label10);
+            this.panelFiltros.Controls.Add(this.label7);
             this.panelFiltros.Controls.Add(this.label4);
             this.panelFiltros.Controls.Add(this.dtDataFinal);
             this.panelFiltros.Controls.Add(this.label13);
@@ -142,31 +148,48 @@ namespace AugustusFahsion.View.Relatorios
             // cbDirecaoOrdem
             // 
             this.cbDirecaoOrdem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbDirecaoOrdem.Enabled = false;
             this.cbDirecaoOrdem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbDirecaoOrdem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cbDirecaoOrdem.FormattingEnabled = true;
             this.cbDirecaoOrdem.Items.AddRange(new object[] {
             "Crescente",
             "Decrescente"});
-            this.cbDirecaoOrdem.Location = new System.Drawing.Point(138, 234);
+            this.cbDirecaoOrdem.Location = new System.Drawing.Point(165, 346);
             this.cbDirecaoOrdem.Name = "cbDirecaoOrdem";
-            this.cbDirecaoOrdem.Size = new System.Drawing.Size(111, 23);
-            this.cbDirecaoOrdem.TabIndex = 50;
+            this.cbDirecaoOrdem.Size = new System.Drawing.Size(82, 23);
+            this.cbDirecaoOrdem.TabIndex = 51;
             // 
-            // cbOdenarPor
+            // cbOrdenarPor
             // 
-            this.cbOdenarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.cbOdenarPor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbOdenarPor.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cbOdenarPor.FormattingEnabled = true;
-            this.cbOdenarPor.Items.AddRange(new object[] {
+            this.cbOrdenarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbOrdenarPor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbOrdenarPor.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbOrdenarPor.FormattingEnabled = true;
+            this.cbOrdenarPor.Items.AddRange(new object[] {
+            "Quantidade",
+            "Total desconto",
+            "Total liquido"});
+            this.cbOrdenarPor.Location = new System.Drawing.Point(16, 346);
+            this.cbOrdenarPor.Name = "cbOrdenarPor";
+            this.cbOrdenarPor.Size = new System.Drawing.Size(143, 23);
+            this.cbOrdenarPor.TabIndex = 50;
+            this.cbOrdenarPor.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor_SelectedIndexChanged);
+            // 
+            // cbFiltrarPor
+            // 
+            this.cbFiltrarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbFiltrarPor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFiltrarPor.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbFiltrarPor.FormattingEnabled = true;
+            this.cbFiltrarPor.Items.AddRange(new object[] {
             "Quantidade",
             "Total  desconto",
             "Total  liquido"});
-            this.cbOdenarPor.Location = new System.Drawing.Point(18, 234);
-            this.cbOdenarPor.Name = "cbOdenarPor";
-            this.cbOdenarPor.Size = new System.Drawing.Size(109, 23);
-            this.cbOdenarPor.TabIndex = 49;
+            this.cbFiltrarPor.Location = new System.Drawing.Point(18, 234);
+            this.cbFiltrarPor.Name = "cbFiltrarPor";
+            this.cbFiltrarPor.Size = new System.Drawing.Size(231, 23);
+            this.cbFiltrarPor.TabIndex = 49;
             // 
             // nupQuantidadeClientes
             // 
@@ -174,31 +197,41 @@ namespace AugustusFahsion.View.Relatorios
             this.nupQuantidadeClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantidadeClientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupQuantidadeClientes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidadeClientes.Location = new System.Drawing.Point(18, 398);
+            this.nupQuantidadeClientes.Location = new System.Drawing.Point(16, 453);
+            this.nupQuantidadeClientes.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.nupQuantidadeClientes.Name = "nupQuantidadeClientes";
             this.nupQuantidadeClientes.Size = new System.Drawing.Size(231, 21);
             this.nupQuantidadeClientes.TabIndex = 48;
             // 
-            // nupTotalLiquidoInicial
+            // nupAPartirDe
             // 
-            this.nupTotalLiquidoInicial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.nupTotalLiquidoInicial.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nupTotalLiquidoInicial.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nupTotalLiquidoInicial.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupTotalLiquidoInicial.Location = new System.Drawing.Point(18, 341);
-            this.nupTotalLiquidoInicial.Name = "nupTotalLiquidoInicial";
-            this.nupTotalLiquidoInicial.Size = new System.Drawing.Size(231, 21);
-            this.nupTotalLiquidoInicial.TabIndex = 48;
+            this.nupAPartirDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.nupAPartirDe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nupAPartirDe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nupAPartirDe.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.nupAPartirDe.Location = new System.Drawing.Point(16, 287);
+            this.nupAPartirDe.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.nupAPartirDe.Name = "nupAPartirDe";
+            this.nupAPartirDe.Size = new System.Drawing.Size(233, 21);
+            this.nupAPartirDe.TabIndex = 48;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(18, 271);
+            this.label5.Location = new System.Drawing.Point(16, 383);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
+            this.label5.Size = new System.Drawing.Size(81, 15);
             this.label5.TabIndex = 46;
-            this.label5.Text = "Cliente:";
+            this.label5.Text = "Nome cliente:";
             // 
             // txtNomeCliente
             // 
@@ -206,7 +239,7 @@ namespace AugustusFahsion.View.Relatorios
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNomeCliente.ForeColor = System.Drawing.Color.Silver;
-            this.txtNomeCliente.Location = new System.Drawing.Point(18, 290);
+            this.txtNomeCliente.Location = new System.Drawing.Point(16, 402);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(231, 18);
             this.txtNomeCliente.TabIndex = 47;
@@ -215,17 +248,17 @@ namespace AugustusFahsion.View.Relatorios
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label16.Location = new System.Drawing.Point(18, 323);
+            this.label16.Location = new System.Drawing.Point(16, 269);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 15);
+            this.label16.Size = new System.Drawing.Size(49, 15);
             this.label16.TabIndex = 37;
-            this.label16.Text = "Total liquido a partir de:";
+            this.label16.Text = "A partir:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(18, 380);
+            this.label15.Location = new System.Drawing.Point(16, 435);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(128, 15);
             this.label15.TabIndex = 37;
@@ -250,15 +283,35 @@ namespace AugustusFahsion.View.Relatorios
             this.label6.Size = new System.Drawing.Size(0, 15);
             this.label6.TabIndex = 37;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.Location = new System.Drawing.Point(165, 328);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 15);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Direcao:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(16, 328);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 15);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Ordenar por:";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Location = new System.Drawing.Point(18, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 15);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 37;
-            this.label4.Text = "Ordenar por:";
+            this.label4.Text = "Filtrar por:";
             // 
             // dtDataFinal
             // 
@@ -333,7 +386,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFiltrarPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrarPorCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrarPorCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(79, 445);
+            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(78, 510);
             this.btnFiltrarPorCliente.Name = "btnFiltrarPorCliente";
             this.btnFiltrarPorCliente.Size = new System.Drawing.Size(112, 48);
             this.btnFiltrarPorCliente.TabIndex = 42;
@@ -531,7 +584,7 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.ResumeLayout(false);
             this.panelFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidadeClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupTotalLiquidoInicial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupAPartirDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRelatorioClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -544,7 +597,7 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelFiltros;
-        private System.Windows.Forms.ComboBox cbOdenarPor;
+        private System.Windows.Forms.ComboBox cbFiltrarPor;
         private System.Windows.Forms.NumericUpDown nupTotalLiquidoInicial;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNomeCliente;
@@ -571,6 +624,10 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblTotalDesconto;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbOrdenarPor;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbDirecaoOrdem;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown nupAPartirDe;
     }
 }

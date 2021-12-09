@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 
-namespace AugustusFahsion.Enum
+namespace AugustusFahsion.Enums
 {
-    public enum OrdemRelatorioDeVenda
+    public enum EOrdemRelatorioDeVenda
     {
-        [Description (" ")]
+        [Description(" ")]
         Nome = -1,
         [Description(" ORDER BY QuantidadeVenda ")]
         Quantidade,
