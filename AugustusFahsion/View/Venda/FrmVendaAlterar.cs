@@ -239,9 +239,9 @@ namespace AugustusFahsion.View.Venda
         }
         private void AtualizarPrecosTotais()
         {
-            //lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ToString("c");
-            //lblTotalLiquido.Text = _vendaModel.TotalLiquido.ToString("c");
-            //lblTotalDesconto.Text = _vendaModel.TotalDesconto.ToString("c");
+            lblTotalBruto.Text = _vendaModelSelecionada.TotalBruto.ValorFormatado;
+            lblTotalLiquido.Text = _vendaModelSelecionada.TotalLiquido.ValorFormatado;
+            lblTotalDesconto.Text = _vendaModelSelecionada.TotalDesconto.ValorFormatado;
             //lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
         }
         private void AtualizarCarrinho()

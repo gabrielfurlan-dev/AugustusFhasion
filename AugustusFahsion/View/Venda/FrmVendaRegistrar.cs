@@ -114,6 +114,7 @@ namespace AugustusFahsion.View.Venda
 
                 _vendaModel.ListaDeItens[index].Quantidade = Convert.ToInt32(nupQuantidade.Value);
                 _vendaModel.ListaDeItens[index].Desconto = Convert.ToInt32(nupDesconto.Value);
+                MessageBox.Show("O item já existia no carrinho. Os valores foram atualizados.");
                 AtualizarCarrinho();
                 return;
             }
@@ -314,7 +315,7 @@ namespace AugustusFahsion.View.Venda
                 TotalLiquido = desconto,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
                 TotalBruto = lblTotalLiquidoProduto.Text.RealParaDecimal(),
-                //Lucro = lblLucroProduto.Text.RealParaDecimal()
+                Lucro = lblLucroProduto.Text.RealParaDecimal()
             });
         }
 

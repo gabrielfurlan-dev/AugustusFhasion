@@ -14,7 +14,7 @@ namespace AugustusFahsion.Model
         public string FormaPagamento { get; set; }
         public DinheiroModel TotalBruto {get => ListaDeItens.Sum(x => (x.PrecoVenda.RetornarValor) * (x.Quantidade));}
         public DinheiroModel TotalLiquido {get => ListaDeItens.Sum(x => x.TotalLiquido.RetornarValor);}
-        public DinheiroModel TotalDesconto {get => ListaDeItens.Sum(x => (x.Desconto));}
+        public DinheiroModel TotalDesconto {get => TotalBruto.RetornarValor - TotalLiquido.RetornarValor; }
         public decimal TotalLucro {get => ListaDeItens.Sum(x => x.Lucro);}
         public int Pago { get; set; }
         public DateTime DataVenda    { get; set; }
