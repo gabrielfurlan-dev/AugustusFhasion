@@ -16,37 +16,6 @@ namespace AugustusFahsion.View
             InitializeComponent();
             _controller = clienteListarController;
         }
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            var id = SelecionarClienteModel();
-            var cliente = ClienteAlterarController.Buscar(id);
-            AbrirFormAlterar(cliente);
-        }
-        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvLista.Rows.Count <= 0) return;
-            var id = SelecionarClienteModel();
-            var cliente = ClienteAlterarController.Buscar(id);
-            AbrirFormAlterar(cliente);
-        }
-        private int SelecionarClienteModel() => Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
-
-
-        private void AbrirFormAlterar(ClienteModel cliente)
-        {
-            new ClienteAlterarController().AbrirFormulario(cliente);
-            this.Close();
-        }
-        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvLista.Rows.Count <= 0) return;
-            SelecionarClienteModel();
-            btnAlterar.Enabled = true;
-        }
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
@@ -63,5 +32,32 @@ namespace AugustusFahsion.View
             
             dgvLista.DataSource = _controller.ListarClientesPorNome(txtProcurar.Text);
         }
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvLista.Rows.Count <= 0) return;
+            SelecionarClienteModel();
+            btnAlterar.Enabled = true;
+        }
+        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvLista.Rows.Count <= 0) return;
+            var id = SelecionarClienteModel();
+            var cliente = ClienteAlterarController.Buscar(id);
+            AbrirFormAlterar(cliente);
+        }
+        private int SelecionarClienteModel() => Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            var id = SelecionarClienteModel();
+            var cliente = ClienteAlterarController.Buscar(id);
+            AbrirFormAlterar(cliente);
+        }
+        private void AbrirFormAlterar(ClienteModel cliente)
+        {
+            new ClienteAlterarController().AbrirFormulario(cliente);
+            this.Close();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
     }
 }

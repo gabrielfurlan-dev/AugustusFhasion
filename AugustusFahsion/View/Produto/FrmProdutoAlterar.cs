@@ -31,8 +31,6 @@ namespace AugustusFahsion.View.Alterar
             _controllerExcluir = produtoExcluirController;
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
-
         public void AtribuirModelParaCampos(ProdutoModel produto)
         {
             txtId.Text = produto.IdProduto.ToString();
@@ -45,46 +43,49 @@ namespace AugustusFahsion.View.Alterar
             cbCondicao.Text = produto.Condicao;
         }
 
+        private void PreencherCamposModel()
+        {
+            produtoModel.Nome = txtNome.Text;
+            produtoModel.Fabricante = txtFabricante.Text;
+            produtoModel.PrecoCusto = nupPrecoCusto.Value;
+            produtoModel.PrecoVenda = nupPrecoVenda.Value;
+            produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
+            produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txtNome.Text))
+            {
+                MessageBox.Show("Insira um nome.");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtFabricante.Text))
+            {
+                MessageBox.Show("Insira uma marca");
+                return false;
+            }
+            if (nupPrecoCusto.Value < 0)
+            {
+                MessageBox.Show("Insira um preço de custo válido");
+                return false;
+            }
+            if (nupPrecoVenda.Value < 0)
+            {
+                MessageBox.Show("Insira um preço de venda válido");
+            }
+            return true;
+        }
+
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            try
-            {
 
-                if (String.IsNullOrEmpty(txtNome.Text))
-                {
-                    MessageBox.Show("Insira um nome.");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtFabricante.Text))
-                {
-                    MessageBox.Show("Insira uma marca");
-                    return;
-                }
-                if (nupPrecoCusto.Value < 0)
-                {
-                    MessageBox.Show("Insira um preço de custo válido");
-                    return;
-                }
-                if (nupPrecoVenda.Value < 0)
-                {
-                    MessageBox.Show("Insira um preço de venda válido");
-                }
-                
-                produtoModel.Nome = txtNome.Text;
-                produtoModel.Fabricante = txtFabricante.Text;
-                produtoModel.PrecoCusto = nupPrecoCusto.Value;
-                produtoModel.PrecoVenda = nupPrecoVenda.Value;
-                produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
-                produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+            if (ValidarCampos())
 
-                _controllerAlterar.AtualizarProduto(produtoModel);
-                this.Close();
-            }
+                PreencherCamposModel();
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro ao tentar gravar");
-            }
+            _controllerAlterar.AtualizarProduto(produtoModel);
+            this.Close();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -113,7 +114,7 @@ namespace AugustusFahsion.View.Alterar
             }
         }
 
-
+        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
         private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
     }
 }

@@ -54,106 +54,111 @@ namespace AugustusFahsion.View
         }
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
-            try
+            if (ValidarCampos())
             {
-                if (String.IsNullOrEmpty(txtNome.Text))
-                {
-                    MessageBox.Show("Insira um nome.");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtSobrenome.Text))
-                {
-                    MessageBox.Show("Insira um sobrenome");
-                    return;
-                }
-                if (String.IsNullOrEmpty(cbSexo.Text))
-                {
-                    MessageBox.Show("Selecione o sexo.");
-                    return;
-                }
-                if (dtpDataNascimento.Value >= DateTime.Now)
-                {
-                    MessageBox.Show("Selecione uma data de nascimento valida");
-                    return;
-                }
-                if (nupValorLimiteAPrazo.Value < 0)
-                {
-                    MessageBox.Show("Insira um valor a prazo válido");
-                    return;
-                }
-                if (String.IsNullOrEmpty(mtxtCep.Text))
-                {
-                    MessageBox.Show("Insira um CEP");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtLogradouro.Text))
-                {
-                    MessageBox.Show("Insira um Logradouro");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtCidade.Text))
-                {
-                    MessageBox.Show("Insira uma cidade");
-                    return;
-                }
-                if (String.IsNullOrEmpty(cbUf.Text))
-                {
-                    MessageBox.Show("Selecione um Estado (UF)");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtBairro.Text))
-                {
-                    MessageBox.Show("Insira um bairro");
-                    return;
-                }
-                if (String.IsNullOrEmpty(txtNumeroEndereco.Text))
-                {
-                    MessageBox.Show("Insira um numero de endereço.");
-                    return;
-                }
-                if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
-                {
-                    MessageBox.Show("Insira um numero de celular válido");
-                    return;
-                }
-                if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
-                {
-                    MessageBox.Show("Insira um endereço de email válido.");
-                    return;
-                }
-                if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
-                {
-                    MessageBox.Show("Insira um CPF");
-                    return;
-                }
-
-                clienteModel.IdCliente = int.Parse(txtId.Text);
-                clienteModel.NomeCompleto.Nome = txtNome.Text;
-                clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
-                clienteModel.Sexo = cbSexo.Text;
-                clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
-                clienteModel.Endereco.Cep = mtxtCep.Text;
-                clienteModel.Endereco.Logradouro = txtLogradouro.Text;
-                clienteModel.Endereco.Cidade = txtCidade.Text;
-                clienteModel.Endereco.Uf = cbUf.Text;
-                clienteModel.Endereco.Complemento = txtComplemento.Text;
-                clienteModel.Endereco.Bairro = txtBairro.Text;
-                clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
-                clienteModel.Contato.Telefone = txtTelefone.Text;
-                clienteModel.Contato.Celular = mtxtCelular.Text;
-                clienteModel.Contato.Email = txtEmail.Text;
-                clienteModel.Cpf = mtxtCpf.Text;
-                clienteModel.Condicao = cbCondicao.Text;
+                PreencherCamposModel();
 
                 _controllerAlterar.AtualizarCliente(clienteModel);
                 this.Close();
+            }
 
-            }
-            catch (Exception ex)
+        }
+
+        private void PreencherCamposModel()
+        {
+            clienteModel.IdCliente = int.Parse(txtId.Text);
+            clienteModel.NomeCompleto.Nome = txtNome.Text;
+            clienteModel.NomeCompleto.Sobrenome = txtSobrenome.Text;
+            clienteModel.Sexo = cbSexo.Text;
+            clienteModel.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+            clienteModel.ValorLimiteAPrazo = nupValorLimiteAPrazo.Value;
+            clienteModel.Endereco.Cep = mtxtCep.Text;
+            clienteModel.Endereco.Logradouro = txtLogradouro.Text;
+            clienteModel.Endereco.Cidade = txtCidade.Text;
+            clienteModel.Endereco.Uf = cbUf.Text;
+            clienteModel.Endereco.Complemento = txtComplemento.Text;
+            clienteModel.Endereco.Bairro = txtBairro.Text;
+            clienteModel.Endereco.NumeroEndereco = txtNumeroEndereco.Text;
+            clienteModel.Contato.Telefone = txtTelefone.Text;
+            clienteModel.Contato.Celular = mtxtCelular.Text;
+            clienteModel.Contato.Email = txtEmail.Text;
+            clienteModel.Cpf = mtxtCpf.Text;
+            clienteModel.Condicao = cbCondicao.Text;
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txtNome.Text))
             {
-                MessageBox.Show(ex.Message, "Erro ao tentar gravar");
+                MessageBox.Show("Insira um nome.");
+                return false;
             }
+            if (String.IsNullOrEmpty(txtSobrenome.Text))
+            {
+                MessageBox.Show("Insira um sobrenome");
+                return false;
+            }
+            if (String.IsNullOrEmpty(cbSexo.Text))
+            {
+                MessageBox.Show("Selecione o sexo.");
+                return false;
+            }
+            if (dtpDataNascimento.Value >= DateTime.Now)
+            {
+                MessageBox.Show("Selecione uma data de nascimento valida");
+                return false;
+            }
+            if (nupValorLimiteAPrazo.Value < 0)
+            {
+                MessageBox.Show("Insira um valor a prazo válido");
+                return false;
+            }
+            if (String.IsNullOrEmpty(mtxtCep.Text))
+            {
+                MessageBox.Show("Insira um CEP");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtLogradouro.Text))
+            {
+                MessageBox.Show("Insira um Logradouro");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtCidade.Text))
+            {
+                MessageBox.Show("Insira uma cidade");
+                return false;
+            }
+            if (String.IsNullOrEmpty(cbUf.Text))
+            {
+                MessageBox.Show("Selecione um Estado (UF)");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtBairro.Text))
+            {
+                MessageBox.Show("Insira um bairro");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtNumeroEndereco.Text))
+            {
+                MessageBox.Show("Insira um numero de endereço.");
+                return false;
+            }
+            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+            {
+                MessageBox.Show("Insira um numero de celular válido");
+                return false;
+            }
+            if (!Regex.IsMatch(txtEmail.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+            {
+                MessageBox.Show("Insira um endereço de email válido.");
+                return false;
+            }
+            if (!Regex.IsMatch(mtxtCpf.Text, "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}"))
+            {
+                MessageBox.Show("Insira um CPF");
+                return false;
+            }
+            return true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();

@@ -22,49 +22,49 @@ namespace AugustusFahsion.View
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-
+            if (ValidarCampos())
             {
-                try
-                {
+                PreencherCamposModel();
 
-                    if (String.IsNullOrEmpty(txtNome.Text))
-                    {
-                        MessageBox.Show("Insira um nome.");
-                        return;
-                    }
-                    if (String.IsNullOrEmpty(txtFabricante.Text))
-                    {
-                        MessageBox.Show("Insira uma marca");
-                        return;
-                    }
-                    if (nupPrecoCusto.Value < 0)
-                    {
-                        MessageBox.Show("Insira um preço de custo válido");
-                        return;
-                    }
-                    if (nupPrecoVenda.Value < 0)
-                    {
-                        MessageBox.Show("Insira um preço de venda válido");
-                        return;
-                    }
-                                        
-                    produtoModel.Nome = txtNome.Text;
-                    produtoModel.Fabricante = txtFabricante.Text;
-                    produtoModel.PrecoCusto = nupPrecoCusto.Value;
-                    produtoModel.PrecoVenda = nupPrecoVenda.Value;
-                    produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
-                    produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
-                    produtoModel.Condicao = cbCondicao.Text;
-
-                    _controller.CadastrarProduto(produtoModel);
-                    this.Close();
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Erro ao tentar gravar");
-                }
+                _controller.CadastrarProduto(produtoModel);
+                this.Close();
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txtNome.Text))
+            {
+                MessageBox.Show("Insira um nome.");
+                return false;
+            }
+            if (String.IsNullOrEmpty(txtFabricante.Text))
+            {
+                MessageBox.Show("Insira uma marca");
+                return false;
+            }
+            if (nupPrecoCusto.Value < 0)
+            {
+                MessageBox.Show("Insira um preço de custo válido");
+                return false;
+            }
+            if (nupPrecoVenda.Value < 0)
+            {
+                MessageBox.Show("Insira um preço de venda válido");
+                return false;
+            }
+            return true;
+        }
+
+        private void PreencherCamposModel()
+        {
+            produtoModel.Nome = txtNome.Text;
+            produtoModel.Fabricante = txtFabricante.Text;
+            produtoModel.PrecoCusto = nupPrecoCusto.Value;
+            produtoModel.PrecoVenda = nupPrecoVenda.Value;
+            produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
+            produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+            produtoModel.Condicao = cbCondicao.Text;
         }
 
         private void btnFechar_Click(object sender, EventArgs e) => this.Close();
