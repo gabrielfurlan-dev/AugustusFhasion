@@ -52,7 +52,7 @@
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnFechar.Location = new System.Drawing.Point(507, 693);
+            this.btnFechar.Location = new System.Drawing.Point(787, 627);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(88, 40);
             this.btnFechar.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(390, 39);
+            this.label1.Location = new System.Drawing.Point(386, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 30);
             this.label1.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.btnAlterar.Enabled = false;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAlterar.Location = new System.Drawing.Point(401, 692);
+            this.btnAlterar.Location = new System.Drawing.Point(881, 626);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 41);
             this.btnAlterar.TabIndex = 8;
@@ -123,13 +123,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLista.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLista.GridColor = System.Drawing.Color.Black;
-            this.dgvLista.Location = new System.Drawing.Point(46, 150);
+            this.dgvLista.Location = new System.Drawing.Point(70, 170);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowTemplate.Height = 25;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(929, 517);
+            this.dgvLista.Size = new System.Drawing.Size(900, 450);
             this.dgvLista.TabIndex = 9;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
@@ -137,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 99);
+            this.label4.Location = new System.Drawing.Point(70, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 15);
             this.label4.TabIndex = 11;
@@ -149,7 +149,7 @@
             this.txtProcurar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProcurar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtProcurar.Location = new System.Drawing.Point(49, 117);
+            this.txtProcurar.Location = new System.Drawing.Point(70, 142);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(100, 22);
             this.txtProcurar.TabIndex = 12;
@@ -162,7 +162,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.button1.Location = new System.Drawing.Point(152, 114);
+            this.button1.Location = new System.Drawing.Point(173, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 30);
             this.button1.TabIndex = 13;

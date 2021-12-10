@@ -148,6 +148,7 @@ namespace AugustusFahsion.View.Relatorios
             // cbDirecaoOrdem
             // 
             this.cbDirecaoOrdem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbDirecaoOrdem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDirecaoOrdem.Enabled = false;
             this.cbDirecaoOrdem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbDirecaoOrdem.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -163,6 +164,7 @@ namespace AugustusFahsion.View.Relatorios
             // cbOrdenarPor
             // 
             this.cbOrdenarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbOrdenarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrdenarPor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbOrdenarPor.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cbOrdenarPor.FormattingEnabled = true;
@@ -179,6 +181,7 @@ namespace AugustusFahsion.View.Relatorios
             // cbFiltrarPor
             // 
             this.cbFiltrarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.cbFiltrarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFiltrarPor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFiltrarPor.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cbFiltrarPor.FormattingEnabled = true;
@@ -415,7 +418,7 @@ namespace AugustusFahsion.View.Relatorios
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaRelatorioClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListaRelatorioClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.dgvListaRelatorioClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -560,7 +563,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);

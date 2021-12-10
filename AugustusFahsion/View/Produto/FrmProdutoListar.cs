@@ -57,5 +57,7 @@ namespace AugustusFahsion.View.Listar
 
         private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e) =>
             btnAlterar.Enabled = true;
+
+        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
     }
 }
