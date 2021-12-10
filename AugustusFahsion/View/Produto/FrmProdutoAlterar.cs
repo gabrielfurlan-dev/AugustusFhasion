@@ -81,11 +81,11 @@ namespace AugustusFahsion.View.Alterar
         {
 
             if (ValidarCampos())
-
+            {
                 PreencherCamposModel();
-
-            _controllerAlterar.AtualizarProduto(produtoModel);
-            this.Close();
+                _controllerAlterar.AtualizarProduto(produtoModel);
+                this.Close();
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
