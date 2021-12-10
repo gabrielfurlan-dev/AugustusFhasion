@@ -37,6 +37,17 @@ namespace AugustusFahsion.View.Venda
 
         private void FrmVendaAlterar_Load(object sender, EventArgs e)
         {
+            if (_vendaModelSelecionada.Condicao == "Inativa") 
+            {
+                btnSalvarAlteracoes.Enabled = false;
+                btnInativarVenda.Enabled = false;
+                btnRemoverItem.Enabled = false;
+                btnAdicionar.Enabled = false;
+                cbPago.Enabled = false;
+                cbFormaPagamento.Enabled = false;
+
+                lblImpossivelAlterarVenda.Enabled = true;
+            }
             AdicionarProdutosRegistradosDaVendaNaLista();
             AtualizarCarrinho();
         }
@@ -83,11 +94,15 @@ namespace AugustusFahsion.View.Venda
             lblTotalLiquido.Text = vendaListagemModel[0].TotalLiquido.ValorFormatado;
             lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
-            if (vendaListagemModel[0].Pago == true) { cbPago.Text = "Sim"; } else { cbPago.Text = "Não"; }
+
+            if (vendaListagemModel[0].Pago == true)
+                cbPago.Text = "Sim"; 
+            else 
+                cbPago.Text = "Não"; 
+
             if (cbFormaPagamento.Text != "A prazo") 
-            { 
                 cbPago.Visible = false;
-            }
+
             
             lblIdCliente.Text = vendaModel.Cliente.IdCliente.ToString();
             lblIdColaborador.Text = vendaModel.IdColaborador.ToString();
@@ -263,33 +278,41 @@ namespace AugustusFahsion.View.Venda
 
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
+
+            if (ValidarCampos())
+            {
+                if (cbPago.Text == "Sim")
+                    _vendaModelSelecionada.Pago = 1;
+                AlterarVenda();
+                this.Close();
+            }
+        }
+
+        private bool ValidarCampos()
+        {
             if (lblClienteSelecionado.Text.Equals("Selecione um cliente. . ."))
             {
                 MessageBox.Show("Selecione um cliente");
-                return;
+                return false;
             }
             if (lblColaboradorSelecionado.Text.Equals("Selecione um colaborador. . ."))
             {
                 MessageBox.Show("Selecione um colaborador");
-                return;
+                return false;
             }
             if (_vendaModelSelecionada.ListaDeItens.Count.Equals(0))
             {
                 MessageBox.Show("Selecione pelo menos 1 item ao seu carrinho");
-                return;
+                return false;
             }
             if (String.IsNullOrEmpty(cbFormaPagamento.Text))
             {
                 MessageBox.Show("Selecione uma forma de pagamento.");
-                return;
+                return false;
             }
-            if (cbPago.Text == "Sim")
-                _vendaModelSelecionada.Pago = 1;
-
-
-            AlterarVenda();
-            this.Close();
+            return true;
         }
+
         private void AlterarVenda()
         {
             VendaAlterarController.AlterarVenda(_vendaModelSelecionada);

@@ -18,6 +18,7 @@ namespace AugustusFahsion.Model
         public decimal TotalLucro {get => ListaDeItens.Sum(x => x.Lucro);}
         public int Pago { get; set; }
         public DateTime DataVenda    { get; set; }
+        public string Condicao { get; set; }
 
         public List<VendaProdutoModel> ListaDeItens { get; set; }
         public VendaModel()

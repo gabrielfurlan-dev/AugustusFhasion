@@ -69,6 +69,6 @@ namespace AugustusFahsion.View.Venda
 
         //private void btnFiltrarPorProduto_Click(object sender, EventArgs e) =>
         //    dgvListaVenda.DataSource = _vendaListagemcontroller.FiltrarPor();
-    
+
     }
 }

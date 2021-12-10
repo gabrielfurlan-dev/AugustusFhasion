@@ -44,9 +44,6 @@ namespace AugustusFahsion.View.Venda
             this.dateDataInicial = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBuscarPorProduto = new System.Windows.Forms.TextBox();
-            this.btnFiltrarPorProduto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFiltrarPorColaborador = new System.Windows.Forms.TextBox();
             this.btnFiltrarPorColaborador = new System.Windows.Forms.Button();
@@ -233,40 +230,6 @@ namespace AugustusFahsion.View.Venda
             this.label3.TabIndex = 21;
             this.label3.Text = "Data Final:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(421, 153);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 15);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Produto:";
-            // 
-            // txtBuscarPorProduto
-            // 
-            this.txtBuscarPorProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtBuscarPorProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarPorProduto.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBuscarPorProduto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBuscarPorProduto.Location = new System.Drawing.Point(421, 172);
-            this.txtBuscarPorProduto.Name = "txtBuscarPorProduto";
-            this.txtBuscarPorProduto.Size = new System.Drawing.Size(140, 22);
-            this.txtBuscarPorProduto.TabIndex = 22;
-            // 
-            // btnFiltrarPorProduto
-            // 
-            this.btnFiltrarPorProduto.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFiltrarPorProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFiltrarPorProduto.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFiltrarPorProduto.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnFiltrarPorProduto.Location = new System.Drawing.Point(567, 172);
-            this.btnFiltrarPorProduto.Name = "btnFiltrarPorProduto";
-            this.btnFiltrarPorProduto.Size = new System.Drawing.Size(23, 22);
-            this.btnFiltrarPorProduto.TabIndex = 23;
-            this.btnFiltrarPorProduto.Text = "🔎";
-            this.btnFiltrarPorProduto.UseVisualStyleBackColor = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -323,14 +286,11 @@ namespace AugustusFahsion.View.Venda
             this.Controls.Add(this.dateDataFinal);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFiltrarPorColaborador);
-            this.Controls.Add(this.btnFiltrarPorProduto);
             this.Controls.Add(this.btnFiltrarPorCliente);
             this.Controls.Add(this.txtFiltrarPorColaborador);
-            this.Controls.Add(this.txtBuscarPorProduto);
             this.Controls.Add(this.txtFiltrarPorCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAlterar);
@@ -361,9 +321,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.DateTimePicker dateDataInicial;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBuscarPorProduto;
-        private System.Windows.Forms.Button btnFiltrarPorProduto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFiltrarPorColaborador;
         private System.Windows.Forms.Button btnFiltrarPorColaborador;
