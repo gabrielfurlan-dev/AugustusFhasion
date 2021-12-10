@@ -64,7 +64,7 @@ namespace AugustusFashionTeste
                     }
                 );
 
-            var resultado = venda.TotalBruto;
+            var resultado = venda.TotalBruto.RetornarValor;
             decimal resultadoEsperado = 5.5m;
 
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -87,7 +87,7 @@ namespace AugustusFashionTeste
                     }
                 );
 
-            var resultado = venda.TotalLiquido;
+            var resultado = venda.TotalLiquido.RetornarValor;
             decimal resultadoEsperado = 22.3m;
 
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -100,18 +100,24 @@ namespace AugustusFashionTeste
             venda.ListaDeItens.Add(
                     new VendaProdutoModel()
                     {
-                        Desconto = 2
+                        Quantidade = 1,
+                        TotalBruto = 4,
+                        PrecoVenda = 4,
+                        TotalLiquido = 2
                     }
                 );
             venda.ListaDeItens.Add(
                     new VendaProdutoModel()
                     {
-                        Desconto = 1
+                        Quantidade = 1,
+                        TotalBruto = 4,
+                        PrecoVenda = 4,
+                        TotalLiquido = 2,
                     }
                 );
 
-            var resultado = venda.TotalDesconto;
-            decimal resultadoEsperado = 3;
+            var resultado = venda.TotalDesconto.RetornarValor;
+            decimal resultadoEsperado = 4;
 
             Assert.AreEqual(resultadoEsperado, resultado);
         }
