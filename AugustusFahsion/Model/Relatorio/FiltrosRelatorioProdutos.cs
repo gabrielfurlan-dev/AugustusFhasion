@@ -11,7 +11,7 @@ namespace AugustusFahsion.Model.Relatorio
 
         public string GerarFiltrosWhere()
         {
-            var where = " WHERE v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' ";
+            var where = " WHERE v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' AND v.Condicao = 'Ativa' ";
 
             if (IdCliente != 0)
                 where += " AND v.IdCliente = @IdCliente ";
