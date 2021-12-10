@@ -1,7 +1,5 @@
 ﻿using AugustusFahsion.DAO;
 using AugustusFahsion.Model;
-using AugustusFahsion.Model.Contato;
-using AugustusFahsion.Model.Enderecos;
 using AugustusFahsion.View;
 using System;
 using System.Windows.Forms;
