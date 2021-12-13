@@ -10,9 +10,12 @@ namespace AugustusFahsion.Controller
 {
     public class ProdutoListarController
     {
-        public void AbrirLista() =>
-            new FrmProdutoListar(this).Show();
-
+        public void AbrirLista()
+        {
+            var child = new FrmProdutoListar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
 
         public List<ProdutoModel> ListarProdutos()
         {

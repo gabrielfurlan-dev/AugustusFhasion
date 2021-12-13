@@ -10,12 +10,19 @@ namespace AugustusFahsion.Controller
     public class ProdutoAlterarController
     {
 
-        public void AbrirFormulario() =>
-            new FrmProdutoAlterar(this).Show();
+        public void AbrirFormulario()
+        {
+            var child = new FrmProdutoAlterar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
+
         public void AbrirFormulario(ProdutoModel produtoModelSelecionado)
         {
             ProdutoExcluirController produtoExcluirController = new ProdutoExcluirController();
-            new FrmProdutoAlterar(this, produtoExcluirController, produtoModelSelecionado).Show();
+            var child = new FrmProdutoAlterar(this, produtoExcluirController, produtoModelSelecionado);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
         }
 
         public static ProdutoModel Buscar(int id) => ProdutoDAO.Buscar(id);    

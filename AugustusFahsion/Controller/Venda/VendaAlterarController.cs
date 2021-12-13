@@ -9,7 +9,12 @@ namespace AugustusFahsion.Controller.Venda
 {
     public class VendaAlterarController
     {
-        public void AbrirFormulario(VendaModel venda) => new FrmVendaAlterar(this, venda).Show();
+        public void AbrirFormulario(VendaModel venda)
+        {
+            var child = new FrmVendaAlterar(this, venda);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
         public static VendaModel BuscarVenda(int id) => 
             VendaDAO.BuscarVenda(id);
 

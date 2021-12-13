@@ -1,8 +1,5 @@
-using AugustusFahsion.View;
+using AugustusFahsion.Controller;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AugustusFahsion
@@ -18,7 +15,7 @@ namespace AugustusFahsion
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(MDISingleton.InstaciaMDI());
         }
     }
 }

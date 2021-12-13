@@ -9,9 +9,12 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteListarController
     {
-        public void AbrirLista() =>
-            new FrmClienteListar(this).Show();
-
+        public void AbrirLista()
+        {
+            var child = new FrmClienteListar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
 
         public List<ClienteListagemModel> ListarClientes()
         {

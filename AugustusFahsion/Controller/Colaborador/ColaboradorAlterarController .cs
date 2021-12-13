@@ -8,11 +8,19 @@ namespace AugustusFahsion.Controller
 {
     public class ColaboradorAlterarController
     {
-        public void AbrirFormulario() => new FrmColaboradorAlterar(this).Show();
+        public void AbrirFormulario()
+        {
+            var form = new FrmColaboradorAlterar(this);
+            form.MdiParent = MDISingleton.InstaciaMDI();
+            form.Show();
+        }
+
         public void AbrirFormulario(ColaboradorModel colaboradorModelSelecionado)
         {
             ColaboradorExcluirController colaboradorExcluirController = new ColaboradorExcluirController();
-            new FrmColaboradorAlterar(this, colaboradorModelSelecionado, colaboradorExcluirController).Show();
+            var form = new FrmColaboradorAlterar(this, colaboradorModelSelecionado, colaboradorExcluirController);
+            form.MdiParent = MDISingleton.InstaciaMDI();
+            form.Show();
         }
         public static ColaboradorModel Buscar(int id) => ColaboradorDAO.Buscar(id);
         public void AtualizarColaborador(ColaboradorModel colaboradorModel)

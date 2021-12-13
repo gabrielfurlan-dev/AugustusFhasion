@@ -8,12 +8,17 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteAlterarController
     {
-        public void AbrirFormulario() =>
-            new FrmClienteAlterar(this).Show();
-
+        public void AbrirFormulario() 
+        {
+            var form = new FrmClienteAlterar(this);
+            form.MdiParent = MDISingleton.InstaciaMDI();
+            form.Show();
+        }
         public void AbrirFormulario(ClienteModel clienteModelSelecionado)
         {
-            new FrmClienteAlterar(this, clienteModelSelecionado).Show();
+            var form = new FrmClienteAlterar(this, clienteModelSelecionado);
+            form.MdiParent = MDISingleton.InstaciaMDI();
+            form.Show();
         }
 
         public static ClienteModel Buscar(int id)

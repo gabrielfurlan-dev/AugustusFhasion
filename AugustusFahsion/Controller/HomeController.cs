@@ -1,14 +1,13 @@
-﻿using AugustusFahsion.View;
-
-namespace AugustusFahsion.Controller
+﻿namespace AugustusFahsion.Controller
 {
-    public class HomeController
+    class HomeController
     {
-        public static void AbrirHome(MDIParent mdi)
+        public void AbrirHome()
         {
-            var home = new Home();
-            home.MdiParent = mdi;
-            home.Show();
+            var child = new Home();
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+
         }
     }
 }

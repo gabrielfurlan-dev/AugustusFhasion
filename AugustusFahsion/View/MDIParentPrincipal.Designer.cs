@@ -1,7 +1,7 @@
 ﻿
 namespace AugustusFahsion.View
 {
-    partial class MDIParent
+    partial class MDIParentPrincipal
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,27 +29,23 @@ namespace AugustusFahsion.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // MDIParent
+            // MDIParentPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1038, 748);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "MDIParent";
+            this.Name = "MDIParentPrincipal";
             this.Text = "MDIParent1";
-            this.Load += new System.EventHandler(this.MDIParent_Load);
+            this.Load += new System.EventHandler(this.MDIParentPrincipal_Load);
             this.ResumeLayout(false);
 
         }
         #endregion
-        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

@@ -9,8 +9,12 @@ namespace AugustusFahsion.Controller
 {
     public class ClienteCadastrarController
     {
-        public void AbrirFormulario() =>
-            new FrmClienteCadastrar(this).Show();
+        public void AbrirFormulario()
+        {
+            var form = new FrmClienteCadastrar(this);
+            form.MdiParent = MDISingleton.InstaciaMDI();
+            form.Show();
+        }
 
         public void CadastrarCliente(ClienteModel clienteModel)
         {

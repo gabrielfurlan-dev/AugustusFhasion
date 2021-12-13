@@ -10,8 +10,12 @@ namespace AugustusFahsion.Controller.Venda
 {
     public class  VendaRegistrarController
     {
-        public void AbrirFormulario() =>
-            new FrmVendaRegistrar(this).Show();
+        public void AbrirFormulario()
+        {
+            var child = new FrmVendaRegistrar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
 
         internal ClienteModel ProcurarCliente()
         {

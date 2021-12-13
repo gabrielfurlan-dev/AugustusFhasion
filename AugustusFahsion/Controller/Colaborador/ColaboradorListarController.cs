@@ -12,9 +12,12 @@ namespace AugustusFahsion.Controller
 {
     public class ColaboradorListarController
     {
-        public void AbrirLista() =>
-            new FrmColaboradorListar(this).Show();
-
+        public void AbrirLista()
+        {
+            var child = new FrmColaboradorListar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
 
         public List<ColaboradorListagemModel> ListarColaborador()
         {

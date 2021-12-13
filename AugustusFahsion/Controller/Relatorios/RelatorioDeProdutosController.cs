@@ -7,8 +7,12 @@ namespace AugustusFahsion.Controller.Venda
 {
     public class RelatorioDeProdutosController
     {
-        public void AbrirRelatorio() =>
-            new FrmRelatorioDeProdutos(this).Show();
+        public void AbrirRelatorio()
+        {
+            var child = new FrmRelatorioDeProdutos(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
 
         internal List<RelatorioProdutos> FiltrarRelatorioProdutos(FiltrosRelatorioProdutos filtros) => RelatorioDAO.FiltrarRelatorioProdutos(filtros);
     }

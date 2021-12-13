@@ -10,9 +10,13 @@ namespace AugustusFahsion.Controller.Venda
     public class VendaListarController
     {
 
-        public void AbrirLista() =>
-            new FrmVendaListar(this).Show();
-        
+        public void AbrirLista()
+        {
+            var child = new FrmVendaListar(this);
+            child.MdiParent = MDISingleton.InstaciaMDI();
+            child.Show();
+        }
+
         public List<VendaListagemModel> ListarVendas()
         {
             try
