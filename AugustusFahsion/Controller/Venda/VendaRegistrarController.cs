@@ -48,5 +48,21 @@ namespace AugustusFahsion.Controller.Venda
                 throw new Exception(ex.Message);
             }
         }
+
+        public ClienteModel BuscarCliente(int id) => ClienteAlterarController.Buscar(id);
+
+        //public bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int id, VendaModel vendaModel)
+        //{
+        //    var valorGasto = ValorLimiteGasto(id);
+        //    var cliente = BuscarCliente(id);
+        //    var valorLimite = cliente.ValorLimiteAPrazo;
+        //    var valorCompra = vendaModel.TotalLiquido;
+
+        //    if (valorGasto.RetornarValor + valorCompra.RetornarValor > valorLimite.RetornarValor)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
     }
 }

@@ -18,6 +18,8 @@ namespace AugustusFahsion.View.Venda
         private VendaRegistrarController _vendaRegistrarController;
         private int _quantidadeOriginal = 0;
         private int _estoqueOriginal = 0;
+        private decimal _totalLiquidoOriginal;
+
         public FrmVendaAlterar()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace AugustusFahsion.View.Venda
 
         private void FrmVendaAlterar_Load(object sender, EventArgs e)
         {
-            if (_vendaModelSelecionada.Condicao == "Inativa") 
+            if (_vendaModelSelecionada.Condicao == "Inativa")
             {
                 btnSalvarAlteracoes.Enabled = false;
                 btnInativarVenda.Enabled = false;
@@ -50,8 +52,9 @@ namespace AugustusFahsion.View.Venda
             }
             AdicionarProdutosRegistradosDaVendaNaLista();
             AtualizarCarrinho();
+            _totalLiquidoOriginal = _vendaModelSelecionada.TotalLiquido.RetornarValor;
         }
-        
+
         //dgv_cellMouseClick
         private void dgvProdutoListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -95,18 +98,18 @@ namespace AugustusFahsion.View.Venda
             lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
 
-            if (vendaModel.Pago == true) 
-            { 
+            if (vendaModel.Pago == true)
+            {
                 cbPago.SelectedIndex = 0;
                 cbPago.Enabled = false;
             }
-            else 
-                cbPago.SelectedIndex = 1; 
+            else
+                cbPago.SelectedIndex = 1;
 
-            if (cbFormaPagamento.Text != "A prazo") 
+            if (cbFormaPagamento.Text != "A prazo")
                 cbPago.Visible = false;
 
-            
+
             lblIdCliente.Text = vendaModel.Cliente.IdCliente.ToString();
             lblIdColaborador.Text = vendaModel.IdColaborador.ToString();
         }
@@ -136,8 +139,8 @@ namespace AugustusFahsion.View.Venda
             ValorTotalBrutoProduto() - ValorTotalDesconto();
         private decimal ValorTotalDesconto() =>
             ValorTotalBrutoProduto() - (ValorTotalBrutoProduto() * nupDesconto.Value * Convert.ToDecimal(0.01));
-        public int SelecionarProdutoModel() 
-        { 
+        public int SelecionarProdutoModel()
+        {
             int idProduto = Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
             setarQuantidadeEstoqueMaximum(idProduto, Convert.ToInt32(lblIdVenda.Text));
             return idProduto;
@@ -233,7 +236,7 @@ namespace AugustusFahsion.View.Venda
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
                 TotalBruto = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 //Lucro = lblLucroProduto.Text.RealParaDecimal()
-            }) ;
+            });
         }
         public void AdicionarProdutosRegistradosDaVendaNaLista()
         {
@@ -268,7 +271,7 @@ namespace AugustusFahsion.View.Venda
             dgvProdutosVenda.DataSource = _vendaModelSelecionada.ListaDeItens;
         }
 
-        public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) => 
+        public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) =>
             (from x in _vendaModelSelecionada.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
 
         private void BtnInativarVenda_Click(object sender, EventArgs e)
@@ -276,12 +279,16 @@ namespace AugustusFahsion.View.Venda
             //var vendaSelecionada = _controllerVendaAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
             VendaAlterarController.InativarVenda(_vendaModelSelecionada);
             MessageBox.Show("Venda Inativada.");
-            this.Close(); 
+            this.Close();
         }
 
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
 
+            if (!VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text)))
+            {
+                return;
+            }
             if (ValidarCampos())
             {
                 if (cbPago.Text == "Sim")
@@ -289,6 +296,24 @@ namespace AugustusFahsion.View.Venda
                 AlterarVenda();
                 this.Close();
             }
+        }
+        private bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int id)
+        {
+            //Subtrair o totalLiquido original da venda para comparar valor limite a prazo
+            var valorGasto = VendaRegistrarController.ValorLimiteGasto(id).RetornarValor - _totalLiquidoOriginal;
+
+            var cliente = ClienteAlterarController.Buscar(id);
+            var valorLimite = cliente.ValorLimiteAPrazo;
+            var valorCompra = _vendaModelSelecionada.TotalLiquido;
+
+            if (valorGasto + valorCompra.RetornarValor > valorLimite.RetornarValor)
+            {
+                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {valorLimite.ValorFormatado}" +
+                                $"\nValor total gasto em compras a prazo {valorGasto.ToString("c")}" +
+                                $"\nValor da compra: {valorCompra.ValorFormatado}");
+                return false;
+            }
+            return true;
         }
 
         private bool ValidarCampos()
