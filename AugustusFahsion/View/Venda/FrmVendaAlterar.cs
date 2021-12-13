@@ -95,10 +95,13 @@ namespace AugustusFahsion.View.Venda
             lblTotalDesconto.Text = vendaListagemModel[0].TotalDesconto.ValorFormatado;
             cbFormaPagamento.Text = vendaListagemModel[0].FormaPagamento;
 
-            if (vendaListagemModel[0].Pago == true)
-                cbPago.Text = "Sim"; 
+            if (vendaModel.Pago == true) 
+            { 
+                cbPago.SelectedIndex = 0;
+                cbPago.Enabled = false;
+            }
             else 
-                cbPago.Text = "Não"; 
+                cbPago.SelectedIndex = 1; 
 
             if (cbFormaPagamento.Text != "A prazo") 
                 cbPago.Visible = false;
@@ -282,7 +285,7 @@ namespace AugustusFahsion.View.Venda
             if (ValidarCampos())
             {
                 if (cbPago.Text == "Sim")
-                    _vendaModelSelecionada.Pago = 1;
+                    _vendaModelSelecionada.Pago = true;
                 AlterarVenda();
                 this.Close();
             }

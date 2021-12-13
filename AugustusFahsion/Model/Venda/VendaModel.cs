@@ -16,7 +16,7 @@ namespace AugustusFahsion.Model
         public DinheiroModel TotalLiquido {get => ListaDeItens.Sum(x => x.TotalLiquido.RetornarValor);}
         public DinheiroModel TotalDesconto {get => TotalBruto.RetornarValor - TotalLiquido.RetornarValor; }
         public decimal TotalLucro {get => ListaDeItens.Sum(x => x.Lucro);}
-        public int Pago { get; set; }
+        public bool Pago { get; set; }
         public DateTime DataVenda    { get; set; }
         public string Condicao { get; set; }
 

@@ -274,7 +274,7 @@ namespace AugustusFahsion.DAO
             const string query = @"SELECT Sum(vp.TotalLiquido) 
                                     FROM VendaProduto vp
                                     INNER JOIN Venda v ON vp.IdVenda = v.IdVenda
-                                    WHERE v.FormaPagamento = 'A prazo' and v.IdCliente = @id and v.Condicao = 'Ativa'";
+                                    WHERE v.FormaPagamento = 'A prazo' and v.IdCliente = @id and v.Condicao = 'Ativa' and v.Pago = 0";
 
             using var conexao = new SqlConexao().Connection();
             conexao.Open();

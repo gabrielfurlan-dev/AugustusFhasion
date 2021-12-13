@@ -165,7 +165,7 @@ namespace AugustusFahsion.DAO
             {
                 using (var conexao = new SqlConexao().Connection())
                 {
-                    var query = @"select IdVenda, IdColaborador, FormaPagamento, Condicao, DataVenda,
+                    var query = @"select IdVenda, IdColaborador, FormaPagamento, Pago, Condicao, DataVenda,
                                 TotalBruto, TotalDesconto, TotalLiquido, IdVenda, IdCliente from Venda 
                                 where IdVenda = @id";
                     var resultado = conexao.Query<VendaModel, ClienteModel, VendaModel>(query,

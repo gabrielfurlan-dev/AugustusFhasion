@@ -75,6 +75,7 @@ namespace AugustusFahsion.View.Venda
             this.label12 = new System.Windows.Forms.Label();
             this.cbPago = new System.Windows.Forms.ComboBox();
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.lblImpossivelAlterarVenda = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvProdutoListar = new System.Windows.Forms.DataGridView();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
@@ -88,7 +89,7 @@ namespace AugustusFahsion.View.Venda
             this.lbl = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lblImpossivelAlterarVenda = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDesconto)).BeginInit();
@@ -132,6 +133,7 @@ namespace AugustusFahsion.View.Venda
             this.panel1.Controls.Add(this.btnRemoverItem);
             this.panel1.Controls.Add(this.lblProdutoSelecionado);
             this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblIdVenda);
             this.panel1.Controls.Add(this.lblIdProduto);
@@ -213,7 +215,7 @@ namespace AugustusFahsion.View.Venda
             this.btnInativarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInativarVenda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnInativarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnInativarVenda.Location = new System.Drawing.Point(672, 621);
+            this.btnInativarVenda.Location = new System.Drawing.Point(678, 643);
             this.btnInativarVenda.Name = "btnInativarVenda";
             this.btnInativarVenda.Size = new System.Drawing.Size(83, 47);
             this.btnInativarVenda.TabIndex = 112;
@@ -229,7 +231,7 @@ namespace AugustusFahsion.View.Venda
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnCancelar.Location = new System.Drawing.Point(583, 621);
+            this.btnCancelar.Location = new System.Drawing.Point(589, 643);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 47);
             this.btnCancelar.TabIndex = 112;
@@ -245,7 +247,7 @@ namespace AugustusFahsion.View.Venda
             this.btnSalvarAlteracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarAlteracoes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalvarAlteracoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnSalvarAlteracoes.Location = new System.Drawing.Point(761, 621);
+            this.btnSalvarAlteracoes.Location = new System.Drawing.Point(767, 643);
             this.btnSalvarAlteracoes.Name = "btnSalvarAlteracoes";
             this.btnSalvarAlteracoes.Size = new System.Drawing.Size(83, 47);
             this.btnSalvarAlteracoes.TabIndex = 112;
@@ -524,9 +526,9 @@ namespace AugustusFahsion.View.Venda
             this.cbPago.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.cbPago.Location = new System.Drawing.Point(731, 95);
+            this.cbPago.Location = new System.Drawing.Point(452, 595);
             this.cbPago.Name = "cbPago";
-            this.cbPago.Size = new System.Drawing.Size(114, 23);
+            this.cbPago.Size = new System.Drawing.Size(68, 23);
             this.cbPago.TabIndex = 107;
             // 
             // cbFormaPagamento
@@ -546,6 +548,17 @@ namespace AugustusFahsion.View.Venda
             this.cbFormaPagamento.Size = new System.Drawing.Size(118, 23);
             this.cbFormaPagamento.TabIndex = 107;
             this.cbFormaPagamento.SelectedIndexChanged += new System.EventHandler(this.cbFormaPagamento_SelectedIndexChanged);
+            // 
+            // lblImpossivelAlterarVenda
+            // 
+            this.lblImpossivelAlterarVenda.AutoSize = true;
+            this.lblImpossivelAlterarVenda.Enabled = false;
+            this.lblImpossivelAlterarVenda.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblImpossivelAlterarVenda.Location = new System.Drawing.Point(581, 625);
+            this.lblImpossivelAlterarVenda.Name = "lblImpossivelAlterarVenda";
+            this.lblImpossivelAlterarVenda.Size = new System.Drawing.Size(270, 15);
+            this.lblImpossivelAlterarVenda.TabIndex = 106;
+            this.lblImpossivelAlterarVenda.Text = "Impossível fazer alterações em uma venda inativa.";
             // 
             // label15
             // 
@@ -759,16 +772,14 @@ namespace AugustusFahsion.View.Venda
             this.menuStrip1.TabIndex = 57;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lblImpossivelAlterarVenda
+            // label1
             // 
-            this.lblImpossivelAlterarVenda.AutoSize = true;
-            this.lblImpossivelAlterarVenda.Enabled = false;
-            this.lblImpossivelAlterarVenda.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblImpossivelAlterarVenda.Location = new System.Drawing.Point(575, 603);
-            this.lblImpossivelAlterarVenda.Name = "lblImpossivelAlterarVenda";
-            this.lblImpossivelAlterarVenda.Size = new System.Drawing.Size(270, 15);
-            this.lblImpossivelAlterarVenda.TabIndex = 106;
-            this.lblImpossivelAlterarVenda.Text = "Impossível fazer alterações em uma venda inativa.";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(452, 577);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 110;
+            this.label1.Text = "Pago:";
             // 
             // FrmVendaAlterar
             // 
@@ -846,5 +857,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label lblImpossivelAlterarVenda;
+        private System.Windows.Forms.Label label1;
     }
 }

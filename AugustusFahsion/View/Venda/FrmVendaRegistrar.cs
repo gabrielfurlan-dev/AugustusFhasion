@@ -294,9 +294,9 @@ namespace AugustusFahsion.View.Venda
             _vendaModel.FormaPagamento = cbFormaPagamento.Text;
             if (cbFormaPagamento.Text == "A prazo")
             {
-                _vendaModel.Pago = 0;
+                _vendaModel.Pago = false;
             }
-            else _vendaModel.Pago = 1;
+            else _vendaModel.Pago = true;
 
             _vendaModel.DataVenda = DateTime.Now;
 
