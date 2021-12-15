@@ -285,7 +285,7 @@ namespace AugustusFahsion.View.Venda
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
 
-            if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada, _totalLiquidoOriginal))
+            if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada.TotalLiquido, _totalLiquidoOriginal))
             {
                 return;
             }

@@ -437,14 +437,14 @@ namespace AugustusFahsion.View.Relatorios
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaRelatorioClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaRelatorioClientes.GridColor = System.Drawing.Color.Black;
-            this.dgvListaRelatorioClientes.Location = new System.Drawing.Point(16, 180);
+            this.dgvListaRelatorioClientes.Location = new System.Drawing.Point(58, 180);
             this.dgvListaRelatorioClientes.Name = "dgvListaRelatorioClientes";
             this.dgvListaRelatorioClientes.ReadOnly = true;
             this.dgvListaRelatorioClientes.RowHeadersVisible = false;
             this.dgvListaRelatorioClientes.RowHeadersWidth = 51;
             this.dgvListaRelatorioClientes.RowTemplate.Height = 25;
             this.dgvListaRelatorioClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaRelatorioClientes.Size = new System.Drawing.Size(960, 480);
+            this.dgvListaRelatorioClientes.Size = new System.Drawing.Size(901, 441);
             this.dgvListaRelatorioClientes.TabIndex = 50;
             // 
             // label9
@@ -453,7 +453,7 @@ namespace AugustusFahsion.View.Relatorios
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label9.Location = new System.Drawing.Point(268, 687);
+            this.label9.Location = new System.Drawing.Point(291, 649);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 15);
             this.label9.TabIndex = 55;
@@ -465,7 +465,7 @@ namespace AugustusFahsion.View.Relatorios
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(20, 687);
+            this.label8.Location = new System.Drawing.Point(58, 649);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(128, 15);
             this.label8.TabIndex = 51;
@@ -477,7 +477,7 @@ namespace AugustusFahsion.View.Relatorios
             this.lblTotalVendas.AutoSize = true;
             this.lblTotalVendas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalVendas.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTotalVendas.Location = new System.Drawing.Point(154, 687);
+            this.lblTotalVendas.Location = new System.Drawing.Point(192, 649);
             this.lblTotalVendas.Name = "lblTotalVendas";
             this.lblTotalVendas.Size = new System.Drawing.Size(13, 15);
             this.lblTotalVendas.TabIndex = 61;
@@ -491,7 +491,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnMostrarFiltros.Location = new System.Drawing.Point(904, 130);
+            this.btnMostrarFiltros.Location = new System.Drawing.Point(881, 128);
             this.btnMostrarFiltros.Name = "btnMostrarFiltros";
             this.btnMostrarFiltros.Size = new System.Drawing.Size(78, 46);
             this.btnMostrarFiltros.TabIndex = 65;
@@ -505,7 +505,7 @@ namespace AugustusFahsion.View.Relatorios
             this.lblTotalBruto.AutoSize = true;
             this.lblTotalBruto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalBruto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTotalBruto.Location = new System.Drawing.Point(341, 687);
+            this.lblTotalBruto.Location = new System.Drawing.Point(364, 649);
             this.lblTotalBruto.Name = "lblTotalBruto";
             this.lblTotalBruto.Size = new System.Drawing.Size(13, 15);
             this.lblTotalBruto.TabIndex = 61;
@@ -517,7 +517,7 @@ namespace AugustusFahsion.View.Relatorios
             this.lblTotalLiquido.AutoSize = true;
             this.lblTotalLiquido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalLiquido.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTotalLiquido.Location = new System.Drawing.Point(697, 687);
+            this.lblTotalLiquido.Location = new System.Drawing.Point(736, 649);
             this.lblTotalLiquido.Name = "lblTotalLiquido";
             this.lblTotalLiquido.Size = new System.Drawing.Size(13, 15);
             this.lblTotalLiquido.TabIndex = 61;
@@ -529,7 +529,7 @@ namespace AugustusFahsion.View.Relatorios
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(624, 687);
+            this.label12.Location = new System.Drawing.Point(655, 649);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 15);
             this.label12.TabIndex = 55;
@@ -541,7 +541,7 @@ namespace AugustusFahsion.View.Relatorios
             this.lblTotalDesconto.AutoSize = true;
             this.lblTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTotalDesconto.Location = new System.Drawing.Point(519, 687);
+            this.lblTotalDesconto.Location = new System.Drawing.Point(556, 649);
             this.lblTotalDesconto.Name = "lblTotalDesconto";
             this.lblTotalDesconto.Size = new System.Drawing.Size(13, 15);
             this.lblTotalDesconto.TabIndex = 61;
@@ -553,7 +553,7 @@ namespace AugustusFahsion.View.Relatorios
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label17.Location = new System.Drawing.Point(426, 687);
+            this.label17.Location = new System.Drawing.Point(463, 649);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(87, 15);
             this.label17.TabIndex = 55;

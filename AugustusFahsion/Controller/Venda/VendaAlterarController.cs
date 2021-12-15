@@ -63,7 +63,7 @@ namespace AugustusFahsion.Controller.Venda
         }
 
         public static decimal ValorTotalDescontoProduto(int desconto, int quantidade, decimal precoProduto) => 
-            VendaAlterarController.ValorTotalBrutoProduto(precoProduto, quantidade) - ValorTotalDesconto(desconto, quantidade, precoProduto);
+            ValorTotalBrutoProduto(precoProduto, quantidade) - ValorTotalDesconto(desconto, quantidade, precoProduto);
 
         public static decimal ValorProdutoLucro(decimal ProdutoLucroUnitario, int desconto, int quantidade, decimal precoProduto) =>
             (ProdutoLucroUnitario * quantidade) - ValorTotalDescontoProduto(desconto, quantidade, precoProduto);

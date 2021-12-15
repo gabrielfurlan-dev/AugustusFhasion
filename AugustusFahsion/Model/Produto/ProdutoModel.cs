@@ -18,4 +18,5 @@ namespace AugustusFahsion.Model
         public int QuantidadeEstoque { get; set; }
         public string Condicao { get; set; }
     }
+
 }

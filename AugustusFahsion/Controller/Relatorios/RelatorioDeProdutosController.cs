@@ -13,7 +13,6 @@ namespace AugustusFahsion.Controller.Venda
             child.MdiParent = MDISingleton.InstaciaMDI();
             child.Show();
         }
-
         internal List<RelatorioProdutos> FiltrarRelatorioProdutos(FiltrosRelatorioProdutos filtros) => RelatorioDAO.FiltrarRelatorioProdutos(filtros);
     }
 }

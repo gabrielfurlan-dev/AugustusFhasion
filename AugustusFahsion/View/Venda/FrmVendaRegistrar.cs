@@ -139,7 +139,7 @@ namespace AugustusFahsion.View.Venda
             if (!VerificaSeCamposEstãoPreenchidos()) return;
             if (cbFormaPagamento.Text == "A prazo") 
             {
-                if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModel, 0)) 
+                if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModel.TotalLiquido, 0)) 
                 {
                     return;
                 }

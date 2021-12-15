@@ -10,10 +10,36 @@ namespace AugustusFashionTeste.Model
         [TestMethod]
         public void se_valor_limite_for_atingido_retornar_falso()
         {
+            var idCliente = 22;
             DinheiroModel TotalLiquido = 20;
             var totalLiquidoOriginal = 0;
-            var resultado = VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(22, TotalLiquido, totalLiquidoOriginal);
+
+            var resultado = VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido
+                (
+                idCliente, 
+                TotalLiquido, 
+                totalLiquidoOriginal
+                );
+
             var resultadoEsperado = false;
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        public void se_valor_limite_nao_for_atingido_retornar_verdadeiro()
+        {
+            var idCliente = 22;
+            DinheiroModel TotalLiquido = 10;
+            var totalLiquidoOriginal = 0;
+
+            var resultado = VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido
+                (
+                idCliente, 
+                TotalLiquido, 
+                totalLiquidoOriginal
+                );
+            var resultadoEsperado = true;
 
             Assert.AreEqual(resultadoEsperado, resultado);
         }

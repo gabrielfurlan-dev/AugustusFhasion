@@ -41,12 +41,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFechar
             // 
-            this.btnFechar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFechar.BackColor = System.Drawing.Color.Transparent;
             this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -83,7 +84,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
             this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -194,12 +195,24 @@
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(70, 627);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(313, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Dê um clique duplo no colaborador desejado para edita-lo.";
+            // 
             // FrmColaboradorListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button1);
@@ -233,5 +246,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label label3;
     }
 }

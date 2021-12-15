@@ -20,7 +20,7 @@ namespace AugustusFahsion
 
         private void BtnListarProduto_Click(object sender, EventArgs e) => new ProdutoListarController().AbrirLista();
 
-        private void BtnFechar_Click(object sender, EventArgs e) => this.Close();
+        private void BtnFechar_Click(object sender, EventArgs e) => MDISingleton.InstaciaMDI().Close();
 
         private void btnAdicionarVenda_Click(object sender, EventArgs e) => new VendaRegistrarController().AbrirFormulario();
 

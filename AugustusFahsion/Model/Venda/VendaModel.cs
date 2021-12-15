@@ -33,7 +33,7 @@ namespace AugustusFahsion.Model
         public static bool VerificarLimiteGastoCompraAPrazoFoiAtingido
             (
             int idCliente,
-            VendaModel vendaModel,
+            DinheiroModel TotalLiquido,
             decimal totalLiquidoOriginal
             )
         {
@@ -42,7 +42,7 @@ namespace AugustusFahsion.Model
 
             var cliente = ClienteAlterarController.Buscar(idCliente);
             var valorLimite = cliente.ValorLimiteAPrazo;
-            var valorCompra = vendaModel.TotalLiquido;
+            var valorCompra = TotalLiquido;
 
             if (valorGasto + valorCompra.RetornarValor > valorLimite.RetornarValor)
             {
