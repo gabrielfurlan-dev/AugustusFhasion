@@ -827,7 +827,7 @@ namespace AugustusFahsion.View.Venda
             this.btnFechar.Size = new System.Drawing.Size(49, 40);
             this.btnFechar.TabIndex = 30;
             this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // menuStrip1
             // 

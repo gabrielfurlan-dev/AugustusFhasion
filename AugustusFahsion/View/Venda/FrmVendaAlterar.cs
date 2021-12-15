@@ -263,7 +263,6 @@ namespace AugustusFahsion.View.Venda
             lblTotalBruto.Text = _vendaModelSelecionada.TotalBruto.ValorFormatado;
             lblTotalLiquido.Text = _vendaModelSelecionada.TotalLiquido.ValorFormatado;
             lblTotalDesconto.Text = _vendaModelSelecionada.TotalDesconto.ValorFormatado;
-            //lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("c");
         }
         private void AtualizarCarrinho()
         {
@@ -276,7 +275,6 @@ namespace AugustusFahsion.View.Venda
 
         private void BtnInativarVenda_Click(object sender, EventArgs e)
         {
-            //var vendaSelecionada = _controllerVendaAlterar.BuscarVenda(Convert.ToInt32(lblIdVenda.Text));
             VendaAlterarController.InativarVenda(_vendaModelSelecionada);
             MessageBox.Show("Venda Inativada.");
             this.Close();

@@ -37,7 +37,6 @@ namespace AugustusFahsion.Model
             decimal totalLiquidoOriginal
             )
         {
-            //Subtrair o totalLiquido original da venda para comparar valor limite a prazo
             var valorGasto = VendaRegistrarController.ValorLimiteGasto(idCliente).RetornarValor - totalLiquidoOriginal;
 
             var cliente = ClienteAlterarController.Buscar(idCliente);
