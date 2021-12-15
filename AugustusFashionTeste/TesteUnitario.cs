@@ -39,12 +39,6 @@ namespace AugustusFashionTeste
         [DataRow("uhausd12863", false)]
         public void se_conversao_para_inteiro_for_valida_retorna_true(string valor, bool resultado) => Assert.AreEqual(valor.EhNumerico(), resultado);
 
-        //[DataTestMethod]
-        //[DataRow("R$ 01,20", 01.20)]
-        //[DataRow("01,20", 01.20)]
-        //public void se_conversao_de_um_valor_em_real_para_decimal_for_valida_retorna_true(string real, decimal resultado) =>
-        //    Assert.AreEqual(Convert.ToDouble(real.RealParaDecimal(), resultado));
-
         [TestMethod]
         public void verifica_se_totalBruto_esta_correto()
         {
@@ -122,4 +116,5 @@ namespace AugustusFashionTeste
             Assert.AreEqual(resultadoEsperado, resultado);
         }
     }
+
 }
