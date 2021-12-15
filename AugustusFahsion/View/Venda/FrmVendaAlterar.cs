@@ -285,7 +285,7 @@ namespace AugustusFahsion.View.Venda
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
 
-            if (!VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text)))
+            if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada, _totalLiquidoOriginal))
             {
                 return;
             }
@@ -297,24 +297,7 @@ namespace AugustusFahsion.View.Venda
                 this.Close();
             }
         }
-        private bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int id)
-        {
-            //Subtrair o totalLiquido original da venda para comparar valor limite a prazo
-            var valorGasto = VendaRegistrarController.ValorLimiteGasto(id).RetornarValor - _totalLiquidoOriginal;
-
-            var cliente = ClienteAlterarController.Buscar(id);
-            var valorLimite = cliente.ValorLimiteAPrazo;
-            var valorCompra = _vendaModelSelecionada.TotalLiquido;
-
-            if (valorGasto + valorCompra.RetornarValor > valorLimite.RetornarValor)
-            {
-                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {valorLimite.ValorFormatado}" +
-                                $"\nValor total gasto em compras a prazo {valorGasto.ToString("c")}" +
-                                $"\nValor da compra: {valorCompra.ValorFormatado}");
-                return false;
-            }
-            return true;
-        }
+        
 
         private bool ValidarCampos()
         {

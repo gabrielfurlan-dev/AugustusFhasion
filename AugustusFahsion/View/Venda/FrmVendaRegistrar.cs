@@ -139,7 +139,7 @@ namespace AugustusFahsion.View.Venda
             if (!VerificaSeCamposEstãoPreenchidos()) return;
             if (cbFormaPagamento.Text == "A prazo") 
             {
-                if (!VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text))) 
+                if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModel, 0)) 
                 {
                     return;
                 }
@@ -157,22 +157,6 @@ namespace AugustusFahsion.View.Venda
             LimparTodosOsCampos();
         }
 
-        private bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int id)
-        {
-            var valorGasto = VendaRegistrarController.ValorLimiteGasto(id);
-            var cliente = ClienteAlterarController.Buscar(id);
-            var valorLimite = cliente.ValorLimiteAPrazo;
-            var valorCompra = _vendaModel.TotalLiquido;
-
-            if (valorGasto.RetornarValor + valorCompra.RetornarValor > valorLimite.RetornarValor) 
-            {
-                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {valorLimite.ValorFormatado}" +
-                                $"\nValor total gasto em compras a prazo {valorGasto.ValorFormatado}" +
-                                $"\nValor da compra: {valorCompra.ValorFormatado}");
-                return false;
-            }
-            return true;
-        }
         private bool VerificaSeCamposEstãoPreenchidos()
         {
             if (lblClienteSelecionado.Text.Equals("Selecione um cliente. . ."))
@@ -247,19 +231,19 @@ namespace AugustusFahsion.View.Venda
         {
            return (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) -
             (VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value),
-                Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)));
+                Convert.ToInt32(nupQuantidade.Value), lblPrecoProduto.Text.RealParaDecimal()));
         }
         private decimal ValorTotalDesconto() {
-            var valorTotalBrutoProduto = VendaAlterarController.ValorTotalBrutoProduto(Extensoes.RealParaDecimal(lblPrecoProduto.Text), Convert.ToInt32(nupQuantidade.Value));
+            var valorTotalBrutoProduto = VendaAlterarController.ValorTotalBrutoProduto((lblPrecoProduto.Text.RealParaDecimal()), Convert.ToInt32(nupQuantidade.Value));
             return valorTotalBrutoProduto - (valorTotalBrutoProduto * (Convert.ToDecimal(nupDesconto.Value) * Convert.ToDecimal(0.01)));
         } 
         private void CalcularPrecosProdutoSelecionado()
         {
-            lblTotalLiquidoProduto.Text = VendaAlterarController.ValorTotalBrutoProduto(Extensoes.RealParaDecimal(lblPrecoProduto.Text), Convert.ToInt32(nupQuantidade.Value)).ToString("c");
+            lblTotalLiquidoProduto.Text = VendaAlterarController.ValorTotalBrutoProduto(lblPrecoProduto.Text.RealParaDecimal(), Convert.ToInt32(nupQuantidade.Value)).ToString("c");
 
             lblTotalBrutoProduto.Text = ValorTotalDesconto().ToString("c");
 
-            lblTotalDescontoProduto.Text = VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), Extensoes.RealParaDecimal(lblPrecoProduto.Text)).ToString("c");
+            lblTotalDescontoProduto.Text = VendaAlterarController.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), lblPrecoProduto.Text.RealParaDecimal()).ToString("c");
             lblLucroProduto.Text = ValorProdutoLucro().ToString("c");
         }
 
