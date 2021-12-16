@@ -12,9 +12,16 @@ namespace AugustusFahsion.Model.ValueObjects
         public NomeCompletoModel(string nome, string sobrenome)
         {
             if (string.IsNullOrWhiteSpace(nome))
+            {
                 throw new Exception("Nome é inválido.");
-            else if (string.IsNullOrWhiteSpace(sobrenome))
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(sobrenome))
+            {
                 throw new Exception("Sobrenome é inválido");
+                return;
+            }
 
             Nome = nome;
             Sobrenome = sobrenome;

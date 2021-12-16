@@ -58,6 +58,6 @@ namespace AugustusFahsion.View
             this.Close();
         }
 
-        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
+        private void BtnFechar_Click(object sender, EventArgs e) => Close();
     }
 }

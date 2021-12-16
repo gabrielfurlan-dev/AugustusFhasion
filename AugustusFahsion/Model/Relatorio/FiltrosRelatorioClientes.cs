@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace AugustusFahsion.Model.Relatorio
 {
-    class FiltrosRelatorioClientes
+    public class FiltrosRelatorioClientes
     {
         public string NomeCliente { get; set; }
         public EFiltroRelatorioDeVenda FiltrarPor { get; set; }

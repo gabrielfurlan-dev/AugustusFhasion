@@ -15,31 +15,24 @@ namespace AugustusFahsion.View.Venda
         ClienteModel _cliente;
         ColaboradorModel _colaborador;
 
-        ClienteListarController _clienteListarController;
-        ColaboradorListarController _colaboradorListarController;
         ProdutoListarController _produtoListarController;
-        VendaProdutoModel _vendaProdutoModel;
         VendaModel _vendaModel;
         VendaRegistrarController _vendaRegistrarController;
         ProdutoModel _produtoSelecionado;
 
         public FrmVendaRegistrar() => InitializeComponent();
+
         public FrmVendaRegistrar(VendaRegistrarController vendaRegistrarController)
         {
             InitializeComponent();
             _vendaRegistrarController = vendaRegistrarController;
-            _clienteListarController = new ClienteListarController();
-            _colaboradorListarController = new ColaboradorListarController();
             _produtoListarController = new ProdutoListarController();
             _vendaModel = new VendaModel();
-            _vendaProdutoModel = new VendaProdutoModel();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+        private void BtnCancelar_Click(object sender, EventArgs e) => this.Close();
 
-
-        //Botoes de Busca
-        private void btAbrirSelecaoDeColaborador_Click(object sender, EventArgs e)
+        private void BtAbrirSelecaoDeColaborador_Click(object sender, EventArgs e)
         {
             _colaborador = _vendaRegistrarController.ProcurarColaborador();
             if (_colaborador != null)
@@ -48,7 +41,8 @@ namespace AugustusFahsion.View.Venda
                 lblIdColaborador.Text = _colaborador.IdColaborador.ToString();
             }
         }
-        private void btnAbrirSelecaoDeCliente_Click(object sender, EventArgs e)
+
+        private void BtnAbrirSelecaoDeCliente_Click(object sender, EventArgs e)
         {
             _cliente = _vendaRegistrarController.ProcurarCliente();
             if (_cliente != null)
@@ -57,7 +51,8 @@ namespace AugustusFahsion.View.Venda
                 lblIdCliente.Text = _cliente.IdCliente.ToString();
             }
         }
-        private void btnPesquisarProduto_Click(object sender, EventArgs e)
+
+        private void BtnPesquisarProduto_Click(object sender, EventArgs e)
         {
             if (Validacoes.EhNumerico(txtProcurar.Text))
                 dgvProdutoListar.DataSource =
@@ -71,15 +66,12 @@ namespace AugustusFahsion.View.Venda
                     _produtoListarController.ListarProdutosAtivosPorNome(txtProcurar.Text);
         }
 
-
-        //DvgCellMouseCLick
-        private void dgvProdutoListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvProdutoListar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //metodo para corrigir o bug de clicar no header da dataGridView
-            if (e.RowIndex == -1)
-                return;
+            if (e.RowIndex == -1) return;
         }
-        private void dgvProdutoListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void DgvProdutoListar_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
@@ -93,7 +85,9 @@ namespace AugustusFahsion.View.Venda
             nupQuantidade.Enabled = true;
             nupDesconto.Enabled = true;
         }
-        private void dgvCarrinho_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) => SelecionarCarrinhoModel();
+        
+        private void DgvCarrinho_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) => SelecionarCarrinhoModel();
+        
         private void AtribuirValoresDoProdutoSelecionado(ProdutoModel produto)
         {
             lblIdProduto.Text = produto.IdProduto.ToString();
@@ -105,15 +99,14 @@ namespace AugustusFahsion.View.Venda
             nupQuantidade.Maximum = produto.QuantidadeEstoque;
         }
 
-
-        //atualizar preços por ação
         private void NupQuantidade_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
+        
         private void NupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
+        
         private void NupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
+        
         private void NupQuantidade_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
 
-
-        //funções do carinhho
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             if (lblProdutoSelecionado.Text.Equals("Selecione um produto. . ."))
@@ -121,6 +114,7 @@ namespace AugustusFahsion.View.Venda
                 MessageBox.Show("Selecione um produto primeiro.");
                 return;
             }
+
             if (nupQuantidade.Value < 1)
             {
                 MessageBox.Show("Informe a quantidade");
@@ -138,12 +132,14 @@ namespace AugustusFahsion.View.Venda
                 AtualizarCarrinho();
                 return;
             }
+
             AdicionarProdutoNoCarrinho();
 
             AtualizarCarrinho();
             AtualizarPrecosTotais();
             LimparCamposDoProduto();
         }
+
         private void BtnRemover(object sender, EventArgs e)
         {
             if (_vendaModel.ListaDeItens.Count() > 0)
@@ -154,6 +150,7 @@ namespace AugustusFahsion.View.Venda
             AtualizarCarrinho();
             AtualizarPrecosTotais();
         }
+
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
             if (!VerificaSeCamposEstãoPreenchidos()) return;
@@ -202,12 +199,12 @@ namespace AugustusFahsion.View.Venda
             return true;
         }
 
-        //Limpar campos
         private void LimparCamposDoProduto()
         {
             nupDesconto.Value = 0;
             nupQuantidade.Value = 1;
         }
+
         private void LimparTodosOsCampos()
         {
             nupDesconto.Enabled = false;
@@ -237,24 +234,13 @@ namespace AugustusFahsion.View.Venda
 
             LimparCamposDoProduto();
             AtualizarCarrinho();
-
         }
 
-
-        //selecionar Model
         public int SelecionarProdutoModel() =>
             Convert.ToInt32(dgvProdutoListar.SelectedRows[0].Cells[0].Value);
+
         public string SelecionarCarrinhoModel() =>
             dgvCarrinho.SelectedRows[0].Cells[7].Value.ToString();
-
-
-        //atualizar precos    
-        private decimal ValorProdutoLucro()
-        {
-            return (Convert.ToDecimal(lblProdutoLucroUnitario.Text) * nupQuantidade.Value) -
-             (ProdutoModel.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value),
-                 Convert.ToInt32(nupQuantidade.Value), lblPrecoProduto.Text.RealParaDecimal()));
-        }
 
         private void CalcularPrecosProdutoSelecionado()
         {
@@ -279,23 +265,20 @@ namespace AugustusFahsion.View.Venda
             dgvCarrinho.DataSource = null;
             dgvCarrinho.DataSource = _vendaModel.ListaDeItens;
         }
+
         private void AtualizarPrecosTotais()
         {
-            lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ValorFormatado;
             lblTotalLiquido.Text = _vendaModel.TotalLiquido.ValorFormatado;
-            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ValorFormatado;
-            lblTotalDesconto.Text = _vendaModel.TotalDesconto.ValorFormatado;
             lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("C");
+            lblTotalDesconto.Text = _vendaModel.TotalDesconto.ValorFormatado;
+            lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ValorFormatado;
+            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ValorFormatado;
         }
-
-
 
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) =>
             (from x in _vendaModel.ListaDeItens where x.IdProduto == id select x).FirstOrDefault();
 
         private void btnFechar_Click(object sender, EventArgs e) => Close();
-
-
 
         public void RegistrarVenda()
         {
@@ -313,14 +296,15 @@ namespace AugustusFahsion.View.Venda
 
             _vendaRegistrarController.RegistrarVenda(_vendaModel);
         }
+
         public void AdicionarProdutoNoCarrinho()
         {
             var desconto = ProdutoModel.ValorTotalDesconto
-                (
-                    _produtoSelecionado.PrecoVenda.RetornarValor,
-                    Convert.ToInt32(nupQuantidade.Value),
-                    Convert.ToInt32(nupDesconto.Value)
-                );
+            (
+                _produtoSelecionado.PrecoVenda.RetornarValor,
+                Convert.ToInt32(nupQuantidade.Value),
+                Convert.ToInt32(nupDesconto.Value)
+            );
 
             _vendaModel.ListaDeItens.Add(new VendaProdutoModel()
             {

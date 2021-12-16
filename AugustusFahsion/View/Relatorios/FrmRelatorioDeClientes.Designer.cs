@@ -87,7 +87,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFechar.Size = new System.Drawing.Size(49, 40);
             this.btnFechar.TabIndex = 6;
             this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // menuStrip1
             // 
@@ -176,7 +176,7 @@ namespace AugustusFahsion.View.Relatorios
             this.cbOrdenarPor.Name = "cbOrdenarPor";
             this.cbOrdenarPor.Size = new System.Drawing.Size(143, 23);
             this.cbOrdenarPor.TabIndex = 50;
-            this.cbOrdenarPor.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor_SelectedIndexChanged);
+            this.cbOrdenarPor.SelectedIndexChanged += new System.EventHandler(this.CbOrdenarPor_SelectedIndexChanged);
             // 
             // cbFiltrarPor
             // 
@@ -352,7 +352,7 @@ namespace AugustusFahsion.View.Relatorios
             this.button2.Size = new System.Drawing.Size(40, 40);
             this.button2.TabIndex = 6;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label2
             // 
@@ -395,7 +395,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFiltrarPorCliente.TabIndex = 42;
             this.btnFiltrarPorCliente.Text = "Filtrar";
             this.btnFiltrarPorCliente.UseVisualStyleBackColor = false;
-            this.btnFiltrarPorCliente.Click += new System.EventHandler(this.btnFiltrarPorCliente_Click);
+            this.btnFiltrarPorCliente.Click += new System.EventHandler(this.BtnFiltrarPorCliente_Click);
             // 
             // label3
             // 
@@ -497,7 +497,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnMostrarFiltros.TabIndex = 65;
             this.btnMostrarFiltros.Text = "Filtrar";
             this.btnMostrarFiltros.UseVisualStyleBackColor = false;
-            this.btnMostrarFiltros.Click += new System.EventHandler(this.btnMostrarFiltros_Click);
+            this.btnMostrarFiltros.Click += new System.EventHandler(this.BtnMostrarFiltros_Click);
             // 
             // lblTotalBruto
             // 

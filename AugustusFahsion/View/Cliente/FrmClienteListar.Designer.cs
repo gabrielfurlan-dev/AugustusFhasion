@@ -112,7 +112,7 @@
             this.btnCanclar.TabIndex = 1;
             this.btnCanclar.Text = "Cancelar";
             this.btnCanclar.UseVisualStyleBackColor = false;
-            this.btnCanclar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.btnCanclar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // btnAlterar
             // 

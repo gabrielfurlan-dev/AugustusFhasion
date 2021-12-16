@@ -114,7 +114,7 @@ namespace AugustusFahsion.View.Alterar
             }
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e) => this.Close();
-        private void btnFechar_Click_1(object sender, EventArgs e) => this.Close();
+        private void BtnCancelar_Click(object sender, EventArgs e) => this.Close();
+        private void BtnFechar_Click(object sender, EventArgs e) => this.Close();
     }
 }

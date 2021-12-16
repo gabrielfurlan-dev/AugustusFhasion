@@ -127,6 +127,5 @@ namespace AugustusFahsion.View
             return true;
 
         }
-
     }
 }

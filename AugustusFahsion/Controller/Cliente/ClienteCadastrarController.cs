@@ -20,10 +20,8 @@ namespace AugustusFahsion.Controller
         {
             try
             {
-                
                 ClienteDAO.CadastrarCliente(clienteModel);
                 MessageBox.Show("Cliente cadastrado.");
-                
             }
             catch (Exception excecao)
             {

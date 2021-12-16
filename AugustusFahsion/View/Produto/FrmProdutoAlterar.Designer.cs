@@ -92,7 +92,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // label4
             // 
@@ -368,7 +368,7 @@ namespace AugustusFahsion.View.Alterar
             this.btnFechar.Size = new System.Drawing.Size(49, 40);
             this.btnFechar.TabIndex = 66;
             this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
+            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // menuStrip1
             // 

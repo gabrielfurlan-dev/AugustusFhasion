@@ -19,13 +19,13 @@ namespace AugustusFahsion.View.Relatorios
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, System.EventArgs e) => panelFiltros.Visible = false;
+        private void Button2_Click(object sender, EventArgs e) => panelFiltros.Visible = false;
 
-        private void btnFechar_Click(object sender, System.EventArgs e) => this.Close();
+        private void BtnFechar_Click(object sender, EventArgs e) => Close();
 
-        private void btnMostrarFiltros_Click(object sender, System.EventArgs e) => panelFiltros.Visible = true;
+        private void BtnMostrarFiltros_Click(object sender, EventArgs e) => panelFiltros.Visible = true;
 
-        private void btnFiltrarPorCliente_Click(object sender, System.EventArgs e)
+        private void BtnFiltrarPorCliente_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
@@ -71,8 +71,9 @@ namespace AugustusFahsion.View.Relatorios
             lblTotalBruto.Text = resultado.Sum(x => (x.TotalBruto.RetornarValor)).ToString("c");
             lblTotalLiquido.Text = resultado.Sum(x => (x.TotalLiquido.RetornarValor)).ToString("c");
             lblTotalDesconto.Text = resultado.Sum(x => (x.Desconto.RetornarValor)).ToString("c");
+            lblTotalDesconto.Text = resultado.Count(x => (x.Desconto.RetornarValor != 0)).ToString();
         }
 
-        private void cbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e) => cbDirecaoOrdem.Enabled = true;
+        private void CbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e) => cbDirecaoOrdem.Enabled = true;
     }
 }

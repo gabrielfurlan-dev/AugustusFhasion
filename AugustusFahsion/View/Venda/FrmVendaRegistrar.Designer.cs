@@ -177,7 +177,7 @@ namespace AugustusFahsion.View.Venda
             this.btnAbrirDeSelecaoDeCliente.TabIndex = 58;
             this.btnAbrirDeSelecaoDeCliente.Text = "Selecionar";
             this.btnAbrirDeSelecaoDeCliente.UseVisualStyleBackColor = true;
-            this.btnAbrirDeSelecaoDeCliente.Click += new System.EventHandler(this.btnAbrirSelecaoDeCliente_Click);
+            this.btnAbrirDeSelecaoDeCliente.Click += new System.EventHandler(this.BtnAbrirSelecaoDeCliente_Click);
             // 
             // cbFormaPagamento
             // 
@@ -264,7 +264,7 @@ namespace AugustusFahsion.View.Venda
             this.dgvCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarrinho.Size = new System.Drawing.Size(451, 269);
             this.dgvCarrinho.TabIndex = 35;
-            this.dgvCarrinho.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCarrinho_CellMouseClick);
+            this.dgvCarrinho.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvCarrinho_CellMouseClick);
             // 
             // lblIdCliente
             // 
@@ -297,7 +297,7 @@ namespace AugustusFahsion.View.Venda
             this.btnAbrirSelecaoDeColaborador.TabIndex = 51;
             this.btnAbrirSelecaoDeColaborador.Text = "Selecionar";
             this.btnAbrirSelecaoDeColaborador.UseVisualStyleBackColor = false;
-            this.btnAbrirSelecaoDeColaborador.Click += new System.EventHandler(this.btAbrirSelecaoDeColaborador_Click);
+            this.btnAbrirSelecaoDeColaborador.Click += new System.EventHandler(this.BtAbrirSelecaoDeColaborador_Click);
             // 
             // lblLucroProduto
             // 
@@ -387,8 +387,8 @@ namespace AugustusFahsion.View.Venda
             this.dgvProdutoListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutoListar.Size = new System.Drawing.Size(425, 269);
             this.dgvProdutoListar.TabIndex = 35;
-            this.dgvProdutoListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutoListar_CellContentClick);
-            this.dgvProdutoListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProdutoListar_CellMouseClick);
+            this.dgvProdutoListar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProdutoListar_CellContentClick);
+            this.dgvProdutoListar.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvProdutoListar_CellMouseClick);
             // 
             // lblTotalBrutoVenda
             // 
@@ -539,7 +539,7 @@ namespace AugustusFahsion.View.Venda
             this.btnPesquisarProduto.TabIndex = 51;
             this.btnPesquisarProduto.Text = "🔎";
             this.btnPesquisarProduto.UseVisualStyleBackColor = false;
-            this.btnPesquisarProduto.Click += new System.EventHandler(this.btnPesquisarProduto_Click);
+            this.btnPesquisarProduto.Click += new System.EventHandler(this.BtnPesquisarProduto_Click);
             // 
             // label7
             // 
@@ -771,7 +771,7 @@ namespace AugustusFahsion.View.Venda
             this.btnCancelar.TabIndex = 41;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // btnEnviar
             // 

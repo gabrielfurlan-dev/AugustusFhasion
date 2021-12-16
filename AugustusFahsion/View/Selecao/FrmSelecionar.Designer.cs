@@ -105,11 +105,11 @@ namespace AugustusFahsion.View.Selecao
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTitulo.Location = new System.Drawing.Point(110, 35);
+            this.lblTitulo.Location = new System.Drawing.Point(157, 34);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(195, 30);
+            this.lblTitulo.Size = new System.Drawing.Size(113, 30);
             this.lblTitulo.TabIndex = 37;
-            this.lblTitulo.Text = "Selecionar Clientes";
+            this.lblTitulo.Text = "Selecionar";
             // 
             // btnContinuar
             // 
