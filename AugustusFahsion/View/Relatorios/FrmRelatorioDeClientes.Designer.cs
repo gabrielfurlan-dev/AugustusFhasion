@@ -449,7 +449,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -461,7 +461,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -473,7 +473,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // lblTotalVendas
             // 
-            this.lblTotalVendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalVendas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalVendas.AutoSize = true;
             this.lblTotalVendas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalVendas.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -501,7 +501,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // lblTotalBruto
             // 
-            this.lblTotalBruto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalBruto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalBruto.AutoSize = true;
             this.lblTotalBruto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalBruto.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -513,7 +513,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // lblTotalLiquido
             // 
-            this.lblTotalLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalLiquido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalLiquido.AutoSize = true;
             this.lblTotalLiquido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalLiquido.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -525,7 +525,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -537,7 +537,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // lblTotalDesconto
             // 
-            this.lblTotalDesconto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalDesconto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalDesconto.AutoSize = true;
             this.lblTotalDesconto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalDesconto.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -549,7 +549,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLight;
