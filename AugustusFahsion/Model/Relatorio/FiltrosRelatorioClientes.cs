@@ -26,21 +26,23 @@ namespace AugustusFahsion.Model.Relatorio
 
             return @"SELECT ";
         }
+
         public string GerarFiltrosHaving()
         {
             var having = @" ";
 
             if (APartirDe != 0)
-                having += $" HAVING {GetEnumDescription(FiltrarPor)} > @APartirDe ";
+                having = $" HAVING {GetEnumDescription(FiltrarPor)} > @APartirDe ";
 
             return having;
         }
-        internal string GerarFiltrosOrderBy()
+        public string GerarFiltrosOrderBy()
         {
             var a = GetEnumDescription(OrdenarPor);
             return a;
         }
-        internal string GerarDirecaoDaOrdem()
+
+        public string GerarDirecaoDaOrdem()
         {
             var direcao = @" ";
             if (DirecaoOrdem == "Decrescente")
