@@ -49,19 +49,19 @@ namespace AugustusFahsion.Model.Relatorio
             return direcao;
         }
 
-        public static string GetEnumDescription<T> (T value) where T : Enum
+        public static string GetEnumDescription<T> (T valor) where T : Enum
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
+            FieldInfo FieldInfo = valor.GetType().GetField(valor.ToString());
             //metodo para pegar o enum description
             try
             {
-                DescriptionAttribute[] attributes = fi.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+                DescriptionAttribute[] attributes = FieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
                 if (attributes != null && attributes.Any())
                 {
                     return attributes.First().Description;
                 }
 
-                return value.ToString();
+                return valor.ToString();
             }
             catch (Exception)
             {
