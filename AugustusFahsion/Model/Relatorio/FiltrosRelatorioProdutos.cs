@@ -19,7 +19,7 @@ namespace AugustusFahsion.Model.Relatorio
             return where;
         }
 
-        internal string GerarFiltrosHaving()
+        public string GerarFiltrosHaving()
         {
             var having = " HAVING p.Nome LIKE @NomeProduto + '%' ";
 
