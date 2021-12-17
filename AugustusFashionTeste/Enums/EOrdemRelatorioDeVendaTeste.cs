@@ -21,7 +21,7 @@ namespace AugustusFashionTeste.Model.Relatorio.Filtros
         public static void verifica_se_descricao_do_enum_quantidade_esta_correto()
         {
             EOrdemRelatorioDeVenda OrdenarPor = (EOrdemRelatorioDeVenda) 0;
-            var resultado = FiltrosRelatorioClientesTeste.GetEnumDescription(OrdenarPor);
+            var resultado = FiltrosRelatorioClientes.GetEnumDescription(OrdenarPor);
             var resultadoEsperado = " ORDER BY QuantidadeVenda ";
 
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -31,7 +31,7 @@ namespace AugustusFashionTeste.Model.Relatorio.Filtros
         public static void verifica_se_descricao_do_enum_totalDesconto_esta_correto()
         {
             EOrdemRelatorioDeVenda OrdenarPor = (EOrdemRelatorioDeVenda)1;
-            var resultado = FiltrosRelatorioClientesTeste.GetEnumDescription(OrdenarPor);
+            var resultado = FiltrosRelatorioClientes.GetEnumDescription(OrdenarPor);
             var resultadoEsperado = " ORDER BY Desconto ";
 
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -41,7 +41,7 @@ namespace AugustusFashionTeste.Model.Relatorio.Filtros
         public static void verifica_se_descricao_do_enum_totalLiquido_esta_correto()
         {
             EOrdemRelatorioDeVenda OrdenarPor = (EOrdemRelatorioDeVenda)2;
-            var resultado = FiltrosRelatorioClientesTeste.GetEnumDescription(OrdenarPor);
+            var resultado = FiltrosRelatorioClientes.GetEnumDescription(OrdenarPor);
             var resultadoEsperado = " ORDER BY TotalLiquido";
 
             Assert.AreEqual(resultadoEsperado, resultado);

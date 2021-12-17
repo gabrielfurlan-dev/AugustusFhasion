@@ -87,17 +87,14 @@ namespace AugustusFahsion.View.Selecao
         {
             if (_clienteListarController != null)
             {
-                lblTitulo.Text += " Cliente";
                 PesquisarCliente();
             }
             else if (_colaboradorListarController != null)
             {
-                lblTitulo.Text += " Colaborador";
                 PesquisaColaborador();
             }
             else
             {
-                lblTitulo.Text += " Produto";
                 PesquisarProduto();
             }
         }

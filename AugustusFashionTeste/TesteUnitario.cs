@@ -32,10 +32,10 @@ namespace AugustusFashionTeste
             Assert.AreEqual(resultado, Pessoa.DataMaiorQueHoje(teste));
         }
 
-        [DataTestMethod]
-        [DataRow("string", false)]
+        [DataTestMethod][DataRow("string", false)]
         [DataRow("40028922", true)]
         [DataRow("uhausd12863", false)]
+        
         public void se_conversao_para_inteiro_for_valida_retorna_true(string valor, bool resultado) => Assert.AreEqual(valor.EhNumerico(), resultado);
 
         [TestMethod]

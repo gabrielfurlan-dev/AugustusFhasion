@@ -243,6 +243,7 @@ namespace AugustusFahsion.View.Venda
             this.dgvCarrinho.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCarrinho.GridColor = System.Drawing.Color.Black;
             this.dgvCarrinho.Location = new System.Drawing.Point(512, 85);
+            this.dgvCarrinho.MultiSelect = false;
             this.dgvCarrinho.Name = "dgvCarrinho";
             this.dgvCarrinho.ReadOnly = true;
             this.dgvCarrinho.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -366,6 +367,7 @@ namespace AugustusFahsion.View.Venda
             this.dgvProdutoListar.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProdutoListar.GridColor = System.Drawing.Color.Black;
             this.dgvProdutoListar.Location = new System.Drawing.Point(37, 85);
+            this.dgvProdutoListar.MultiSelect = false;
             this.dgvProdutoListar.Name = "dgvProdutoListar";
             this.dgvProdutoListar.ReadOnly = true;
             this.dgvProdutoListar.RightToLeft = System.Windows.Forms.RightToLeft.No;
