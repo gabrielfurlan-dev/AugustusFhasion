@@ -14,7 +14,7 @@ namespace AugustusFashionTeste.Model
             DinheiroModel TotalLiquido = 20;
             var totalLiquidoOriginal = 0;
 
-            var resultado = VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido
+            var resultado = new VendaModel().VerificarLimiteGastoCompraAPrazoFoiAtingido
                 (
                 idCliente, 
                 TotalLiquido, 
@@ -33,12 +33,7 @@ namespace AugustusFashionTeste.Model
             DinheiroModel TotalLiquido = 10;
             var totalLiquidoOriginal = 0;
 
-            var resultado = VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido
-                (
-                idCliente, 
-                TotalLiquido, 
-                totalLiquidoOriginal
-                );
+            var resultado = new VendaModel().VerificarLimiteGastoCompraAPrazoFoiAtingido (idCliente, TotalLiquido, totalLiquidoOriginal);
             var resultadoEsperado = true;
 
             Assert.AreEqual(resultadoEsperado, resultado);

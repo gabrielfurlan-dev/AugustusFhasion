@@ -280,9 +280,8 @@ namespace AugustusFahsion.View.Venda
 
             if (!_vendaModelSelecionada.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada.TotalLiquido, _totalLiquidoOriginal))
             {
-                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {_vendaModelSelecionada.Cliente.ValorLimiteAPrazo.ValorFormatado}" +
-                              $"\nValor total gasto em compras a prazo {_vendaModelSelecionada.Cliente.ValorLimiteGasto.RetornarValor.ToString("c")}" +
-                              $"\nValor da compra: {_vendaModelSelecionada.TotalLiquido.ValorFormatado}");
+                var valorLimiteRestante = _vendaModelSelecionada.Cliente.ValorLimiteAPrazo.RetornarValor - _vendaModelSelecionada.Cliente.ValorLimiteGasto.RetornarValor;
+                MessageBox.Show($"Valor Limite de compra a prazo restante foi ultrapassado: " + valorLimiteRestante.ToString("c"));
                 return;
             }
             if (ValidarCampos())
