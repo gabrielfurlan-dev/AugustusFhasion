@@ -23,7 +23,9 @@ namespace AugustusFahsion.Controller
 
         public static ClienteModel Buscar(int id)
         {
-                return ClienteDAO.BuscarCliente(id);
+                var cliente =  ClienteDAO.BuscarCliente(id);
+            cliente.ValorLimiteGasto = ClienteDAO.ValorLimiteGasto(id);
+            return cliente;
         }
 
         public void AtualizarCliente(ClienteModel clienteModel)

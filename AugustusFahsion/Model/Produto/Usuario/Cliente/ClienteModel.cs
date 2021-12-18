@@ -7,5 +7,7 @@ namespace AugustusFahsion.Model
         public int IdPessoa { get; set; }   
         public DinheiroModel ValorLimiteAPrazo { get; set; }
         public string Condicao { get; set; }
+
+        public DinheiroModel ValorLimiteGasto { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace AugustusFashionTeste.Model
             int quantidade = 2;
             int desconto = 10;
 
-            var resultado = ProdutoModel.ValorTotalDesconto(precoVenda, quantidade, desconto);
+            var resultado = ProdutoModel.ValorTotalLiquido(precoVenda, quantidade, desconto);
             var resultadoEsperado = 18;
 
             Assert.AreEqual(resultadoEsperado, resultado);

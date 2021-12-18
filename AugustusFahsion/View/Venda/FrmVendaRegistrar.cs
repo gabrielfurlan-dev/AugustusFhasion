@@ -44,11 +44,11 @@ namespace AugustusFahsion.View.Venda
 
         private void BtnAbrirSelecaoDeCliente_Click(object sender, EventArgs e)
         {
-            _cliente = _vendaRegistrarController.ProcurarCliente();
-            if (_cliente != null)
+            _vendaModel.Cliente = _vendaRegistrarController.ProcurarCliente();
+            if (_vendaModel.Cliente != null)
             {
-                lblClienteSelecionado.Text = _cliente.NomeCompleto.Nome + " " + _cliente.NomeCompleto.Sobrenome;
-                lblIdCliente.Text = _cliente.IdCliente.ToString();
+                lblClienteSelecionado.Text = _vendaModel.Cliente.NomeCompleto.Nome + " " + _vendaModel.Cliente.NomeCompleto.Sobrenome;
+                lblIdCliente.Text = _vendaModel.Cliente.IdCliente.ToString();
             }
         }
 
@@ -126,10 +126,19 @@ namespace AugustusFahsion.View.Venda
             {
                 var index = _vendaModel.ListaDeItens.IndexOf(produto);
 
+                var totalLiquido = ProdutoModel.ValorTotalLiquido
+            (
+                _produtoSelecionado.PrecoVenda.RetornarValor,
+                Convert.ToInt32(nupQuantidade.Value),
+                Convert.ToInt32(nupDesconto.Value)
+            );
+
                 _vendaModel.ListaDeItens[index].Quantidade = Convert.ToInt32(nupQuantidade.Value);
                 _vendaModel.ListaDeItens[index].Desconto = Convert.ToInt32(nupDesconto.Value);
-                MessageBox.Show("O item já existia no carrinho. Os valores foram atualizados.");
+                _vendaModel.ListaDeItens[index].TotalLiquido = totalLiquido;
                 AtualizarCarrinho();
+                AtualizarPrecosTotais();
+                MessageBox.Show("O item já existia no carrinho. Os valores foram atualizados.");
                 return;
             }
 
@@ -156,8 +165,11 @@ namespace AugustusFahsion.View.Venda
             if (!VerificaSeCamposEstãoPreenchidos()) return;
             if (cbFormaPagamento.Text == "A prazo")
             {
-                if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModel.TotalLiquido, 0))
+                if (!_vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModel.TotalLiquido, 0))
                 {
+                    MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {_vendaModel.Cliente.ValorLimiteAPrazo.ValorFormatado}" +
+                               $"\nValor total gasto em compras a prazo {_vendaModel.Cliente.ValorLimiteGasto.RetornarValor.ToString("c")}" +
+                               $"\nValor da compra: {_vendaModel.TotalLiquido.ValorFormatado}");
                     return;
                 }
             }
@@ -246,7 +258,7 @@ namespace AugustusFahsion.View.Venda
         {
             lblTotalLiquidoProduto.Text = ProdutoModel.ValorTotalBrutoProduto(_produtoSelecionado.PrecoVenda.RetornarValor, Convert.ToInt32(nupQuantidade.Value)).ToString("c");
 
-            lblTotalBrutoProduto.Text = ProdutoModel.ValorTotalDesconto(_produtoSelecionado.PrecoVenda.RetornarValor, Convert.ToInt32(nupQuantidade.Value), Convert.ToInt32(nupDesconto.Value)).ToString("c");
+            lblTotalBrutoProduto.Text = ProdutoModel.ValorTotalLiquido(_produtoSelecionado.PrecoVenda.RetornarValor, Convert.ToInt32(nupQuantidade.Value), Convert.ToInt32(nupDesconto.Value)).ToString("c");
 
             lblTotalDescontoProduto.Text = ProdutoModel.ValorTotalDescontoProduto(Convert.ToInt32(nupDesconto.Value), Convert.ToInt32(nupQuantidade.Value), lblPrecoProduto.Text.RealParaDecimal()).ToString("c");
 
@@ -268,11 +280,11 @@ namespace AugustusFahsion.View.Venda
 
         private void AtualizarPrecosTotais()
         {
+            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ValorFormatado;
             lblTotalLiquido.Text = _vendaModel.TotalLiquido.ValorFormatado;
             lblTotalLucro.Text = _vendaModel.TotalLucro.ToString("C");
             lblTotalDesconto.Text = _vendaModel.TotalDesconto.ValorFormatado;
             lblTotalBrutoVenda.Text = _vendaModel.TotalBruto.ValorFormatado;
-            lblPrecoTotal.Text = _vendaModel.TotalLiquido.ValorFormatado;
         }
 
         public VendaProdutoModel VerificarSeExisteNoCarrinho(int id) =>
@@ -299,7 +311,7 @@ namespace AugustusFahsion.View.Venda
 
         public void AdicionarProdutoNoCarrinho()
         {
-            var desconto = ProdutoModel.ValorTotalDesconto
+            var totalLiquido = ProdutoModel.ValorTotalLiquido
             (
                 _produtoSelecionado.PrecoVenda.RetornarValor,
                 Convert.ToInt32(nupQuantidade.Value),
@@ -313,7 +325,7 @@ namespace AugustusFahsion.View.Venda
                 Nome = lblProdutoSelecionado.Text,
                 Quantidade = Convert.ToInt32(nupQuantidade.Value),
                 Desconto = (int)nupDesconto.Value,
-                TotalLiquido = desconto,
+                TotalLiquido = totalLiquido,
                 PrecoVenda = lblPrecoProduto.Text.RealParaDecimal(),
                 TotalBruto = lblTotalLiquidoProduto.Text.RealParaDecimal(),
                 Lucro = lblLucroProduto.Text.RealParaDecimal()

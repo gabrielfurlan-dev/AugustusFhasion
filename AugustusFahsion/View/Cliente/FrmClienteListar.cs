@@ -59,5 +59,7 @@ namespace AugustusFahsion.View
         }
 
         private void BtnFechar_Click(object sender, EventArgs e) => Close();
+
+        private void btnCancelar_Click(object sender, EventArgs e) => Close();
     }
 }

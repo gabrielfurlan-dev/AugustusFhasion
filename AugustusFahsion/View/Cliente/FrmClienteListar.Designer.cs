@@ -182,6 +182,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(49, 40);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // menuStrip1
             // 

@@ -16,6 +16,5 @@ namespace AugustusFahsion.Model.Venda
         public decimal Lucro { get; set; }
         public Guid IdProdutoGuid{ get; set; }
 
-        //public decimal ValorTotalBrutoProduto(VendaProdutoModel produto) => produto.PrecoCusto.RetornarValor * produto.Quantidade;
     }
 }

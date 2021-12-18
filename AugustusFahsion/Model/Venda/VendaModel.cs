@@ -30,24 +30,12 @@ namespace AugustusFahsion.Model
             Cliente = new ClienteModel();
         }
 
-        public static bool VerificarLimiteGastoCompraAPrazoFoiAtingido
-            (
-            int idCliente,
-            DinheiroModel TotalLiquido,
-            decimal totalLiquidoOriginal
-            )
+        public bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int idCliente, DinheiroModel TotalLiquido, decimal totalLiquidoOriginal)
         {
-            var valorGasto = VendaRegistrarController.ValorLimiteGasto(idCliente).RetornarValor - totalLiquidoOriginal;
+            var valorGasto = Cliente.ValorLimiteGasto.RetornarValor - totalLiquidoOriginal;
 
-            var cliente = ClienteAlterarController.Buscar(idCliente);
-            var valorLimite = cliente.ValorLimiteAPrazo;
-            var valorCompra = TotalLiquido;
-
-            if (valorGasto + valorCompra.RetornarValor > valorLimite.RetornarValor)
-            {
-                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {valorLimite.ValorFormatado}" +
-                                $"\nValor total gasto em compras a prazo {valorGasto.ToString("c")}" +
-                                $"\nValor da compra: {valorCompra.ValorFormatado}");
+            if (valorGasto + TotalLiquido.RetornarValor > Cliente.ValorLimiteAPrazo.RetornarValor)
+            {              
                 return false;
             }
             return true;

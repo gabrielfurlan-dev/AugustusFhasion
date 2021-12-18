@@ -11,11 +11,9 @@ namespace AugustusFahsion.View.Venda
 {
     public partial class FrmVendaAlterar : Form
     {
-        private VendaAlterarController _controllerVendaAlterar;
         private VendaListarController _controllerVendaListar;
         private ProdutoListarController _produtoListarController;
         private VendaModel _vendaModelSelecionada;
-        private VendaRegistrarController _vendaRegistrarController;
         private int _quantidadeOriginal = 0;
         private int _estoqueOriginal = 0;
         private decimal _totalLiquidoOriginal;
@@ -27,14 +25,11 @@ namespace AugustusFahsion.View.Venda
         public FrmVendaAlterar(VendaAlterarController vendaAlterarController, VendaModel vendaModel)
         {
             InitializeComponent();
-            _controllerVendaAlterar = vendaAlterarController;
             _vendaModelSelecionada = vendaModel;
 
             AtribuirModelParaCampos(vendaModel);
             _produtoListarController = new ProdutoListarController();
             _controllerVendaListar = new VendaListarController();
-            _vendaRegistrarController = new VendaRegistrarController();
-
         }
 
         private void FrmVendaAlterar_Load(object sender, EventArgs e)
@@ -89,6 +84,7 @@ namespace AugustusFahsion.View.Venda
             var id = vendaModelSelecionada.IdVenda;
             var vendaModel = VendaAlterarController.BuscarVenda(id);
             var vendaListagemModel = new VendaListarController().ListarVendaSelecionada(id);
+            _vendaModelSelecionada.Cliente = new VendaRegistrarController().BuscarCliente(vendaModel.Cliente.IdCliente); 
 
             lblIdVenda.Text = vendaListagemModel[0].IdVenda.ToString();
             lblClienteSelecionado.Text = vendaListagemModel[0].NomeCliente;
@@ -219,7 +215,6 @@ namespace AugustusFahsion.View.Venda
                     _produtoListarController.ListarProdutosAtivosPorNome(txtProcurar.Text);
         }
 
-
         public void AdicionarProdutoNoCarrinho()
         {
             var desconto = ValorTotalDesconto();
@@ -277,14 +272,17 @@ namespace AugustusFahsion.View.Venda
         {
             VendaAlterarController.InativarVenda(_vendaModelSelecionada);
             MessageBox.Show("Venda Inativada.");
-            this.Close();
+            Close();
         }
 
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
 
-            if (!VendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada.TotalLiquido, _totalLiquidoOriginal))
+            if (!_vendaModelSelecionada.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada.TotalLiquido, _totalLiquidoOriginal))
             {
+                MessageBox.Show($"Valor Limite de compra a prazo máximo atingido: {_vendaModelSelecionada.Cliente.ValorLimiteAPrazo.ValorFormatado}" +
+                              $"\nValor total gasto em compras a prazo {_vendaModelSelecionada.Cliente.ValorLimiteGasto.RetornarValor.ToString("c")}" +
+                              $"\nValor da compra: {_vendaModelSelecionada.TotalLiquido.ValorFormatado}");
                 return;
             }
             if (ValidarCampos())
@@ -292,10 +290,9 @@ namespace AugustusFahsion.View.Venda
                 if (cbPago.Text == "Sim")
                     _vendaModelSelecionada.Pago = true;
                 AlterarVenda();
-                this.Close();
+                Close();
             }
         }
-        
 
         private bool ValidarCampos()
         {
@@ -328,6 +325,6 @@ namespace AugustusFahsion.View.Venda
             MessageBox.Show("Venda Alterada!");
         }
 
-        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
     }
 }

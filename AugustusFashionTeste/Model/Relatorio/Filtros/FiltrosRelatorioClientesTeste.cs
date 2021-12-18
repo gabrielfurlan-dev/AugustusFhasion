@@ -61,7 +61,5 @@ namespace AugustusFashionTeste.Model.Relatorio.Filtros
 
             Assert.AreEqual(resultadoEsperado, resultado);
         }
-
-
     }
 }

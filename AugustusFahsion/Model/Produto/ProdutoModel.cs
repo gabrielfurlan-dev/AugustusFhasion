@@ -26,7 +26,7 @@ namespace AugustusFahsion.Model
         public static decimal ValorTotalDescontoProduto(int desconto, int quantidade, decimal precoProduto)
         {
             var valorTotalBrutoProduto = ValorTotalBrutoProduto(precoProduto, quantidade);
-            var valorTotalDesconto = ValorTotalDesconto(precoProduto, quantidade, desconto);
+            var valorTotalDesconto = ValorTotalLiquido(precoProduto, quantidade, desconto);
 
             return valorTotalBrutoProduto - valorTotalDesconto;
         }
@@ -37,7 +37,7 @@ namespace AugustusFahsion.Model
 
             return (ProdutoLucroUnitario * Quantidade) - valorTotalDescontoProduto;
         }
-        public static decimal ValorTotalDesconto(decimal precoVenda, int quantidade, int desconto)
+        public static decimal ValorTotalLiquido(decimal precoVenda, int quantidade, int desconto)
         {
             var valorTotalBrutoProduto = ValorTotalBrutoProduto(precoVenda, quantidade);
             var descontoEmPorcentagem = DescontoPorcentagemEmDecimal(valorTotalBrutoProduto, desconto);

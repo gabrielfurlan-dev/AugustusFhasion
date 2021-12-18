@@ -488,14 +488,13 @@ namespace AugustusFahsion.View.Relatorios
             this.btnMostrarFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarFiltros.BackColor = System.Drawing.Color.Transparent;
             this.btnMostrarFiltros.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrarFiltros.BackgroundImage")));
-            this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMostrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnMostrarFiltros.Location = new System.Drawing.Point(881, 128);
+            this.btnMostrarFiltros.Location = new System.Drawing.Point(911, 128);
             this.btnMostrarFiltros.Name = "btnMostrarFiltros";
-            this.btnMostrarFiltros.Size = new System.Drawing.Size(78, 46);
+            this.btnMostrarFiltros.Size = new System.Drawing.Size(48, 46);
             this.btnMostrarFiltros.TabIndex = 65;
-            this.btnMostrarFiltros.Text = "Filtrar";
             this.btnMostrarFiltros.UseVisualStyleBackColor = false;
             this.btnMostrarFiltros.Click += new System.EventHandler(this.BtnMostrarFiltros_Click);
             // 
@@ -565,8 +564,8 @@ namespace AugustusFahsion.View.Relatorios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvListaRelatorioClientes);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label12);
@@ -575,8 +574,8 @@ namespace AugustusFahsion.View.Relatorios
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblTotalLiquido);
             this.Controls.Add(this.lblTotalBruto);
-            this.Controls.Add(this.lblTotalVendas);
             this.Controls.Add(this.btnMostrarFiltros);
+            this.Controls.Add(this.lblTotalVendas);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;

@@ -30,8 +30,8 @@ namespace AugustusFahsion.View.Venda
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeProdutos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnFechar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dtDataInicial = new System.Windows.Forms.DateTimePicker();
@@ -181,23 +181,23 @@ namespace AugustusFahsion.View.Venda
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaVenda.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaVenda.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaVenda.GridColor = System.Drawing.Color.Black;
             this.dgvListaVenda.Location = new System.Drawing.Point(50, 195);
             this.dgvListaVenda.Name = "dgvListaVenda";
@@ -287,7 +287,7 @@ namespace AugustusFahsion.View.Venda
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(364, 100);
+            this.label1.Location = new System.Drawing.Point(418, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 30);
             this.label1.TabIndex = 47;
@@ -298,14 +298,13 @@ namespace AugustusFahsion.View.Venda
             this.btnMostrarFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarFiltros.BackColor = System.Drawing.Color.Transparent;
             this.btnMostrarFiltros.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrarFiltros.BackgroundImage")));
-            this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMostrarFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMostrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnMostrarFiltros.Location = new System.Drawing.Point(891, 143);
+            this.btnMostrarFiltros.Location = new System.Drawing.Point(922, 143);
             this.btnMostrarFiltros.Name = "btnMostrarFiltros";
-            this.btnMostrarFiltros.Size = new System.Drawing.Size(78, 46);
+            this.btnMostrarFiltros.Size = new System.Drawing.Size(47, 46);
             this.btnMostrarFiltros.TabIndex = 48;
-            this.btnMostrarFiltros.Text = "Filtrar";
             this.btnMostrarFiltros.UseVisualStyleBackColor = false;
             this.btnMostrarFiltros.Click += new System.EventHandler(this.btnMostrarFiltros_Click);
             // 
@@ -315,7 +314,7 @@ namespace AugustusFahsion.View.Venda
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(42, 632);
+            this.label7.Location = new System.Drawing.Point(50, 632);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 15);
             this.label7.TabIndex = 36;
@@ -387,7 +386,7 @@ namespace AugustusFahsion.View.Venda
             this.lblProdutosVendidos.AutoSize = true;
             this.lblProdutosVendidos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblProdutosVendidos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblProdutosVendidos.Location = new System.Drawing.Point(157, 632);
+            this.lblProdutosVendidos.Location = new System.Drawing.Point(165, 632);
             this.lblProdutosVendidos.Name = "lblProdutosVendidos";
             this.lblProdutosVendidos.Size = new System.Drawing.Size(13, 15);
             this.lblProdutosVendidos.TabIndex = 36;
@@ -459,8 +458,8 @@ namespace AugustusFahsion.View.Venda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelFiltros);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvListaVenda);
             this.Controls.Add(this.BtnFechar);
             this.Controls.Add(this.menuStrip1);
