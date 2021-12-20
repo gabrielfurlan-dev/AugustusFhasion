@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AugustusFahsion.Model;
-using AugustusFahsion.Model.ValueObjects;
+﻿using AugustusFahsion.Model;
+using AugustusFashionTeste.Mock;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AugustusFashionTeste.Model
 {
@@ -10,16 +10,13 @@ namespace AugustusFashionTeste.Model
         [TestMethod]
         public void se_valor_limite_for_atingido_retornar_falso()
         {
-            var idCliente = 22;
-            DinheiroModel TotalLiquido = 20;
-            var totalLiquidoOriginal = 0;
+            var vendaModel = new VendaModelMock().RetornarListaDeItens();
 
-            var resultado = new VendaModel().VerificarLimiteGastoCompraAPrazoFoiAtingido
-                (
-                idCliente, 
-                TotalLiquido, 
-                totalLiquidoOriginal
-                );
+
+            vendaModel.Cliente.IdCliente = 22;
+            var totalLiquidoOriginal = 0;
+            
+            var resultado = vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(totalLiquidoOriginal);
 
             var resultadoEsperado = false;
 
@@ -29,11 +26,13 @@ namespace AugustusFashionTeste.Model
         [TestMethod]
         public void se_valor_limite_nao_for_atingido_retornar_verdadeiro()
         {
-            var idCliente = 22;
-            DinheiroModel TotalLiquido = 10;
+            VendaModel vendaModel = new VendaModelMock().RetornarListaDeItens();
+            vendaModel.Cliente.IdCliente = 22;
+            vendaModel.Cliente.ValorLimiteGasto = 0;
+
             var totalLiquidoOriginal = 0;
 
-            var resultado = new VendaModel().VerificarLimiteGastoCompraAPrazoFoiAtingido (idCliente, TotalLiquido, totalLiquidoOriginal);
+            var resultado = vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(totalLiquidoOriginal);
             var resultadoEsperado = true;
 
             Assert.AreEqual(resultadoEsperado, resultado);

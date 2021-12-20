@@ -1,11 +1,8 @@
-﻿using AugustusFahsion.Controller;
-using AugustusFahsion.Controller.Venda;
-using AugustusFahsion.Model.ValueObjects;
+﻿using AugustusFahsion.Model.ValueObjects;
 using AugustusFahsion.Model.Venda;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace AugustusFahsion.Model
 {
@@ -30,7 +27,7 @@ namespace AugustusFahsion.Model
             Cliente = new ClienteModel();
         }
 
-        public bool VerificarLimiteGastoCompraAPrazoFoiAtingido(int idCliente, DinheiroModel TotalLiquido, decimal totalLiquidoOriginal)
+        public bool VerificarLimiteGastoCompraAPrazoFoiAtingido( decimal totalLiquidoOriginal)
         {
             var valorGasto = Cliente.ValorLimiteGasto.RetornarValor - totalLiquidoOriginal;
 

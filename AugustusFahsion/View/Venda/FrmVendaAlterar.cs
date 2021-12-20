@@ -278,7 +278,7 @@ namespace AugustusFahsion.View.Venda
         private void btnSalvarAlteracoes_Click(object sender, EventArgs e)
         {
 
-            if (!_vendaModelSelecionada.VerificarLimiteGastoCompraAPrazoFoiAtingido(Convert.ToInt32(lblIdCliente.Text), _vendaModelSelecionada.TotalLiquido, _totalLiquidoOriginal))
+            if (!_vendaModelSelecionada.VerificarLimiteGastoCompraAPrazoFoiAtingido(_totalLiquidoOriginal))
             {
                 var valorLimiteRestante = _vendaModelSelecionada.Cliente.ValorLimiteAPrazo.RetornarValor - _vendaModelSelecionada.Cliente.ValorLimiteGasto.RetornarValor;
                 MessageBox.Show($"Valor Limite de compra a prazo restante foi ultrapassado: " + valorLimiteRestante.ToString("c"));
