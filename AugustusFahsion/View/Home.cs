@@ -28,7 +28,6 @@ namespace AugustusFahsion
 
         private void btnListarColaborador_Click(object sender, EventArgs e) => new ColaboradorListarController().AbrirLista();
 
-        private void btnRelatorioProdutos_Click(object sender, EventArgs e) => new RelatorioDeProdutosController().AbrirRelatorio();
 
         private void lblVendas_MouseClick(object sender, MouseEventArgs e)
         {
@@ -42,6 +41,9 @@ namespace AugustusFahsion
             panelRelatorios.Visible = true;
         }
 
-        private void btnRelatorioClientes_Click(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
+
+        private void btnRelatorioClientes_Click_1(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
+
+        private void btnRelatorioProdutos_Click_1(object sender, EventArgs e) => new RelatorioDeProdutosController().AbrirRelatorio();
     }
 }

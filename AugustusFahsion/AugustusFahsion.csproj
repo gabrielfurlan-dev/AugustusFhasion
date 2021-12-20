@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <Compile Remove="asdas\**" />
-    <Compile Remove="Model\ValueObjects\NovaPasta\**" />
+    <Compile Remove="ValueObjects\NovaPasta\**" />
     <EmbeddedResource Remove="asdas\**" />
-    <EmbeddedResource Remove="Model\ValueObjects\NovaPasta\**" />
+    <EmbeddedResource Remove="ValueObjects\NovaPasta\**" />
     <None Remove="asdas\**" />
-    <None Remove="Model\ValueObjects\NovaPasta\**" />
+    <None Remove="ValueObjects\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>

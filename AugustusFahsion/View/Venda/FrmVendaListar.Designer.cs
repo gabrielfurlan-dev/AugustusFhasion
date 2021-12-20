@@ -113,9 +113,9 @@ namespace AugustusFahsion.View.Venda
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnFechar.Location = new System.Drawing.Point(768, 662);
+            this.btnFechar.Location = new System.Drawing.Point(753, 662);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(96, 41);
+            this.btnFechar.Size = new System.Drawing.Size(111, 41);
             this.btnFechar.TabIndex = 19;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
