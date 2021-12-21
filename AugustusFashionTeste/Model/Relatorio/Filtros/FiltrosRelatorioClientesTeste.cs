@@ -61,5 +61,18 @@ namespace AugustusFashionTeste.Model.Relatorio.Filtros
 
             Assert.AreEqual(resultadoEsperado, resultado);
         }
+
+        [DataTestMethod]
+        [DataRow(0, " WHERE ")]
+        [DataRow(1, " WHERE c.IdCliente = @IdCliente AND ")]
+        public void verifica_se_geracao_de_filtros_where_esta_correta(int idCliente, string resultadoEsperado)
+        {
+            FiltrosRelatorioClientes filtros = new FiltrosRelatorioClientes();
+            filtros.IdCliente = idCliente;
+
+            var resultado = filtros.GerarFiltrosWhere();
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
     }
 }
