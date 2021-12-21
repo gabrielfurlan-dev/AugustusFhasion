@@ -12,8 +12,6 @@ namespace AugustusFashionTeste.Model
         {
             var vendaModel = new VendaModelMock().RetornarListaDeItens();
 
-
-            vendaModel.Cliente.IdCliente = 22;
             var totalLiquidoOriginal = 0;
             
             var resultado = vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(totalLiquidoOriginal);
@@ -27,7 +25,6 @@ namespace AugustusFashionTeste.Model
         public void se_valor_limite_nao_for_atingido_retornar_verdadeiro()
         {
             VendaModel vendaModel = new VendaModelMock().RetornarListaDeItens();
-            vendaModel.Cliente.IdCliente = 22;
             vendaModel.Cliente.ValorLimiteGasto = 0;
 
             var totalLiquidoOriginal = 0;

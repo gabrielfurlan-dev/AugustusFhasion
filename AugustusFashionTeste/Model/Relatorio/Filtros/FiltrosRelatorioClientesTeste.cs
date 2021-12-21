@@ -1,4 +1,4 @@
-﻿using AugustusFahsion.Enums;
+﻿ using AugustusFahsion.Enums;
 using AugustusFahsion.Model.Relatorio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
