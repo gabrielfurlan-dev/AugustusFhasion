@@ -9,7 +9,7 @@ namespace AugustusFahsion.Model.Relatorio
 {
     public class FiltrosRelatorioClientes
     {
-        public string NomeCliente { get; set; }
+        public int IdCliente { get; set; }
         public EFiltroRelatorioDeVenda FiltrarPor { get; set; }
         public EOrdemRelatorioDeVenda OrdenarPor { get; set; }
         public string DirecaoOrdem { get; set; }
@@ -71,5 +71,13 @@ namespace AugustusFahsion.Model.Relatorio
             }
         }
 
+        public string GerarFiltrosWhere()
+        {
+            var where = " WHERE ";
+            if(IdCliente != 0)
+                where = @" WHERE c.IdCliente = @IdCliente AND ";
+
+            return where;
+        }
     }
 }

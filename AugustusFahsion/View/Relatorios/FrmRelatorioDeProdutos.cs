@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller.Venda;
+using AugustusFahsion.Model;
 using AugustusFahsion.Model.Relatorio;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace AugustusFahsion.View.Venda
     {
         private RelatorioDeProdutosController _relatorioDeVendasController;
         private FiltrosRelatorioProdutos _filtros;
+        private int _idCliente;
         public FrmRelatorioDeProdutos(RelatorioDeProdutosController relatorioDeVendasController)
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace AugustusFahsion.View.Venda
 
         private void PreencherFiltros()
         {
-            _filtros.IdCliente = int.TryParse(txtIdCliente.Text, out int saida) ? saida : 0;
+            _filtros.IdCliente = _idCliente;
             _filtros.NomeProduto = txtNomeProduto.Text;
             _filtros.DataInicial = dtDataInicial.Value;
             _filtros.DataFinal = dtDataFinal.Value;
@@ -69,5 +71,21 @@ namespace AugustusFahsion.View.Venda
         }
 
         private void btnMostrarFiltros_Click(object sender, EventArgs e) => panelFiltros.Visible = true;
+
+        private void btnProcurarCliente_Click(object sender, EventArgs e)
+        {
+            var cliente = new VendaRegistrarController().ProcurarCliente();
+
+            if (cliente != null)
+            {
+                _idCliente = cliente.IdCliente;
+                txtCliente.Text = cliente.NomeCompleto.Nome + " " + cliente.NomeCompleto.Sobrenome;
+            }
+        }
+
+        private void dgvListaVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

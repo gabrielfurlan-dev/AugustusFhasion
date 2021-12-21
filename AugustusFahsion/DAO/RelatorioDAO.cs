@@ -50,7 +50,9 @@ namespace AugustusFahsion.DAO
 	        INNER JOIN Cliente c on v.IdCliente = c.IdCliente
 	        INNER JOIN Pessoa pe on c.IdPessoa = pe.IdPessoa ";
 
-            query += @" WHERE pe.NOME LIKE @NomeCliente + '%' AND v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' ";
+            query += filtros.GerarFiltrosWhere();
+
+            query += @" v.DataVenda BETWEEN @DataInicial AND @DataFinal  + ' 23:59' ";
 
             query += " GROUP BY pe.Nome ";
 

@@ -30,13 +30,13 @@ namespace AugustusFahsion.View.Venda
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeProdutos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnFechar = new System.Windows.Forms.Button();
             this.dtDataInicial = new System.Windows.Forms.DateTimePicker();
             this.dtDataFinal = new System.Windows.Forms.DateTimePicker();
             this.btnFiltrarPorProduto = new System.Windows.Forms.Button();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@ namespace AugustusFahsion.View.Venda
             this.lblPrecoLiquido = new System.Windows.Forms.Label();
             this.lblCusto = new System.Windows.Forms.Label();
             this.lblLucro = new System.Windows.Forms.Label();
+            this.btnProcurarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVenda)).BeginInit();
             this.panelFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -115,16 +116,17 @@ namespace AugustusFahsion.View.Venda
             this.btnFiltrarPorProduto.UseVisualStyleBackColor = false;
             this.btnFiltrarPorProduto.Click += new System.EventHandler(this.btnFiltrarPorProduto_Click);
             // 
-            // txtIdCliente
+            // txtCliente
             // 
-            this.txtIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtIdCliente.Location = new System.Drawing.Point(14, 299);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(231, 22);
-            this.txtIdCliente.TabIndex = 40;
+            this.txtCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCliente.Location = new System.Drawing.Point(14, 299);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(158, 22);
+            this.txtCliente.TabIndex = 40;
             // 
             // label3
             // 
@@ -169,23 +171,23 @@ namespace AugustusFahsion.View.Venda
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaVenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaVenda.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaVenda.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaVenda.GridColor = System.Drawing.Color.Black;
             this.dgvListaVenda.Location = new System.Drawing.Point(50, 195);
             this.dgvListaVenda.Name = "dgvListaVenda";
@@ -196,12 +198,14 @@ namespace AugustusFahsion.View.Venda
             this.dgvListaVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaVenda.Size = new System.Drawing.Size(919, 415);
             this.dgvListaVenda.TabIndex = 32;
+            this.dgvListaVenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVenda_CellContentClick);
             // 
             // panelFiltros
             // 
             this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panelFiltros.Controls.Add(this.btnProcurarCliente);
             this.panelFiltros.Controls.Add(this.label5);
             this.panelFiltros.Controls.Add(this.txtNomeProduto);
             this.panelFiltros.Controls.Add(this.dtDataInicial);
@@ -212,7 +216,7 @@ namespace AugustusFahsion.View.Venda
             this.panelFiltros.Controls.Add(this.BtnFecharFiltros);
             this.panelFiltros.Controls.Add(this.btnFiltrarPorProduto);
             this.panelFiltros.Controls.Add(this.label3);
-            this.panelFiltros.Controls.Add(this.txtIdCliente);
+            this.panelFiltros.Controls.Add(this.txtCliente);
             this.panelFiltros.Location = new System.Drawing.Point(760, 1);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(264, 771);
@@ -440,6 +444,19 @@ namespace AugustusFahsion.View.Venda
             this.lblLucro.TabIndex = 36;
             this.lblLucro.Text = "0";
             // 
+            // btnProcurarCliente
+            // 
+            this.btnProcurarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurarCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProcurarCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProcurarCliente.Location = new System.Drawing.Point(170, 299);
+            this.btnProcurarCliente.Name = "btnProcurarCliente";
+            this.btnProcurarCliente.Size = new System.Drawing.Size(75, 22);
+            this.btnProcurarCliente.TabIndex = 48;
+            this.btnProcurarCliente.Text = "Procurar";
+            this.btnProcurarCliente.UseVisualStyleBackColor = true;
+            this.btnProcurarCliente.Click += new System.EventHandler(this.btnProcurarCliente_Click);
+            // 
             // FrmRelatorioDeProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -482,7 +499,7 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.DateTimePicker dtDataInicial;
         private System.Windows.Forms.DateTimePicker dtDataFinal;
         private System.Windows.Forms.Button btnFiltrarPorProduto;
-        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -506,5 +523,6 @@ namespace AugustusFahsion.View.Venda
         private System.Windows.Forms.Label lblPrecoLiquido;
         private System.Windows.Forms.Label lblCusto;
         private System.Windows.Forms.Label lblLucro;
+        private System.Windows.Forms.Button btnProcurarCliente;
     }
 }

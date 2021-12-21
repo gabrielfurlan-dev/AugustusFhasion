@@ -1,4 +1,5 @@
 ﻿using AugustusFahsion.Controller.Relatorios;
+using AugustusFahsion.Controller.Venda;
 using AugustusFahsion.Enums;
 using AugustusFahsion.Model.Relatorio;
 using System;
@@ -12,6 +13,8 @@ namespace AugustusFahsion.View.Relatorios
     {
         RelatorioDeClientesController _relatorioDeClientesController;
         FiltrosRelatorioClientes _filtros;
+        private int _idCliente;
+
         public FrmRelatorioDeClientes(RelatorioDeClientesController relatorioDeClientesController)
         {
             _relatorioDeClientesController = relatorioDeClientesController;
@@ -55,7 +58,7 @@ namespace AugustusFahsion.View.Relatorios
 
         public void PreencherFiltros()
         {
-            _filtros.NomeCliente = txtNomeCliente.Text;
+            _filtros.IdCliente = _idCliente;
             _filtros.FiltrarPor = (EFiltroRelatorioDeVenda)cbFiltrarPor.SelectedIndex;
             _filtros.QuantidadeDeClientes = (int)nupQuantidadeClientes.Value;
             _filtros.OrdenarPor = (EOrdemRelatorioDeVenda)cbOrdenarPor.SelectedIndex;
@@ -75,5 +78,16 @@ namespace AugustusFahsion.View.Relatorios
         }
 
         private void CbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e) => cbDirecaoOrdem.Enabled = true;
+
+        private void btnProcurarCliente_Click(object sender, EventArgs e)
+        {
+            var cliente = new VendaRegistrarController().ProcurarCliente();
+
+            if (cliente != null)
+            {
+               txtNomeCliente.Text = cliente.NomeCompleto.Nome + " " + cliente.NomeCompleto.Sobrenome;
+                _idCliente = cliente.IdCliente;
+            }
+        }
     }
 }

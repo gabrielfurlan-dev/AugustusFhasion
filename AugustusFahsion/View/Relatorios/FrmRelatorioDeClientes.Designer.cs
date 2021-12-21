@@ -35,6 +35,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
+            this.btnProcurarCliente = new System.Windows.Forms.Button();
             this.cbDirecaoOrdem = new System.Windows.Forms.ComboBox();
             this.cbOrdenarPor = new System.Windows.Forms.ComboBox();
             this.cbFiltrarPor = new System.Windows.Forms.ComboBox();
@@ -106,6 +107,7 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panelFiltros.Controls.Add(this.btnProcurarCliente);
             this.panelFiltros.Controls.Add(this.cbDirecaoOrdem);
             this.panelFiltros.Controls.Add(this.cbOrdenarPor);
             this.panelFiltros.Controls.Add(this.cbFiltrarPor);
@@ -132,6 +134,18 @@ namespace AugustusFahsion.View.Relatorios
             this.panelFiltros.Size = new System.Drawing.Size(264, 768);
             this.panelFiltros.TabIndex = 63;
             this.panelFiltros.Visible = false;
+            // 
+            // btnProcurarCliente
+            // 
+            this.btnProcurarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurarCliente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProcurarCliente.Location = new System.Drawing.Point(172, 414);
+            this.btnProcurarCliente.Name = "btnProcurarCliente";
+            this.btnProcurarCliente.Size = new System.Drawing.Size(75, 22);
+            this.btnProcurarCliente.TabIndex = 52;
+            this.btnProcurarCliente.Text = "Procurar";
+            this.btnProcurarCliente.UseVisualStyleBackColor = true;
+            this.btnProcurarCliente.Click += new System.EventHandler(this.btnProcurarCliente_Click);
             // 
             // cbDirecaoOrdem
             // 
@@ -188,7 +202,7 @@ namespace AugustusFahsion.View.Relatorios
             this.nupQuantidadeClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantidadeClientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nupQuantidadeClientes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupQuantidadeClientes.Location = new System.Drawing.Point(14, 464);
+            this.nupQuantidadeClientes.Location = new System.Drawing.Point(14, 499);
             this.nupQuantidadeClientes.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -228,11 +242,12 @@ namespace AugustusFahsion.View.Relatorios
             // 
             this.txtNomeCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.txtNomeCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNomeCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNomeCliente.ForeColor = System.Drawing.Color.Silver;
-            this.txtNomeCliente.Location = new System.Drawing.Point(14, 413);
+            this.txtNomeCliente.Location = new System.Drawing.Point(14, 414);
             this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(231, 18);
+            this.txtNomeCliente.ReadOnly = true;
+            this.txtNomeCliente.Size = new System.Drawing.Size(160, 22);
             this.txtNomeCliente.TabIndex = 47;
             // 
             // label16
@@ -249,7 +264,7 @@ namespace AugustusFahsion.View.Relatorios
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(14, 446);
+            this.label15.Location = new System.Drawing.Point(14, 481);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(128, 15);
             this.label15.TabIndex = 37;
@@ -377,7 +392,7 @@ namespace AugustusFahsion.View.Relatorios
             this.btnFiltrarPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrarPorCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrarPorCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(76, 521);
+            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(76, 556);
             this.btnFiltrarPorCliente.Name = "btnFiltrarPorCliente";
             this.btnFiltrarPorCliente.Size = new System.Drawing.Size(112, 48);
             this.btnFiltrarPorCliente.TabIndex = 42;
@@ -617,5 +632,6 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.ComboBox cbDirecaoOrdem;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nupAPartirDe;
+        private System.Windows.Forms.Button btnProcurarCliente;
     }
 }
