@@ -317,7 +317,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCelular.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.mtxtCelular.Location = new System.Drawing.Point(363, 203);
-            this.mtxtCelular.Mask = "(099) 00000-0000";
+            this.mtxtCelular.Mask = "(99) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 16);
             this.mtxtCelular.TabIndex = 8;

@@ -487,7 +487,7 @@ namespace AugustusFahsion.View
             this.mtxtCelular.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtxtCelular.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.mtxtCelular.Location = new System.Drawing.Point(374, 217);
-            this.mtxtCelular.Mask = "(099) 00000-0000";
+            this.mtxtCelular.Mask = "(99) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 20);
             this.mtxtCelular.TabIndex = 24;

@@ -815,7 +815,7 @@ namespace AugustusFahsion.View.Alterar
             this.mtxtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCelular.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.mtxtCelular.Location = new System.Drawing.Point(370, 193);
-            this.mtxtCelular.Mask = "(099) 00000-0000";
+            this.mtxtCelular.Mask = "(99) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 16);
             this.mtxtCelular.TabIndex = 10;
