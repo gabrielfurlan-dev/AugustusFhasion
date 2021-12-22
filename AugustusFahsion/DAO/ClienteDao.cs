@@ -291,7 +291,6 @@ namespace AugustusFahsion.DAO
             }
         }
 
-        //
         public static bool ValidaId(int id)
         {
             try

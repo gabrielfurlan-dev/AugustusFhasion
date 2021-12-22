@@ -85,7 +85,7 @@ namespace AugustusFahsion.View
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnEnviar);
-            this.panel1.Location = new System.Drawing.Point(203, 27);
+            this.panel1.Location = new System.Drawing.Point(203, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(636, 691);
             this.panel1.TabIndex = 0;
@@ -626,7 +626,7 @@ namespace AugustusFahsion.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1024, 726);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -635,6 +635,7 @@ namespace AugustusFahsion.View
             this.Name = "FrmClienteCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClienteCadastrar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
