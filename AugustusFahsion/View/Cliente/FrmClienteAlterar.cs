@@ -52,14 +52,20 @@ namespace AugustusFahsion.View
             mtxtCpf.Text = clienteModel.Cpf.RetornarValor;
             cbCondicao.Text = clienteModel.Condicao;
         }
-        private void btnSalvar_Click_1(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
-                PreencherCamposModel();
+                DialogResult opcaoDoUsuario = new DialogResult();
+                opcaoDoUsuario = MessageBox.Show("Deseja mesmo alterar o cliente?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                _controllerAlterar.AtualizarCliente(clienteModel);
-                this.Close();
+                if (opcaoDoUsuario == DialogResult.Yes)
+                {
+                    PreencherCamposModel();
+
+                    _controllerAlterar.AtualizarCliente(clienteModel);
+                    Close();
+                }
             }
 
         }
@@ -143,7 +149,7 @@ namespace AugustusFahsion.View
                 MessageBox.Show("Insira um numero de endereço.");
                 return false;
             }
-            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{2}[)] [9][0-9]{4}[-][0-9]{4}"))
             {
                 MessageBox.Show("Insira um numero de celular válido");
                 return false;

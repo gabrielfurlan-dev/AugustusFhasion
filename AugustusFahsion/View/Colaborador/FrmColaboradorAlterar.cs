@@ -178,7 +178,7 @@ namespace AugustusFahsion.View.Alterar
                 MessageBox.Show("Insira um CPF válido");
                 return false;
             }
-            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{2}[)] [9][0-9]{4}[-][0-9]{4}"))
             {
                 MessageBox.Show("Insira um numero de celular válido");
                 return false;

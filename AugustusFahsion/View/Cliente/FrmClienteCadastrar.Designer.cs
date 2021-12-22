@@ -110,7 +110,7 @@ namespace AugustusFahsion.View
             this.panel2.Controls.Add(this.txtCidade);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(11, 392);
+            this.panel2.Location = new System.Drawing.Point(14, 392);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(606, 239);
             this.panel2.TabIndex = 56;
@@ -347,7 +347,7 @@ namespace AugustusFahsion.View
             this.panel3.Controls.Add(this.txtNome);
             this.panel3.Controls.Add(this.label29);
             this.panel3.Controls.Add(this.label30);
-            this.panel3.Location = new System.Drawing.Point(43, 58);
+            this.panel3.Location = new System.Drawing.Point(46, 58);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(528, 360);
             this.panel3.TabIndex = 55;
@@ -582,7 +582,7 @@ namespace AugustusFahsion.View
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnCancelar.Location = new System.Drawing.Point(329, 637);
+            this.btnCancelar.Location = new System.Drawing.Point(334, 635);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 47);
             this.btnCancelar.TabIndex = 22;
@@ -598,7 +598,7 @@ namespace AugustusFahsion.View
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnEnviar.Location = new System.Drawing.Point(447, 635);
+            this.btnEnviar.Location = new System.Drawing.Point(452, 633);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(113, 49);
             this.btnEnviar.TabIndex = 21;

@@ -30,7 +30,6 @@ namespace AugustusFahsion.View.Alterar
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmColaboradorAlterar));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnFechar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -95,16 +94,6 @@ namespace AugustusFahsion.View.Alterar
             ((System.ComponentModel.ISupportInitialize)(this.nupComissao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupSalario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(218)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
-            this.menuStrip1.TabIndex = 43;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // btnFechar
             // 
@@ -867,7 +856,6 @@ namespace AugustusFahsion.View.Alterar
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmColaboradorAlterar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -886,8 +874,6 @@ namespace AugustusFahsion.View.Alterar
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel3;

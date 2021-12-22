@@ -254,7 +254,7 @@ namespace AugustusFahsion
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(336, 31);
+            this.panel4.Location = new System.Drawing.Point(335, 42);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(688, 58);
@@ -439,7 +439,7 @@ namespace AugustusFahsion
             this.btnCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(224, 289);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(224, 290);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(30, 30);
             this.btnCadastrarCliente.TabIndex = 11;

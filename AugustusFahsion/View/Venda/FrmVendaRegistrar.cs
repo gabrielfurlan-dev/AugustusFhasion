@@ -85,9 +85,9 @@ namespace AugustusFahsion.View.Venda
             nupQuantidade.Enabled = true;
             nupDesconto.Enabled = true;
         }
-        
+
         private void DgvCarrinho_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) => SelecionarCarrinhoModel();
-        
+
         private void AtribuirValoresDoProdutoSelecionado(ProdutoModel produto)
         {
             lblIdProduto.Text = produto.IdProduto.ToString();
@@ -100,11 +100,11 @@ namespace AugustusFahsion.View.Venda
         }
 
         private void NupQuantidade_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
-        
+
         private void NupDesconto_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
-        
+
         private void NupDesconto_ValueChanged(object sender, EventArgs e) => CalcularPrecosProdutoSelecionado();
-        
+
         private void NupQuantidade_KeyUp(object sender, KeyEventArgs e) => CalcularPrecosProdutoSelecionado();
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -162,18 +162,28 @@ namespace AugustusFahsion.View.Venda
 
         private void BtnEnviar_Click(object sender, EventArgs e)
         {
+
+
             if (!VerificaSeCamposEstãoPreenchidos()) return;
-            if (cbFormaPagamento.Text == "A prazo")
+
+            DialogResult opcaoDoUsuario = new DialogResult();
+            opcaoDoUsuario = MessageBox.Show("Deseja mesmo registrar a venda?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (opcaoDoUsuario == DialogResult.Yes)
             {
-                if (!_vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(0))
+                if (cbFormaPagamento.Text == "A prazo")
                 {
-                    var valorLimiteRestante = _vendaModel.Cliente.ValorLimiteAPrazo.RetornarValor - _vendaModel.Cliente.ValorLimiteGasto.RetornarValor;
-                    MessageBox.Show($"Valor Limite de compra a prazo restante foi ultrapassado: " + valorLimiteRestante.ToString("c"));
-                    return;
+                    if (!_vendaModel.VerificarLimiteGastoCompraAPrazoFoiAtingido(0))
+                    {
+                        var valorLimiteRestante = _vendaModel.Cliente.ValorLimiteAPrazo.RetornarValor - _vendaModel.Cliente.ValorLimiteGasto.RetornarValor;
+                        MessageBox.Show($"Valor Limite de compra a prazo restante foi ultrapassado: " + valorLimiteRestante.ToString("c"));
+                        return;
+                    }
                 }
+                RegistrarVenda();
             }
 
-            RegistrarVenda();
+
 
             MessageBox.Show("Venda Registrada");
             if (chkEnviarEmail.Checked)

@@ -25,10 +25,17 @@ namespace AugustusFahsion.View
         {
             if (validarCampos())
             {
-                PrencherCamposModel();
+                DialogResult opcaoDoUsuario = new DialogResult();
+                opcaoDoUsuario = MessageBox.Show("Deseja mesmo cadastrar o cliente?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                _controller.CadastrarCliente(clienteModel);
-                this.Close();
+                if (opcaoDoUsuario == DialogResult.Yes)
+                {
+                    PrencherCamposModel();
+
+                    _controller.CadastrarCliente(clienteModel);
+                    Close();
+                }
+
             }
         }
 
@@ -109,7 +116,7 @@ namespace AugustusFahsion.View
                 MessageBox.Show("Insira um numero de endereço.");
                 return false;
             }
-            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{3}[)] [9][0-9]{4}[-][0-9]{4}"))
+            if (!Regex.IsMatch(mtxtCelular.Text, @"[(][0-9]{2}[)] [9][0-9]{4}[-][0-9]{4}"))
             {
                 MessageBox.Show("Insira um numero de celular válido");
                 return false;
