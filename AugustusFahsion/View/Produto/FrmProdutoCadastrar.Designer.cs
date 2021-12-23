@@ -447,6 +447,7 @@
             this.Name = "FrmProdutoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdutoCadastrar";
+            this.Load += new System.EventHandler(this.FrmProdutoCadastrar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

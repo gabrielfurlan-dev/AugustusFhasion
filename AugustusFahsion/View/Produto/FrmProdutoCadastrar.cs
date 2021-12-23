@@ -22,7 +22,7 @@ namespace AugustusFahsion.View
             _controller = produtoCadastrarController;
             produtoModel = new ProdutoModel { };
         }
-
+        private void FrmProdutoCadastrar_Load(object sender, EventArgs e) => cbCondicao.Text = "Ativo";
 
         private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
 
@@ -57,6 +57,11 @@ namespace AugustusFahsion.View
             if (nupPrecoVenda.Value < 0)
             {
                 MessageBox.Show("Insira um preço de venda válido");
+                return false;
+            }
+            if (nupPrecoCusto.Value > nupPrecoVenda.Value)
+            {
+                MessageBox.Show("O preco de custo não pode ser maior que o preço de venda.");
                 return false;
             }
             return true;
@@ -105,5 +110,6 @@ namespace AugustusFahsion.View
             lblInsiraUmaImagem.Visible = true;
             BtnAdicionarImagem.Text = "Adicionar";
         }
+
     }
 }
