@@ -82,8 +82,8 @@ namespace AugustusFahsion.View
 
         private void btnRemoverImagem_Click(object sender, EventArgs e)
         {
-            PtbImagemProduto.ImageLocation = null;
-            PtbImagemProduto.Load();
+            //PtbImagemProduto.ImageLocation = null;
+            //PtbImagemProduto.Load();
 
             lblInsiraUmaImagem.Visible = true;
             BtnAdicionarImagem.Text = "Adicionar";

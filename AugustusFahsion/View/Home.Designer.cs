@@ -69,6 +69,9 @@ namespace AugustusFahsion
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.LblHora = new System.Windows.Forms.Label();
+            this.TimerHora = new System.Windows.Forms.Timer(this.components);
             this.panelVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelRelatorios.SuspendLayout();
@@ -84,6 +87,7 @@ namespace AugustusFahsion
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelVendas
@@ -626,12 +630,37 @@ namespace AugustusFahsion
             this.panel6.Size = new System.Drawing.Size(292, 58);
             this.panel6.TabIndex = 15;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.LblHora);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(337, 693);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(667, 32);
+            this.panel7.TabIndex = 15;
+            // 
+            // LblHora
+            // 
+            this.LblHora.AutoSize = true;
+            this.LblHora.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.LblHora.Location = new System.Drawing.Point(606, 8);
+            this.LblHora.Name = "LblHora";
+            this.LblHora.Size = new System.Drawing.Size(49, 15);
+            this.LblHora.TabIndex = 0;
+            this.LblHora.Text = "12:00:00";
+            // 
+            // TimerHora
+            // 
+            this.TimerHora.Enabled = true;
+            this.TimerHora.Tick += new System.EventHandler(this.TimerHora_Tick);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1004, 725);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelVendas);
@@ -662,6 +691,8 @@ namespace AugustusFahsion
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -705,6 +736,9 @@ namespace AugustusFahsion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label LblHora;
+        private System.Windows.Forms.Timer TimerHora;
     }
 }
 

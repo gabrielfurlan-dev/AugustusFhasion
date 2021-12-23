@@ -45,5 +45,10 @@ namespace AugustusFahsion
         private void btnRelatorioClientes_Click(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
 
         private void btnRelatorioProdutos_Click(object sender, EventArgs e) => new RelatorioDeProdutosController().AbrirRelatorio();
+
+        private void TimerHora_Tick(object sender, EventArgs e)
+        {
+            LblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }
