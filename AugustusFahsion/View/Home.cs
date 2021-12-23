@@ -42,8 +42,8 @@ namespace AugustusFahsion
         }
 
 
-        private void btnRelatorioClientes_Click_1(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
+        private void btnRelatorioClientes_Click(object sender, EventArgs e) => new RelatorioDeClientesController().AbrirRelatorio();
 
-        private void btnRelatorioProdutos_Click_1(object sender, EventArgs e) => new RelatorioDeProdutosController().AbrirRelatorio();
+        private void btnRelatorioProdutos_Click(object sender, EventArgs e) => new RelatorioDeProdutosController().AbrirRelatorio();
     }
 }

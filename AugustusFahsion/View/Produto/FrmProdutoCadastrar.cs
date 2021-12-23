@@ -67,6 +67,26 @@ namespace AugustusFahsion.View
             produtoModel.Condicao = cbCondicao.Text;
         }
 
-        private void btnFechar_Click(object sender, EventArgs e) => this.Close();
+        private void BtnAdicionarImagem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK) 
+            {
+                PtbImagemProduto.ImageLocation = openFileDialog1.FileName;
+                LblCaminhoImagem.Text = openFileDialog1.FileName;
+                PtbImagemProduto.Load();
+
+                lblInsiraUmaImagem.Visible = false;
+                BtnAdicionarImagem.Text = "Alterar";
+            }
+        }
+
+        private void btnRemoverImagem_Click(object sender, EventArgs e)
+        {
+            PtbImagemProduto.ImageLocation = null;
+            PtbImagemProduto.Load();
+
+            lblInsiraUmaImagem.Visible = true;
+            BtnAdicionarImagem.Text = "Adicionar";
+        }
     }
 }

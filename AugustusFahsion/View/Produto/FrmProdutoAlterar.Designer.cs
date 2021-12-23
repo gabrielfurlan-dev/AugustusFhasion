@@ -52,7 +52,6 @@ namespace AugustusFahsion.View.Alterar
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidadeEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoCusto)).BeginInit();
@@ -279,10 +278,10 @@ namespace AugustusFahsion.View.Alterar
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(50, 66);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(155, 17);
+            this.label9.Size = new System.Drawing.Size(149, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Informações do produto";
             // 
@@ -352,17 +351,6 @@ namespace AugustusFahsion.View.Alterar
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(218)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
-            this.menuStrip1.TabIndex = 65;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // FrmProdutoAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -370,7 +358,6 @@ namespace AugustusFahsion.View.Alterar
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancelar);
@@ -413,6 +400,5 @@ namespace AugustusFahsion.View.Alterar
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
