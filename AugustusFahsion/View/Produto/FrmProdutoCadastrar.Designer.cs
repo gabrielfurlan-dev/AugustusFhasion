@@ -58,7 +58,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.OfdInserirImagemProduto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImagemProduto)).BeginInit();
@@ -93,7 +93,7 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.PtbImagemProduto);
-            this.panel3.Location = new System.Drawing.Point(152, 61);
+            this.panel3.Location = new System.Drawing.Point(174, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 495);
             this.panel3.TabIndex = 25;
@@ -203,7 +203,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.txtFabricante);
-            this.panel2.Location = new System.Drawing.Point(505, 61);
+            this.panel2.Location = new System.Drawing.Point(527, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(347, 495);
             this.panel2.TabIndex = 25;
@@ -400,7 +400,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnCancelar.Location = new System.Drawing.Point(658, 567);
+            this.btnCancelar.Location = new System.Drawing.Point(685, 551);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 47);
             this.btnCancelar.TabIndex = 23;
@@ -412,11 +412,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(377, 0);
+            this.label4.Location = new System.Drawing.Point(408, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 32);
             this.label4.TabIndex = 24;
             this.label4.Text = "Cadastrar Produto";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEnviar
             // 
@@ -426,17 +427,13 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnEnviar.Location = new System.Drawing.Point(758, 562);
+            this.btnEnviar.Location = new System.Drawing.Point(780, 551);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(94, 49);
             this.btnEnviar.TabIndex = 22;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FrmProdutoCadastrar
             // 
@@ -493,7 +490,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox PtbImagemProduto;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog OfdInserirImagemProduto;
         private System.Windows.Forms.Label LblCaminhoImagem;
         private System.Windows.Forms.Label label9;
     }

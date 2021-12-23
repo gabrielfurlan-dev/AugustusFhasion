@@ -1,6 +1,9 @@
 ﻿using AugustusFahsion.Controller;
 using AugustusFahsion.Model;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AugustusFahsion.View
@@ -8,6 +11,9 @@ namespace AugustusFahsion.View
 
     public partial class FrmProdutoCadastrar : Form
     {
+        Bitmap _bitmap;
+        byte[] _foto;
+
         private ProdutoCadastrarController _controller;
         private ProdutoModel produtoModel;
         public FrmProdutoCadastrar(ProdutoCadastrarController produtoCadastrarController)
@@ -65,15 +71,28 @@ namespace AugustusFahsion.View
             produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
             produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
             produtoModel.Condicao = cbCondicao.Text;
+
+            produtoModel.ImagemProduto = _foto;
         }
 
         private void BtnAdicionarImagem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) 
+            if (OfdInserirImagemProduto.ShowDialog() == DialogResult.OK) 
             {
-                PtbImagemProduto.ImageLocation = openFileDialog1.FileName;
-                LblCaminhoImagem.Text = openFileDialog1.FileName;
-                PtbImagemProduto.Load();
+                string nome = OfdInserirImagemProduto.FileName;
+                MemoryStream memory = new MemoryStream();
+
+                _bitmap = new Bitmap(nome);
+                
+                //PtbImagemProduto.ImageLocation = OfdInserirImagemProduto.FileName;
+                PtbImagemProduto.Image = _bitmap;
+                LblCaminhoImagem.Text = OfdInserirImagemProduto.FileName;
+                //PtbImagemProduto.Load();
+
+                //converter a imagem em byte
+                MemoryStream memoryStream = new MemoryStream();
+                _bitmap.Save(memoryStream, ImageFormat.Bmp);
+                _foto = memoryStream.ToArray();
 
                 lblInsiraUmaImagem.Visible = false;
                 BtnAdicionarImagem.Text = "Alterar";
@@ -82,9 +101,7 @@ namespace AugustusFahsion.View
 
         private void btnRemoverImagem_Click(object sender, EventArgs e)
         {
-            //PtbImagemProduto.ImageLocation = null;
-            //PtbImagemProduto.Load();
-
+            PtbImagemProduto.Image = null;
             lblInsiraUmaImagem.Visible = true;
             BtnAdicionarImagem.Text = "Adicionar";
         }

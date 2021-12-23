@@ -1,6 +1,9 @@
 ﻿using AugustusFahsion.Controller;
 using AugustusFahsion.Model;
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AugustusFahsion.View.Alterar
@@ -10,6 +13,10 @@ namespace AugustusFahsion.View.Alterar
         private ProdutoAlterarController _controllerAlterar;
         private ProdutoExcluirController _controllerExcluir;
         private ProdutoModel produtoModel;
+        private Bitmap _bitmap;
+        private byte[] _foto;
+        MemoryStream _memoryStream;
+
         public FrmProdutoAlterar(ProdutoAlterarController produtoAlterarController)
         {
             InitializeComponent();
@@ -29,6 +36,7 @@ namespace AugustusFahsion.View.Alterar
 
             AtribuirModelParaCampos(produtoModel);
             _controllerExcluir = produtoExcluirController;
+            _memoryStream = new MemoryStream();
         }
 
         public void AtribuirModelParaCampos(ProdutoModel produto)
@@ -41,6 +49,17 @@ namespace AugustusFahsion.View.Alterar
             nupQuantidadeEstoque.Value = produto.QuantidadeEstoque;
             mtxtCodigoBarras.Text = produto.CodigoBarras;
             cbCondicao.Text = produto.Condicao;
+
+
+            if (produto.ImagemProduto != null)
+            {
+                _memoryStream = new MemoryStream(produto.ImagemProduto);
+                PtbImagemProduto.Image = Image.FromStream(_memoryStream);
+
+                lblInsiraUmaImagem.Visible = false;
+                BtnAdicionarImagem.Text = "Alterar";
+            }
+
         }
 
         private void PreencherCamposModel()
@@ -51,6 +70,7 @@ namespace AugustusFahsion.View.Alterar
             produtoModel.PrecoVenda = nupPrecoVenda.Value;
             produtoModel.CodigoBarras = mtxtCodigoBarras.Text;
             produtoModel.QuantidadeEstoque = (int)nupQuantidadeEstoque.Value;
+            produtoModel.ImagemProduto = _foto;
         }
 
         private bool ValidarCampos()
@@ -116,5 +136,33 @@ namespace AugustusFahsion.View.Alterar
 
         private void BtnCancelar_Click(object sender, EventArgs e) => this.Close();
         private void BtnFechar_Click(object sender, EventArgs e) => this.Close();
+
+        private void BtnAdicionarImagem_Click(object sender, EventArgs e)
+        {
+            if (OfdInserirImagemProduto.ShowDialog() == DialogResult.OK)
+            {
+                string nome = OfdInserirImagemProduto.FileName;
+                MemoryStream memory = new MemoryStream();
+
+                _bitmap = new Bitmap(nome);
+
+                PtbImagemProduto.Image = _bitmap;
+                LblCaminhoImagem.Text = OfdInserirImagemProduto.FileName;
+
+                //converter a imagem em byte
+                _bitmap.Save(_memoryStream, ImageFormat.Bmp);
+                _foto = _memoryStream.ToArray();
+
+                lblInsiraUmaImagem.Visible = false;
+                BtnAdicionarImagem.Text = "Alterar";
+            }
+        }
+
+        private void btnRemoverImagem_Click(object sender, EventArgs e)
+        {
+            PtbImagemProduto.Image = null;
+            lblInsiraUmaImagem.Visible = true;
+            BtnAdicionarImagem.Text = "Adicionar";
+        }
     }
 }

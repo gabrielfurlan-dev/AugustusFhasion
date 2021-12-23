@@ -13,6 +13,7 @@ namespace AugustusFahsion.Model
         public string CodigoBarras { get; set; }
         public int QuantidadeEstoque { get; set; }
         public string Condicao { get; set; }
+        public byte[] ImagemProduto { get; set; }
 
         public static decimal ValorTotalBrutoProduto(decimal precoVenda, int quantidade) =>
             precoVenda * quantidade;

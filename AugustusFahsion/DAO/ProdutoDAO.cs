@@ -15,7 +15,7 @@ namespace AugustusFahsion.DAO
                 {
                     var query = @"insert into Produto values(@Nome, @Fabricante,
                     @PrecoCusto, @PrecoVenda, @CodigoBarras, 
-                    @QuantidadeEstoque, @Condicao)";
+                    @QuantidadeEstoque, @Condicao, @ImagemProduto)";
                     conexao.Query<ProdutoModel>(query, 
                         new 
                         {
@@ -25,7 +25,8 @@ namespace AugustusFahsion.DAO
                             PrecoVenda = produto.PrecoVenda.RetornarValor,
                             produto.CodigoBarras,
                             produto.QuantidadeEstoque,
-                            produto.Condicao
+                            produto.Condicao,
+                            produto.ImagemProduto
                         }
                     );
 
@@ -179,7 +180,8 @@ namespace AugustusFahsion.DAO
                                 PrecoVenda = @PrecoVenda, 
                                 QuantidadeEstoque = @QuantidadeEstoque, 
                                 CodigoBarras = @CodigoBarras, 
-                                Condicao = @Condicao 
+                                Condicao = @Condicao,
+                                ImagemProduto = @ImagemProduto
                                 where IdProduto = @IdProduto";
 
                     conexao.Query<ProdutoModel>(query, 
@@ -192,7 +194,8 @@ namespace AugustusFahsion.DAO
                             PrecoVenda = produto.PrecoVenda.RetornarValor,
                             produto.QuantidadeEstoque,
                             produto.CodigoBarras,
-                            produto.Condicao
+                            produto.Condicao,
+                            produto.ImagemProduto
                         }
                     );
                 }
