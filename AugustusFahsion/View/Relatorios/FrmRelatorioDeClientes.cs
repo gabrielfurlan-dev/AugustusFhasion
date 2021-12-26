@@ -85,7 +85,7 @@ namespace AugustusFahsion.View.Relatorios
 
             if (cliente != null)
             {
-               txtNomeCliente.Text = cliente.NomeCompleto.Nome + " " + cliente.NomeCompleto.Sobrenome;
+                txtNomeCliente.Text = cliente.NomeCompleto.Nome + " " + cliente.NomeCompleto.Sobrenome;
                 _idCliente = cliente.IdCliente;
             }
         }

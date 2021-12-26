@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutoCadastrar));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRemoverImagem = new System.Windows.Forms.Button();
             this.BtnAdicionarImagem = new System.Windows.Forms.Button();
@@ -59,7 +57,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.OfdInserirImagemProduto = new System.Windows.Forms.OpenFileDialog();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImagemProduto)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,19 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoCusto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.btnEnviar);
-            this.panel1.Location = new System.Drawing.Point(25, 86);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 614);
-            this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -93,7 +77,7 @@
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.PtbImagemProduto);
-            this.panel3.Location = new System.Drawing.Point(174, 50);
+            this.panel3.Location = new System.Drawing.Point(159, 141);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 495);
             this.panel3.TabIndex = 25;
@@ -203,7 +187,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.txtFabricante);
-            this.panel2.Location = new System.Drawing.Point(527, 50);
+            this.panel2.Location = new System.Drawing.Point(512, 141);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(347, 495);
             this.panel2.TabIndex = 25;
@@ -394,15 +378,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnCancelar.Location = new System.Drawing.Point(685, 551);
+            this.btnCancelar.Location = new System.Drawing.Point(654, 648);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -412,7 +395,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(408, 0);
+            this.label4.Location = new System.Drawing.Point(427, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 32);
             this.label4.TabIndex = 24;
@@ -421,17 +404,16 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnviar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnviar.BackgroundImage")));
+            this.btnEnviar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnEnviar.Location = new System.Drawing.Point(780, 551);
+            this.btnEnviar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnEnviar.Location = new System.Drawing.Point(760, 648);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(94, 49);
+            this.btnEnviar.Size = new System.Drawing.Size(100, 35);
             this.btnEnviar.TabIndex = 22;
-            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.Text = "Salvar";
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
@@ -441,15 +423,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEnviar);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProdutoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProdutoCadastrar";
             this.Load += new System.EventHandler(this.FrmProdutoCadastrar_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImagemProduto)).EndInit();
@@ -459,12 +443,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoVenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecoCusto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEnviar;

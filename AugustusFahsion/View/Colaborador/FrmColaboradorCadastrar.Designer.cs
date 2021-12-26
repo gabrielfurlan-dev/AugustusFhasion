@@ -29,7 +29,6 @@ namespace AugustusFahsion.View.Cadastrar
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmColaboradorCadastrar));
             this.label4 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -61,8 +60,6 @@ namespace AugustusFahsion.View.Cadastrar
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -101,7 +98,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(81, 244);
+            this.label20.Location = new System.Drawing.Point(53, 223);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(40, 15);
             this.label20.TabIndex = 2;
@@ -110,7 +107,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(379, 244);
+            this.label23.Location = new System.Drawing.Point(351, 223);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(39, 15);
             this.label23.TabIndex = 2;
@@ -119,7 +116,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(195, 244);
+            this.label21.Location = new System.Drawing.Point(167, 223);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(50, 15);
             this.label21.TabIndex = 2;
@@ -128,7 +125,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(288, 244);
+            this.label22.Location = new System.Drawing.Point(260, 223);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(30, 15);
             this.label22.TabIndex = 2;
@@ -140,7 +137,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtBanco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBanco.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBanco.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBanco.Location = new System.Drawing.Point(81, 265);
+            this.txtBanco.Location = new System.Drawing.Point(53, 244);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(95, 18);
             this.txtBanco.TabIndex = 18;
@@ -158,7 +155,7 @@ namespace AugustusFahsion.View.Cadastrar
             "Conta salário",
             "Conta digital",
             "Conta universitária"});
-            this.cbTipoConta.Location = new System.Drawing.Point(290, 262);
+            this.cbTipoConta.Location = new System.Drawing.Point(262, 241);
             this.cbTipoConta.Name = "cbTipoConta";
             this.cbTipoConta.Size = new System.Drawing.Size(85, 23);
             this.cbTipoConta.TabIndex = 20;
@@ -169,7 +166,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtConta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtConta.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtxtConta.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.mtxtConta.Location = new System.Drawing.Point(380, 265);
+            this.mtxtConta.Location = new System.Drawing.Point(352, 244);
             this.mtxtConta.Mask = "0000 0000 0000";
             this.mtxtConta.Name = "mtxtConta";
             this.mtxtConta.Size = new System.Drawing.Size(112, 18);
@@ -182,7 +179,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtAgencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtAgencia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtxtAgencia.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.mtxtAgencia.Location = new System.Drawing.Point(181, 265);
+            this.mtxtAgencia.Location = new System.Drawing.Point(153, 244);
             this.mtxtAgencia.Mask = "0000";
             this.mtxtAgencia.Name = "mtxtAgencia";
             this.mtxtAgencia.Size = new System.Drawing.Size(100, 18);
@@ -192,15 +189,14 @@ namespace AugustusFahsion.View.Cadastrar
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnCancelar.Location = new System.Drawing.Point(543, 692);
+            this.btnCancelar.Location = new System.Drawing.Point(573, 682);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
             this.btnCancelar.TabIndex = 41;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -209,15 +205,14 @@ namespace AugustusFahsion.View.Cadastrar
             // btnEnviar
             // 
             this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnviar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnviar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnviar.BackgroundImage")));
+            this.btnEnviar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnEnviar.Location = new System.Drawing.Point(656, 692);
+            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnEnviar.Location = new System.Drawing.Point(679, 682);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(102, 44);
+            this.btnEnviar.Size = new System.Drawing.Size(100, 40);
             this.btnEnviar.TabIndex = 40;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
@@ -228,7 +223,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefone.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtTelefone.Location = new System.Drawing.Point(245, 203);
+            this.txtTelefone.Location = new System.Drawing.Point(244, 162);
             this.txtTelefone.Mask = "000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(100, 16);
@@ -236,7 +231,7 @@ namespace AugustusFahsion.View.Cadastrar
             // 
             // dtpDataNascimento
             // 
-            this.dtpDataNascimento.Location = new System.Drawing.Point(195, 160);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(194, 119);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(134, 23);
             this.dtpDataNascimento.TabIndex = 4;
@@ -247,7 +242,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.mtxtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCpf.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.mtxtCpf.Location = new System.Drawing.Point(52, 160);
+            this.mtxtCpf.Location = new System.Drawing.Point(51, 119);
             this.mtxtCpf.Mask = "000,000,000-00";
             this.mtxtCpf.Name = "mtxtCpf";
             this.mtxtCpf.Size = new System.Drawing.Size(127, 16);
@@ -258,7 +253,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.nupComissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.nupComissao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupComissao.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.nupComissao.Location = new System.Drawing.Point(248, 250);
+            this.nupComissao.Location = new System.Drawing.Point(247, 209);
             this.nupComissao.Name = "nupComissao";
             this.nupComissao.Size = new System.Drawing.Size(98, 19);
             this.nupComissao.TabIndex = 10;
@@ -274,7 +269,7 @@ namespace AugustusFahsion.View.Cadastrar
             0,
             0,
             0});
-            this.nupSalario.Location = new System.Drawing.Point(52, 250);
+            this.nupSalario.Location = new System.Drawing.Point(51, 209);
             this.nupSalario.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -287,7 +282,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 102);
+            this.label1.Location = new System.Drawing.Point(52, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 15);
             this.label1.TabIndex = 2;
@@ -296,7 +291,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(275, 100);
+            this.label5.Location = new System.Drawing.Point(274, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
             this.label5.TabIndex = 2;
@@ -305,7 +300,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(341, 144);
+            this.label6.Location = new System.Drawing.Point(340, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 15);
             this.label6.TabIndex = 2;
@@ -316,7 +311,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.mtxtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCelular.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.mtxtCelular.Location = new System.Drawing.Point(363, 203);
+            this.mtxtCelular.Location = new System.Drawing.Point(362, 162);
             this.mtxtCelular.Mask = "(99) 00000-0000";
             this.mtxtCelular.Name = "mtxtCelular";
             this.mtxtCelular.Size = new System.Drawing.Size(97, 16);
@@ -325,7 +320,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(195, 142);
+            this.label7.Location = new System.Drawing.Point(194, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 15);
             this.label7.TabIndex = 2;
@@ -336,7 +331,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtNome.Location = new System.Drawing.Point(53, 118);
+            this.txtNome.Location = new System.Drawing.Point(52, 77);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(206, 16);
             this.txtNome.TabIndex = 1;
@@ -344,7 +339,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(363, 186);
+            this.label8.Location = new System.Drawing.Point(362, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 15);
             this.label8.TabIndex = 2;
@@ -365,7 +360,7 @@ namespace AugustusFahsion.View.Cadastrar
             "Masculino",
             "Feminino",
             "Outros"});
-            this.cbSexo.Location = new System.Drawing.Point(341, 160);
+            this.cbSexo.Location = new System.Drawing.Point(340, 119);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 23);
             this.cbSexo.TabIndex = 5;
@@ -375,7 +370,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtEmail.Location = new System.Drawing.Point(50, 203);
+            this.txtEmail.Location = new System.Drawing.Point(49, 162);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(179, 16);
             this.txtEmail.TabIndex = 6;
@@ -385,7 +380,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtSobrenome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtSobrenome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSobrenome.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtSobrenome.Location = new System.Drawing.Point(275, 118);
+            this.txtSobrenome.Location = new System.Drawing.Point(274, 77);
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(188, 16);
             this.txtSobrenome.TabIndex = 2;
@@ -393,7 +388,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 142);
+            this.label9.Location = new System.Drawing.Point(51, 101);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 15);
             this.label9.TabIndex = 2;
@@ -402,7 +397,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 185);
+            this.label2.Location = new System.Drawing.Point(49, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 6;
@@ -411,7 +406,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(248, 232);
+            this.label19.Location = new System.Drawing.Point(247, 191);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(80, 15);
             this.label19.TabIndex = 6;
@@ -420,7 +415,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(50, 232);
+            this.label18.Location = new System.Drawing.Point(49, 191);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 15);
             this.label18.TabIndex = 6;
@@ -429,43 +424,16 @@ namespace AugustusFahsion.View.Cadastrar
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 185);
+            this.label3.Location = new System.Drawing.Point(244, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Telefone";
             // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnFechar.Location = new System.Drawing.Point(960, 40);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(49, 40);
-            this.btnFechar.TabIndex = 43;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(218)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
-            this.menuStrip1.TabIndex = 42;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.txtTelefone);
             this.panel3.Controls.Add(this.label29);
@@ -488,27 +456,26 @@ namespace AugustusFahsion.View.Cadastrar
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.cbSexo);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(251, 74);
+            this.panel3.Location = new System.Drawing.Point(251, 118);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(528, 337);
+            this.panel3.Size = new System.Drawing.Size(528, 254);
             this.panel3.TabIndex = 56;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(52, 69);
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(51, 28);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(137, 17);
+            this.label29.Size = new System.Drawing.Size(140, 16);
             this.label29.TabIndex = 71;
             this.label29.Text = "Informações pessoais";
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label23);
@@ -534,9 +501,9 @@ namespace AugustusFahsion.View.Cadastrar
             this.panel1.Controls.Add(this.txtComplemento);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtBairro);
-            this.panel1.Location = new System.Drawing.Point(215, 377);
+            this.panel1.Location = new System.Drawing.Point(251, 387);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 318);
+            this.panel1.Size = new System.Drawing.Size(528, 289);
             this.panel1.TabIndex = 56;
             // 
             // mtxtCep
@@ -544,7 +511,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.mtxtCep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.mtxtCep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtCep.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.mtxtCep.Location = new System.Drawing.Point(187, 140);
+            this.mtxtCep.Location = new System.Drawing.Point(159, 119);
             this.mtxtCep.Mask = "00000000";
             this.mtxtCep.Name = "mtxtCep";
             this.mtxtCep.Size = new System.Drawing.Size(86, 16);
@@ -554,10 +521,10 @@ namespace AugustusFahsion.View.Cadastrar
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(79, 221);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(51, 200);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 17);
+            this.label16.Size = new System.Drawing.Size(112, 16);
             this.label16.TabIndex = 71;
             this.label16.Text = "Dados Bancários";
             // 
@@ -565,10 +532,10 @@ namespace AugustusFahsion.View.Cadastrar
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(80, 48);
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(52, 27);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(160, 17);
+            this.label28.Size = new System.Drawing.Size(161, 16);
             this.label28.TabIndex = 71;
             this.label28.Text = "Informações de endereço";
             // 
@@ -577,7 +544,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtNumeroEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtNumeroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumeroEndereco.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(80, 140);
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(52, 119);
             this.txtNumeroEndereco.Mask = "00000";
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(100, 16);
@@ -589,7 +556,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCidade.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCidade.Location = new System.Drawing.Point(80, 98);
+            this.txtCidade.Location = new System.Drawing.Point(52, 77);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(193, 16);
             this.txtCidade.TabIndex = 64;
@@ -597,7 +564,7 @@ namespace AugustusFahsion.View.Cadastrar
             // a
             // 
             this.a.AutoSize = true;
-            this.a.Location = new System.Drawing.Point(437, 168);
+            this.a.Location = new System.Drawing.Point(409, 147);
             this.a.Name = "a";
             this.a.Size = new System.Drawing.Size(21, 15);
             this.a.TabIndex = 57;
@@ -606,7 +573,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(80, 166);
+            this.label13.Location = new System.Drawing.Point(52, 145);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 15);
             this.label13.TabIndex = 63;
@@ -615,7 +582,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(187, 123);
+            this.label10.Location = new System.Drawing.Point(159, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 15);
             this.label10.TabIndex = 58;
@@ -624,7 +591,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(287, 122);
+            this.label11.Location = new System.Drawing.Point(259, 101);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 15);
             this.label11.TabIndex = 62;
@@ -672,7 +639,7 @@ namespace AugustusFahsion.View.Cadastrar
             "SE",
             "TO",
             "DF"});
-            this.cbUf.Location = new System.Drawing.Point(437, 184);
+            this.cbUf.Location = new System.Drawing.Point(409, 163);
             this.cbUf.Name = "cbUf";
             this.cbUf.Size = new System.Drawing.Size(53, 23);
             this.cbUf.TabIndex = 70;
@@ -680,7 +647,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(288, 80);
+            this.label14.Location = new System.Drawing.Point(260, 59);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 15);
             this.label14.TabIndex = 61;
@@ -691,7 +658,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtLogradouro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtLogradouro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogradouro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtLogradouro.Location = new System.Drawing.Point(288, 140);
+            this.txtLogradouro.Location = new System.Drawing.Point(260, 119);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(201, 16);
             this.txtLogradouro.TabIndex = 68;
@@ -699,7 +666,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(80, 122);
+            this.label15.Location = new System.Drawing.Point(52, 101);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 15);
             this.label15.TabIndex = 60;
@@ -710,7 +677,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtComplemento.Location = new System.Drawing.Point(80, 184);
+            this.txtComplemento.Location = new System.Drawing.Point(52, 163);
             this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(337, 16);
@@ -719,7 +686,7 @@ namespace AugustusFahsion.View.Cadastrar
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(80, 80);
+            this.label12.Location = new System.Drawing.Point(52, 59);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(44, 15);
             this.label12.TabIndex = 59;
@@ -730,7 +697,7 @@ namespace AugustusFahsion.View.Cadastrar
             this.txtBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
             this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBairro.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBairro.Location = new System.Drawing.Point(288, 98);
+            this.txtBairro.Location = new System.Drawing.Point(260, 77);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(202, 16);
             this.txtBairro.TabIndex = 65;
@@ -742,8 +709,6 @@ namespace AugustusFahsion.View.Cadastrar
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
@@ -797,8 +762,6 @@ namespace AugustusFahsion.View.Cadastrar
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel1;

@@ -35,7 +35,8 @@ namespace AugustusFahsion.View
             btnAlterar.Enabled = true;
         }
 
-        private void btnProcurar(object sender, EventArgs e)
+
+        private void btnProcurar_Click(object sender, EventArgs e)
         {
             if (Validacoes.EhNumerico(txtProcurar.Text))
             {
@@ -61,5 +62,7 @@ namespace AugustusFahsion.View
             
         }
         private int SelecionarColaboradorModel() => Convert.ToInt32(dgvLista.SelectedRows[0].Cells[0].Value);
+
+
     }
 }

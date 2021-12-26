@@ -29,7 +29,6 @@ namespace AugustusFahsion.View.Listar
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutoListar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -39,8 +38,6 @@ namespace AugustusFahsion.View.Listar
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -48,15 +45,14 @@ namespace AugustusFahsion.View.Listar
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.btnFechar.Location = new System.Drawing.Point(766, 628);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(99, 41);
+            this.btnFechar.Size = new System.Drawing.Size(100, 35);
             this.btnFechar.TabIndex = 4;
             this.btnFechar.Text = "Cancelar";
             this.btnFechar.UseVisualStyleBackColor = false;
@@ -113,16 +109,15 @@ namespace AugustusFahsion.View.Listar
             // btnAlterar
             // 
             this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAlterar.Enabled = false;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlterar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAlterar.Location = new System.Drawing.Point(871, 628);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(99, 41);
+            this.btnAlterar.Size = new System.Drawing.Size(100, 35);
             this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
@@ -130,13 +125,13 @@ namespace AugustusFahsion.View.Listar
             // 
             // btnProcurar
             // 
-            this.btnProcurar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProcurar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnProcurar.Location = new System.Drawing.Point(177, 142);
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProcurar.Location = new System.Drawing.Point(229, 142);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(23, 22);
+            this.btnProcurar.Size = new System.Drawing.Size(39, 22);
             this.btnProcurar.TabIndex = 19;
             this.btnProcurar.Text = "🔎";
             this.btnProcurar.UseVisualStyleBackColor = false;
@@ -150,7 +145,7 @@ namespace AugustusFahsion.View.Listar
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtProcurar.Location = new System.Drawing.Point(71, 142);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(100, 22);
+            this.txtProcurar.Size = new System.Drawing.Size(160, 22);
             this.txtProcurar.TabIndex = 18;
             // 
             // label4
@@ -162,33 +157,6 @@ namespace AugustusFahsion.View.Listar
             this.label4.Size = new System.Drawing.Size(45, 15);
             this.label4.TabIndex = 17;
             this.label4.Text = "Buscar:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnCancelar.Location = new System.Drawing.Point(960, 40);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(49, 40);
-            this.btnCancelar.TabIndex = 64;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(165)))), ((int)(((byte)(218)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
-            this.menuStrip1.TabIndex = 63;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // label2
             // 
@@ -207,8 +175,6 @@ namespace AugustusFahsion.View.Listar
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtProcurar);
             this.Controls.Add(this.label4);
@@ -235,8 +201,6 @@ namespace AugustusFahsion.View.Listar
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.TextBox txtProcurar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label2;
     }
 }

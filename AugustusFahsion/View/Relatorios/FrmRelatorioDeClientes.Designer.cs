@@ -29,10 +29,9 @@ namespace AugustusFahsion.View.Relatorios
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnFechar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelatorioDeClientes));
             this.label1 = new System.Windows.Forms.Label();
             this.panelFiltros = new System.Windows.Forms.Panel();
             this.btnProcurarCliente = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@ namespace AugustusFahsion.View.Relatorios
             this.label4 = new System.Windows.Forms.Label();
             this.dtDataFinal = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnFecharFiltros = new System.Windows.Forms.Button();
             this.btnFiltrarPorCliente = new System.Windows.Forms.Button();
@@ -67,27 +65,13 @@ namespace AugustusFahsion.View.Relatorios
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalDesconto = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantidadeClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAPartirDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRelatorioClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.btnFechar.Location = new System.Drawing.Point(960, 40);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(49, 40);
-            this.btnFechar.TabIndex = 6;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
             // 
             // label1
             // 
@@ -340,23 +324,6 @@ namespace AugustusFahsion.View.Relatorios
             this.label13.TabIndex = 36;
             this.label13.Text = "Filtros";
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.button2.Location = new System.Drawing.Point(213, 39);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 40);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -386,15 +353,14 @@ namespace AugustusFahsion.View.Relatorios
             // 
             // btnFiltrarPorCliente
             // 
-            this.btnFiltrarPorCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnFiltrarPorCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltrarPorCliente.BackgroundImage")));
+            this.btnFiltrarPorCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
             this.btnFiltrarPorCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFiltrarPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrarPorCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFiltrarPorCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(76, 556);
+            this.btnFiltrarPorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFiltrarPorCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFiltrarPorCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnFiltrarPorCliente.Location = new System.Drawing.Point(87, 555);
             this.btnFiltrarPorCliente.Name = "btnFiltrarPorCliente";
-            this.btnFiltrarPorCliente.Size = new System.Drawing.Size(112, 48);
+            this.btnFiltrarPorCliente.Size = new System.Drawing.Size(100, 35);
             this.btnFiltrarPorCliente.TabIndex = 42;
             this.btnFiltrarPorCliente.Text = "Filtrar";
             this.btnFiltrarPorCliente.UseVisualStyleBackColor = false;
@@ -561,6 +527,39 @@ namespace AugustusFahsion.View.Relatorios
             this.label17.TabIndex = 55;
             this.label17.Text = "Total desconto:";
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.button2.Location = new System.Drawing.Point(213, 39);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 40);
+            this.button2.TabIndex = 6;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 6.15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.btnFechar.Location = new System.Drawing.Point(960, 40);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(49, 40);
+            this.btnFechar.TabIndex = 6;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
+            // 
             // FrmRelatorioDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -596,8 +595,6 @@ namespace AugustusFahsion.View.Relatorios
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelFiltros;
         private System.Windows.Forms.ComboBox cbFiltrarPor;
@@ -609,7 +606,6 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtDataFinal;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnFecharFiltros;
         private System.Windows.Forms.Button btnFiltrarPorCliente;
@@ -633,5 +629,7 @@ namespace AugustusFahsion.View.Relatorios
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nupAPartirDe;
         private System.Windows.Forms.Button btnProcurarCliente;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

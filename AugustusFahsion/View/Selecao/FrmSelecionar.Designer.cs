@@ -34,7 +34,6 @@ namespace AugustusFahsion.View.Selecao
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSelecionarModel));
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnContinuar = new System.Windows.Forms.Button();
@@ -95,7 +94,7 @@ namespace AugustusFahsion.View.Selecao
             this.dgvLista.RowTemplate.Height = 25;
             this.dgvLista.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(351, 231);
+            this.dgvLista.Size = new System.Drawing.Size(358, 231);
             this.dgvLista.TabIndex = 36;
             this.dgvLista.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLista_CellMouseClick);
             // 
@@ -105,7 +104,7 @@ namespace AugustusFahsion.View.Selecao
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTitulo.Location = new System.Drawing.Point(157, 34);
+            this.lblTitulo.Location = new System.Drawing.Point(161, 50);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(113, 30);
             this.lblTitulo.TabIndex = 37;
@@ -114,43 +113,44 @@ namespace AugustusFahsion.View.Selecao
             // btnContinuar
             // 
             this.btnContinuar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnContinuar.BackColor = System.Drawing.Color.Transparent;
-            this.btnContinuar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContinuar.BackgroundImage")));
+            this.btnContinuar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnContinuar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnContinuar.Location = new System.Drawing.Point(304, 371);
+            this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnContinuar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnContinuar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnContinuar.Location = new System.Drawing.Point(341, 361);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(75, 34);
+            this.btnContinuar.Size = new System.Drawing.Size(45, 24);
             this.btnContinuar.TabIndex = 38;
-            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.Text = "Ok";
             this.btnContinuar.UseVisualStyleBackColor = false;
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // lblSelecionado
             // 
             this.lblSelecionado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSelecionado.AutoSize = true;
+            this.lblSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblSelecionado.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblSelecionado.Location = new System.Drawing.Point(28, 381);
+            this.lblSelecionado.Location = new System.Drawing.Point(28, 361);
             this.lblSelecionado.Name = "lblSelecionado";
-            this.lblSelecionado.Size = new System.Drawing.Size(131, 15);
+            this.lblSelecionado.Size = new System.Drawing.Size(315, 24);
             this.lblSelecionado.TabIndex = 39;
             this.lblSelecionado.Text = "Selecione um cliente. . .";
+            this.lblSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.BackgroundImage")));
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
             this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnPesquisar.Location = new System.Drawing.Point(131, 94);
+            this.btnPesquisar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisar.Location = new System.Drawing.Point(341, 97);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(37, 29);
+            this.btnPesquisar.Size = new System.Drawing.Size(45, 22);
             this.btnPesquisar.TabIndex = 54;
+            this.btnPesquisar.Text = "🔎";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -163,7 +163,7 @@ namespace AugustusFahsion.View.Selecao
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtProcurar.Location = new System.Drawing.Point(28, 97);
             this.txtProcurar.Name = "txtProcurar";
-            this.txtProcurar.Size = new System.Drawing.Size(100, 22);
+            this.txtProcurar.Size = new System.Drawing.Size(313, 22);
             this.txtProcurar.TabIndex = 53;
             // 
             // label8

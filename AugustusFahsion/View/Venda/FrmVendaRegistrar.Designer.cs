@@ -29,7 +29,6 @@ namespace AugustusFahsion.View.Venda
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVendaRegistrar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +39,7 @@ namespace AugustusFahsion.View.Venda
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVendaRegistrar));
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -173,15 +173,14 @@ namespace AugustusFahsion.View.Venda
             // btnEnviar
             // 
             this.btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEnviar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnviar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEnviar.BackgroundImage")));
+            this.btnEnviar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnviar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnEnviar.Location = new System.Drawing.Point(853, 489);
+            this.btnEnviar.Location = new System.Drawing.Point(863, 488);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(110, 40);
+            this.btnEnviar.Size = new System.Drawing.Size(100, 35);
             this.btnEnviar.TabIndex = 36;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
@@ -190,7 +189,7 @@ namespace AugustusFahsion.View.Venda
             // btnAbrirDeSelecaoDeCliente
             // 
             this.btnAbrirDeSelecaoDeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirDeSelecaoDeCliente.Location = new System.Drawing.Point(388, 16);
+            this.btnAbrirDeSelecaoDeCliente.Location = new System.Drawing.Point(391, 16);
             this.btnAbrirDeSelecaoDeCliente.Name = "btnAbrirDeSelecaoDeCliente";
             this.btnAbrirDeSelecaoDeCliente.Size = new System.Drawing.Size(73, 23);
             this.btnAbrirDeSelecaoDeCliente.TabIndex = 58;
@@ -202,7 +201,7 @@ namespace AugustusFahsion.View.Venda
             // 
             this.chkEnviarEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkEnviarEmail.AutoSize = true;
-            this.chkEnviarEmail.Location = new System.Drawing.Point(738, 539);
+            this.chkEnviarEmail.Location = new System.Drawing.Point(757, 529);
             this.chkEnviarEmail.Name = "chkEnviarEmail";
             this.chkEnviarEmail.Size = new System.Drawing.Size(144, 19);
             this.chkEnviarEmail.TabIndex = 55;
@@ -248,15 +247,14 @@ namespace AugustusFahsion.View.Venda
             // btnCancelar
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnCancelar.Location = new System.Drawing.Point(737, 493);
+            this.btnCancelar.Location = new System.Drawing.Point(757, 488);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(110, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 41;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -339,7 +337,7 @@ namespace AugustusFahsion.View.Venda
             this.btnAbrirSelecaoDeColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirSelecaoDeColaborador.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAbrirSelecaoDeColaborador.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAbrirSelecaoDeColaborador.Location = new System.Drawing.Point(881, 13);
+            this.btnAbrirSelecaoDeColaborador.Location = new System.Drawing.Point(890, 13);
             this.btnAbrirSelecaoDeColaborador.Name = "btnAbrirSelecaoDeColaborador";
             this.btnAbrirSelecaoDeColaborador.Size = new System.Drawing.Size(73, 23);
             this.btnAbrirSelecaoDeColaborador.TabIndex = 51;
@@ -362,7 +360,7 @@ namespace AugustusFahsion.View.Venda
             this.lblColaboradorSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblColaboradorSelecionado.Location = new System.Drawing.Point(539, 11);
             this.lblColaboradorSelecionado.Name = "lblColaboradorSelecionado";
-            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(343, 27);
+            this.lblColaboradorSelecionado.Size = new System.Drawing.Size(354, 27);
             this.lblColaboradorSelecionado.TabIndex = 43;
             this.lblColaboradorSelecionado.Text = "Selecione um colaborador. . .";
             this.lblColaboradorSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -519,9 +517,9 @@ namespace AugustusFahsion.View.Venda
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(72)))), ((int)(((byte)(77)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Location = new System.Drawing.Point(881, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 27);
@@ -542,17 +540,16 @@ namespace AugustusFahsion.View.Venda
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.BackgroundImage")));
+            this.btnAdicionar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(391, 428);
+            this.btnAdicionar.Location = new System.Drawing.Point(362, 428);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(73, 28);
+            this.btnAdicionar.Size = new System.Drawing.Size(102, 28);
             this.btnAdicionar.TabIndex = 38;
-            this.btnAdicionar.Text = "Add";
+            this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
@@ -578,13 +575,13 @@ namespace AugustusFahsion.View.Venda
             // 
             // btnPesquisarProduto
             // 
-            this.btnPesquisarProduto.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPesquisarProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
+            this.btnPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisarProduto.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisarProduto.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnPesquisarProduto.Location = new System.Drawing.Point(441, 55);
+            this.btnPesquisarProduto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnPesquisarProduto.Location = new System.Drawing.Point(424, 55);
             this.btnPesquisarProduto.Name = "btnPesquisarProduto";
-            this.btnPesquisarProduto.Size = new System.Drawing.Size(23, 22);
+            this.btnPesquisarProduto.Size = new System.Drawing.Size(40, 22);
             this.btnPesquisarProduto.TabIndex = 51;
             this.btnPesquisarProduto.Text = "🔎";
             this.btnPesquisarProduto.UseVisualStyleBackColor = false;
@@ -614,7 +611,7 @@ namespace AugustusFahsion.View.Venda
             this.txtProcurar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProcurar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProcurar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtProcurar.Location = new System.Drawing.Point(335, 55);
+            this.txtProcurar.Location = new System.Drawing.Point(326, 55);
             this.txtProcurar.Name = "txtProcurar";
             this.txtProcurar.Size = new System.Drawing.Size(100, 22);
             this.txtProcurar.TabIndex = 50;
@@ -655,7 +652,7 @@ namespace AugustusFahsion.View.Venda
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(284, 58);
+            this.label8.Location = new System.Drawing.Point(275, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 15);
             this.label8.TabIndex = 49;
@@ -789,7 +786,7 @@ namespace AugustusFahsion.View.Venda
             this.lblClienteSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.lblClienteSelecionado.Location = new System.Drawing.Point(68, 14);
             this.lblClienteSelecionado.Name = "lblClienteSelecionado";
-            this.lblClienteSelecionado.Size = new System.Drawing.Size(321, 27);
+            this.lblClienteSelecionado.Size = new System.Drawing.Size(325, 27);
             this.lblClienteSelecionado.TabIndex = 43;
             this.lblClienteSelecionado.Text = "Selecione um cliente. . .";
             this.lblClienteSelecionado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -101,7 +101,7 @@ namespace AugustusFahsion
             this.panelVendas.Controls.Add(this.pictureBox5);
             this.panelVendas.Controls.Add(this.btnAdicionarVenda);
             this.panelVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panelVendas.Location = new System.Drawing.Point(391, 246);
+            this.panelVendas.Location = new System.Drawing.Point(406, 141);
             this.panelVendas.Name = "panelVendas";
             this.panelVendas.Size = new System.Drawing.Size(563, 250);
             this.panelVendas.TabIndex = 6;
@@ -109,18 +109,16 @@ namespace AugustusFahsion
             // btnListarVendas
             // 
             this.btnListarVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnListarVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnListarVendas.BackgroundImage")));
             this.btnListarVendas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnListarVendas.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnListarVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListarVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnListarVendas.Location = new System.Drawing.Point(397, 140);
+            this.btnListarVendas.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnListarVendas.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnListarVendas.Location = new System.Drawing.Point(395, 153);
             this.btnListarVendas.MaximumSize = new System.Drawing.Size(450, 450);
             this.btnListarVendas.Name = "btnListarVendas";
             this.btnListarVendas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnListarVendas.Size = new System.Drawing.Size(115, 49);
+            this.btnListarVendas.Size = new System.Drawing.Size(119, 40);
             this.btnListarVendas.TabIndex = 13;
             this.btnListarVendas.Text = "Consultar";
             this.btnListarVendas.UseVisualStyleBackColor = false;
@@ -156,17 +154,16 @@ namespace AugustusFahsion
             // btnAdicionarVenda
             // 
             this.btnAdicionarVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdicionarVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdicionarVenda.BackgroundImage")));
+            this.btnAdicionarVenda.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAdicionarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAdicionarVenda.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAdicionarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionarVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnAdicionarVenda.Location = new System.Drawing.Point(272, 136);
+            this.btnAdicionarVenda.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarVenda.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdicionarVenda.Location = new System.Drawing.Point(272, 153);
             this.btnAdicionarVenda.MaximumSize = new System.Drawing.Size(450, 450);
             this.btnAdicionarVenda.Name = "btnAdicionarVenda";
-            this.btnAdicionarVenda.Size = new System.Drawing.Size(119, 57);
+            this.btnAdicionarVenda.Size = new System.Drawing.Size(119, 40);
             this.btnAdicionarVenda.TabIndex = 12;
             this.btnAdicionarVenda.Text = "Vender";
             this.btnAdicionarVenda.UseVisualStyleBackColor = false;
@@ -183,7 +180,7 @@ namespace AugustusFahsion
             this.panelRelatorios.Controls.Add(this.btnRelatorioClientes);
             this.panelRelatorios.Controls.Add(this.btnRelatorioProdutos);
             this.panelRelatorios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.panelRelatorios.Location = new System.Drawing.Point(389, 245);
+            this.panelRelatorios.Location = new System.Drawing.Point(404, 140);
             this.panelRelatorios.Name = "panelRelatorios";
             this.panelRelatorios.Size = new System.Drawing.Size(563, 248);
             this.panelRelatorios.TabIndex = 14;
@@ -195,7 +192,7 @@ namespace AugustusFahsion
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Trebuchet MS", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(272, 76);
+            this.label11.Location = new System.Drawing.Point(272, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(205, 50);
             this.label11.TabIndex = 19;
@@ -218,17 +215,16 @@ namespace AugustusFahsion
             // btnRelatorioClientes
             // 
             this.btnRelatorioClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRelatorioClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnRelatorioClientes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorioClientes.BackgroundImage")));
+            this.btnRelatorioClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(134)))), ((int)(((byte)(221)))));
             this.btnRelatorioClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRelatorioClientes.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRelatorioClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorioClientes.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRelatorioClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnRelatorioClientes.Location = new System.Drawing.Point(272, 138);
+            this.btnRelatorioClientes.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorioClientes.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRelatorioClientes.Location = new System.Drawing.Point(272, 153);
             this.btnRelatorioClientes.MaximumSize = new System.Drawing.Size(450, 450);
             this.btnRelatorioClientes.Name = "btnRelatorioClientes";
-            this.btnRelatorioClientes.Size = new System.Drawing.Size(119, 55);
+            this.btnRelatorioClientes.Size = new System.Drawing.Size(119, 40);
             this.btnRelatorioClientes.TabIndex = 20;
             this.btnRelatorioClientes.Text = "Clientes";
             this.btnRelatorioClientes.UseVisualStyleBackColor = false;
@@ -238,17 +234,16 @@ namespace AugustusFahsion
             // 
             this.btnRelatorioProdutos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRelatorioProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnRelatorioProdutos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRelatorioProdutos.BackgroundImage")));
             this.btnRelatorioProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRelatorioProdutos.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRelatorioProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorioProdutos.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRelatorioProdutos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.btnRelatorioProdutos.Location = new System.Drawing.Point(397, 139);
+            this.btnRelatorioProdutos.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorioProdutos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnRelatorioProdutos.Location = new System.Drawing.Point(397, 154);
             this.btnRelatorioProdutos.MaximumSize = new System.Drawing.Size(450, 450);
             this.btnRelatorioProdutos.Name = "btnRelatorioProdutos";
             this.btnRelatorioProdutos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRelatorioProdutos.Size = new System.Drawing.Size(115, 54);
+            this.btnRelatorioProdutos.Size = new System.Drawing.Size(119, 40);
             this.btnRelatorioProdutos.TabIndex = 21;
             this.btnRelatorioProdutos.Text = "Produtos";
             this.btnRelatorioProdutos.UseVisualStyleBackColor = false;
@@ -663,8 +658,8 @@ namespace AugustusFahsion
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelVendas);
             this.Controls.Add(this.panelRelatorios);
+            this.Controls.Add(this.panelVendas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

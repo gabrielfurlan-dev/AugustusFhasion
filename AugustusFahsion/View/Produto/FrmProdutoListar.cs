@@ -45,7 +45,7 @@ namespace AugustusFahsion.View.Listar
         private void AbrirFormAlterar(ProdutoModel produto)
         {
             new ProdutoAlterarController().AbrirFormulario(produto);
-            this.Close();
+            Close();
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -55,8 +55,7 @@ namespace AugustusFahsion.View.Listar
         }
 
 
-        private void btnFechar_Click(object sender, EventArgs e) =>
-            this.Close();
-        private void btnCancelar_Click(object sender, EventArgs e) => this.Close();
+        private void btnFechar_Click(object sender, EventArgs e) => Close();
+        private void btnCancelar_Click(object sender, EventArgs e) => Close();
     }
 }

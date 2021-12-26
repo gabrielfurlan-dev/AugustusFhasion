@@ -96,7 +96,7 @@ namespace AugustusFahsion.View.Alterar
             }
             if (nupPrecoCusto.Value > nupPrecoVenda.Value)
             {
-                MessageBox.Show("O preco de custo não pode ser maior que o preço de venda.");
+                MessageBox.Show("O preco de custo não pode ser maior que o preço de venda/.");
                 return false;
             }
             return true;
